@@ -56,12 +56,36 @@
     }
   }
 
+  function markActiveNav(){
+    // Highlight the primary nav link that matches the current page path.
+    // Catalog.html → /Catalog (also matches /catalog/ paths if used later).
+    const path = (location.pathname || '').toLowerCase();
+    const file = path.split('/').pop() || '';
+    const stem = file.replace(/\.html?$/i, '');
+    document.querySelectorAll('header.site nav.primary a').forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      if (!href) return;
+      const targetStem = href.split('/').pop().replace(/\.html?$/i, '');
+      // Match if the link file matches current file, OR if the link points to
+      // a subroute whose first segment equals the current file stem.
+      const linkSeg = href.split('/').filter(Boolean)[0] || '';
+      const isMatch =
+        (stem && targetStem && stem === targetStem) ||
+        (stem && linkSeg && stem === linkSeg);
+      if (isMatch){
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
   async function loadAll(){
     const nodes = Array.from(document.querySelectorAll('[data-partial]'));
     // Load sequentially to preserve DOM order
     for (const n of nodes) {
       await load(n);
     }
+    markActiveNav();
     document.documentElement.dispatchEvent(new CustomEvent('partials:ready'));
     // If i18n has already mounted, re-apply translations to freshly inserted nodes
     if (window.BX_i18n && typeof window.BX_i18n.reload === 'function'){

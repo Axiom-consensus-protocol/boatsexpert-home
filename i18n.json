@@ -1983,5 +1983,165 @@
   "entry.services.h": {
     "en": "Installation, tuning, registration and warranty",
     "ro": "Montaj, tuning, înmatriculare și garanție"
+  },
+  "catalog.crumbs.here": {
+    "en": "Boats Catalog",
+    "ro": "Catalog Bărci"
+  },
+  "catalog.stat.total": {
+    "en": "Total<br/>boats",
+    "ro": "Total<br/>bărci"
+  },
+  "catalog.stat.stock": {
+    "en": "In stock<br/>this season",
+    "ro": "În stoc<br/>sezonul curent"
+  },
+  "catalog.stat.brands": {
+    "en": "Brands<br/>represented",
+    "ro": "Mărci<br/>reprezentate"
+  },
+  "catalog.tab.aluminium": {
+    "en": "Aluminium",
+    "ro": "Aluminiu"
+  },
+  "catalog.tab.fishing": {
+    "en": "Fishing",
+    "ro": "Pescuit"
+  },
+  "catalog.tab.rib": {
+    "en": "RIB",
+    "ro": "RIB"
+  },
+  "catalog.tab.cruising": {
+    "en": "Cruising",
+    "ro": "Croazieră"
+  },
+  "catalog.tab.fiberglass": {
+    "en": "Fiberglass",
+    "ro": "Fibră de sticlă"
+  },
+  "catalog.tab.trailers": {
+    "en": "Trailers",
+    "ro": "Peridocuri"
+  },
+  "catalog.tab.featured": {
+    "en": "Featured",
+    "ro": "Recomandate"
+  },
+  "catalog.trust.warranty.l": {
+    "en": "One-handed warranty",
+    "ro": "Garanție cu o singură mână"
+  },
+  "catalog.trust.leasing.b": {
+    "en": "0% leasing",
+    "ro": "Leasing 0%"
+  },
+  "catalog.trust.tradein.b": {
+    "en": "Trade-in",
+    "ro": "Trade-in"
+  },
+  "catalog.trust.tradein.l": {
+    "en": "Your old boat counts",
+    "ro": "Vechea ta barcă contează"
+  },
+  "catalog.trust.countries.b": {
+    "en": "4 countries",
+    "ro": "4 țări"
+  },
+  "catalog.trust.countries.l": {
+    "en": "RO · MD · RS · BG delivery",
+    "ro": "Livrare RO · MD · RS · BG"
+  },
+  "catalog.hull.ey": {
+    "en": "Browse by hull · 6 of 6",
+    "ro": "Caută după corp · 6 din 6"
+  },
+  "catalog.hull.more": {
+    "en": "Hull guide · how to choose →",
+    "ro": "Ghid de corp · cum alegi →"
+  },
+  "catalog.hull.fishing": {
+    "en": "Fishing Boats",
+    "ro": "Bărci de pescuit"
+  },
+  "catalog.hull.aluminium": {
+    "en": "Aluminium",
+    "ro": "Aluminiu"
+  },
+  "catalog.hull.rib": {
+    "en": "RIB",
+    "ro": "RIB"
+  },
+  "catalog.hull.cruising": {
+    "en": "Cruising",
+    "ro": "Croazieră"
+  },
+  "catalog.hull.fiberglass": {
+    "en": "Fiberglass",
+    "ro": "Fibră de sticlă"
+  },
+  "catalog.hull.trailers": {
+    "en": "Trailers",
+    "ro": "Peridocuri"
+  },
+  "catalog.toolbar.sortby": {
+    "en": "Sort by",
+    "ro": "Sortează după"
+  },
+  "catalog.toolbar.clear": {
+    "en": "Clear all",
+    "ro": "Resetează"
+  },
+  "catalog.filt.reset": {
+    "en": "Reset all",
+    "ro": "Resetează tot"
+  },
+  "catalog.filt.availability": {
+    "en": "Availability",
+    "ro": "Disponibilitate"
+  },
+  "catalog.filt.brand": {
+    "en": "Brand",
+    "ro": "Marcă"
+  },
+  "catalog.filt.all": {
+    "en": "All",
+    "ro": "Toate"
+  },
+  "catalog.filt.instock": {
+    "en": "In stock",
+    "ro": "În stoc"
+  },
+  "catalog.filt.onorder": {
+    "en": "On order",
+    "ro": "La comandă"
+  },
+  "catalog.cta.ey": {
+    "en": "Can't find what you're looking for?",
+    "ro": "Nu găsești ce cauți?"
+  },
+  "catalog.tab.all": {
+    "en": "All",
+    "ro": "Toate"
+  },
+  "catalog.tab.instock": {
+    "en": "In Stock",
+    "ro": "În Stoc"
+  },
+  "catalog.hero.ey": {
+    "en": "230 offers · 16 brands · 6 categories",
+    "ro": "230 oferte · 16 mărci · 6 categorii"
+  },
+  "catalog.hero.h1": {
+    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">230 boats · 16 marine brands · 6 hull types · Romania, Moldova, Serbia, Bulgaria delivery</span>",
+    "ro": "Catalogul complet de <em>bărci.</em>\n            <span class=\"sub\">230 bărci · 16 mărci marine · 6 tipuri de corp · livrare România, Moldova, Serbia, Bulgaria</span>"
+  },
+  "catalog.hero.deck": {
+    "en": "Aluminium fishing platforms, RIB tubes, cabin cruisers and trailers. From €3,450 to €178,940 — filter by hull, engine, length and price. Stock and on-order availability shown live.",
+    "ro": "Platforme de pescuit din aluminiu, tuburi RIB, ambarcațiuni cu cabină și peridocuri. De la €3.450 la €178.940 — filtrează după corp, motor, lungime și preț. Stoc și disponibilitate la comandă afișate live."
+  },
+  "crumbs.home": {
+    "en": "Home",
+    "ro": "Acasă"
   }
 }

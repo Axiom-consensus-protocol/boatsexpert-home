@@ -92,15 +92,49 @@
   .topbar a{ color: inherit; transition: color .15s; }
   .topbar a:hover{ color: var(--brass); }
   .dot{ color: var(--brass); margin-right: 6px; font-size: 8px; vertical-align: middle; }
-  .lang{
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 4px 10px 5px;
-    border: 1px solid rgba(244,239,230,.18);
+  /* Flag-pill language switcher (shared with index) */
+  .topbar .lang{
+    display: inline-flex; align-items: stretch;
+    height: 28px;
+    padding: 2px;
+    gap: 2px;
+    background: rgba(244,239,230,.05);
+    border: 1px solid rgba(244,239,230,.16);
     border-radius: 2px;
-    letter-spacing: .08em;
+    font-family: var(--mono);
+    line-height: 1;
   }
-  .lang b{ color: var(--brass); font-weight: 500; }
-  .lang span.dim{ opacity: .4; }
+  .topbar .lang [data-i18n-set]{
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 0 9px;
+    color: rgba(244,239,230,.78);
+    text-decoration: none;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: .12em;
+    transition: background-color .15s, color .15s;
+    cursor: pointer;
+    border-radius: 1px;
+  }
+  .topbar .lang [data-i18n-set] .flag{
+    display: inline-flex;
+    width: 16px; height: 11px;
+    border-radius: 1px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.18);
+    flex: 0 0 auto;
+    opacity: .85;
+    transition: opacity .15s;
+  }
+  .topbar .lang [data-i18n-set] .flag svg{ width: 100%; height: 100%; display: block; }
+  .topbar .lang [data-i18n-set]:hover{ color: var(--paper); background: rgba(244,239,230,.06); }
+  .topbar .lang [data-i18n-set]:hover .flag{ opacity: 1; }
+  .topbar .lang [data-i18n-set].active{
+    background: var(--brass);
+    color: #FFFCF6;
+    box-shadow: 0 1px 4px rgba(198,139,61,.32);
+  }
+  .topbar .lang [data-i18n-set].active .flag{ opacity: 1; }
+  .topbar .lang [data-i18n-set]:focus-visible{ outline: 1px solid var(--brass); outline-offset: 1px; }
 
   /* ============ HEADER (shared) ============ */
   header.site{
@@ -1413,7 +1447,133 @@
     background: var(--navy-4);
     color: rgba(244,239,230,.78);
     padding: 64px 0 28px;
+    position: relative;
+    overflow: hidden;
   }
+  footer.foot .container{ position: relative; z-index: 1; }
+
+  /* Foot topline (shared with index) */
+  .foot-topline{
+    border: 1px solid rgba(244,239,230,.14);
+    border-bottom: 0;
+    background: rgba(3,16,31,.54);
+    min-height: 92px;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+  }
+  .foot-topline span,
+  .foot-topline-actions a{
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .foot-topline span{ color: var(--brass); }
+  .foot-topline strong{
+    display: block;
+    margin-top: 8px;
+    font-family: var(--display);
+    font-size: 30px;
+    line-height: .96;
+    letter-spacing: -.018em;
+    color: var(--paper);
+    font-weight: 400;
+  }
+  .foot-topline-actions{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background: rgba(244,239,230,.14);
+    border: 1px solid rgba(244,239,230,.14);
+  }
+  .foot-topline-actions a{
+    min-height: 44px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(3,16,31,.82);
+    color: rgba(244,239,230,.78);
+    transition: color .15s, background .15s;
+    white-space: nowrap;
+  }
+  .foot-topline-actions a:hover{
+    background: rgba(8,168,215,.1);
+    color: var(--brass);
+  }
+  .foot-proof{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(244,239,230,.12);
+    margin: 16px 0 20px;
+    border: 1px solid rgba(244,239,230,.12);
+  }
+  .foot-proof span{
+    min-height: 56px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(2,9,18,.46);
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(244,239,230,.48);
+  }
+  .foot-proof b{
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: .95;
+    letter-spacing: -.012em;
+    color: var(--brass);
+    font-weight: 400;
+  }
+
+  /* Quick-search bar/icon/close (shared partial classes) */
+  .quick-search__bar{
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .quick-search__icon{
+    display: inline-flex;
+    color: var(--brass-3);
+  }
+  .quick-search__icon svg{ width: 18px; height: 18px; }
+  .quick-search__bar input{
+    border: 0;
+    background: transparent;
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: -.012em;
+    color: var(--navy);
+    width: 100%;
+    outline: none;
+  }
+  .quick-search__bar input::placeholder{ color: rgba(10,37,64,.35); }
+  .quick-search__close{
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 2px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--graphite);
+    cursor: pointer;
+  }
+  .quick-search__close:hover{ border-color: var(--navy); color: var(--navy); }
+
   .foot-inner{
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
@@ -3855,18 +4015,44 @@
 <body>
 
   <!-- =========== TOP BAR =========== -->
+  <div data-partial="header"></div>
+  <template id="partial-header">
   <div class="topbar">
     <div class="container">
       <div class="tl">
-        <span><span class="dot">●</span>Strada Horia Cloșca și Crișan 5, Otopeni</span>
-        <span>10 Years Warranty</span>
-        <span>Delivery RO · MD · RS · BG</span>
+        <span><span class="dot">●</span><span data-i18n="topbar.address">Strada Horia Cloșca și Crișan 5, Otopeni 075100, Romania</span></span>
+        <span data-i18n="topbar.warranty">One-handed warranty</span>
+        <span data-i18n="topbar.delivery">Delivery RO · MD · RS · BG</span>
       </div>
       <div class="tr">
-        <a href="tel:+40743377377"><span class="dot">☎</span>+40 (743) 377 377</a>
-        <a href="https://wa.me/40743377377">WhatsApp</a>
-        <a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>
-        <span class="lang"><b>EN</b><span class="dim">/</span><span class="dim">RO</span></span>
+        <a href="tel:+40743377377"><span class="dot">☎</span><span data-i18n="topbar.phone">+40 (743) 377 377</span></a>
+        <a href="https://wa.me/40743377377" data-i18n="topbar.whatsapp">WhatsApp</a>
+        <a href="mailto:info@boatsexpert.com" data-i18n="topbar.email">info@boatsexpert.com</a>
+        <span class="lang" role="group" aria-label="Language">
+          <a href="?lang=ro" data-i18n-set="ro" aria-label="Română">
+            <span class="flag flag-ro" aria-hidden="true">
+              <svg viewBox="0 0 18 12" preserveAspectRatio="none" focusable="false">
+                <rect width="6" height="12" fill="#002B7F"/>
+                <rect x="6" width="6" height="12" fill="#FCD116"/>
+                <rect x="12" width="6" height="12" fill="#CE1126"/>
+              </svg>
+            </span>
+            <span class="lang-code">RO</span>
+          </a>
+          <a href="?lang=en" data-i18n-set="en" aria-label="English">
+            <span class="flag flag-gb" aria-hidden="true">
+              <svg viewBox="0 0 60 30" preserveAspectRatio="none" focusable="false">
+                <rect width="60" height="30" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>
+                <path d="M60,0 L0,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+              </svg>
+            </span>
+            <span class="lang-code">EN</span>
+          </a>
+        </span>
       </div>
     </div>
   </div>
@@ -3874,18 +4060,18 @@
   <!-- =========== HEADER =========== -->
   <header class="site">
     <div class="container">
-      <a href="Home.html" class="logo" aria-label="BoatsExpert — Aluminium and fishing boats in Romania">
+      <a href="/" class="logo" aria-label="BoatsExpert — Aluminium and fishing boats in Romania">
         <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
-        <span class="logo-tagline"><b>Since 2014</b>Official dealer · Otopeni RO</span>
+        <span class="logo-tagline"><b data-i18n="header.tagline">Since 2014</b><span data-i18n="header.subtagline">Official dealer · Otopeni RO</span></span>
       </a>
 
       <nav class="primary">
-        <a href="Catalog.html" class="sub active">Catalog</a>
-        <a href="#">In Stock</a>
-        <a href="Shop.html" class="sub">Shop</a>
-        <a href="#" class="sub">Services</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
+        <a href="/listings" class="sub" data-i18n="nav.catalog">Catalog</a>
+        <a href="/product-category/boats-in-stock" data-i18n="nav.instock">In Stock</a>
+        <a href="/shop" class="sub" data-i18n="nav.shop">Shop</a>
+        <a href="/services" class="sub" data-i18n="nav.services">Services</a>
+        <a href="/blog" data-i18n="nav.blog">Blog</a>
+        <a href="/contact-us" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="nav-cta">
@@ -3894,24 +4080,24 @@
             <circle cx="11" cy="11" r="6"/>
             <path d="M16 16l4 4"/>
           </svg>
-          <span class="search-label">Search</span>
+          <span class="search-label" data-i18n="nav.search_label">Search</span>
           <span class="search-key">Ctrl K</span>
         </button>
-        <a href="#" class="icon-btn" aria-label="Account">
+        <a href="/my-account" class="icon-btn" aria-label="Account">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
           </svg>
         </a>
-        <a href="#" class="icon-btn" aria-label="Cart">
+        <a href="/cart" class="icon-btn" aria-label="Cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 4h2l2.5 12h11l2-8H6"/>
             <circle cx="9" cy="20" r="1.5"/>
             <circle cx="18" cy="20" r="1.5"/>
           </svg>
         </a>
-        <a href="Brief.html" class="btn-brass">
-          Book a Test Drive
+        <a href="#contact" class="btn-brass">
+          <span data-i18n="nav.cta_testdrive">Book a Test Drive</span>
           <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <path d="M2 6h8M7 3l3 3-3 3"/>
           </svg>
@@ -3931,29 +4117,29 @@
     </div>
   </header>
 
+  <!-- =========== QUICK SEARCH =========== -->
   <div class="quick-search" id="quickSearch" aria-hidden="true">
-    <button class="quick-search__shade" type="button" aria-label="Close search" data-search-close></button>
+    <div class="quick-search__shade" data-search-close></div>
     <div class="quick-search__panel" role="dialog" aria-modal="true" aria-labelledby="quickSearchTitle">
-      <div class="quick-search__top">
-        <span>BoatsExpert live catalog</span>
-        <button type="button" data-search-close>Close</button>
-      </div>
-      <div class="quick-search__field">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M16.5 16.5 L21 21"/>
-        </svg>
-        <label class="sr-only" for="quickSearchInput" id="quickSearchTitle">Search BoatsExpert catalog</label>
-        <input id="quickSearchInput" type="search" placeholder="Search Finval 470, RIB, 70 hp, trailer..." autocomplete="off" />
+      <div class="quick-search__bar">
+        <span class="quick-search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="6"/>
+            <path d="M16 16l4 4"/>
+          </svg>
+        </span>
+        <label class="sr-only" for="quickSearchInput" id="quickSearchTitle" data-i18n="quick.title">Search BoatsExpert catalog</label>
+        <input id="quickSearchInput" type="search" data-i18n-attr="placeholder:quick.placeholder" placeholder="Search Finval, Garmin, sonars, outboards..." autocomplete="off" />
+        <button class="quick-search__close" type="button" data-search-close aria-label="Close search" data-i18n="quick.close">Close</button>
       </div>
       <div class="quick-search__meta">
-        <span>230 boats</span>
-        <span>16 brands</span>
-        <span>62 in stock</span>
+        <span data-i18n="quick.live">Live catalog search</span>
+        <span data-i18n="quick.subline">Boats · shop · services · stories</span>
       </div>
       <div class="quick-search__results" id="quickSearchResults" aria-live="polite"></div>
     </div>
   </div>
+  </template>
 
   <!-- =========== CATALOG BAND =========== -->
   <section class="catalog-band">
@@ -3965,46 +4151,46 @@
     </div>
     <div class="container">
       <div class="crumbs">
-        <a href="Home.html">Home</a>
+        <a href="Home.html" data-i18n="crumbs.home">Home</a>
         <span class="sep">/</span>
-        <span class="here">Boats Catalog</span>
+        <span class="here" data-i18n="catalog.crumbs.here">Boats Catalog</span>
       </div>
 
       <div class="band-top">
         <div class="band-title">
-          <div class="ey">230 offers · 16 brands · 6 categories</div>
-          <h1>The full <em>boats catalog.</em>
+          <div class="ey" data-i18n="catalog.hero.ey">230 offers · 16 brands · 6 categories</div>
+          <h1 data-i18n="catalog.hero.h1">The full <em>boats catalog.</em>
             <span class="sub">230 boats · 16 marine brands · 6 hull types · Romania, Moldova, Serbia, Bulgaria delivery</span>
           </h1>
-          <p class="deck">Aluminium fishing platforms, RIB tubes, cabin cruisers and trailers. From €3,450 to €178,940 — filter by hull, engine, length and price. Stock and on-order availability shown live.</p>
+          <p class="deck" data-i18n="catalog.hero.deck">Aluminium fishing platforms, RIB tubes, cabin cruisers and trailers. From €3,450 to €178,940 — filter by hull, engine, length and price. Stock and on-order availability shown live.</p>
         </div>
 
         <div class="band-stats">
           <div class="band-stat">
             <div class="n">230</div>
-            <div class="l">Total<br/>boats</div>
+            <div class="l" data-i18n="catalog.stat.total">Total<br/>boats</div>
           </div>
           <div class="band-stat">
             <div class="n">62</div>
-            <div class="l">In stock<br/>this season</div>
+            <div class="l" data-i18n="catalog.stat.stock">In stock<br/>this season</div>
           </div>
           <div class="band-stat">
             <div class="n">16</div>
-            <div class="l">Brands<br/>represented</div>
+            <div class="l" data-i18n="catalog.stat.brands">Brands<br/>represented</div>
           </div>
         </div>
       </div>
 
       <div class="cat-tabs">
-        <a href="Catalog.html" class="active">All <span class="n">230</span></a>
-        <a href="#">Aluminium <span class="n">54</span></a>
-        <a href="#">Fishing <span class="n">118</span></a>
-        <a href="#">RIB <span class="n">27</span></a>
-        <a href="#">Cruising <span class="n">18</span></a>
-        <a href="#">Fiberglass <span class="n">10</span></a>
-        <a href="#">Trailers <span class="n">3</span></a>
-        <a href="#">In Stock <span class="n">62</span></a>
-        <a href="#">Featured <span class="n">12</span></a>
+        <a href="Catalog.html" class="active"><span data-i18n="catalog.tab.all">All</span> <span class="n">230</span></a>
+        <a href="#"><span data-i18n="catalog.tab.aluminium">Aluminium</span> <span class="n">54</span></a>
+        <a href="#"><span data-i18n="catalog.tab.fishing">Fishing</span> <span class="n">118</span></a>
+        <a href="#"><span data-i18n="catalog.tab.rib">RIB</span> <span class="n">27</span></a>
+        <a href="#"><span data-i18n="catalog.tab.cruising">Cruising</span> <span class="n">18</span></a>
+        <a href="#"><span data-i18n="catalog.tab.fiberglass">Fiberglass</span> <span class="n">10</span></a>
+        <a href="#"><span data-i18n="catalog.tab.trailers">Trailers</span> <span class="n">3</span></a>
+        <a href="#"><span data-i18n="catalog.tab.instock">In Stock</span> <span class="n">62</span></a>
+        <a href="#"><span data-i18n="catalog.tab.featured">Featured</span> <span class="n">12</span></a>
       </div>
 
       <!-- Trust pills row: 4 dealer guarantees -->
@@ -4019,19 +4205,19 @@
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10h18"/><path d="M7 15h3"/></svg>
           </span>
-          <span class="lb"><b>0% leasing</b><span>BCR · Țiriac · BT</span></span>
+          <span class="lb"><b data-i18n="catalog.trust.leasing.b">0% leasing</b><span>BCR · Țiriac · BT</span></span>
         </div>
         <div class="it">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l4-4h10l4 4"/><path d="M3 10v9h18v-9"/><path d="M7 14h3M14 14h3"/></svg>
           </span>
-          <span class="lb"><b>Trade-in</b><span>Your old boat counts</span></span>
+          <span class="lb"><b data-i18n="catalog.trust.tradein.b">Trade-in</b><span data-i18n="catalog.trust.tradein.l">Your old boat counts</span></span>
         </div>
         <div class="it">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a18 18 0 0 1 0 18M12 3a18 18 0 0 0 0 18"/></svg>
           </span>
-          <span class="lb"><b>4 countries</b><span>RO · MD · RS · BG delivery</span></span>
+          <span class="lb"><b data-i18n="catalog.trust.countries.b">4 countries</b><span data-i18n="catalog.trust.countries.l">RO · MD · RS · BG delivery</span></span>
         </div>
       </div>
     </div>
@@ -4042,40 +4228,40 @@
     <div class="container">
       <div class="type-strip-head">
         <div>
-          <div class="ey">Browse by hull · 6 of 6</div>
+          <div class="ey" data-i18n="catalog.hull.ey">Browse by hull · 6 of 6</div>
           <h2>Find the right <em>type of boat</em>.</h2>
         </div>
-        <a href="#" class="more">Hull guide · how to choose →</a>
+        <a href="#" class="more" data-i18n="catalog.hull.more">Hull guide · how to choose →</a>
       </div>
       <div class="htype-tiles">
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28l4-1 6 2.5 5-1 7 1.5 10-2"/><path d="M7 23h22l-2.5 4H10z"/><path d="M15 23v-8h7v8"/><path d="M18 9v6"/><path d="M28 18l8-3-3 5"/></svg></span>
-          <span class="nm">Fishing Boats</span>
+          <span class="nm" data-i18n="catalog.hull.fishing">Fishing Boats</span>
           <span class="ct"><b>118</b>offers · 4.2–6.8 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26h32l-3 6H7z"/><path d="M10 26V18l4-4h10l4 4v8"/><path d="M14 22h12"/><path d="M19 14v-3"/></svg></span>
-          <span class="nm">Aluminium</span>
+          <span class="nm" data-i18n="catalog.tab.aluminium">Aluminium</span>
           <span class="ct"><b>54</b>offers · 3.7–7.2 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22c0-3 3-6 8-6h14c5 0 8 3 8 6v4H5v-4z"/><circle cx="10" cy="22" r="2.5"/><circle cx="30" cy="22" r="2.5"/><path d="M14 16v-4M26 16v-4"/></svg></span>
-          <span class="nm">RIB</span>
+          <span class="nm" data-i18n="catalog.tab.rib">RIB</span>
           <span class="ct"><b>27</b>offers · 3.3–6.5 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26h30l-3 6H8z"/><path d="M11 26V16l5-5h10l4 5v10"/><rect x="15" y="14" width="4" height="5"/><rect x="22" y="14" width="4" height="5"/></svg></span>
-          <span class="nm">Cruising</span>
+          <span class="nm" data-i18n="catalog.tab.cruising">Cruising</span>
           <span class="ct"><b>18</b>offers · 5.5–8.4 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 25c4 4 14 6 16 6s12-2 16-6"/><path d="M6 25l3-9h22l3 9"/><path d="M13 16l1-4h12l1 4"/><path d="M20 8v4"/></svg></span>
-          <span class="nm">Fiberglass</span>
+          <span class="nm" data-i18n="catalog.tab.fiberglass">Fiberglass</span>
           <span class="ct"><b>10</b>offers · 4.6–5.8 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
         <a class="htype-tile" href="#">
           <span class="ic"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 24h24v4H5z"/><circle cx="11" cy="30" r="2.5"/><circle cx="23" cy="30" r="2.5"/><path d="M29 26l6-4-2-4-7 2"/><path d="M29 18l8-2"/></svg></span>
-          <span class="nm">Trailers</span>
+          <span class="nm" data-i18n="catalog.tab.trailers">Trailers</span>
           <span class="ct"><b>3</b>offers · for 4.5–7.5 m<span class="arr"><svg viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 4h6M5 2l2 2-2 2"/></svg></span></span>
         </a>
       </div>
@@ -4091,12 +4277,12 @@
           <span class="chip">Brand: <b>Finval</b><span class="x"></span></span>
           <span class="chip">Length: <b>4 – 7 m</b><span class="x"></span></span>
           <span class="chip">In stock<span class="x"></span></span>
-          <button class="chip-clear">Clear all</button>
+          <button class="chip-clear" data-i18n="catalog.toolbar.clear">Clear all</button>
         </div>
       </div>
       <div class="toolbar-right">
         <div class="sort-wrap">
-          <span>Sort by</span>
+          <span data-i18n="catalog.toolbar.sortby">Sort by</span>
           <select>
             <option>Featured first</option>
             <option>Price · low to high</option>
@@ -4127,20 +4313,20 @@
       <aside class="filters">
         <div class="filter-head">
           <h3>Filters <em>· 3</em></h3>
-          <a href="#" class="reset">Reset all</a>
+          <a href="#" class="reset" data-i18n="catalog.filt.reset">Reset all</a>
         </div>
 
         <div class="filter-section">
-          <h4>Availability <span class="toggle"></span></h4>
+          <h4><span data-i18n="catalog.filt.availability">Availability</span> <span class="toggle"></span></h4>
           <div class="seg">
-            <button>All</button>
-            <button class="active">In stock</button>
-            <button>On order</button>
+            <button data-i18n="catalog.filt.all">All</button>
+            <button class="active" data-i18n="catalog.filt.instock">In stock</button>
+            <button data-i18n="catalog.filt.onorder">On order</button>
           </div>
         </div>
 
         <div class="filter-section">
-          <h4>Brand <span class="toggle"></span></h4>
+          <h4><span data-i18n="catalog.filt.brand">Brand</span> <span class="toggle"></span></h4>
           <div class="checks">
             <label class="check on"><span class="box"></span><span class="lbl">Finval</span><span class="count">38</span></label>
             <label class="check"><span class="box"></span><span class="lbl">NorthSilver</span><span class="count">28</span></label>
@@ -4383,7 +4569,7 @@
   <section class="cta-band">
     <div class="container">
       <div>
-        <div class="ey">Can't find what you're looking for?</div>
+        <div class="ey" data-i18n="catalog.cta.ey">Can't find what you're looking for?</div>
         <h3>Tell us what you fish. <em>We'll find the hull.</em></h3>
         <p>Forty-seven of our 230 boats live in our Otopeni showroom; the rest we configure and bring in. Send us your spec — length, engine, draft, budget — and we'll come back with three matches within 48 hours.</p>
         <div class="reassure">
@@ -4415,31 +4601,33 @@
   </section>
 
   <!-- =========== FOOTER =========== -->
+  <div data-partial="footer"></div>
+  <template id="partial-footer">
   <footer class="foot">
     <div class="container">
       <div class="foot-topline">
         <div>
-          <span>BoatsExpert dealer ledger</span>
-          <strong>Otopeni showroom · shop · workshop · delivery</strong>
+          <span data-i18n="foot.top.ledger">BoatsExpert dealer ledger</span>
+          <strong data-i18n="foot.top.line">Otopeni showroom · shop · workshop · delivery</strong>
         </div>
         <div class="foot-topline-actions">
-          <a href="tel:+40743377377">Call +40 743 377 377</a>
-          <a href="https://wa.me/40743377377">WhatsApp</a>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Strada%20Horia%20Closca%20si%20Crisan%205%2C%20Otopeni%20075100%2C%20Romania">Directions</a>
+          <a href="tel:+40743377377" data-i18n="foot.top.call">Call +40 743 377 377</a>
+          <a href="https://wa.me/40743377377" data-i18n="foot.top.wa">WhatsApp</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Strada%20Horia%20Closca%20si%20Crisan%205%2C%20Otopeni%20075100%2C%20Romania" data-i18n="foot.top.dir">Directions</a>
         </div>
       </div>
 
       <div class="foot-inner">
         <div class="brand-block">
-          <a href="Home.html" class="logo" aria-label="BoatsExpert home">
+          <a href="/" class="logo" aria-label="BoatsExpert home">
             <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
-            <span class="logo-tagline"><b>Since 2014</b>Otopeni · Romania</span>
+            <span class="logo-tagline"><b data-i18n="foot.brand.tag">Since 2014</b><span data-i18n="foot.brand.sub">Otopeni · Romania</span></span>
           </a>
-          <p>Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.</p>
+          <p data-i18n="foot.brand.p">Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.</p>
           <div class="foot-proof">
-            <span><b>230</b> boats</span>
-            <span><b>16</b> brands</span>
-            <span><b>10y</b> warranty</span>
+            <span><b>230</b> <span data-i18n="foot.proof.boats">boats</span></span>
+            <span><b>16</b> <span data-i18n="foot.proof.brands">brands</span></span>
+            <span><b>10y</b> <span data-i18n="foot.proof.warranty">warranty</span></span>
           </div>
           <div class="so">
             <a href="https://www.facebook.com/boatsexpert" aria-label="Facebook">
@@ -4451,84 +4639,84 @@
             <a href="https://wa.me/40743377377" aria-label="WhatsApp">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 14l1-3a6 6 0 1 1 2.2 2.2L2 14z"/></svg>
             </a>
-            <a href="Home.html" aria-label="YouTube">
+            <a href="/" aria-label="YouTube">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="12" height="8" rx="2"/><path d="M7 6.5 V9.5 L10 8 Z" fill="currentColor"/></svg>
             </a>
           </div>
         </div>
 
         <div>
-          <h5>Catalog</h5>
+          <h5 data-i18n="foot.col_cat.h">Catalog</h5>
           <ul>
-            <li><a href="#">Finval Boats</a></li>
-            <li><a href="#">Beneteau</a></li>
-            <li><a href="#">NorthSilver Fish</a></li>
-            <li><a href="#">NorthSilver Expedition</a></li>
-            <li><a href="#">GALA RIB</a></li>
-            <li><a href="#">GALAXY Pro</a></li>
-            <li><a href="#">LANDX</a></li>
-            <li><a href="#">RESPO Trailers</a></li>
+            <li><a href="/listings/make-brand/finval" data-i18n="foot.col_cat.l1">Finval Boats</a></li>
+            <li><a href="/listings/make-brand/beneteau" data-i18n="foot.col_cat.l2">Beneteau</a></li>
+            <li><a href="/listings/make-brand/northsilver-fish" data-i18n="foot.col_cat.l3">NorthSilver Fish</a></li>
+            <li><a href="/listings/make-brand/northsilver-expedition" data-i18n="foot.col_cat.l4">NorthSilver Expedition</a></li>
+            <li><a href="/listings/make-brand/gala" data-i18n="foot.col_cat.l5">GALA RIB</a></li>
+            <li><a href="/listings/make-brand/galaxy-pro-rib" data-i18n="foot.col_cat.l6">GALAXY Pro</a></li>
+            <li><a href="/listings/make-brand/landx" data-i18n="foot.col_cat.l7">LANDX</a></li>
+            <li><a href="/listings/make-brand/respo-trailers" data-i18n="foot.col_cat.l8">RESPO Trailers</a></li>
           </ul>
         </div>
 
         <div>
-          <h5>Shop</h5>
+          <h5 data-i18n="foot.col_shop.h">Shop</h5>
           <ul>
-            <li><a href="#">Outboard motors</a></li>
-            <li><a href="#">Electric motors</a></li>
-            <li><a href="#">Sonars</a></li>
-            <li><a href="#">Batteries</a></li>
-            <li><a href="#">Marine accessories</a></li>
-            <li><a href="#">Marine audio</a></li>
-            <li><a href="#">Navigation</a></li>
-            <li><a href="#">Quatix watches</a></li>
+            <li><a href="/product-category/outboard-motors" data-i18n="foot.col_shop.l1">Outboard motors</a></li>
+            <li><a href="/product-category/electric-motors" data-i18n="foot.col_shop.l2">Electric motors</a></li>
+            <li><a href="/product-category/sonars" data-i18n="foot.col_shop.l3">Sonars</a></li>
+            <li><a href="/product-category/batteries" data-i18n="foot.col_shop.l4">Batteries</a></li>
+            <li><a href="/product-category/marine-accessories" data-i18n="foot.col_shop.l5">Marine accessories</a></li>
+            <li><a href="/product-category/marine-audio" data-i18n="foot.col_shop.l6">Marine audio</a></li>
+            <li><a href="/product-category/navigation-equipment" data-i18n="foot.col_shop.l7">Navigation</a></li>
+            <li><a href="/product-category/quatix-smartwatches" data-i18n="foot.col_shop.l8">Quatix watches</a></li>
           </ul>
         </div>
 
         <div>
-          <h5>Services</h5>
+          <h5 data-i18n="foot.col_svc.h">Services</h5>
           <ul>
-            <li><a href="#">Tuning of angler boats</a></li>
-            <li><a href="#">Outboard installation</a></li>
-            <li><a href="#">Tuning &amp; service</a></li>
-            <li><a href="#">Registration courses</a></li>
-            <li><a href="#">10-year warranty</a></li>
-            <li><a href="#">Book a Test Drive</a></li>
+            <li><a href="/services/expert-tuning-of-angler-boats" data-i18n="foot.col_svc.l1">Tuning of angler boats</a></li>
+            <li><a href="/services/outboard-engine-installation" data-i18n="foot.col_svc.l2">Outboard installation</a></li>
+            <li><a href="/services/tuning-service" data-i18n="foot.col_svc.l3">Tuning &amp; service</a></li>
+            <li><a href="/services/registration-driving" data-i18n="foot.col_svc.l4">Registration courses</a></li>
+            <li><a href="/services/warranty" data-i18n="foot.col_svc.l5">10-year warranty</a></li>
+            <li><a href="#contact" data-i18n="foot.col_svc.l6">Book a Test Drive</a></li>
           </ul>
         </div>
 
         <div>
-          <h5>Contact</h5>
+          <h5 data-i18n="foot.col_ct.h">Contact</h5>
           <ul>
-            <li>Strada Horia Cloșca<br/>și Crișan 5</li>
-            <li>Otopeni 075100, Ilfov</li>
-            <li><a href="tel:+40743377377">+40 (743) 377 377</a></li>
-            <li><a href="tel:+40743377375">+40 (743) 377 375</a></li>
-            <li><a href="https://wa.me/40743377377">WhatsApp</a></li>
-            <li><a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a></li>
-            <li>Mon–Thu · 10:00–17:30</li>
+            <li data-i18n="foot.col_ct.addr1">Strada Horia Cloșca<br/>și Crișan 5</li>
+            <li data-i18n="foot.col_ct.addr2">Otopeni 075100, Ilfov</li>
+            <li><a href="tel:+40743377377" data-i18n="foot.col_ct.phone1">+40 (743) 377 377</a></li>
+            <li><a href="tel:+40743377375" data-i18n="foot.col_ct.phone2">+40 (743) 377 375</a></li>
+            <li><a href="https://wa.me/40743377377" data-i18n="foot.col_ct.wa">WhatsApp</a></li>
+            <li><a href="mailto:info@boatsexpert.com" data-i18n="foot.col_ct.email">info@boatsexpert.com</a></li>
+            <li data-i18n="foot.col_ct.hours">Mon–Thu · 10:00–17:30</li>
           </ul>
         </div>
       </div>
-      <!-- Legal ledger: 5-col dealer credentials -->
+
+      <!-- Legal ledger: real dealer credentials (registration numbers to be filled by the client) -->
       <div class="foot-legal">
-        <div><b>Legal entity</b><span>BoatsExpert SRL</span></div>
-        <div><b>Trade register</b><span>J23 / 000 / 2014</span></div>
-        <div><b>VAT identifier</b><span>RO 12345678</span></div>
-        <div><b>ANR licence</b><span>RM / 2014 · brokered</span></div>
-        <div><b>Workshop hours</b><span>Mon–Thu 10:00 – 17:30 · Fri–Sun by appointment</span></div>
+        <div><b data-i18n="foot.legal.k1">Legal entity</b><span data-i18n="foot.legal.v1">BoatsExpert SRL</span></div>
+        <div><b data-i18n="foot.legal.k_trade">Trade register</b><span data-i18n="foot.legal.v_trade">J23 / 000 / 2014</span></div>
+        <div><b data-i18n="foot.legal.k_vat">VAT identifier</b><span data-i18n="foot.legal.v_vat">RO 12345678</span></div>
+        <div><b data-i18n="foot.legal.k_anr">ANR licence</b><span data-i18n="foot.legal.v_anr">RM / 2014 · brokered</span></div>
+        <div><b data-i18n="foot.legal.k5">Workshop hours</b><span data-i18n="foot.legal.v5">Mon–Thu 10:00 – 17:30 · Fri–Sun by appointment</span></div>
       </div>
-
-
 
       <div class="foot-bottom">
-        <div>© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania</div>
+        <div data-i18n="foot.copyright">© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania</div>
         <div>
-          <a href="/legal/privacy">Privacy</a> · <a href="/legal/cookies">Cookies</a> · <a href="/legal/terms">Terms</a> · <a href="/legal/imprint">Imprint</a> · EN / RO
+          <a href="/legal/privacy" data-i18n="foot.priv">Privacy</a> · <a href="/legal/cookies" data-i18n="foot.cookies">Cookies</a> · <a href="/legal/terms" data-i18n="foot.terms">Terms</a> · <a href="/legal/imprint" data-i18n="foot.imprint">Imprint</a> · EN / RO
         </div>
       </div>
     </div>
   </footer>
+  </template>
 
   <script>
     // Make filter checks interactive
@@ -4926,5 +5114,9 @@
     });
   })();
 </script>
+
+  <script type="application/json" id="i18n-data">{"_meta":{"version":3,"languages":["en","ro"],"default":"en","rule":"EN values MUST match the mockup HTML verbatim. RO is a translation of EN. No design or copy simplification."},"site.title":{"en":"BoatsExpert — Aluminium & fishing boats in Romania. Finval, Beneteau, NorthSilver.","ro":"BoatsExpert — Bărci din aluminiu și de pescuit în România. Finval, Beneteau, NorthSilver."},"site.description":{"en":"BoatsExpert — official dealer of Finval, Beneteau and NorthSilver in Romania. Boats, marine equipment, workshop and warranty in Otopeni.","ro":"BoatsExpert — dealer oficial Finval, Beneteau și NorthSilver în România. Bărci, echipamente marine, atelier și garanție în Otopeni."},"topbar.address":{"en":"Strada Horia Cloșca și Crișan 5, Otopeni","ro":"Strada Horia Cloșca și Crișan 5, Otopeni"},"topbar.warranty":{"en":"10 Years Warranty","ro":"Garanție 10 ani"},"topbar.delivery":{"en":"Delivery RO · MD · RS · BG","ro":"Livrare RO · MD · RS · BG"},"topbar.phone":{"en":"+40 (743) 377 377","ro":"+40 (743) 377 377"},"topbar.whatsapp":{"en":"WhatsApp","ro":"WhatsApp"},"topbar.email":{"en":"info@boatsexpert.com","ro":"info@boatsexpert.com"},"header.tagline":{"en":"Since 2014","ro":"Din 2014"},"header.subtagline":{"en":"Official dealer · Otopeni RO","ro":"Dealer oficial · Otopeni RO"},"nav.catalog":{"en":"Catalog","ro":"Catalog"},"nav.instock":{"en":"In Stock","ro":"În Stoc"},"nav.shop":{"en":"Shop","ro":"Shop"},"nav.services":{"en":"Services","ro":"Servicii"},"nav.blog":{"en":"Blog","ro":"Blog"},"nav.contact":{"en":"Contact","ro":"Contact"},"nav.search_label":{"en":"Search","ro":"Caută"},"nav.cta_testdrive":{"en":"Book a Test Drive","ro":"Programează un Test Drive"},"hero.eyebrow":{"en":"Finval boats · Garmin Marine · Yamaha rigging · 10-year warranty","ro":"Bărci Finval · Garmin Marine · echipare Yamaha · garanție 10 ani"},"hero.h1":{"en":"Finval 470 EVO. <em>Garmin Marine ready.</em>","ro":"Finval 470 EVO. <em>Pregătită pentru Garmin Marine.</em>"},"hero.h1_sub":{"en":"Boat · electronics · motor · trailer · paperwork · one dealer","ro":"Barcă · electronică · motor · peridoc · acte · un singur dealer"},"hero.lead":{"en":"The original BoatsExpert promise, sharpened: <b>Finval aluminium hull</b>, <b>Garmin Marine electronics</b>, engine installation, trailer, ANR paperwork and workshop warranty from the same Otopeni team.","ro":"Promisiunea originală BoatsExpert, în detaliu: <b>cocă din aluminiu Finval</b>, <b>electronică Garmin Marine</b>, montaj motor, peridoc, formalități ANR și garanție de atelier de la aceeași echipă din Otopeni."},"hero.cta_primary":{"en":"Configure a Finval","ro":"Configurează un Finval"},"hero.cta_secondary":{"en":"Book showroom visit","ro":"Programează vizită showroom"},"hero.chip":{"en":"230 boats · 471 shop items","ro":"230 bărci · 471 produse în shop"},"featured.eyebrow":{"en":"Featured this season · 3 of 230","ro":"Bărci în prim-plan acest sezon · 3 din 230"},"featured.title":{"en":"Boats <em>ready to leave</em> the showroom.","ro":"Bărci <em>gata să plece</em> din showroom."},"types.eyebrow":{"en":"Browse by category · 6 of 6","ro":"Categorii · 6 din 6"},"types.title":{"en":"Find the right <em>type of boat</em> for the water you sail.","ro":"Găsește <em>tipul potrivit</em> de barcă pentru apele tale."},"types.t1.name":{"en":"Aluminium","ro":"Aluminiu"},"types.t2.name":{"en":"Fishing Boats","ro":"Bărci de pescuit"},"types.t3.name":{"en":"RIB Boats","ro":"Bărci RIB"},"types.t4.name":{"en":"Cruising","ro":"Croazieră"},"types.t5.name":{"en":"Fiberglass","ro":"Fibră de sticlă"},"types.t6.name":{"en":"Trailers","ro":"Peridocuri"},"types.t1.count":{"en":"<b>54</b> offers · 3.7–7.2 m","ro":"<b>54</b> oferte · 3,7–7,2 m"},"types.t2.count":{"en":"<b>118</b> offers · 4.2–6.8 m","ro":"<b>118</b> oferte · 4,2–6,8 m"},"types.t3.count":{"en":"<b>27</b> offers · 3.3–6.5 m","ro":"<b>27</b> oferte · 3,3–6,5 m"},"types.t4.count":{"en":"<b>18</b> offers · 5.5–8.4 m","ro":"<b>18</b> oferte · 5,5–8,4 m"},"types.t5.count":{"en":"<b>10</b> offers · 4.6–5.8 m","ro":"<b>10</b> oferte · 4,6–5,8 m"},"types.t6.count":{"en":"<b>3</b> offers · for 4.5–7.5 m","ro":"<b>3</b> oferte · pentru 4,5–7,5 m"},"types.t1.sub":{"en":"Marine-grade AlMg 5083 hull, 2–3&nbsp;mm — welded, never riveted.","ro":"Cocă AlMg 5083 marin, 2–3&nbsp;mm — sudată, niciodată cu nituri."},"types.t2.sub":{"en":"Angler-tuned platforms — casting decks, livewells, rod storage, trolling motor prep, JackPlate ready.","ro":"Platforme pentru pescari — punți de casting, livewell, suporturi lansete, pregătire trolling, JackPlate-ready."},"types.t3.sub":{"en":"Inflatable tubes, fibreglass hull — stable, fast, beach-friendly.","ro":"Tuburi gonflabile, cocă din fibră de sticlă — stabile, rapide, prietenoase cu plaja."},"types.t4.sub":{"en":"Family cabin boats with covered cockpit, head, and overnight bunks.","ro":"Bărci cu cabină pentru familie, cu cockpit acoperit, toaletă și paturi pentru noapte."},"types.t5.sub":{"en":"Lightweight GRP hulls — smooth ride, easy maintenance.","ro":"Coci GRP ușoare — mers lin, întreținere simplă."},"types.t6.sub":{"en":"RESPO trailers — road-legal across EU, galvanised steel.","ro":"Peridocuri RESPO — omologate în UE, oțel zincat."},"brands.eyebrow":{"en":"Brand partnerships · three tiers","ro":"Parteneriate de mărci · trei niveluri"},"brands.title":{"en":"Sixteen brands. <em>One promise.</em>","ro":"Șaisprezece mărci. <em>O singură promisiune.</em>"},"services.eyebrow":{"en":"What we do · five services","ro":"Ce facem · cinci servicii"},"services.title":{"en":"More than a dealer. <em>An on-water partner.</em>","ro":"Mai mult decât un dealer. <em>Un partener pe apă.</em>"},"shop.eyebrow":{"en":"Original SHOP menu · dealer parts desk","ro":"Meniul SHOP original · parts desk dealer"},"shop.title":{"en":"Everything around the boat, <em>arranged by system.</em>","ro":"Tot ce trebuie pe barcă, <em>aranjat pe sisteme.</em>"},"showroom.eyebrow":{"en":"Contact · showroom · application","ro":"Contact · showroom · cerere"},"showroom.title":{"en":"Come see the boats. <em>Or send the exact request.</em>","ro":"Vino să vezi bărcile. <em>Sau trimite cererea exactă.</em>"},"blog.eyebrow":{"en":"Stories · guides · news","ro":"Articole · ghiduri · știri"},"blog.title":{"en":"From the <em>logbook.</em>","ro":"Din <em>jurnalul de bord.</em>"},"spotlight.eyebrow":{"en":"Exclusive · Finval","ro":"Exclusiv · Finval"},"spotlight.title":{"en":"Built for shallow water. <em>Built like a workshop tool.</em>","ro":"Construită pentru ape mici. <em>Construită ca o unealtă de atelier.</em>"},"spotlight.sec_link":{"en":"14 Finval models →","ro":"14 modele Finval →"},"spotlight.badge_exclusive":{"en":"Exclusive in Romania","ro":"Exclusiv în România"},"spotlight.badge_stock":{"en":"In stock","ro":"În stoc"},"spotlight.badge_featured":{"en":"Featured","ro":"În prim-plan"},"spotlight.anno_beam":{"en":"Beam <b>1.96 m</b>","ro":"Lățime <b>1,96 m</b>"},"spotlight.anno_draft":{"en":"Draft <b>19 cm</b>","ro":"Pescaj <b>19 cm</b>"},"spotlight.anno_len":{"en":"Hull length over-all <b>4.65 m</b>","ro":"Lungime totală cocă <b>4,65 m</b>"},"spotlight.body_eyebrow":{"en":"Finval 470 EVO DC · since 2024","ro":"Finval 470 EVO DC · din 2024"},"spotlight.body_title":{"en":"The boat that <em>clears 19 cm.</em>","ro":"Barca ce <em>trece prin 19 cm.</em>"},"spotlight.body_text":{"en":"Consoles positioned forward for maximum cockpit comfort. All-welded AlMg 5083 aluminium hull, 2–3 mm thick. Built to plane fully loaded, to fish all day, and to run rivers and lakes other boats simply cannot reach.","ro":"Consolele sunt poziționate în față pentru confort maxim în cockpit. Cocă din aluminiu AlMg 5083 sudată complet, 2–3 mm grosime. Construită să planeze încărcată, să pescuiască toată ziua și să meargă pe râuri și lacuri pe care alte bărci pur și simplu nu le pot atinge."},"spotlight.k_length":{"en":"Length","ro":"Lungime"},"spotlight.v_length":{"en":"4.65 m","ro":"4,65 m"},"spotlight.k_beam":{"en":"Beam","ro":"Lățime"},"spotlight.v_beam":{"en":"1.96 m","ro":"1,96 m"},"spotlight.k_draft":{"en":"Draft","ro":"Pescaj"},"spotlight.v_draft":{"en":"190 mm","ro":"190 mm"},"spotlight.k_weight":{"en":"Weight","ro":"Greutate"},"spotlight.v_weight":{"en":"440 kg","ro":"440 kg"},"spotlight.k_engine":{"en":"Engine","ro":"Motor"},"spotlight.v_engine":{"en":"40–70 hp","ro":"40–70 CP"},"spotlight.k_capacity":{"en":"Capacity","ro":"Capacitate"},"spotlight.v_capacity":{"en":"600 kg","ro":"600 kg"},"spotlight.k_fuel":{"en":"Fuel","ro":"Combustibil"},"spotlight.v_fuel":{"en":"55 l","ro":"55 l"},"spotlight.k_persons":{"en":"Persons","ro":"Persoane"},"spotlight.v_persons":{"en":"4 + 1","ro":"4 + 1"},"spotlight.price_l":{"en":"Price from","ro":"Preț de la"},"spotlight.price_v":{"en":"€20,490","ro":"€20.490"},"spotlight.price_vat":{"en":"VAT included · Standard features","ro":"TVA inclus · Echipare standard"},"spotlight.cta_view":{"en":"View the Boat","ro":"Vezi barca"},"spotlight.cta_test":{"en":"Book a Test Drive","ro":"Programează un Test Drive"},"why.eyebrow":{"en":"Why customers choose us","ro":"De ce ne aleg clienții"},"why.title":{"en":"Twelve years on the <em>Romanian market.</em> Four reasons people stay.","ro":"Doisprezece ani pe <em>piața din România.</em> Patru motive pentru care oamenii rămân."},"why.c1.ix_n":{"en":"01","ro":"01"},"why.c1.ix_t":{"en":"Warranty","ro":"Garanție"},"why.c1.h":{"en":"One-handed <em>warranty</em>","ro":"Garanție <em>cu un singur apel</em>"},"why.c1.p":{"en":"One call, one number, one person handles your case from diagnosis to delivery. Up to 10 years on aluminium hulls.","ro":"Un apel, un număr, o singură persoană se ocupă de cazul tău de la diagnostic la livrare. Până la 10 ani pe cocile din aluminiu."},"why.c1.tag":{"en":"Guarantee · 10 years","ro":"Garanție · 10 ani"},"why.c2.ix_n":{"en":"02","ro":"02"},"why.c2.ix_t":{"en":"In-shop","ro":"În atelier"},"why.c2.h":{"en":"In-house <em>tuning</em>","ro":"Tuning <em>la noi în atelier</em>"},"why.c2.p":{"en":"Every boat is fit out in our Otopeni workshop before leaving: engine, electronics, deck layout, livewell, trolling prep.","ro":"Fiecare barcă este echipată complet în atelierul nostru din Otopeni înainte de a pleca: motor, electronică, layout punte, livewell, pregătire trolling."},"why.c2.tag":{"en":"Workshop · Otopeni","ro":"Atelier · Otopeni"},"why.c3.ix_n":{"en":"03","ro":"03"},"why.c3.ix_t":{"en":"Delivery","ro":"Livrare"},"why.c3.h":{"en":"Four <em>countries</em>","ro":"Patru <em>țări</em>"},"why.c3.p":{"en":"Delivery and registration across Romania, Moldova, Serbia and Bulgaria. ANR paperwork handled in-house.","ro":"Livrare și înmatriculare în România, Moldova, Serbia și Bulgaria. Formalitățile ANR le rezolvăm noi."},"why.c3.tag":{"en":"RO · MD · RS · BG","ro":"RO · MD · RS · BG"},"why.c4.ix_n":{"en":"04","ro":"04"},"why.c4.ix_t":{"en":"Inventory","ro":"Inventar"},"why.c4.h":{"en":"230 boats <em>in catalog</em>","ro":"230 de bărci <em>în catalog</em>"},"why.c4.p":{"en":"Aluminium fishing platforms from €3,450 to Galaxy Trident T12 at €178,940. Whatever you fish, we have a hull for it.","ro":"Platforme de pescuit din aluminiu de la €3.450 până la Galaxy Trident T12 la €178.940. Indiferent ce pescuiești, avem o cocă pentru asta."},"why.c4.tag":{"en":"From €3,450","ro":"De la €3.450"},"promos.eyebrow":{"en":"Marine retail · shop promos","ro":"Retail marin · promoții shop"},"promos.title":{"en":"Three retail doors. <em>One BoatsExpert store.</em>","ro":"Trei intrări în retail. <em>Un singur magazin BoatsExpert.</em>"},"promos.sec_link":{"en":"Open shop →","ro":"Deschide shop →"},"promos.c1.k":{"en":"Marine accessories","ro":"Accesorii marine"},"promos.c1.h":{"en":"Marinac <em>Marine Accessories</em>","ro":"Marinac <em>Accesorii Marine</em>"},"promos.c1.p":{"en":"Deck hardware, organisers, mounts and boat-specific accessories grouped for retail and service orders.","ro":"Feronerie de punte, organizatoare, suporturi și accesorii specifice bărcilor, grupate pentru comenzi de retail și service."},"promos.c1.more":{"en":"Open Marinac range","ro":"Deschide gama Marinac"},"promos.c2.k":{"en":"Shop online","ro":"Magazin online"},"promos.c2.h":{"en":"Shop online <em>BoatsExpert</em>","ro":"Magazin online <em>BoatsExpert</em>"},"promos.c2.p":{"en":"Motors, sonars, batteries, mounts and accessories with prices, stock logic and pickup from Otopeni.","ro":"Motoare, sonare, baterii, suporturi și accesorii cu prețuri, stoc și ridicare din Otopeni."},"promos.c2.more":{"en":"Browse catalog","ro":"Vezi catalogul"},"promos.c3.k":{"en":"Premium hardware","ro":"Feronerie premium"},"promos.c3.h":{"en":"KED <em>Marine Accessories</em>","ro":"KED <em>Accesorii Marine</em>"},"promos.c3.p":{"en":"Stainless hardware and deck equipment for fit-outs, repair orders and custom service work.","ro":"Feronerie din inox și echipament de punte pentru echipări, reparații și lucrări de service la cerere."},"promos.c3.more":{"en":"View KED equipment","ro":"Vezi echipamentul KED"},"showroom.sec_link":{"en":"Call now →","ro":"Sună acum →"},"showroom.visual_k":{"en":"Otopeni showroom · service desk","ro":"Showroom Otopeni · birou service"},"showroom.visual_h":{"en":"See the boat, price the fit-out, leave with a plan.","ro":"Vezi barca, calculează echiparea, pleacă acasă cu un plan."},"showroom.ledger.addr_b":{"en":"Address","ro":"Adresă"},"showroom.ledger.addr_v":{"en":"Strada Horia Cloșca și Crișan 5<br/>Otopeni 075100","ro":"Strada Horia Cloșca și Crișan 5<br/>Otopeni 075100"},"showroom.ledger.hours_b":{"en":"Hours","ro":"Program"},"showroom.ledger.hours_v":{"en":"Mon–Thu · 10:00–17:30<br/>Fri–Sat by appointment","ro":"Lun–Joi · 10:00–17:30<br/>Vin–Sâm cu programare"},"showroom.ledger.del_b":{"en":"Delivery","ro":"Livrare"},"showroom.ledger.del_v":{"en":"Romania · Moldova · Serbia · Bulgaria","ro":"România · Moldova · Serbia · Bulgaria"},"showroom.ledger.work_b":{"en":"Workshop","ro":"Atelier"},"showroom.ledger.work_v":{"en":"Fit-out, service, registration, warranty","ro":"Echipare, service, înmatriculare, garanție"},"showroom.panel_eyebrow":{"en":"Application · fast route","ro":"Cerere · traseu rapid"},"showroom.panel_h":{"en":"Tell us what you need. Sales or service answers on the same business day.","ro":"Spune-ne ce ai nevoie. Răspuns de la vânzări sau service în aceeași zi lucrătoare."},"showroom.action_office_b":{"en":"Office","ro":"Birou"},"showroom.action_office_v":{"en":"+40 (743) 377 377","ro":"+40 (743) 377 377"},"showroom.action_wa_b":{"en":"WhatsApp","ro":"WhatsApp"},"showroom.action_wa_v":{"en":"Send photos or boat model","ro":"Trimite poze sau modelul bărcii"},"showroom.action_dir_b":{"en":"Directions","ro":"Indicații"},"showroom.action_dir_v":{"en":"10 min from Henri Coandă","ro":"La 10 min de Henri Coandă"},"showroom.form.name_l":{"en":"Name","ro":"Nume"},"showroom.form.name_p":{"en":"Your name","ro":"Numele tău"},"showroom.form.phone_l":{"en":"Phone / WhatsApp","ro":"Telefon / WhatsApp"},"showroom.form.phone_p":{"en":"+40...","ro":"+40..."},"showroom.form.interest_l":{"en":"Interest","ro":"Interes"},"showroom.form.opt_buy":{"en":"Boat purchase","ro":"Cumpărare barcă"},"showroom.form.opt_shop":{"en":"Equipment shop","ro":"Magazin de echipamente"},"showroom.form.opt_svc":{"en":"Service &amp; tuning","ro":"Service și tuning"},"showroom.form.opt_reg":{"en":"Registration &amp; warranty","ro":"Înmatriculare și garanție"},"showroom.form.lang_l":{"en":"Preferred language","ro":"Limbă preferată"},"showroom.form.lang_en":{"en":"English","ro":"Engleză"},"showroom.form.lang_ro":{"en":"Romanian","ro":"Română"},"showroom.form.msg_l":{"en":"Message","ro":"Mesaj"},"showroom.form.msg_p":{"en":"Boat model, budget, engine, trailer, accessories, delivery city...","ro":"Model barcă, buget, motor, peridoc, accesorii, oraș de livrare..."},"showroom.form.submit":{"en":"Send request","ro":"Trimite cererea"},"showroom.form.note":{"en":"No payment here · request goes to sales desk · EN / RO","ro":"Aici nu se plătește · cererea ajunge la vânzări · EN / RO"},"featured.sec_link":{"en":"All 230 listings →","ro":"Toate cele 230 de bărci →"},"featured.killer_label":{"en":"Killer fact","ro":"Atu principal"},"featured.from_vat":{"en":"From, VAT incl.","ro":"De la, TVA inclus"},"featured.msrp_from":{"en":"MSRP from","ro":"Preț de listă de la"},"featured.finance_label":{"en":"Finance","ro":"Finanțare"},"featured.finance_term":{"en":"60 mo · 9.9% APR","ro":"60 luni · 9,9% DAE"},"featured.btn_details":{"en":"Details","ro":"Detalii"},"featured.btn_request":{"en":"Request","ro":"Solicită"},"featured.spec_length":{"en":"Length","ro":"Lungime"},"featured.spec_engine":{"en":"Engine","ro":"Motor"},"featured.spec_persons":{"en":"Persons","ro":"Persoane"},"featured.spec_hull":{"en":"Hull","ro":"Cocă"},"featured.spec_type":{"en":"Type","ro":"Tip"},"featured.badge_instock":{"en":"In stock","ro":"În stoc"},"featured.badge_exclusive":{"en":"Exclusive","ro":"Exclusiv"},"featured.badge_onorder":{"en":"On order · 4–6 wk","ro":"La comandă · 4–6 săpt."},"featured.badge_toprib":{"en":"Top RIB","ro":"Top RIB"},"featured.badge_protuned":{"en":"Pro tuned","ro":"Tunat profesionist"},"featured.b1.killer":{"en":"Draft only 19 cm","ro":"Pescaj de doar 19 cm"},"featured.b1.brand":{"en":"Finval · Exclusive Dealer","ro":"Finval · Dealer Exclusiv"},"featured.b1.model":{"en":"470 EVO DC","ro":"470 EVO DC"},"featured.b1.why":{"en":"Built to clear shallow rivers where 22 cm boats run aground. Welded AlMg 5083, planes fully loaded with the smallest engine in class.","ro":"Construită pentru ape mici, unde bărcile cu pescaj de 22 cm se opresc. AlMg 5083 sudat, planează fără probleme cu cel mai mic motor din clasă."},"featured.b2.killer":{"en":"150 hp · 12 pax","ro":"150 CP · 12 pers."},"featured.b2.brand":{"en":"GALA · RIB Specialist","ro":"GALA · Specialist RIB"},"featured.b2.model":{"en":"VIKING V6F","ro":"VIKING V6F"},"featured.b2.why":{"en":"5.80 m of inflatable safety with the speed of a fibreglass hull. Twelve seats, two consoles, one of the most stable RIBs at this length.","ro":"5,80 m de siguranță gonflabilă, cu viteza unei coci din fibră de sticlă. Douăsprezece locuri, două console, una dintre cele mai stabile RIB-uri la această lungime."},"featured.b3.killer":{"en":"200 hp aluminium","ro":"200 CP din aluminiu"},"featured.b3.brand":{"en":"GALAXY Pro · Aluminium","ro":"GALAXY Pro · Aluminiu"},"featured.b3.model":{"en":"Pilot P6.5","ro":"Pilot P6.5"},"featured.b3.why":{"en":"Cabin cruiser tuned for the Black Sea and Danube delta. 200 hp of factory-rated horsepower on a welded hull that handles 1.2 m waves clean.","ro":"Cabin cruiser pregătit pentru Marea Neagră și Delta Dunării. 200 CP omologați de fabrică pe o cocă sudată care taie clar valurile de 1,2 m."},"hero.trust.1.b":{"en":"Finval","ro":"Finval"},"hero.trust.1.s":{"en":"Exclusive dealer","ro":"Dealer exclusiv"},"hero.trust.2.b":{"en":"Garmin","ro":"Garmin"},"hero.trust.2.s":{"en":"Sonar · chartplotter","ro":"Sonar · plotter de hărți"},"hero.trust.3.b":{"en":"Yamaha","ro":"Yamaha"},"hero.trust.3.s":{"en":"Installed in shop","ro":"Montaj la noi în atelier"},"hero.trust.4.b":{"en":"Otopeni","ro":"Otopeni"},"hero.trust.4.s":{"en":"Showroom · service","ro":"Showroom · service"},"hero.feat.label":{"en":"Boat of the week","ro":"Barca săptămânii"},"hero.feat.ix":{"en":"№ 01 / 04","ro":"Nr. 01 / 04"},"hero.feat.a_draft":{"en":"Draft 19 cm","ro":"Pescaj 19 cm"},"hero.feat.a_garmin":{"en":"Garmin sonar ready","ro":"Pregătit pentru sonar Garmin"},"hero.feat.a_hull":{"en":"AlMg 5083","ro":"AlMg 5083"},"hero.feat.brand":{"en":"Finval — Exclusive dealer","ro":"Finval — dealer exclusiv"},"hero.feat.killer.k":{"en":"Shallowest draft in the Finval range","ro":"Cel mai mic pescaj din gama Finval"},"hero.feat.killer.v":{"en":"Draft only 19 cm","ro":"Pescaj doar 19 cm"},"hero.feat.act_view":{"en":"View Boat","ro":"Vezi barca"},"hero.feat.act_req":{"en":"Send Request","ro":"Trimite cererea"},"hero.rail.vt":{"en":"№ 01 of 04 · Boat of the week","ro":"Nr. 01 din 04 · Barca săptămânii"},"hero.rail.cue":{"en":"Scroll · Catalog below","ro":"Derulează · catalogul mai jos"},"brands.sec_link":{"en":"How dealer levels work →","ro":"Cum funcționează nivelurile de dealer →"},"brands.t1.lvl":{"en":"Tier 01 · Exclusive","ro":"Nivel 01 · Exclusiv"},"brands.t1.title":{"en":"Exclusive <em>Dealers</em>","ro":"Dealeri <em>Exclusivi</em>"},"brands.t1.p":{"en":"Sole authorised dealer in Romania. Factory configurator, full warranty, in-shop fit-out. <b>Average partnership: 9 years.</b>","ro":"Singurul dealer autorizat în România. Configurator de uzină, garanție completă, echipare la noi în atelier. <b>Parteneriat mediu: 9 ani.</b>"},"brands.t1.stat":{"en":"<b>5</b>brands · 230 boats · since 2014","ro":"<b>5</b>mărci · 230 bărci · din 2014"},"brands.t2.lvl":{"en":"Tier 02 · Official","ro":"Nivel 02 · Oficial"},"brands.t2.title":{"en":"Official <em>Equipment</em>","ro":"Echipamente <em>Oficiale</em>"},"brands.t2.p":{"en":"Authorised reseller for engines, electronics and accessories. Manufacturer warranty across the catalog — <b>same parts, same paperwork, same day.</b>","ro":"Distribuitor autorizat pentru motoare, electronică și accesorii. Garanție de la producător pentru tot catalogul — <b>aceleași piese, aceleași acte, în aceeași zi.</b>"},"brands.t2.stat":{"en":"<b>7</b>brands · 471 SKU · in-shop fit-out","ro":"<b>7</b>mărci · 471 SKU · montaj la noi în atelier"},"brands.t3.lvl":{"en":"Tier 03 · Partners","ro":"Nivel 03 · Parteneri"},"brands.t3.title":{"en":"Marine <em>Partners</em>","ro":"Parteneri <em>Marini</em>"},"brands.t3.p":{"en":"Trusted supply partners. On-demand stock, same one-handed warranty and service — covers what the first two tiers don't carry.","ro":"Parteneri de furnizare de încredere. Stoc la cerere, aceeași garanție rapidă și service — acoperă ce primele două niveluri nu țin pe stoc."},"brands.t3.stat":{"en":"<b>4</b>brands · supply · 48h order","ro":"<b>4</b>mărci · furnizare · comandă în 48h"},"brands.t1.c_finval":{"en":"Estonia · 1993","ro":"Estonia · 1993"},"brands.t1.c_beneteau":{"en":"France · 1884","ro":"Franța · 1884"},"brands.t1.c_northsilver":{"en":"Estonia · 2002","ro":"Estonia · 2002"},"brands.t1.c_landx":{"en":"Hungary","ro":"Ungaria"},"brands.t1.c_revalgrade":{"en":"Estonia","ro":"Estonia"},"brands.t2.c_yamaha":{"en":"Outboards","ro":"Motoare outboard"},"brands.t2.c_garmin":{"en":"Sonars · Nav","ro":"Sonare · Navigație"},"brands.t2.c_minnkota":{"en":"Electric motors","ro":"Motoare electrice"},"brands.t2.c_humminbird":{"en":"Fishfinders","ro":"Sonare de pescuit"},"brands.t2.c_rebelcell":{"en":"Lithium","ro":"Litiu"},"brands.t2.c_osculati":{"en":"Accessories","ro":"Accesorii"},"brands.t2.c_ram":{"en":"Mounts","ro":"Suporturi"},"brands.t3.c_mercury":{"en":"Outboards","ro":"Motoare outboard"},"brands.t3.c_honda":{"en":"Outboards","ro":"Motoare outboard"},"brands.t3.c_fusion":{"en":"Marine audio","ro":"Audio marin"},"brands.t3.c_tohatsu":{"en":"Outboards","ro":"Motoare outboard"},"services.sec_link":{"en":"All services →","ro":"Toate serviciile →"},"services.s1.num":{"en":"№ 01","ro":"Nr. 01"},"services.s1.h":{"en":"Expert tuning of <em>angler boats</em>","ro":"Tuning expert pentru <em>bărci de pescuit</em>"},"services.s1.p":{"en":"Casting platforms, livewells, trolling motor prep, rod storage. Built for serious fishermen.","ro":"Platforme de casting, livewell, pregătire trolling, suporturi pentru lansete. Construit pentru pescari serioși."},"services.s1.m":{"en":"Tune my boat","ro":"Tunează-mi barca"},"services.s2.num":{"en":"№ 02","ro":"Nr. 02"},"services.s2.h":{"en":"Outboard <em>installation</em>","ro":"Montaj <em>motor outboard</em>"},"services.s2.p":{"en":"Yamaha, Mercury, Honda, Tohatsu — fitted, rigged, calibrated. Hydraulic steering and JackPlate ready.","ro":"Yamaha, Mercury, Honda, Tohatsu — montat, echipat, calibrat. Pregătit pentru guvernare hidraulică și JackPlate."},"services.s2.m":{"en":"Book installation","ro":"Programează montaj"},"services.s3.num":{"en":"№ 03","ro":"Nr. 03"},"services.s3.h":{"en":"Tuning &amp; <em>service</em>","ro":"Tuning <em>și service</em>"},"services.s3.p":{"en":"Winterising, hull repair, electrical fit-out. Pickup from any marina in Romania.","ro":"Pregătire de iarnă, reparații cocă, echipare electrică. Ridicare din orice marina din România."},"services.s3.m":{"en":"Service request","ro":"Cerere service"},"services.s4.num":{"en":"№ 04","ro":"Nr. 04"},"services.s4.h":{"en":"Registration &amp; <em>driving courses</em>","ro":"Înmatriculare &amp; <em>cursuri de navigație</em>"},"services.s4.p":{"en":"ANR paperwork, skipper licence, insurance referrals. We handle the desk so you handle the wheel.","ro":"Formalități ANR, permis de conducere, recomandări de asigurare. Ne ocupăm noi de hârtii ca tu să ai grijă doar de volan."},"services.s4.m":{"en":"See programmes","ro":"Vezi programele"},"services.s5.num":{"en":"№ 05","ro":"Nr. 05"},"services.s5.h":{"en":"10-year <em>warranty</em>","ro":"Garanție <em>10 ani</em>"},"services.s5.p":{"en":"One call, one number, one person on your case. From engine diagnosis to trailer pick-up.","ro":"Un apel, un număr, o singură persoană pe cazul tău. De la diagnostic motor până la ridicarea peridocului."},"services.s5.m":{"en":"How it works","ro":"Cum funcționează"},"services.s6.num":{"en":"№ 06","ro":"Nr. 06"},"services.s6.h":{"en":"Equipment <em>retail</em>","ro":"Vânzare <em>echipamente</em>"},"services.s6.p":{"en":"471 SKU — outboards, sonars, batteries, accessories. Online and walk-in shop.","ro":"471 SKU — motoare outboard, sonare, baterii, accesorii. Online și magazin fizic."},"services.s6.m":{"en":"Open shop","ro":"Deschide shop"},"hero.rail.dealer":{"en":"<b>BoatsExpert</b> · Official dealer · Otopeni, Romania","ro":"<b>BoatsExpert</b> · Dealer oficial · Otopeni, România"},"hero.rail.since":{"en":"EST. MMXIV · OTOPENI, ROMANIA","ro":"EST. MMXIV · OTOPENI, ROMÂNIA"},"hero.ledger.since":{"en":"<b>Since</b>2014 · Otopeni RO","ro":"<b>Din</b>2014 · Otopeni RO"},"hero.ledger.exclusive":{"en":"<b>Exclusive</b>Finval · Beneteau · NorthSilver","ro":"<b>Exclusiv</b>Finval · Beneteau · NorthSilver"},"hero.ledger.warranty":{"en":"<b>Warranty</b>10-year hull · one-handed","ro":"<b>Garanție</b>10 ani cocă · procedură rapidă"},"hero.ledger.lang":{"en":"<b>Languages</b>EN · RO","ro":"<b>Limbi</b>EN · RO"},"foot.legal.k1":{"en":"Legal entity","ro":"Entitate juridică"},"foot.legal.v1":{"en":"BoatsExpert SRL","ro":"BoatsExpert SRL"},"foot.legal.k2":{"en":"Showroom","ro":"Showroom"},"foot.legal.v2":{"en":"Strada Horia Cloșca și Crișan 5, Otopeni 075100","ro":"Strada Horia Cloșca și Crișan 5, Otopeni 075100"},"foot.legal.k3":{"en":"Phone","ro":"Telefon"},"foot.legal.v3":{"en":"+40 (743) 377 377","ro":"+40 (743) 377 377"},"foot.legal.k4":{"en":"Email","ro":"Email"},"foot.legal.v4":{"en":"info@boatsexpert.com","ro":"info@boatsexpert.com"},"foot.legal.k5":{"en":"Workshop hours","ro":"Program atelier"},"foot.legal.v5":{"en":"Mon–Thu 10:00 – 17:30","ro":"Luni–Joi 10:00 – 17:30"},"hero.brand_role.finval":{"en":"Romania dealer","ro":"Dealer România"},"hero.brand_role.garmin":{"en":"Official equipment","ro":"Echipament oficial"},"hero.brand_role.yamaha":{"en":"Installed in shop","ro":"Montat în atelier"},"hero.crumb":{"en":"Exclusive Finval · Official Garmin Marine · Otopeni","ro":"Finval exclusiv · Garmin Marine oficial · Otopeni"},"hero.featured_tag":{"en":"<span class=\"pulse\"></span>Finval 470 EVO DC · Garmin-ready rig","ro":"<span class=\"pulse\"></span>Finval 470 EVO DC · gata pentru Garmin"},"types.catalog_share":{"en":"Catalog share","ro":"Pondere în catalog"},"types.sec_link":{"en":"All categories →","ro":"Toate categoriile →"},"foot.topline.k":{"en":"BoatsExpert dealer ledger","ro":"Registru dealer BoatsExpert"},"foot.topline.v":{"en":"Otopeni showroom · shop · workshop · delivery","ro":"Showroom Otopeni · shop · atelier · livrare"},"foot.topline.call":{"en":"Call +40 743 377 377","ro":"Sună +40 743 377 377"},"foot.topline.wa":{"en":"WhatsApp","ro":"WhatsApp"},"foot.topline.dir":{"en":"Directions","ro":"Indicații rutiere"},"foot.brand.tagline_a":{"en":"Since 2014","ro":"Din 2014"},"foot.brand.tagline_b":{"en":"Otopeni · Romania","ro":"Otopeni · România"},"foot.brand.about":{"en":"Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.","ro":"Dealer exclusiv în România pentru Finval, Beneteau și NorthSilver. Partener oficial Yamaha, Garmin, Mercury și încă 13 mărci marine. Otopeni, din 2014."},"foot.proof.boats":{"en":"<b>230</b> boats","ro":"<b>230</b> bărci"},"foot.proof.brands":{"en":"<b>16</b> brands","ro":"<b>16</b> mărci"},"foot.proof.warr":{"en":"<b>10y</b> warranty","ro":"<b>10ani</b> garanție"},"foot.col_cat.h":{"en":"Catalog","ro":"Catalog"},"foot.col_cat.l1":{"en":"Finval Boats","ro":"Bărci Finval"},"foot.col_cat.l2":{"en":"Beneteau","ro":"Beneteau"},"foot.col_cat.l3":{"en":"NorthSilver Fish","ro":"NorthSilver Fish"},"foot.col_cat.l4":{"en":"NorthSilver Expedition","ro":"NorthSilver Expedition"},"foot.col_cat.l5":{"en":"GALA RIB","ro":"GALA RIB"},"foot.col_cat.l6":{"en":"GALAXY Pro","ro":"GALAXY Pro"},"foot.col_cat.l7":{"en":"LANDX","ro":"LANDX"},"foot.col_cat.l8":{"en":"RESPO Trailers","ro":"Peridocuri RESPO"},"foot.col_shop.h":{"en":"Shop","ro":"Shop"},"foot.col_shop.l1":{"en":"Outboard motors","ro":"Motoare termice"},"foot.col_shop.l2":{"en":"Electric motors","ro":"Motoare electrice"},"foot.col_shop.l3":{"en":"Sonars","ro":"Sonare"},"foot.col_shop.l4":{"en":"Batteries","ro":"Baterii"},"foot.col_shop.l5":{"en":"Marine accessories","ro":"Accesorii marine"},"foot.col_shop.l6":{"en":"Marine audio","ro":"Sisteme audio marine"},"foot.col_shop.l7":{"en":"Navigation","ro":"Navigație"},"foot.col_shop.l8":{"en":"Quatix watches","ro":"Ceasuri Quatix"},"foot.col_svc.h":{"en":"Services","ro":"Servicii"},"foot.col_svc.l1":{"en":"Tuning of angler boats","ro":"Tuning bărci de pescuit"},"foot.col_svc.l2":{"en":"Outboard installation","ro":"Montaj motor outboard"},"foot.col_svc.l3":{"en":"Tuning &amp; service","ro":"Tuning și service"},"foot.col_svc.l4":{"en":"Registration courses","ro":"Cursuri de înmatriculare"},"foot.col_svc.l5":{"en":"10-year warranty","ro":"Garanție 10 ani"},"foot.col_svc.l6":{"en":"Book a Test Drive","ro":"Programează un Test Drive"},"foot.col_ct.h":{"en":"Contact","ro":"Contact"},"foot.col_ct.addr1":{"en":"Strada Horia Cloșca<br/>și Crișan 5","ro":"Strada Horia Cloșca<br/>și Crișan 5"},"foot.col_ct.addr2":{"en":"Otopeni 075100, Ilfov","ro":"Otopeni 075100, Ilfov"},"foot.col_ct.phone1":{"en":"+40 (743) 377 377","ro":"+40 (743) 377 377"},"foot.col_ct.phone2":{"en":"+40 (743) 377 375","ro":"+40 (743) 377 375"},"foot.col_ct.wa":{"en":"WhatsApp","ro":"WhatsApp"},"foot.col_ct.email":{"en":"info@boatsexpert.com","ro":"info@boatsexpert.com"},"foot.col_ct.hours":{"en":"Mon–Thu · 10:00–17:30","ro":"Lun–Joi · 10:00–17:30"},"foot.copyright":{"en":"© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania","ro":"© 2014–2026 BoatsExpert SRL · Toate drepturile rezervate · Construit în Otopeni, România"},"foot.priv":{"en":"Privacy","ro":"Confidențialitate"},"foot.cookies":{"en":"Cookies","ro":"Cookie-uri"},"foot.terms":{"en":"Terms","ro":"Termeni"},"foot.imprint":{"en":"Imprint","ro":"Impressum"},"shop.head_copy":{"en":"Motors, electronics, power, lights, mounts and deck hardware from the same Otopeni team that installs and services the boats.","ro":"Motoare, electronică, baterii, lumini, suporturi și feronerie de punte, de la aceeași echipă din Otopeni care montează și face service-ul bărcilor."},"shop.head_card.l":{"en":"Live commerce board","ro":"Panou comerț live"},"shop.head_card.b":{"en":"12 departments","ro":"12 departamente"},"shop.head_card.p":{"en":"253+ listed shop items · pickup or install in Otopeni","ro":"253+ produse listate · ridicare sau montaj la Otopeni"},"shop.head_card.a":{"en":"Open shop →","ro":"Deschide shop →"},"shop.bar_l":{"en":"Shop online · official dealer stock","ro":"Magazin online · stoc dealer oficial"},"shop.bar_r":{"en":"Engines · electronics · batteries · deck hardware · installation","ro":"Motoare · electronică · baterii · feronerie de punte · montaj"},"shop.cmd.lead.k":{"en":"Commerce spine","ro":"Pilon comercial"},"shop.cmd.lead.b":{"en":"Equipment, motors and accessories for boats.","ro":"Echipamente, motoare și accesorii pentru bărci."},"shop.cmd.lead.p":{"en":"Built from the original BoatsExpert SHOP categories, but shaped like a premium marine dealer catalogue.","ro":"Construit pe baza categoriilor SHOP originale BoatsExpert, dar prezentat ca un catalog premium de dealer marin."},"shop.cmd.lead.f":{"en":"WooCommerce shop · walk-in pickup · Otopeni","ro":"Magazin WooCommerce · ridicare la sediu · Otopeni"},"shop.cmd.1.k":{"en":"Propulsion","ro":"Propulsie"},"shop.cmd.1.b":{"en":"Engines, trolling motors and control.","ro":"Motoare, motoare trolling și control."},"shop.cmd.1.p":{"en":"Yamaha, Mercury, Honda, Tohatsu, Minn Kota, hydraulic steering and jack plates.","ro":"Yamaha, Mercury, Honda, Tohatsu, Minn Kota, guvernare hidraulică și jack plates."},"shop.cmd.1.f":{"en":"134 listed items","ro":"134 produse listate"},"shop.cmd.2.k":{"en":"Electronics","ro":"Electronică"},"shop.cmd.2.b":{"en":"Sonar, navigation and dashboard.","ro":"Sonare, navigație și bord."},"shop.cmd.2.p":{"en":"Garmin, Humminbird, charts, watches, marine audio and console-ready electronics.","ro":"Garmin, Humminbird, hărți, ceasuri, audio marin și electronică pentru consolă."},"shop.cmd.2.f":{"en":"120 listed items","ro":"120 produse listate"},"shop.cmd.3.k":{"en":"Hardware","ro":"Feronerie"},"shop.cmd.3.b":{"en":"Power, light and deck hardware.","ro":"Putere, lumini și feronerie de punte."},"shop.cmd.3.p":{"en":"Rebelcell batteries, Osculati, RAM Mounts, KED and daily service-desk accessories.","ro":"Baterii Rebelcell, Osculati, RAM Mounts, KED și accesorii zilnice de service-desk."},"shop.cmd.3.f":{"en":"249 listed items","ro":"249 produse listate"},"shop.gridlabel.l":{"en":"12 live departments","ro":"12 departamente live"},"shop.gridlabel.r":{"en":"Choose a system first, then the exact product.","ro":"Alege întâi un sistem, apoi produsul exact."},"shop.finder.k":{"en":"Product type index","ro":"Index pe tip de produs"},"shop.finder.b":{"en":"Start like a counter order.","ro":"Începe ca la o comandă la tejghea."},"shop.finder.tab1":{"en":"Motor","ro":"Motor"},"shop.finder.tab2":{"en":"Electronics","ro":"Electronică"},"shop.finder.tab3":{"en":"Power","ro":"Baterii"},"shop.finder.tab4":{"en":"Deck","ro":"Punte"},"shop.finder.tab5":{"en":"Service fit","ro":"Service & montaj"},"entry.catalog.k":{"en":"Boats catalog","ro":"Catalog bărci"},"entry.instock.k":{"en":"Boats in stock","ro":"Bărci în stoc"},"entry.shop.k":{"en":"Shop online","ro":"Magazin online"},"entry.services.k":{"en":"Services","ro":"Servicii"},"brands.promise.1":{"en":"Most in Eastern Europe","ro":"Cei mai mulți din Europa de Est"},"brands.promise.2":{"en":"Hull type, never marketing","ro":"Tipul cocei, nu marketing"},"brands.promise.3":{"en":"ANR paperwork in-house","ro":"Acte ANR rezolvate la noi"},"brands.promise.4":{"en":"Same workshop, same address","ro":"Același atelier, aceeași adresă"},"brands.promise.5":{"en":"One number for all of it","ro":"Un singur număr pentru tot"},"entry.catalog.c":{"en":"Finval · Beneteau · NorthSilver · GALA · GALAXY Pro","ro":"Finval · Beneteau · NorthSilver · GALA · GALAXY Pro"},"entry.instock.c":{"en":"Fishing platforms, RIBs, cabin boats and trailers.","ro":"Platforme de pescuit, RIB-uri, bărci cu cabină și peridocuri."},"entry.shop.c":{"en":"The familiar WooCommerce store, presented cleaner.","ro":"Magazinul WooCommerce, prezentat mai curat."},"entry.services.c":{"en":"The original offer list, turned into a dealer workflow.","ro":"Lista originală de servicii, transformată într-un flux de dealer."},"shop.dept1.system":{"en":"Motor","ro":"Motor"},"shop.dept1.name":{"en":"Outboard motors","ro":"Motoare termice"},"shop.dept1.meta1":{"en":"87 items","ro":"87 produse"},"shop.dept1.meta2":{"en":"from €890","ro":"de la €890"},"shop.dept1.note":{"en":"Yamaha, Mercury, Honda, Tohatsu. Sold with rigging, propeller advice and workshop install.","ro":"Yamaha, Mercury, Honda, Tohatsu. Vândute cu echipare, sfat pentru elice și montaj în atelier."},"shop.dept1.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept2.system":{"en":"Trolling","ro":"Trolling"},"shop.dept2.name":{"en":"Electric motors","ro":"Motoare electrice"},"shop.dept2.meta1":{"en":"22 items","ro":"22 produse"},"shop.dept2.meta2":{"en":"from €640","ro":"de la €640"},"shop.dept2.note":{"en":"Bow motors, pedals, remote control and silent fishing setups for aluminium boats.","ro":"Motoare prova, pedale, telecomenzi și setări silențioase de pescuit pentru bărci din aluminiu."},"shop.dept2.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept3.system":{"en":"Fishfinder","ro":"Sonar"},"shop.dept3.name":{"en":"Sonars &amp; fishfinders","ro":"Sonare și fishfindere"},"shop.dept3.meta1":{"en":"42 items","ro":"42 produse"},"shop.dept3.meta2":{"en":"from €240","ro":"de la €240"},"shop.dept3.note":{"en":"Garmin and Humminbird displays, transducers and dashboard layouts installed in-house.","ro":"Display-uri Garmin și Humminbird, traductoare și layout-uri de bord montate în atelierul nostru."},"shop.dept3.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept4.system":{"en":"Power","ro":"Putere"},"shop.dept4.name":{"en":"Batteries","ro":"Baterii"},"shop.dept4.meta1":{"en":"24 items","ro":"24 produse"},"shop.dept4.meta2":{"en":"from €165","ro":"de la €165"},"shop.dept4.note":{"en":"Rebelcell marine power, chargers and capacity matching for electronics or trolling motors.","ro":"Putere marină Rebelcell, încărcătoare și calcul de capacitate pentru electronică sau trolling."},"shop.dept4.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept5.system":{"en":"Deck hardware","ro":"Punte"},"shop.dept5.name":{"en":"Marine accessories","ro":"Accesorii marine"},"shop.dept5.meta1":{"en":"182 items","ro":"182 produse"},"shop.dept5.meta2":{"en":"from €12","ro":"de la €12"},"shop.dept5.note":{"en":"Osculati, Marinac, KED and daily service-desk accessories for safe boat use.","ro":"Osculati, Marinac, KED și accesorii uzuale de la service-desk pentru utilizare în siguranță."},"shop.dept5.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept6.system":{"en":"Audio","ro":"Audio"},"shop.dept6.name":{"en":"Marine audio","ro":"Audio marin"},"shop.dept6.meta1":{"en":"38 items","ro":"38 produse"},"shop.dept6.meta2":{"en":"from €98","ro":"de la €98"},"shop.dept6.note":{"en":"Fusion audio, speakers, remotes and waterproof entertainment for cruising layouts.","ro":"Audio Fusion, difuzoare, telecomenzi și sisteme audio rezistente la apă pentru bărci de croazieră."},"shop.dept6.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept7.system":{"en":"Light","ro":"Iluminare"},"shop.dept7.name":{"en":"Marine lights","ro":"Lumini marine"},"shop.dept7.meta1":{"en":"31 items","ro":"31 produse"},"shop.dept7.meta2":{"en":"from €45","ro":"de la €45"},"shop.dept7.note":{"en":"Navigation, deck and cabin lighting selected for real marine wiring conditions.","ro":"Lumini de navigație, punte și cabină alese pentru condiții reale de cablaj marin."},"shop.dept7.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept8.system":{"en":"Wearable","ro":"Purtabile"},"shop.dept8.name":{"en":"Quatix smartwatches","ro":"Smartwatch-uri Quatix"},"shop.dept8.meta1":{"en":"12 items","ro":"12 produse"},"shop.dept8.meta2":{"en":"from €380","ro":"de la €380"},"shop.dept8.note":{"en":"Garmin skipper watches for navigation, engine data and day-to-day marine use.","ro":"Ceasuri Garmin pentru navigatori — navigație, date despre motor și utilizare marină zilnică."},"shop.dept8.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept9.system":{"en":"Helm","ro":"Pupitru"},"shop.dept9.name":{"en":"Navigation","ro":"Navigație"},"shop.dept9.meta1":{"en":"28 items","ro":"28 produse"},"shop.dept9.meta2":{"en":"from €120","ro":"de la €120"},"shop.dept9.note":{"en":"GPS, charts and helm equipment planned around the console, not added at random.","ro":"GPS, hărți și echipament de pupitru gândit în jurul consolei, nu adăugat la întâmplare."},"shop.dept9.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept10.system":{"en":"Steering","ro":"Direcție"},"shop.dept10.name":{"en":"Hydraulic steering","ro":"Guvernare hidraulică"},"shop.dept10.meta1":{"en":"14 items","ro":"14 produse"},"shop.dept10.meta2":{"en":"from €310","ro":"de la €310"},"shop.dept10.note":{"en":"Hydraulic kits, hoses and steering components sized and fitted by the workshop.","ro":"Kit-uri hidraulice, furtune și componente de direcție dimensionate și montate de atelier."},"shop.dept10.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept11.system":{"en":"Trim","ro":"Trim"},"shop.dept11.name":{"en":"Power-lift JackPlate","ro":"Power-lift JackPlate"},"shop.dept11.meta1":{"en":"11 items","ro":"11 produse"},"shop.dept11.meta2":{"en":"from €420","ro":"de la €420"},"shop.dept11.note":{"en":"Jack plates and shallow-water trim solutions for loaded fishing boats.","ro":"JackPlate-uri și soluții de trim pentru ape mici, gândite pentru bărci de pescuit încărcate."},"shop.dept11.action":{"en":"Open department","ro":"Deschide departamentul"},"shop.dept12.system":{"en":"Mounting","ro":"Suporturi"},"shop.dept12.name":{"en":"Mounts &amp; brackets","ro":"Suporturi și brățări"},"shop.dept12.meta1":{"en":"11 items","ro":"11 produse"},"shop.dept12.meta2":{"en":"from €38","ro":"de la €38"},"shop.dept12.note":{"en":"RAM mounts, console brackets and hardware for clean, serviceable installs.","ro":"RAM mounts, suporturi de consolă și hardware pentru instalări curate și ușor de întreținut."},"shop.dept12.action":{"en":"Open department","ro":"Deschide departamentul"},"blog.all":{"en":"All stories →","ro":"Toate articolele →"},"blog.read_more":{"en":"Read →","ro":"Citește →"},"blog.s1.meta":{"en":"Owner story · 8 min","ro":"Poveste de proprietar · 8 min"},"blog.s1.title":{"en":"Finval 470 EVO DC — one season on the Danube","ro":"Finval 470 EVO DC — un sezon pe Dunăre"},"blog.s1.excerpt":{"en":"A 19 cm draft puts you in places others can't reach. Andrei spent ten weeks chasing pike in the Delta on a 470 EVO. Verdict from the helm.","ro":"Un pescaj de 19 cm te duce unde alții nu pot ajunge. Andrei a petrecut zece săptămâni la știucă în Deltă pe un 470 EVO. Verdictul de la timonă."},"blog.s1.date":{"en":"02 May 2026","ro":"02 mai 2026"},"blog.s2.meta":{"en":"Guide · 6 min","ro":"Ghid · 6 min"},"blog.s2.title":{"en":"Aluminium vs fiberglass — what you actually pay for","ro":"Aluminiu vs fibră de sticlă — pentru ce plătești de fapt"},"blog.s2.excerpt":{"en":"AlMg 5083 vs GRP. Weight, maintenance, resale, repairability. The honest comparison from our workshop floor.","ro":"AlMg 5083 vs GRP. Greutate, întreținere, valoare la revânzare, ușurința reparațiilor. Comparație onestă din atelier."},"blog.s2.date":{"en":"18 Apr 2026","ro":"18 apr. 2026"},"blog.s3.meta":{"en":"News · 3 min","ro":"Știri · 3 min"},"blog.s3.title":{"en":"Galaxy Pilot P6.5 has landed in Otopeni","ro":"Galaxy Pilot P6.5 a sosit la Otopeni"},"blog.s3.excerpt":{"en":"200 hp aluminium pilot boat in the showroom. Sea trials open from 24 May at Eforie Nord. Slots fill up — book in advance.","ro":"Pilot boat din aluminiu de 200 CP în showroom. Test drive pe mare de pe 24 mai la Eforie Nord. Locurile se umplu — programează din timp."},"blog.s3.date":{"en":"05 May 2026","ro":"05 mai 2026"},"newsletter.h":{"en":"Two letters <em>a month.</em> No spam.","ro":"Două scrisori <em>pe lună.</em> Fără spam."},"newsletter.p":{"en":"New listings, season prices, and the occasional story from the marina. Unsubscribe in one click.","ro":"Bărci noi în catalog, prețuri de sezon și câte o poveste din portul de agrement. Te dezabonezi cu un click."},"newsletter.placeholder":{"en":"your@email.com","ro":"email@exemplu.ro"},"newsletter.cta":{"en":"Subscribe","ro":"Abonează-te"},"newsletter.legal":{"en":"GDPR-compliant · EN / RO","ro":"Conform GDPR · EN / RO"},"foot.top.ledger":{"en":"BoatsExpert dealer ledger","ro":"Registrul dealerului BoatsExpert"},"foot.top.line":{"en":"Otopeni showroom · shop · workshop · delivery","ro":"Showroom Otopeni · shop · atelier · livrare"},"foot.top.call":{"en":"Call +40 743 377 377","ro":"Sună +40 743 377 377"},"foot.top.wa":{"en":"WhatsApp","ro":"WhatsApp"},"foot.top.dir":{"en":"Directions","ro":"Vezi traseul"},"foot.brand.tag":{"en":"Since 2014","ro":"Din 2014"},"foot.brand.sub":{"en":"Otopeni · Romania","ro":"Otopeni · România"},"foot.brand.p":{"en":"Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.","ro":"Dealer exclusiv în România pentru Finval, Beneteau și NorthSilver. Partener oficial Yamaha, Garmin, Mercury și încă 13 mărci marine. Otopeni, din 2014."},"foot.proof.warranty":{"en":"warranty","ro":"garanție"},"quick.title":{"en":"Search BoatsExpert catalog","ro":"Caută în catalogul BoatsExpert"},"quick.placeholder":{"en":"Search Finval, Garmin, sonars, outboards...","ro":"Caută Finval, Garmin, sonare, motoare..."},"quick.close":{"en":"Close","ro":"Închide"},"quick.live":{"en":"Live catalog search","ro":"Căutare live în catalog"},"quick.subline":{"en":"Boats · shop · services · stories","ro":"Bărci · magazin · servicii · articole"},"entry.instock.b":{"en":"View stock","ro":"Vezi stocul"},"entry.services.b":{"en":"Book now","ro":"Programează acum"},"entry.instock.h":{"en":"Ready at Otopeni showroom or available for test drive","ro":"Disponibile în showroom Otopeni sau pentru test drive"},"entry.shop.h":{"en":"Outboards, sonars, batteries and marine accessories","ro":"Motoare, sonare, baterii și accesorii marine"},"entry.shop.b":{"en":"471 SKU","ro":"471 SKU"},"entry.services.h":{"en":"Installation, tuning, registration and warranty","ro":"Montaj, tuning, înmatriculare și garanție"},"catalog.crumbs.here":{"en":"Boats Catalog","ro":"Catalog Bărci"},"catalog.stat.total":{"en":"Total<br/>boats","ro":"Total<br/>bărci"},"catalog.stat.stock":{"en":"In stock<br/>this season","ro":"În stoc<br/>sezonul curent"},"catalog.stat.brands":{"en":"Brands<br/>represented","ro":"Mărci<br/>reprezentate"},"catalog.tab.aluminium":{"en":"Aluminium","ro":"Aluminiu"},"catalog.tab.fishing":{"en":"Fishing","ro":"Pescuit"},"catalog.tab.rib":{"en":"RIB","ro":"RIB"},"catalog.tab.cruising":{"en":"Cruising","ro":"Croazieră"},"catalog.tab.fiberglass":{"en":"Fiberglass","ro":"Fibră de sticlă"},"catalog.tab.trailers":{"en":"Trailers","ro":"Peridocuri"},"catalog.tab.featured":{"en":"Featured","ro":"Recomandate"},"catalog.trust.warranty.l":{"en":"One-handed warranty","ro":"Garanție cu o singură mână"},"catalog.trust.leasing.b":{"en":"0% leasing","ro":"Leasing 0%"},"catalog.trust.tradein.b":{"en":"Trade-in","ro":"Trade-in"},"catalog.trust.tradein.l":{"en":"Your old boat counts","ro":"Vechea ta barcă contează"},"catalog.trust.countries.b":{"en":"4 countries","ro":"4 țări"},"catalog.trust.countries.l":{"en":"RO · MD · RS · BG delivery","ro":"Livrare RO · MD · RS · BG"},"catalog.hull.ey":{"en":"Browse by hull · 6 of 6","ro":"Caută după corp · 6 din 6"},"catalog.hull.more":{"en":"Hull guide · how to choose →","ro":"Ghid de corp · cum alegi →"},"catalog.hull.fishing":{"en":"Fishing Boats","ro":"Bărci de pescuit"},"catalog.hull.aluminium":{"en":"Aluminium","ro":"Aluminiu"},"catalog.hull.rib":{"en":"RIB","ro":"RIB"},"catalog.hull.cruising":{"en":"Cruising","ro":"Croazieră"},"catalog.hull.fiberglass":{"en":"Fiberglass","ro":"Fibră de sticlă"},"catalog.hull.trailers":{"en":"Trailers","ro":"Peridocuri"},"catalog.toolbar.sortby":{"en":"Sort by","ro":"Sortează după"},"catalog.toolbar.clear":{"en":"Clear all","ro":"Resetează"},"catalog.filt.reset":{"en":"Reset all","ro":"Resetează tot"},"catalog.filt.availability":{"en":"Availability","ro":"Disponibilitate"},"catalog.filt.brand":{"en":"Brand","ro":"Marcă"},"catalog.filt.all":{"en":"All","ro":"Toate"},"catalog.filt.instock":{"en":"In stock","ro":"În stoc"},"catalog.filt.onorder":{"en":"On order","ro":"La comandă"},"catalog.cta.ey":{"en":"Can't find what you're looking for?","ro":"Nu găsești ce cauți?"},"catalog.tab.all":{"en":"All","ro":"Toate"},"catalog.tab.instock":{"en":"In Stock","ro":"În Stoc"},"catalog.hero.ey":{"en":"230 offers · 16 brands · 6 categories","ro":"230 oferte · 16 mărci · 6 categorii"},"catalog.hero.h1":{"en":"The full <em>boats catalog.</em>\n            <span class=\"sub\">230 boats · 16 marine brands · 6 hull types · Romania, Moldova, Serbia, Bulgaria delivery</span>","ro":"Catalogul complet de <em>bărci.</em>\n            <span class=\"sub\">230 bărci · 16 mărci marine · 6 tipuri de corp · livrare România, Moldova, Serbia, Bulgaria</span>"},"catalog.hero.deck":{"en":"Aluminium fishing platforms, RIB tubes, cabin cruisers and trailers. From €3,450 to €178,940 — filter by hull, engine, length and price. Stock and on-order availability shown live.","ro":"Platforme de pescuit din aluminiu, tuburi RIB, ambarcațiuni cu cabină și peridocuri. De la €3.450 la €178.940 — filtrează după corp, motor, lungime și preț. Stoc și disponibilitate la comandă afișate live."},"crumbs.home":{"en":"Home","ro":"Acasă"}}</script>
+  <script src="partials.js"></script>
+  <script src="i18n.js" defer></script>
 </body>
 </html>
