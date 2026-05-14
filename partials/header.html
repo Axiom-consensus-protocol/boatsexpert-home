@@ -1,0 +1,102 @@
+  <div class="topbar">
+    <div class="container">
+      <div class="tl">
+        <span><span class="dot">●</span><span data-i18n="topbar.address">Strada Horia Cloșca și Crișan 5, Otopeni 075100, Romania</span></span>
+        <span data-i18n="topbar.warranty">One-handed warranty</span>
+        <span data-i18n="topbar.delivery">Delivery RO · MD · RS · BG</span>
+      </div>
+      <div class="tr">
+        <a href="tel:+40743377377"><span class="dot">☎</span><span data-i18n="topbar.phone">+40 (743) 377 377</span></a>
+        <a href="https://wa.me/40743377377" data-i18n="topbar.whatsapp">WhatsApp</a>
+        <a href="mailto:info@boatsexpert.com" data-i18n="topbar.email">info@boatsexpert.com</a>
+        <span class="lang" role="group" aria-label="Language">
+          <a href="?lang=en" data-i18n-set="en"><b>EN</b></a>
+          <span class="dim">/</span>
+          <a href="?lang=ro" data-i18n-set="ro">RO</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========== HEADER =========== -->
+  <header class="site">
+    <div class="container">
+      <a href="/" class="logo" aria-label="BoatsExpert — Aluminium and fishing boats in Romania">
+        <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
+        <span class="logo-tagline"><b data-i18n="header.tagline">Since 2014</b><span data-i18n="header.subtagline">Official dealer · Otopeni RO</span></span>
+      </a>
+
+      <nav class="primary">
+        <a href="/listings" class="sub" data-i18n="nav.catalog">Catalog</a>
+        <a href="/product-category/boats-in-stock" data-i18n="nav.instock">In Stock</a>
+        <a href="/shop" class="sub" data-i18n="nav.shop">Shop</a>
+        <a href="/services" class="sub" data-i18n="nav.services">Services</a>
+        <a href="/blog" data-i18n="nav.blog">Blog</a>
+        <a href="/contact-us" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="icon-btn search-toggle" type="button" aria-label="Search catalog" aria-controls="quickSearch" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="6"/>
+            <path d="M16 16l4 4"/>
+          </svg>
+          <span class="search-label" data-i18n="nav.search_label">Search</span>
+          <span class="search-key">Ctrl K</span>
+        </button>
+        <a href="/my-account" class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+        </a>
+        <a href="/cart" class="icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 4h2l2.5 12h11l2-8H6"/>
+            <circle cx="9" cy="20" r="1.5"/>
+            <circle cx="18" cy="20" r="1.5"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-brass">
+          <span data-i18n="nav.cta_testdrive">Book a Test Drive</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M2 6h8M7 3l3 3-3 3"/>
+          </svg>
+        </a>
+      </div>
+      <div class="mobile-actions">
+        <button class="icon-btn search-toggle" type="button" aria-label="Search catalog" aria-controls="quickSearch" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="6"/>
+            <path d="M16 16l4 4"/>
+          </svg>
+        </button>
+        <button class="mobile-menu" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========== QUICK SEARCH =========== -->
+  <div class="quick-search" id="quickSearch" aria-hidden="true">
+    <div class="quick-search__shade" data-search-close></div>
+    <div class="quick-search__panel" role="dialog" aria-modal="true" aria-labelledby="quickSearchTitle">
+      <div class="quick-search__bar">
+        <span class="quick-search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="6"/>
+            <path d="M16 16l4 4"/>
+          </svg>
+        </span>
+        <label class="sr-only" for="quickSearchInput" id="quickSearchTitle">Search BoatsExpert catalog</label>
+        <input id="quickSearchInput" type="search" placeholder="Search Finval, Garmin, sonars, outboards..." autocomplete="off" />
+        <button class="quick-search__close" type="button" data-search-close aria-label="Close search">Close</button>
+      </div>
+      <div class="quick-search__meta">
+        <span>Live catalog search</span>
+        <span>Boats · shop · services · stories</span>
+      </div>
+      <div class="quick-search__results" id="quickSearchResults" aria-live="polite"></div>
+    </div>
+  </div>

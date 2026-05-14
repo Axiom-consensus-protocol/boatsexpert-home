@@ -1539,5 +1539,405 @@
   "entry.services.c": {
     "en": "The original offer list, turned into a dealer workflow.",
     "ro": "Lista originală de servicii, transformată într-un flux de dealer."
+  },
+  "shop.dept1.system": {
+    "en": "Motor",
+    "ro": "Motor"
+  },
+  "shop.dept1.name": {
+    "en": "Outboard motors",
+    "ro": "Motoare termice"
+  },
+  "shop.dept1.meta1": {
+    "en": "87 items",
+    "ro": "87 produse"
+  },
+  "shop.dept1.meta2": {
+    "en": "from €890",
+    "ro": "de la €890"
+  },
+  "shop.dept1.note": {
+    "en": "Yamaha, Mercury, Honda, Tohatsu. Sold with rigging, propeller advice and workshop install.",
+    "ro": "Yamaha, Mercury, Honda, Tohatsu. Vândute cu echipare, sfat pentru elice și montaj în atelier."
+  },
+  "shop.dept1.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept2.system": {
+    "en": "Trolling",
+    "ro": "Trolling"
+  },
+  "shop.dept2.name": {
+    "en": "Electric motors",
+    "ro": "Motoare electrice"
+  },
+  "shop.dept2.meta1": {
+    "en": "22 items",
+    "ro": "22 produse"
+  },
+  "shop.dept2.meta2": {
+    "en": "from €640",
+    "ro": "de la €640"
+  },
+  "shop.dept2.note": {
+    "en": "Bow motors, pedals, remote control and silent fishing setups for aluminium boats.",
+    "ro": "Motoare prova, pedale, telecomenzi și setări silențioase de pescuit pentru bărci din aluminiu."
+  },
+  "shop.dept2.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept3.system": {
+    "en": "Fishfinder",
+    "ro": "Sonar"
+  },
+  "shop.dept3.name": {
+    "en": "Sonars &amp; fishfinders",
+    "ro": "Sonare și fishfindere"
+  },
+  "shop.dept3.meta1": {
+    "en": "42 items",
+    "ro": "42 produse"
+  },
+  "shop.dept3.meta2": {
+    "en": "from €240",
+    "ro": "de la €240"
+  },
+  "shop.dept3.note": {
+    "en": "Garmin and Humminbird displays, transducers and dashboard layouts installed in-house.",
+    "ro": "Display-uri Garmin și Humminbird, traductoare și layout-uri de bord montate în atelierul nostru."
+  },
+  "shop.dept3.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept4.system": {
+    "en": "Power",
+    "ro": "Putere"
+  },
+  "shop.dept4.name": {
+    "en": "Batteries",
+    "ro": "Baterii"
+  },
+  "shop.dept4.meta1": {
+    "en": "24 items",
+    "ro": "24 produse"
+  },
+  "shop.dept4.meta2": {
+    "en": "from €165",
+    "ro": "de la €165"
+  },
+  "shop.dept4.note": {
+    "en": "Rebelcell marine power, chargers and capacity matching for electronics or trolling motors.",
+    "ro": "Putere marină Rebelcell, încărcătoare și calcul de capacitate pentru electronică sau trolling."
+  },
+  "shop.dept4.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept5.system": {
+    "en": "Deck hardware",
+    "ro": "Punte"
+  },
+  "shop.dept5.name": {
+    "en": "Marine accessories",
+    "ro": "Accesorii marine"
+  },
+  "shop.dept5.meta1": {
+    "en": "182 items",
+    "ro": "182 produse"
+  },
+  "shop.dept5.meta2": {
+    "en": "from €12",
+    "ro": "de la €12"
+  },
+  "shop.dept5.note": {
+    "en": "Osculati, Marinac, KED and daily service-desk accessories for safe boat use.",
+    "ro": "Osculati, Marinac, KED și accesorii uzuale de la service-desk pentru utilizare în siguranță."
+  },
+  "shop.dept5.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept6.system": {
+    "en": "Audio",
+    "ro": "Audio"
+  },
+  "shop.dept6.name": {
+    "en": "Marine audio",
+    "ro": "Audio marin"
+  },
+  "shop.dept6.meta1": {
+    "en": "38 items",
+    "ro": "38 produse"
+  },
+  "shop.dept6.meta2": {
+    "en": "from €98",
+    "ro": "de la €98"
+  },
+  "shop.dept6.note": {
+    "en": "Fusion audio, speakers, remotes and waterproof entertainment for cruising layouts.",
+    "ro": "Audio Fusion, difuzoare, telecomenzi și sisteme audio rezistente la apă pentru bărci de croazieră."
+  },
+  "shop.dept6.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept7.system": {
+    "en": "Light",
+    "ro": "Iluminare"
+  },
+  "shop.dept7.name": {
+    "en": "Marine lights",
+    "ro": "Lumini marine"
+  },
+  "shop.dept7.meta1": {
+    "en": "31 items",
+    "ro": "31 produse"
+  },
+  "shop.dept7.meta2": {
+    "en": "from €45",
+    "ro": "de la €45"
+  },
+  "shop.dept7.note": {
+    "en": "Navigation, deck and cabin lighting selected for real marine wiring conditions.",
+    "ro": "Lumini de navigație, punte și cabină alese pentru condiții reale de cablaj marin."
+  },
+  "shop.dept7.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept8.system": {
+    "en": "Wearable",
+    "ro": "Purtabile"
+  },
+  "shop.dept8.name": {
+    "en": "Quatix smartwatches",
+    "ro": "Smartwatch-uri Quatix"
+  },
+  "shop.dept8.meta1": {
+    "en": "12 items",
+    "ro": "12 produse"
+  },
+  "shop.dept8.meta2": {
+    "en": "from €380",
+    "ro": "de la €380"
+  },
+  "shop.dept8.note": {
+    "en": "Garmin skipper watches for navigation, engine data and day-to-day marine use.",
+    "ro": "Ceasuri Garmin pentru navigatori — navigație, date despre motor și utilizare marină zilnică."
+  },
+  "shop.dept8.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept9.system": {
+    "en": "Helm",
+    "ro": "Pupitru"
+  },
+  "shop.dept9.name": {
+    "en": "Navigation",
+    "ro": "Navigație"
+  },
+  "shop.dept9.meta1": {
+    "en": "28 items",
+    "ro": "28 produse"
+  },
+  "shop.dept9.meta2": {
+    "en": "from €120",
+    "ro": "de la €120"
+  },
+  "shop.dept9.note": {
+    "en": "GPS, charts and helm equipment planned around the console, not added at random.",
+    "ro": "GPS, hărți și echipament de pupitru gândit în jurul consolei, nu adăugat la întâmplare."
+  },
+  "shop.dept9.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept10.system": {
+    "en": "Steering",
+    "ro": "Direcție"
+  },
+  "shop.dept10.name": {
+    "en": "Hydraulic steering",
+    "ro": "Guvernare hidraulică"
+  },
+  "shop.dept10.meta1": {
+    "en": "14 items",
+    "ro": "14 produse"
+  },
+  "shop.dept10.meta2": {
+    "en": "from €310",
+    "ro": "de la €310"
+  },
+  "shop.dept10.note": {
+    "en": "Hydraulic kits, hoses and steering components sized and fitted by the workshop.",
+    "ro": "Kit-uri hidraulice, furtune și componente de direcție dimensionate și montate de atelier."
+  },
+  "shop.dept10.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept11.system": {
+    "en": "Trim",
+    "ro": "Trim"
+  },
+  "shop.dept11.name": {
+    "en": "Power-lift JackPlate",
+    "ro": "Power-lift JackPlate"
+  },
+  "shop.dept11.meta1": {
+    "en": "11 items",
+    "ro": "11 produse"
+  },
+  "shop.dept11.meta2": {
+    "en": "from €420",
+    "ro": "de la €420"
+  },
+  "shop.dept11.note": {
+    "en": "Jack plates and shallow-water trim solutions for loaded fishing boats.",
+    "ro": "JackPlate-uri și soluții de trim pentru ape mici, gândite pentru bărci de pescuit încărcate."
+  },
+  "shop.dept11.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "shop.dept12.system": {
+    "en": "Mounting",
+    "ro": "Suporturi"
+  },
+  "shop.dept12.name": {
+    "en": "Mounts &amp; brackets",
+    "ro": "Suporturi și brățări"
+  },
+  "shop.dept12.meta1": {
+    "en": "11 items",
+    "ro": "11 produse"
+  },
+  "shop.dept12.meta2": {
+    "en": "from €38",
+    "ro": "de la €38"
+  },
+  "shop.dept12.note": {
+    "en": "RAM mounts, console brackets and hardware for clean, serviceable installs.",
+    "ro": "RAM mounts, suporturi de consolă și hardware pentru instalări curate și ușor de întreținut."
+  },
+  "shop.dept12.action": {
+    "en": "Open department",
+    "ro": "Deschide departamentul"
+  },
+  "blog.all": {
+    "en": "All stories →",
+    "ro": "Toate articolele →"
+  },
+  "blog.read_more": {
+    "en": "Read →",
+    "ro": "Citește →"
+  },
+  "blog.s1.meta": {
+    "en": "Owner story · 8 min",
+    "ro": "Poveste de proprietar · 8 min"
+  },
+  "blog.s1.title": {
+    "en": "Finval 470 EVO DC — one season on the Danube",
+    "ro": "Finval 470 EVO DC — un sezon pe Dunăre"
+  },
+  "blog.s1.excerpt": {
+    "en": "A 19 cm draft puts you in places others can't reach. Andrei spent ten weeks chasing pike in the Delta on a 470 EVO. Verdict from the helm.",
+    "ro": "Un pescaj de 19 cm te duce unde alții nu pot ajunge. Andrei a petrecut zece săptămâni la știucă în Deltă pe un 470 EVO. Verdictul de la timonă."
+  },
+  "blog.s1.date": {
+    "en": "02 May 2026",
+    "ro": "02 mai 2026"
+  },
+  "blog.s2.meta": {
+    "en": "Guide · 6 min",
+    "ro": "Ghid · 6 min"
+  },
+  "blog.s2.title": {
+    "en": "Aluminium vs fiberglass — what you actually pay for",
+    "ro": "Aluminiu vs fibră de sticlă — pentru ce plătești de fapt"
+  },
+  "blog.s2.excerpt": {
+    "en": "AlMg 5083 vs GRP. Weight, maintenance, resale, repairability. The honest comparison from our workshop floor.",
+    "ro": "AlMg 5083 vs GRP. Greutate, întreținere, valoare la revânzare, ușurința reparațiilor. Comparație onestă din atelier."
+  },
+  "blog.s2.date": {
+    "en": "18 Apr 2026",
+    "ro": "18 apr. 2026"
+  },
+  "blog.s3.meta": {
+    "en": "News · 3 min",
+    "ro": "Știri · 3 min"
+  },
+  "blog.s3.title": {
+    "en": "Galaxy Pilot P6.5 has landed in Otopeni",
+    "ro": "Galaxy Pilot P6.5 a sosit la Otopeni"
+  },
+  "blog.s3.excerpt": {
+    "en": "200 hp aluminium pilot boat in the showroom. Sea trials open from 24 May at Eforie Nord. Slots fill up — book in advance.",
+    "ro": "Pilot boat din aluminiu de 200 CP în showroom. Test drive pe mare de pe 24 mai la Eforie Nord. Locurile se umplu — programează din timp."
+  },
+  "blog.s3.date": {
+    "en": "05 May 2026",
+    "ro": "05 mai 2026"
+  },
+  "newsletter.h": {
+    "en": "Two letters <em>a month.</em> No spam.",
+    "ro": "Două scrisori <em>pe lună.</em> Fără spam."
+  },
+  "newsletter.p": {
+    "en": "New listings, season prices, and the occasional story from the marina. Unsubscribe in one click.",
+    "ro": "Bărci noi în catalog, prețuri de sezon și câte o poveste din portul de agrement. Te dezabonezi cu un click."
+  },
+  "newsletter.placeholder": {
+    "en": "your@email.com",
+    "ro": "email@exemplu.ro"
+  },
+  "newsletter.cta": {
+    "en": "Subscribe",
+    "ro": "Abonează-te"
+  },
+  "newsletter.legal": {
+    "en": "GDPR-compliant · EN / RO",
+    "ro": "Conform GDPR · EN / RO"
+  },
+  "foot.top.ledger": {
+    "en": "BoatsExpert dealer ledger",
+    "ro": "Registrul dealerului BoatsExpert"
+  },
+  "foot.top.line": {
+    "en": "Otopeni showroom · shop · workshop · delivery",
+    "ro": "Showroom Otopeni · shop · atelier · livrare"
+  },
+  "foot.top.call": {
+    "en": "Call +40 743 377 377",
+    "ro": "Sună +40 743 377 377"
+  },
+  "foot.top.wa": {
+    "en": "WhatsApp",
+    "ro": "WhatsApp"
+  },
+  "foot.top.dir": {
+    "en": "Directions",
+    "ro": "Vezi traseul"
+  },
+  "foot.brand.tag": {
+    "en": "Since 2014",
+    "ro": "Din 2014"
+  },
+  "foot.brand.sub": {
+    "en": "Otopeni · Romania",
+    "ro": "Otopeni · România"
+  },
+  "foot.brand.p": {
+    "en": "Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.",
+    "ro": "Dealer exclusiv în România pentru Finval, Beneteau și NorthSilver. Partener oficial Yamaha, Garmin, Mercury și încă 13 mărci marine. Otopeni, din 2014."
+  },
+  "foot.proof.warranty": {
+    "en": "warranty",
+    "ro": "garanție"
   }
 }
