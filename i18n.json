@@ -2143,5 +2143,137 @@
   "crumbs.home": {
     "en": "Home",
     "ro": "Acasă"
+  },
+  "shop.crumbs.here": {
+    "en": "Shop",
+    "ro": "Magazin"
+  },
+  "shop.trust.warranty.l": {
+    "en": "Manufacturer warranty",
+    "ro": "Garanție de la producător"
+  },
+  "shop.trust.fitout.b": {
+    "en": "Fit-out free",
+    "ro": "Montaj gratuit"
+  },
+  "shop.trust.fitout.l": {
+    "en": "Orders over €1,500",
+    "ro": "Comenzi peste €1.500"
+  },
+  "shop.trust.shipping.b": {
+    "en": "48h shipping",
+    "ro": "Livrare 48h"
+  },
+  "shop.trust.shipping.l": {
+    "en": "RO · MD · RS · BG",
+    "ro": "RO · MD · RS · BG"
+  },
+  "shop.trust.return.b": {
+    "en": "7-day return",
+    "ro": "Retur 7 zile"
+  },
+  "shop.trust.return.l": {
+    "en": "Free pickup at workshop",
+    "ro": "Ridicare gratuită de la atelier"
+  },
+  "shop.dept.ey": {
+    "en": "Twelve departments · fitted in Otopeni",
+    "ro": "Douăsprezece departamente · echipate în Otopeni"
+  },
+  "shop.dept.more": {
+    "en": "Start with the fit brief →",
+    "ro": "Începe cu briefingul de echipare →"
+  },
+  "shop.dept.outboard": {
+    "en": "Outboard motors",
+    "ro": "Motoare exterioare"
+  },
+  "shop.dept.electric": {
+    "en": "Electric motors",
+    "ro": "Motoare electrice"
+  },
+  "shop.dept.sonars": {
+    "en": "Sonars & fishfinders",
+    "ro": "Sonare & fishfinders"
+  },
+  "shop.dept.batteries": {
+    "en": "Batteries",
+    "ro": "Baterii"
+  },
+  "shop.dept.accessories": {
+    "en": "Marine accessories",
+    "ro": "Accesorii marine"
+  },
+  "shop.dept.audio": {
+    "en": "Marine audio",
+    "ro": "Audio marin"
+  },
+  "shop.dept.lights": {
+    "en": "Marine lights",
+    "ro": "Iluminat marin"
+  },
+  "shop.dept.steering": {
+    "en": "Hydraulic steering",
+    "ro": "Direcție hidraulică"
+  },
+  "shop.dept.jackplate": {
+    "en": "Power-lift JackPlate",
+    "ro": "Power-lift JackPlate"
+  },
+  "shop.dept.navigation": {
+    "en": "Navigation",
+    "ro": "Navigație"
+  },
+  "shop.dept.quatix": {
+    "en": "Quatix smartwatches",
+    "ro": "Smartwatch-uri Quatix"
+  },
+  "shop.dept.mounts": {
+    "en": "Mounts & brackets",
+    "ro": "Suporturi & brățări"
+  },
+  "shop.systems.ey": {
+    "en": "Marine systems desk · built from live shop stock",
+    "ro": "Birou sisteme marine · construit din stocul live al magazinului"
+  },
+  "shop.systems.title": {
+    "en": "Build a working rig, not a basket of random parts.",
+    "ro": "Construiește o platformă funcțională, nu un coș de piese aleatorii."
+  },
+  "shop.systems.lead": {
+    "en": "Every order can be checked against hull length, engine power, battery chemistry, transducer position and steering load before it ships.",
+    "ro": "Fiecare comandă poate fi verificată după lungimea corpului, puterea motorului, chimia bateriei, poziția traductorului și sarcina direcției înainte de expediere."
+  },
+  "shop.toolbar.sortby": {
+    "en": "Sort by",
+    "ro": "Sortează după"
+  },
+  "shop.side.ey": {
+    "en": "Dealer desk · live fit check",
+    "ro": "Birou dealer · verificare live a echipării"
+  },
+  "shop.side.title": {
+    "en": "Send hull, engine and use-case. We clean the order.",
+    "ro": "Trimite corpul, motorul și cazul de utilizare. Noi facem curățenia comenzii."
+  },
+  "shop.side.lead": {
+    "en": "Wrong hose length, weak charger, bad transducer angle or mismatched steering gets caught before checkout.",
+    "ro": "Lungime greșită de furtun, încărcător slab, unghi nepotrivit de traductor sau direcție nepotrivită sunt depistate înainte de checkout."
+  },
+  "shop.cat.reset": {
+    "en": "Reset",
+    "ro": "Resetează"
+  },
+  "shop.cat.alldept": {
+    "en": "All departments",
+    "ro": "Toate departamentele"
+  },
+  "shop.hero.h1": {
+    "en": "Marine equipment <em>shop.</em>\n            <span class=\"sub\">937 SKU · 12 categories · 16 brands · in-shop fit-out · Workshop hours Mon–Thu 10–17:30</span>",
+    "ro": "Magazin de echipamente <em>marine.</em>\n            <span class=\"sub\">937 SKU · 12 categorii · 16 mărci · echipare la magazin · Atelier Lun–Joi 10–17:30</span>"
+  },
+  "shop.hero.lead": {
+    "en": "937 products across 12 categories — outboards, sonars, batteries, accessories. Authorised reseller of 16 brands. Workshop fit-out included on orders over €1,500.",
+    "ro": "937 de produse în 12 categorii — motoare exterioare, sonare, baterii, accesorii. Revânzător autorizat al 16 mărci. Echipare la atelier inclusă pentru comenzi peste €1.500."
   }
 }
