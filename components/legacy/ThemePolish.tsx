@@ -532,6 +532,7 @@ html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .s
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .shop-command .mini p,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .shop-command .mini span:last-child,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs span,
+html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs button,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .cat-meta span,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .cat::after,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .cat-note,
@@ -664,12 +665,14 @@ html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .s
 }
 
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs span,
+html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs button,
 html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-system .cat-meta span{
   background:rgba(244,239,230,.045) !important;
   border-color:var(--bx-page-line) !important;
 }
 
-html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs span:first-child{
+html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs span:first-child,
+html[data-theme="night"] body .legacy-fragment[data-legacy-fragment^="home:"] .shop-finder-tabs button.is-active{
   background:var(--bx-page-accent) !important;
   color:#FFFCF6 !important;
 }

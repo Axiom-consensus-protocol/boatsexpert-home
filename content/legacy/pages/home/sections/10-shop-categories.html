@@ -5,7 +5,7 @@
         <div>
           <div class="ey" data-i18n="shop.eyebrow">Original SHOP menu · dealer parts desk</div>
           <h2 class="sec-title" data-i18n="shop.title">Everything around the boat, <em>arranged by system.</em></h2>
-          <p class="shop-head-copy" data-i18n="shop.head_copy">Motors, electronics, power, lights, mounts and deck hardware from the same Otopeni team that installs and services the boats.</p>
+          <p class="shop-head-copy" data-i18n="shop.head_copy">Departments are grouped the way the workshop actually fits a boat: propulsion first, then helm electronics, marine power, deck hardware and service-ready mounts.</p>
         </div>
         <div class="shop-head-card">
           <span data-i18n="shop.head_card.l">Live commerce board</span>
@@ -24,8 +24,8 @@
       <div class="shop-command">
         <div class="lead">
           <span class="k" data-i18n="shop.cmd.lead.k">Commerce spine</span>
-          <strong data-i18n="shop.cmd.lead.b">Equipment, motors and accessories for boats.</strong>
-          <p data-i18n="shop.cmd.lead.p">Built from the original BoatsExpert SHOP categories, but shaped like a premium marine dealer catalogue.</p>
+          <strong data-i18n="shop.cmd.lead.b">A marine parts counter, not a random web shelf.</strong>
+          <p data-i18n="shop.cmd.lead.p">Every department maps to a real fit-out decision: what powers the boat, what sits at the helm, what gets wired, and what the workshop can install cleanly.</p>
           <span data-i18n="shop.cmd.lead.f">WooCommerce shop · walk-in pickup · Otopeni</span>
         </div>
         <div class="mini" data-code="SYS 01">
@@ -58,20 +58,21 @@
           <span data-i18n="shop.finder.k">Product type index</span>
           <strong data-i18n="shop.finder.b">Start like a counter order.</strong>
         </div>
-        <div class="shop-finder-tabs">
-          <span data-i18n="shop.finder.tab1">Motor</span>
-          <span data-i18n="shop.finder.tab2">Electronics</span>
-          <span data-i18n="shop.finder.tab3">Power</span>
-          <span data-i18n="shop.finder.tab4">Deck</span>
-          <span data-i18n="shop.finder.tab5">Service fit</span>
+        <div class="shop-finder-tabs" role="tablist" aria-label="Filter shop departments">
+          <button type="button" class="is-active" data-shop-filter="all" aria-pressed="true" data-i18n="shop.finder.tab0">All systems</button>
+          <button type="button" data-shop-filter="motor" aria-pressed="false" data-i18n="shop.finder.tab1">Motor</button>
+          <button type="button" data-shop-filter="electronics" aria-pressed="false" data-i18n="shop.finder.tab2">Electronics</button>
+          <button type="button" data-shop-filter="power" aria-pressed="false" data-i18n="shop.finder.tab3">Power</button>
+          <button type="button" data-shop-filter="deck" aria-pressed="false" data-i18n="shop.finder.tab4">Deck</button>
+          <button type="button" data-shop-filter="service" aria-pressed="false" data-i18n="shop.finder.tab5">Service fit</button>
         </div>
       </div>
 
       <div class="shop">
-        <a href="/shop" class="cat" data-code="M01" data-note="Petrol engines · dealer rigging">
+        <a href="/shop" class="cat" data-code="M01" data-shop-groups="motor service" data-note="Outboard rigging · prop advice">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="22" y="6" width="12" height="28" rx="2"/>
                 <path d="M28 34 V46"/>
                 <path d="M20 46 H36"/>
@@ -90,10 +91,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="M02" data-note="Bow motors · silent fishing">
+        <a href="/shop" class="cat" data-code="M02" data-shop-groups="motor power deck" data-note="Bow mount · silent fishing">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M28 10 V38"/>
                 <rect x="22" y="38" width="12" height="6" rx="1"/>
                 <path d="M16 8 L40 8"/>
@@ -113,14 +114,14 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="E01" data-note="Garmin · Humminbird · install">
+        <a href="/shop" class="cat" data-code="E01" data-shop-groups="electronics service" data-note="Sonar layout · transducer install">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="10" y="12" width="36" height="26" rx="2"/>
                 <path d="M14 32 Q 20 22 28 28 T 42 26"/>
-                <circle cx="28" cy="28" r="1.2" fill="#0A2540"/>
-                <circle cx="36" cy="26" r="1" fill="#0A2540"/>
+                <circle cx="28" cy="28" r="1.2" fill="currentColor"/>
+                <circle cx="36" cy="26" r="1" fill="currentColor"/>
                 <path d="M22 42 H34"/>
                 <path d="M28 38 V42"/>
               </svg>
@@ -135,10 +136,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="P01" data-note="Rebelcell · marine power">
+        <a href="/shop" class="cat" data-code="P01" data-shop-groups="power electronics service" data-note="Capacity match · charging plan">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="12" y="16" width="32" height="26" rx="2"/>
                 <rect x="18" y="12" width="6" height="4"/>
                 <rect x="32" y="12" width="6" height="4"/>
@@ -156,10 +157,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="H01" data-note="Deck gear · safety · fittings">
+        <a href="/shop" class="cat" data-code="H01" data-shop-groups="deck service" data-note="Cleats · safety · deck fittings">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="28" cy="14" r="4"/>
                 <path d="M28 18 V40"/>
                 <path d="M14 30 H42"/>
@@ -177,10 +178,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="E02" data-note="Fusion audio · waterproof sound">
+        <a href="/shop" class="cat" data-code="E02" data-shop-groups="electronics deck" data-note="Waterproof audio · cockpit sound">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="14" y="10" width="28" height="36" rx="3"/>
                 <circle cx="28" cy="22" r="5"/>
                 <circle cx="28" cy="22" r="2"/>
@@ -198,10 +199,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="H02" data-note="Navigation · deck · cabin light">
+        <a href="/shop" class="cat" data-code="H02" data-shop-groups="deck power service" data-note="Navigation · deck · cabin light">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M28 10 V14 M14 28 H10 M42 28 H46 M18 18 L15 15 M38 18 L41 15"/>
                 <circle cx="28" cy="28" r="9"/>
                 <circle cx="28" cy="28" r="4"/>
@@ -219,10 +220,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="E03" data-note="Garmin watches · skipper kit">
+        <a href="/shop" class="cat" data-code="E03" data-shop-groups="electronics" data-note="Garmin skipper kit">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="18" y="18" width="20" height="20" rx="3"/>
                 <path d="M22 18 V12 H34 V18"/>
                 <path d="M22 38 V44 H34 V38"/>
@@ -239,13 +240,13 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="E04" data-note="Charts · GPS · helm layout">
+        <a href="/shop" class="cat" data-code="E04" data-shop-groups="electronics service" data-note="Charts · GPS · helm layout">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="28" cy="28" r="14"/>
                 <path d="M28 14 L28 18 M28 38 L28 42 M14 28 L18 28 M38 28 L42 28"/>
-                <path d="M28 20 L33 32 L28 30 L23 32 Z" fill="#0A2540"/>
+                <path d="M28 20 L33 32 L28 30 L23 32 Z" fill="currentColor"/>
               </svg>
             </div>
           </div>
@@ -258,10 +259,10 @@
           </div>
         </a>
 
-        <a href="/product" class="cat" data-code="M03" data-note="Hydraulic kits · workshop fitted">
+        <a href="/product" class="cat" data-code="M03" data-shop-groups="motor service" data-note="Hydraulic kits · workshop fitted">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="28" cy="28" r="13"/>
                 <circle cx="28" cy="28" r="3"/>
                 <path d="M28 18 V25 M28 31 V38 M18 28 H25 M31 28 H38"/>
@@ -278,10 +279,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="M04" data-note="Jack plates · shallow water trim">
+        <a href="/shop" class="cat" data-code="M04" data-shop-groups="motor service" data-note="Jack plates · shallow-water trim">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="20" y="12" width="16" height="20" rx="1"/>
                 <path d="M20 32 V42 H36 V32"/>
                 <path d="M24 20 L32 20 M24 24 L32 24"/>
@@ -298,10 +299,10 @@
           </div>
         </a>
 
-        <a href="/shop" class="cat" data-code="H03" data-note="RAM mounts · console hardware">
+        <a href="/shop" class="cat" data-code="H03" data-shop-groups="deck service electronics" data-note="RAM mounts · console hardware">
           <div class="cat-photo">
             <div class="icon">
-              <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="12" y="22" width="14" height="12" rx="1"/>
                 <rect x="30" y="22" width="14" height="12" rx="1"/>
                 <circle cx="28" cy="28" r="3"/>

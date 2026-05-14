@@ -205,12 +205,12 @@
     "ro": "Șaisprezece mărci. <em>O singură promisiune.</em>"
   },
   "services.eyebrow": {
-    "en": "What we do · five services",
-    "ro": "Ce facem · cinci servicii"
+    "en": "Workshop · six service lines",
+    "ro": "Atelier · șase linii de service"
   },
   "services.title": {
-    "en": "More than a dealer. <em>An on-water partner.</em>",
-    "ro": "Mai mult decât un dealer. <em>Un partener pe apă.</em>"
+    "en": "Built, fitted and supported <em>under one roof.</em>",
+    "ro": "Construit, echipat și susținut <em>sub același acoperiș.</em>"
   },
   "shop.eyebrow": {
     "en": "Original SHOP menu · dealer parts desk",
@@ -973,104 +973,104 @@
     "ro": "Motoare outboard"
   },
   "services.sec_link": {
-    "en": "All services →",
-    "ro": "Toate serviciile →"
+    "en": "Service overview →",
+    "ro": "Prezentare servicii →"
   },
   "services.s1.num": {
     "en": "№ 01",
     "ro": "Nr. 01"
   },
   "services.s1.h": {
-    "en": "Expert tuning of <em>angler boats</em>",
-    "ro": "Tuning expert pentru <em>bărci de pescuit</em>"
+    "en": "Angler boat <em>fit-out</em>",
+    "ro": "Echipare <em>bărci de pescuit</em>"
   },
   "services.s1.p": {
-    "en": "Casting platforms, livewells, trolling motor prep, rod storage. Built for serious fishermen.",
-    "ro": "Platforme de casting, livewell, pregătire trolling, suporturi pentru lansete. Construit pentru pescari serioși."
+    "en": "Casting decks, livewells, trolling motor bases, rod storage and balance checks planned around the hull.",
+    "ro": "Punți de casting, livewell, baze pentru trolling, suporturi de lansete și verificări de echilibru gândite după cocă."
   },
   "services.s1.m": {
-    "en": "Tune my boat",
-    "ro": "Tunează-mi barca"
+    "en": "Plan the fit-out",
+    "ro": "Planifică echiparea"
   },
   "services.s2.num": {
     "en": "№ 02",
     "ro": "Nr. 02"
   },
   "services.s2.h": {
-    "en": "Outboard <em>installation</em>",
-    "ro": "Montaj <em>motor outboard</em>"
+    "en": "Outboard <em>rigging</em>",
+    "ro": "Rigging <em>motor outboard</em>"
   },
   "services.s2.p": {
-    "en": "Yamaha, Mercury, Honda, Tohatsu — fitted, rigged, calibrated. Hydraulic steering and JackPlate ready.",
-    "ro": "Yamaha, Mercury, Honda, Tohatsu — montat, echipat, calibrat. Pregătit pentru guvernare hidraulică și JackPlate."
+    "en": "Yamaha, Mercury, Honda and Tohatsu installed with controls, propeller advice, steering and sea-trial calibration.",
+    "ro": "Yamaha, Mercury, Honda și Tohatsu montate cu comenzi, sfat pentru elice, direcție și calibrare pe apă."
   },
   "services.s2.m": {
-    "en": "Book installation",
-    "ro": "Programează montaj"
+    "en": "Rig my engine",
+    "ro": "Montează motorul"
   },
   "services.s3.num": {
     "en": "№ 03",
     "ro": "Nr. 03"
   },
   "services.s3.h": {
-    "en": "Tuning &amp; <em>service</em>",
-    "ro": "Tuning <em>și service</em>"
+    "en": "Workshop <em>service</em>",
+    "ro": "Service de <em>atelier</em>"
   },
   "services.s3.p": {
-    "en": "Winterising, hull repair, electrical fit-out. Pickup from any marina in Romania.",
-    "ro": "Pregătire de iarnă, reparații cocă, echipare electrică. Ridicare din orice marina din România."
+    "en": "Season prep, diagnostics, hull repair and electrical fit-out with pickup from marinas across Romania.",
+    "ro": "Pregătire de sezon, diagnoză, reparații cocă și echipare electrică, cu ridicare din marinele din România."
   },
   "services.s3.m": {
-    "en": "Service request",
-    "ro": "Cerere service"
+    "en": "Open a job card",
+    "ro": "Deschide fișă service"
   },
   "services.s4.num": {
     "en": "№ 04",
     "ro": "Nr. 04"
   },
   "services.s4.h": {
-    "en": "Registration &amp; <em>driving courses</em>",
-    "ro": "Înmatriculare &amp; <em>cursuri de navigație</em>"
+    "en": "ANR papers &amp; <em>courses</em>",
+    "ro": "Acte ANR &amp; <em>cursuri</em>"
   },
   "services.s4.p": {
-    "en": "ANR paperwork, skipper licence, insurance referrals. We handle the desk so you handle the wheel.",
-    "ro": "Formalități ANR, permis de conducere, recomandări de asigurare. Ne ocupăm noi de hârtii ca tu să ai grijă doar de volan."
+    "en": "Registration, skipper licence guidance and insurance referrals handled by the same showroom desk.",
+    "ro": "Înmatriculare, ghidaj pentru permis de skipper și recomandări de asigurare prin același birou din showroom."
   },
   "services.s4.m": {
-    "en": "See programmes",
-    "ro": "Vezi programele"
+    "en": "Start paperwork",
+    "ro": "Pornește actele"
   },
   "services.s5.num": {
     "en": "№ 05",
     "ro": "Nr. 05"
   },
   "services.s5.h": {
-    "en": "10-year <em>warranty</em>",
-    "ro": "Garanție <em>10 ani</em>"
+    "en": "Warranty <em>desk</em>",
+    "ro": "Birou de <em>garanție</em>"
   },
   "services.s5.p": {
-    "en": "One call, one number, one person on your case. From engine diagnosis to trailer pick-up.",
-    "ro": "Un apel, un număr, o singură persoană pe cazul tău. De la diagnostic motor până la ridicarea peridocului."
+    "en": "One contact follows the case from diagnosis and parts to workshop slot, trailer pickup and return handover.",
+    "ro": "Un singur contact urmărește cazul de la diagnoză și piese până la programarea în atelier, ridicare peridoc și predare."
   },
   "services.s5.m": {
-    "en": "How it works",
-    "ro": "Cum funcționează"
+    "en": "Warranty path",
+    "ro": "Flux garanție"
   },
   "services.s6.num": {
     "en": "№ 06",
     "ro": "Nr. 06"
   },
   "services.s6.h": {
-    "en": "Equipment <em>retail</em>",
-    "ro": "Vânzare <em>echipamente</em>"
+    "en": "Parts &amp; <em>installation</em>",
+    "ro": "Piese &amp; <em>montaj</em>"
   },
   "services.s6.p": {
-    "en": "471 SKU — outboards, sonars, batteries, accessories. Online and walk-in shop.",
-    "ro": "471 SKU — motoare outboard, sonare, baterii, accesorii. Online și magazin fizic."
+    "en": "Outboards, sonars, batteries, mounts and deck hardware sold with fitment advice from the workshop.",
+    "ro": "Motoare, sonare, baterii, suporturi și feronerie de punte vândute cu sfat de montaj din atelier."
   },
   "services.s6.m": {
-    "en": "Open shop",
-    "ro": "Deschide shop"
+    "en": "Match parts",
+    "ro": "Potrivește piesele"
   },
   "hero.rail.dealer": {
     "en": "<b>BoatsExpert</b> · Official dealer · Otopeni, Romania",
@@ -1361,8 +1361,8 @@
     "ro": "Impressum"
   },
   "shop.head_copy": {
-    "en": "Motors, electronics, power, lights, mounts and deck hardware from the same Otopeni team that installs and services the boats.",
-    "ro": "Motoare, electronică, baterii, lumini, suporturi și feronerie de punte, de la aceeași echipă din Otopeni care montează și face service-ul bărcilor."
+    "en": "Departments are grouped the way the workshop actually fits a boat: propulsion first, then helm electronics, marine power, deck hardware and service-ready mounts.",
+    "ro": "Departamentele sunt grupate așa cum atelierul echipează o barcă: propulsie, electronică la pupitru, putere marină, feronerie de punte și suporturi gata de montaj."
   },
   "shop.head_card.l": {
     "en": "Live commerce board",
@@ -1393,12 +1393,12 @@
     "ro": "Pilon comercial"
   },
   "shop.cmd.lead.b": {
-    "en": "Equipment, motors and accessories for boats.",
-    "ro": "Echipamente, motoare și accesorii pentru bărci."
+    "en": "A marine parts counter, not a random web shelf.",
+    "ro": "Un counter marin de piese, nu un raft web la întâmplare."
   },
   "shop.cmd.lead.p": {
-    "en": "Built from the original BoatsExpert SHOP categories, but shaped like a premium marine dealer catalogue.",
-    "ro": "Construit pe baza categoriilor SHOP originale BoatsExpert, dar prezentat ca un catalog premium de dealer marin."
+    "en": "Every department maps to a real fit-out decision: what powers the boat, what sits at the helm, what gets wired, and what the workshop can install cleanly.",
+    "ro": "Fiecare departament corespunde unei decizii reale de echipare: ce propulsează barca, ce stă la pupitru, ce se cablează și ce poate monta curat atelierul."
   },
   "shop.cmd.lead.f": {
     "en": "WooCommerce shop · walk-in pickup · Otopeni",
@@ -1457,16 +1457,16 @@
     "ro": "12 departamente live"
   },
   "shop.gridlabel.r": {
-    "en": "Choose a system first, then the exact product.",
-    "ro": "Alege întâi un sistem, apoi produsul exact."
+    "en": "Use the filters to narrow the counter list without leaving the page.",
+    "ro": "Folosește filtrele ca să restrângi lista fără să pleci din pagină."
   },
   "shop.finder.k": {
     "en": "Product type index",
     "ro": "Index pe tip de produs"
   },
   "shop.finder.b": {
-    "en": "Start like a counter order.",
-    "ro": "Începe ca la o comandă la tejghea."
+    "en": "Filter by the job you are building.",
+    "ro": "Filtrează după lucrarea pe care o construiești."
   },
   "shop.finder.tab1": {
     "en": "Motor",
@@ -1557,8 +1557,8 @@
     "ro": "de la €890"
   },
   "shop.dept1.note": {
-    "en": "Yamaha, Mercury, Honda, Tohatsu. Sold with rigging, propeller advice and workshop install.",
-    "ro": "Yamaha, Mercury, Honda, Tohatsu. Vândute cu echipare, sfat pentru elice și montaj în atelier."
+    "en": "Outboards sold with rigging plan, propeller advice, controls and workshop handover.",
+    "ro": "Motoare vândute cu plan de rigging, sfat pentru elice, comenzi și predare din atelier."
   },
   "shop.dept1.action": {
     "en": "Open department",
@@ -1581,8 +1581,8 @@
     "ro": "de la €640"
   },
   "shop.dept2.note": {
-    "en": "Bow motors, pedals, remote control and silent fishing setups for aluminium boats.",
-    "ro": "Motoare prova, pedale, telecomenzi și setări silențioase de pescuit pentru bărci din aluminiu."
+    "en": "Bow-mount electric motors matched with battery capacity, pedals, remotes and deck reinforcement.",
+    "ro": "Motoare electrice de prova potrivite cu baterii, pedale, telecomenzi și ranforsare de punte."
   },
   "shop.dept2.action": {
     "en": "Open department",
@@ -1605,8 +1605,8 @@
     "ro": "de la €240"
   },
   "shop.dept3.note": {
-    "en": "Garmin and Humminbird displays, transducers and dashboard layouts installed in-house.",
-    "ro": "Display-uri Garmin și Humminbird, traductoare și layout-uri de bord montate în atelierul nostru."
+    "en": "Displays, transducers and sonar layouts planned around the console before installation.",
+    "ro": "Display-uri, traductoare și layout-uri sonar gândite în jurul consolei înainte de montaj."
   },
   "shop.dept3.action": {
     "en": "Open department",
@@ -1629,8 +1629,8 @@
     "ro": "de la €165"
   },
   "shop.dept4.note": {
-    "en": "Rebelcell marine power, chargers and capacity matching for electronics or trolling motors.",
-    "ro": "Putere marină Rebelcell, încărcătoare și calcul de capacitate pentru electronică sau trolling."
+    "en": "Marine batteries, chargers and capacity matching for electronics, trolling motors and long days afloat.",
+    "ro": "Baterii marine, încărcătoare și calcul de capacitate pentru electronică, trolling și zile lungi pe apă."
   },
   "shop.dept4.action": {
     "en": "Open department",
@@ -1653,8 +1653,8 @@
     "ro": "de la €12"
   },
   "shop.dept5.note": {
-    "en": "Osculati, Marinac, KED and daily service-desk accessories for safe boat use.",
-    "ro": "Osculati, Marinac, KED și accesorii uzuale de la service-desk pentru utilizare în siguranță."
+    "en": "Cleats, anchors, safety gear, organisers and deck fittings selected for real boat use.",
+    "ro": "Tacheți, ancore, echipament de siguranță, organizatoare și feronerie alese pentru utilizare reală pe barcă."
   },
   "shop.dept5.action": {
     "en": "Open department",
@@ -1677,8 +1677,8 @@
     "ro": "de la €98"
   },
   "shop.dept6.note": {
-    "en": "Fusion audio, speakers, remotes and waterproof entertainment for cruising layouts.",
-    "ro": "Audio Fusion, difuzoare, telecomenzi și sisteme audio rezistente la apă pentru bărci de croazieră."
+    "en": "Waterproof audio, speakers and remotes laid out for cockpit sound without messy wiring.",
+    "ro": "Audio waterproof, difuzoare și telecomenzi gândite pentru sunet în cockpit fără cablaj haotic."
   },
   "shop.dept6.action": {
     "en": "Open department",
@@ -1701,8 +1701,8 @@
     "ro": "de la €45"
   },
   "shop.dept7.note": {
-    "en": "Navigation, deck and cabin lighting selected for real marine wiring conditions.",
-    "ro": "Lumini de navigație, punte și cabină alese pentru condiții reale de cablaj marin."
+    "en": "Navigation, deck and cabin lighting selected for marine wiring, visibility and service access.",
+    "ro": "Lumini de navigație, punte și cabină alese pentru cablaj marin, vizibilitate și acces la service."
   },
   "shop.dept7.action": {
     "en": "Open department",
@@ -1725,8 +1725,8 @@
     "ro": "de la €380"
   },
   "shop.dept8.note": {
-    "en": "Garmin skipper watches for navigation, engine data and day-to-day marine use.",
-    "ro": "Ceasuri Garmin pentru navigatori — navigație, date despre motor și utilizare marină zilnică."
+    "en": "Garmin skipper watches for engine data, navigation cues and day-to-day marine use.",
+    "ro": "Ceasuri Garmin pentru date motor, indicații de navigație și utilizare marină zilnică."
   },
   "shop.dept8.action": {
     "en": "Open department",
@@ -1749,8 +1749,8 @@
     "ro": "de la €120"
   },
   "shop.dept9.note": {
-    "en": "GPS, charts and helm equipment planned around the console, not added at random.",
-    "ro": "GPS, hărți și echipament de pupitru gândit în jurul consolei, nu adăugat la întâmplare."
+    "en": "GPS, charts and helm equipment planned as a console system, not scattered add-ons.",
+    "ro": "GPS, hărți și echipament de pupitru planificate ca sistem de consolă, nu accesorii împrăștiate."
   },
   "shop.dept9.action": {
     "en": "Open department",
@@ -1773,8 +1773,8 @@
     "ro": "de la €310"
   },
   "shop.dept10.note": {
-    "en": "Hydraulic kits, hoses and steering components sized and fitted by the workshop.",
-    "ro": "Kit-uri hidraulice, furtune și componente de direcție dimensionate și montate de atelier."
+    "en": "Hydraulic kits, hoses and steering components sized to the engine and fitted by the workshop.",
+    "ro": "Kit-uri hidraulice, furtune și componente de direcție dimensionate după motor și montate de atelier."
   },
   "shop.dept10.action": {
     "en": "Open department",
@@ -1797,8 +1797,8 @@
     "ro": "de la €420"
   },
   "shop.dept11.note": {
-    "en": "Jack plates and shallow-water trim solutions for loaded fishing boats.",
-    "ro": "JackPlate-uri și soluții de trim pentru ape mici, gândite pentru bărci de pescuit încărcate."
+    "en": "Jack plates and shallow-water trim solutions for loaded fishing boats and precise setup.",
+    "ro": "JackPlate-uri și soluții de trim pentru ape mici, bărci de pescuit încărcate și setare precisă."
   },
   "shop.dept11.action": {
     "en": "Open department",
@@ -1821,8 +1821,8 @@
     "ro": "de la €38"
   },
   "shop.dept12.note": {
-    "en": "RAM mounts, console brackets and hardware for clean, serviceable installs.",
-    "ro": "RAM mounts, suporturi de consolă și hardware pentru instalări curate și ușor de întreținut."
+    "en": "RAM mounts, brackets and console hardware chosen for clean, serviceable electronics installs.",
+    "ro": "RAM mounts, suporturi și hardware de consolă alese pentru instalări electronice curate și ușor de întreținut."
   },
   "shop.dept12.action": {
     "en": "Open department",
@@ -2815,5 +2815,9 @@
   "cart.counter.lb": {
     "en": "items<br/>in basket",
     "ro": "articole<br/>în coș"
+  },
+  "shop.finder.tab0": {
+    "en": "All systems",
+    "ro": "Toate sistemele"
   }
 }

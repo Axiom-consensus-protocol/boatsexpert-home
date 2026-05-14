@@ -252,3 +252,36 @@
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', __initQuickSearch);
       else __initQuickSearch();
     }
+
+    function __initShopFinder(){
+      document.querySelectorAll('.shop-system').forEach((root) => {
+        if (root.dataset.shopFinderReady === 'true') return;
+        const buttons = Array.from(root.querySelectorAll('[data-shop-filter]'));
+        const cards = Array.from(root.querySelectorAll('.cat[data-shop-groups]'));
+        if (!buttons.length || !cards.length) return;
+
+        const applyFilter = (filter) => {
+          const active = filter || 'all';
+          buttons.forEach((button) => {
+            const selected = button.dataset.shopFilter === active;
+            button.classList.toggle('is-active', selected);
+            button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+          });
+          cards.forEach((card) => {
+            const groups = (card.dataset.shopGroups || '').split(/\s+/).filter(Boolean);
+            const visible = active === 'all' || groups.includes(active);
+            card.hidden = !visible;
+            card.classList.toggle('is-hidden', !visible);
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => applyFilter(button.dataset.shopFilter));
+        });
+        root.dataset.shopFinderReady = 'true';
+        applyFilter(root.querySelector('[data-shop-filter].is-active')?.dataset.shopFilter || 'all');
+      });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', __initShopFinder);
+    else __initShopFinder();
