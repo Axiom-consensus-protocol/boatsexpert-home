@@ -1642,6 +1642,7 @@ header.site .search-toggle .search-key{ white-space: nowrap; }
 
 /* Default hide mobile-actions on desktop (mobile @media re-enables it) */
 .mobile-actions{ display: none; }
+.mobile-lang{ display: none; }
 
 /* Wide container — used by page-band + content sections */
 .container-wide{
@@ -2037,6 +2038,49 @@ html[data-theme="night"] header.site .search-toggle .search-key{
     gap: 8px !important;
     align-items: center !important;
   }
+  body header.site .mobile-lang{
+    height: 44px !important;
+    min-width: 74px !important;
+    display: inline-flex !important;
+    align-items: stretch !important;
+    padding: 3px !important;
+    gap: 2px !important;
+    border: 1px solid rgba(10,37,64,.16) !important;
+    background: #F8FAFC !important;
+    color: var(--navy) !important;
+  }
+  body header.site .mobile-lang a{
+    min-width: 32px !important;
+    padding: 0 7px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(10,37,64,.72) !important;
+    font-family: var(--mono) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: .08em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+  }
+  body header.site .mobile-lang a.active,
+  body header.site .mobile-lang a[aria-current="true"]{
+    background: var(--brass) !important;
+    color: #FFFCF6 !important;
+  }
+  html[data-theme="night"] body header.site .mobile-lang{
+    border-color: rgba(244,239,230,.22) !important;
+    background: rgba(244,239,230,.04) !important;
+    color: var(--paper) !important;
+  }
+  html[data-theme="night"] body header.site .mobile-lang a{
+    color: rgba(244,239,230,.72) !important;
+  }
+  html[data-theme="night"] body header.site .mobile-lang a.active,
+  html[data-theme="night"] body header.site .mobile-lang a[aria-current="true"]{
+    background: var(--brass) !important;
+    color: #FFFCF6 !important;
+  }
   body header.site .mobile-actions .icon-btn,
   body header.site .mobile-actions .mobile-menu{
     width: 44px !important;
@@ -2204,7 +2248,17 @@ html[data-theme="night"] header.site .search-toggle .search-key{
     padding-right: 18px !important;
   }
   body header.site .mobile-actions{
-    gap: 6px !important;
+    gap: 5px !important;
+  }
+  body header.site .mobile-lang{
+    min-width: 64px !important;
+    height: 41px !important;
+    padding: 2px !important;
+  }
+  body header.site .mobile-lang a{
+    min-width: 29px !important;
+    padding: 0 5px !important;
+    font-size: 9px !important;
   }
   body header.site .mobile-actions .icon-btn,
   body header.site .mobile-actions .mobile-menu{
