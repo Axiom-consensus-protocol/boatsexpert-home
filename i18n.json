@@ -2275,5 +2275,289 @@
   "shop.hero.lead": {
     "en": "937 products across 12 categories — outboards, sonars, batteries, accessories. Authorised reseller of 16 brands. Workshop fit-out included on orders over €1,500.",
     "ro": "937 de produse în 12 categorii — motoare exterioare, sonare, baterii, accesorii. Revânzător autorizat al 16 mărci. Echipare la atelier inclusă pentru comenzi peste €1.500."
+  },
+  "boat.crumb.catalog": {
+    "en": "Catalog",
+    "ro": "Catalog"
+  },
+  "boat.crumb.aluminium": {
+    "en": "Aluminium",
+    "ro": "Aluminiu"
+  },
+  "boat.brand.line": {
+    "en": "Finval · Estonia · Aluminium Pro Angler",
+    "ro": "Finval · Estonia · Aluminium Pro Angler"
+  },
+  "boat.tagline": {
+    "en": "The shallowest draft in the Finval line — clears nineteen centimetres of water. Welded AlMg-5083 hull, RAPTOR coat, 55-litre tank, trolling-ready transom. Two anglers, one weekend, zero compromise.",
+    "ro": "Cel mai mic pescaj din gama Finval — trece prin doar nouăsprezece centimetri de apă. Corp sudat AlMg-5083, acoperire RAPTOR, rezervor 55 L, oglindă pregătită pentru trolling. Doi pescari, un weekend, zero compromisuri."
+  },
+  "boat.badge.exclusive": {
+    "en": "Exclusive · Romania",
+    "ro": "Exclusiv · România"
+  },
+  "boat.badge.instock": {
+    "en": "In stock · Otopeni",
+    "ro": "În stoc · Otopeni"
+  },
+  "boat.badge.editor": {
+    "en": "Editor's pick · 2026",
+    "ro": "Recomandarea editorului · 2026"
+  },
+  "boat.badge.testdrive": {
+    "en": "Test drive available",
+    "ro": "Test drive disponibil"
+  },
+  "boat.side.from": {
+    "en": "From, VAT incl.",
+    "ro": "De la, TVA inclus"
+  },
+  "boat.side.exdisplay": {
+    "en": "−€1,500 ex-display",
+    "ro": "−€1.500 din expoziție"
+  },
+  "boat.side.cta.quote": {
+    "en": "Request a Quote",
+    "ro": "Cere o ofertă"
+  },
+  "boat.side.cta.test": {
+    "en": "Book Test Drive",
+    "ro": "Programează Test Drive"
+  },
+  "boat.side.cta.trade": {
+    "en": "Trade-in",
+    "ro": "Trade-in"
+  },
+  "boat.side.reserve_link": {
+    "en": "Reserve →",
+    "ro": "Rezervă →"
+  },
+  "boat.trust.warranty.k": {
+    "en": "Warranty",
+    "ro": "Garanție"
+  },
+  "boat.trust.warranty.v": {
+    "en": "10-year hull · one-handed claim",
+    "ro": "Corp 10 ani · revendicare cu o singură mână"
+  },
+  "boat.trust.showroom.k": {
+    "en": "Showroom",
+    "ro": "Showroom"
+  },
+  "boat.trust.showroom.v": {
+    "en": "Otopeni, 4.7 km from airport",
+    "ro": "Otopeni, 4,7 km de aeroport"
+  },
+  "boat.trust.delivery.k": {
+    "en": "Delivery",
+    "ro": "Livrare"
+  },
+  "boat.trust.delivery.v": {
+    "en": "RO · MD · RS · BG · trailer included",
+    "ro": "RO · MD · RS · BG · peridoc inclus"
+  },
+  "boat.trust.leasing.k": {
+    "en": "Leasing",
+    "ro": "Leasing"
+  },
+  "boat.trust.leasing.v": {
+    "en": "0% interest up to 60 months",
+    "ro": "Dobândă 0% până la 60 luni"
+  },
+  "boat.dealer.role": {
+    "en": "Sales · Finval line",
+    "ro": "Vânzări · linia Finval"
+  },
+  "boat.tab.overview": {
+    "en": "Overview",
+    "ro": "Privire generală"
+  },
+  "boat.tab.equipment": {
+    "en": "Equipment",
+    "ro": "Echipare"
+  },
+  "boat.tab.config": {
+    "en": "Configurations",
+    "ro": "Configurații"
+  },
+  "boat.tab.docs": {
+    "en": "Documents",
+    "ro": "Documente"
+  },
+  "boat.tab.testdrive": {
+    "en": "Test drive",
+    "ro": "Test drive"
+  },
+  "boat.tab.similar": {
+    "en": "Similar boats",
+    "ro": "Bărci similare"
+  },
+  "boat.sec.about.ey": {
+    "en": "About the boat · narrative",
+    "ro": "Despre barcă · narațiune"
+  },
+  "boat.sec.equip.ey": {
+    "en": "Standard equipment · 28 items",
+    "ro": "Echipare standard · 28 articole"
+  },
+  "boat.sec.config.ey": {
+    "en": "3 packs · upgrade path",
+    "ro": "3 pachete · cale de upgrade"
+  },
+  "boat.sec.docs.ey": {
+    "en": "Downloads · 7 files",
+    "ro": "Descărcări · 7 fișiere"
+  },
+  "boat.sec.testdrive.ey": {
+    "en": "Book a sea trial · 30 minutes",
+    "ro": "Programează o probă pe apă · 30 minute"
+  },
+  "boat.sec.similar.ey": {
+    "en": "Similar hulls · 3 picks",
+    "ro": "Corpuri similare · 3 alese"
+  },
+  "boat.cfg.base": {
+    "en": "Base · ready to fish",
+    "ro": "Bază · gata de pescuit"
+  },
+  "boat.cfg.popular": {
+    "en": "Most popular",
+    "ro": "Cel mai popular"
+  },
+  "boat.cfg.pro": {
+    "en": "Full-spec · pro",
+    "ro": "Spec complet · pro"
+  },
+  "boat.cfg.cta.quote": {
+    "en": "Request quote",
+    "ro": "Cere ofertă"
+  },
+  "boat.cta.ey": {
+    "en": "Not sure yet?",
+    "ro": "Nu te-ai hotărât încă?"
+  },
+  "prod.crumb.shop": {
+    "en": "Shop",
+    "ro": "Magazin"
+  },
+  "prod.crumb.steering": {
+    "en": "Hydraulic steering",
+    "ro": "Direcție hidraulică"
+  },
+  "prod.brand.line": {
+    "en": "SeaStar Solutions · Hydraulic steering",
+    "ro": "SeaStar Solutions · Direcție hidraulică"
+  },
+  "prod.tagline": {
+    "en": "A complete hydraulic kit for outboards up to 150 hp. Cylinder, helm, hoses and quick-connect fittings — what you'd want, all in one box.",
+    "ro": "Un kit hidraulic complet pentru motoare exterioare până la 150 CP. Cilindru, comandă, furtunuri și fitinguri quick-connect — tot ce-ți trebuie, într-o singură cutie."
+  },
+  "prod.stock.ok": {
+    "en": "In stock · Otopeni",
+    "ro": "În stoc · Otopeni"
+  },
+  "prod.stock.ship": {
+    "en": "Ships in 48 h",
+    "ro": "Expediere 48 h"
+  },
+  "prod.stock.warr": {
+    "en": "5-year warranty",
+    "ro": "Garanție 5 ani"
+  },
+  "prod.price.save": {
+    "en": "Save €122",
+    "ro": "Economisești €122"
+  },
+  "prod.cta.add": {
+    "en": "Add to cart",
+    "ro": "Adaugă în coș"
+  },
+  "prod.cta.buy": {
+    "en": "Buy now · checkout",
+    "ro": "Cumpără acum · checkout"
+  },
+  "prod.cta.ask": {
+    "en": "Ask a question",
+    "ro": "Pune o întrebare"
+  },
+  "prod.cta.fitout": {
+    "en": "Book fit-out",
+    "ro": "Programează montaj"
+  },
+  "prod.trust.warr.k": {
+    "en": "Warranty",
+    "ro": "Garanție"
+  },
+  "prod.trust.warr.v": {
+    "en": "5-year manufacturer",
+    "ro": "5 ani producător"
+  },
+  "prod.trust.ship.k": {
+    "en": "Shipping",
+    "ro": "Expediere"
+  },
+  "prod.trust.ship.v": {
+    "en": "48 h · RO + 5-day EU",
+    "ro": "48 h · RO + 5 zile UE"
+  },
+  "prod.trust.ret.k": {
+    "en": "Returns",
+    "ro": "Retur"
+  },
+  "prod.trust.ret.v": {
+    "en": "30-day · free pickup",
+    "ro": "30 zile · ridicare gratuită"
+  },
+  "prod.trust.pay.k": {
+    "en": "Pay",
+    "ro": "Plată"
+  },
+  "prod.trust.pay.v": {
+    "en": "Cash, card, 0% leasing",
+    "ro": "Cash, card, leasing 0%"
+  },
+  "prod.tab.desc": {
+    "en": "Description",
+    "ro": "Descriere"
+  },
+  "prod.tab.compat": {
+    "en": "Compatible boats",
+    "ro": "Bărci compatibile"
+  },
+  "prod.tab.fitout": {
+    "en": "Fit-out",
+    "ro": "Montaj"
+  },
+  "prod.tab.reviews": {
+    "en": "Reviews",
+    "ro": "Recenzii"
+  },
+  "prod.tab.related": {
+    "en": "Related",
+    "ro": "Conexe"
+  },
+  "prod.sec.desc.ey": {
+    "en": "Description · what's in the box",
+    "ro": "Descriere · ce conține cutia"
+  },
+  "prod.sec.specs.ey": {
+    "en": "Specifications · 24 items",
+    "ro": "Specificații · 24 articole"
+  },
+  "prod.sec.compat.ey": {
+    "en": "Compatible · 38 hulls verified",
+    "ro": "Compatibil · 38 corpuri verificate"
+  },
+  "prod.sec.fit.ey": {
+    "en": "Workshop fit-out · Otopeni",
+    "ro": "Montaj la atelier · Otopeni"
+  },
+  "prod.sec.rev.ey": {
+    "en": "Reviews · 18 verified buyers",
+    "ro": "Recenzii · 18 cumpărători verificați"
+  },
+  "prod.sec.rel.ey": {
+    "en": "Customers also bought",
+    "ro": "Clienții au mai cumpărat"
   }
 }
