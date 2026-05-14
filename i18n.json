@@ -1350,7 +1350,7 @@
   },
   "foot.cookies": {
     "en": "Cookies",
-    "ro": "Cookies"
+    "ro": "Cookie-uri"
   },
   "foot.terms": {
     "en": "Terms",
@@ -1498,7 +1498,7 @@
   },
   "entry.shop.k": {
     "en": "Shop online",
-    "ro": "Shop online"
+    "ro": "Magazin online"
   },
   "entry.services.k": {
     "en": "Services",
@@ -1939,5 +1939,49 @@
   "foot.proof.warranty": {
     "en": "warranty",
     "ro": "garanție"
+  },
+  "quick.title": {
+    "en": "Search BoatsExpert catalog",
+    "ro": "Caută în catalogul BoatsExpert"
+  },
+  "quick.placeholder": {
+    "en": "Search Finval, Garmin, sonars, outboards...",
+    "ro": "Caută Finval, Garmin, sonare, motoare..."
+  },
+  "quick.close": {
+    "en": "Close",
+    "ro": "Închide"
+  },
+  "quick.live": {
+    "en": "Live catalog search",
+    "ro": "Căutare live în catalog"
+  },
+  "quick.subline": {
+    "en": "Boats · shop · services · stories",
+    "ro": "Bărci · magazin · servicii · articole"
+  },
+  "entry.instock.b": {
+    "en": "View stock",
+    "ro": "Vezi stocul"
+  },
+  "entry.services.b": {
+    "en": "Book now",
+    "ro": "Programează acum"
+  },
+  "entry.instock.h": {
+    "en": "Ready at Otopeni showroom or available for test drive",
+    "ro": "Disponibile în showroom Otopeni sau pentru test drive"
+  },
+  "entry.shop.h": {
+    "en": "Outboards, sonars, batteries and marine accessories",
+    "ro": "Motoare, sonare, baterii și accesorii marine"
+  },
+  "entry.shop.b": {
+    "en": "471 SKU",
+    "ro": "471 SKU"
+  },
+  "entry.services.h": {
+    "en": "Installation, tuning, registration and warranty",
+    "ro": "Montaj, tuning, înmatriculare și garanție"
   }
 }

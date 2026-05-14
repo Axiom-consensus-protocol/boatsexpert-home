@@ -10,9 +10,29 @@
         <a href="https://wa.me/40743377377" data-i18n="topbar.whatsapp">WhatsApp</a>
         <a href="mailto:info@boatsexpert.com" data-i18n="topbar.email">info@boatsexpert.com</a>
         <span class="lang" role="group" aria-label="Language">
-          <a href="?lang=en" data-i18n-set="en"><b>EN</b></a>
-          <span class="dim">/</span>
-          <a href="?lang=ro" data-i18n-set="ro">RO</a>
+          <a href="?lang=ro" data-i18n-set="ro" aria-label="Română">
+            <span class="flag flag-ro" aria-hidden="true">
+              <svg viewBox="0 0 18 12" preserveAspectRatio="none" focusable="false">
+                <rect width="6" height="12" fill="#002B7F"/>
+                <rect x="6" width="6" height="12" fill="#FCD116"/>
+                <rect x="12" width="6" height="12" fill="#CE1126"/>
+              </svg>
+            </span>
+            <span class="lang-code">RO</span>
+          </a>
+          <a href="?lang=en" data-i18n-set="en" aria-label="English">
+            <span class="flag flag-gb" aria-hidden="true">
+              <svg viewBox="0 0 60 30" preserveAspectRatio="none" focusable="false">
+                <rect width="60" height="30" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>
+                <path d="M60,0 L0,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+              </svg>
+            </span>
+            <span class="lang-code">EN</span>
+          </a>
         </span>
       </div>
     </div>
@@ -89,13 +109,13 @@
             <path d="M16 16l4 4"/>
           </svg>
         </span>
-        <label class="sr-only" for="quickSearchInput" id="quickSearchTitle">Search BoatsExpert catalog</label>
-        <input id="quickSearchInput" type="search" placeholder="Search Finval, Garmin, sonars, outboards..." autocomplete="off" />
-        <button class="quick-search__close" type="button" data-search-close aria-label="Close search">Close</button>
+        <label class="sr-only" for="quickSearchInput" id="quickSearchTitle" data-i18n="quick.title">Search BoatsExpert catalog</label>
+        <input id="quickSearchInput" type="search" data-i18n-attr="placeholder:quick.placeholder" placeholder="Search Finval, Garmin, sonars, outboards..." autocomplete="off" />
+        <button class="quick-search__close" type="button" data-search-close aria-label="Close search" data-i18n="quick.close">Close</button>
       </div>
       <div class="quick-search__meta">
-        <span>Live catalog search</span>
-        <span>Boats · shop · services · stories</span>
+        <span data-i18n="quick.live">Live catalog search</span>
+        <span data-i18n="quick.subline">Boats · shop · services · stories</span>
       </div>
       <div class="quick-search__results" id="quickSearchResults" aria-live="polite"></div>
     </div>
