@@ -367,18 +367,32 @@ body .blogo:hover img.brand-logo-img{
 }
 
 body .trust-logos{
-  gap:18px !important;
+  gap:10px !important;
 }
 
 body .trust-logos a{
-  min-height:58px !important;
+  min-height:96px !important;
   opacity:1 !important;
 }
 
 body .trust-logos img.brand-logo-img{
-  max-height:38px !important;
-  max-width:104px !important;
-  transform:none !important;
+  max-height:52px !important;
+  max-width:170px !important;
+  transform:scale(1.18) !important;
+}
+
+@media (max-width:900px){
+  body .trust-logos a{
+    min-height:88px !important;
+  }
+}
+
+@media (max-width:560px){
+  body .trust-logos img.brand-logo-img{
+    max-height:44px !important;
+    max-width:140px !important;
+    transform:scale(1.12) !important;
+  }
 }
 
 body .blogo img.brand-logo-img{
