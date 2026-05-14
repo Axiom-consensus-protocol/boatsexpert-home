@@ -1859,20 +1859,18 @@ header.site nav.primary .nav-link.sub::after{
 header.site .nav-mega{
   position: absolute;
   left: 0;
-  top: calc(100% + 12px);
-  width: 520px;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 14px;
+  top: 100%;
+  width: 320px;
+  padding: 10px;
+  display: block;
   border: 1px solid rgba(10,37,64,.14);
   background: #FFFFFF;
   color: var(--navy);
   box-shadow: 0 28px 70px -34px rgba(10,37,64,.45);
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(0);
   pointer-events: none;
-  transition: opacity .16s, transform .16s;
+  transition: opacity .16s;
 }
 header.site .nav-group:nth-of-type(3) .nav-mega,
 header.site .nav-mega--services{
@@ -1888,7 +1886,6 @@ html[data-theme="night"] header.site .nav-mega{
 header.site .nav-group:hover .nav-mega,
 header.site .nav-group:focus-within .nav-mega{
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 header.site .nav-mega__intro{
@@ -1924,13 +1921,12 @@ html[data-theme="night"] header.site .nav-mega__grid{
   border-color: rgba(244,239,230,.1);
 }
 header.site .nav-mega__grid a{
-  min-height: 68px;
-  padding: 12px 14px;
+  min-height: 48px;
+  padding: 0 14px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 5px;
   background: #F8FAFC;
   color: var(--navy);
   border: 0;
