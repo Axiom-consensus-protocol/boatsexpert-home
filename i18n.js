@@ -73,23 +73,35 @@
   let dict = null;
   let currentLang = getInitialLang();
 
+  let loaded = false;
   async function load(){
-    try {
-      const res = await fetch("./i18n.json", { cache: "no-cache" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      dict = await res.json();
-    } catch (e) {
-      // Fallback: try to read inline <script type="application/json" id="i18n-data">
-      const inline = document.getElementById("i18n-data");
-      if (inline){
-        try { dict = JSON.parse(inline.textContent); }
-        catch (err){ console.error("i18n: inline dict parse failed", err); return; }
-      } else {
+    if (loaded && dict){
+      // Re-apply on subsequent calls (e.g. partials inserted late)
+      applyTo(document, dict, currentLang);
+      return;
+    }
+    // 1) Prefer inline <script type="application/json" id="i18n-data"> (works on file://, http, Vercel)
+    const inline = document.getElementById("i18n-data");
+    if (inline){
+      try {
+        dict = JSON.parse(inline.textContent);
+      } catch (err){
+        console.warn("i18n: inline dict parse failed, will try fetch", err);
+      }
+    }
+    // 2) Else (or as a fresh source) try fetch from i18n.json
+    if (!dict){
+      try {
+        const res = await fetch("./i18n.json", { cache: "no-cache" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        dict = await res.json();
+      } catch (e) {
         console.error("i18n: failed to load dict —", e);
         return;
       }
     }
     applyTo(document, dict, currentLang);
+    loaded = true;
     document.documentElement.dispatchEvent(new CustomEvent("i18n:ready", { detail: { lang: currentLang } }));
   }
 
@@ -121,9 +133,22 @@
     reload: load
   };
 
+  // Wait for partials (if any) to mount before binding, so elements
+  // inserted by partials.js also get translated.
+  function ready(){
+    const hasPartials = document.querySelector("[data-partial]");
+    if (hasPartials){
+      document.documentElement.addEventListener("partials:ready", load, { once: true });
+      // Safety net: if partials never resolve, still try to translate the rest
+      setTimeout(load, 1500);
+    } else {
+      load();
+    }
+  }
+
   if (document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", load);
+    document.addEventListener("DOMContentLoaded", ready);
   } else {
-    load();
+    ready();
   }
 })();

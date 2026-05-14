@@ -1,162 +1,1543 @@
 {
   "_meta": {
-    "version": 2,
-    "languages": ["en", "ro"],
+    "version": 3,
+    "languages": [
+      "en",
+      "ro"
+    ],
     "default": "en",
-    "source": "All copy verified against boatsexpert.com WordPress export (page slugs 'main' EN + 'main-ro' RO) and live site. Client's own voice — no invented copy."
+    "rule": "EN values MUST match the mockup HTML verbatim. RO is a translation of EN. No design or copy simplification."
   },
-
-  "site.title":            { "en": "Boats Expert — official dealer of boats and marine equipment", "ro": "Boats Expert — dealer oficial de bărci și echipamente marine" },
-  "site.description":      { "en": "Boats Expert — official dealer of boats and marine equipment in Romania. Finval, Beneteau, NorthSilver. Otopeni, since 2014.", "ro": "Boats Expert — dealer oficial de bărci și echipamente marine în România. Finval, Beneteau, NorthSilver. Otopeni, din 2014." },
-
-  "topbar.address":        { "en": "Strada Horia Cloșca și Crișan 5, Otopeni 075100, Romania", "ro": "Strada Horia Cloșca și Crișan 5, Otopeni 075100, România" },
-  "topbar.warranty":       { "en": "One-handed warranty", "ro": "Garanție rapidă" },
-  "topbar.delivery":       { "en": "Delivery RO · MD · RS · BG", "ro": "Livrare RO · MD · RS · BG" },
-  "topbar.phone":          { "en": "+40 (743) 377 377", "ro": "+40 (743) 377 377" },
-  "topbar.whatsapp":       { "en": "WhatsApp", "ro": "WhatsApp" },
-  "topbar.email":          { "en": "info@boatsexpert.com", "ro": "info@boatsexpert.com" },
-
-  "header.tagline":        { "en": "Since 2014", "ro": "Din 2014" },
-  "header.subtagline":     { "en": "Official dealer · Otopeni RO", "ro": "Dealer oficial · Otopeni RO" },
-
-  "nav.catalog":           { "en": "Boats Catalog", "ro": "Catalog Bărci" },
-  "nav.instock":           { "en": "Boats in Stock", "ro": "Bărci în Stoc" },
-  "nav.shop":              { "en": "Shop", "ro": "Shop" },
-  "nav.services":          { "en": "Services", "ro": "Servicii" },
-  "nav.blog":              { "en": "Blog", "ro": "Blog" },
-  "nav.contact":           { "en": "Contact us", "ro": "Contact" },
-  "nav.cta_testdrive":     { "en": "Book a Test Drive", "ro": "Programează un Test Drive" },
-  "nav.search_placeholder":{ "en": "Search boats, motors, parts…", "ro": "Caută bărci, motoare, piese…" },
-  "nav.view_all":          { "en": "View all", "ro": "Vezi toate" },
-  "nav.search_label":      { "en": "Search", "ro": "Caută" },
-
-  "hero.slogan":           { "en": "The adventure on water begins here.", "ro": "Aventura pe apă începe aici." },
-  "hero.h1":               { "en": "Official dealer of <em>Finval, Beneteau, NorthSilver</em> in Romania.", "ro": "Dealer oficial <em>Finval, Beneteau, NorthSilver</em> în România." },
-  "hero.lead":             { "en": "Fully kitted out and ready-to-launch motorboats, and motorboats made to measure according to the client's needs.", "ro": "Bărci complet echipate și pregătite pentru lansare, precum și bărci cu motor personalizate conform cerințelor fiecărui client." },
-  "hero.cta_primary":      { "en": "Browse Catalog", "ro": "Vezi Catalogul" },
-  "hero.cta_secondary":    { "en": "Book a Test Drive", "ro": "Programează un Test Drive" },
-
-  "hero.trust.warranty.title": { "en": "One-handed warranty", "ro": "Garanție rapidă" },
-  "hero.trust.warranty.sub":   { "en": "On all boats and equipment", "ro": "Pentru toate bărcile și echipamentele" },
-  "hero.trust.exclusive.title":{ "en": "Exclusive RO dealer", "ro": "Dealer exclusiv RO" },
-  "hero.trust.exclusive.sub":  { "en": "Finval · Beneteau · NorthSilver", "ro": "Finval · Beneteau · NorthSilver" },
-  "hero.trust.delivery.title": { "en": "Delivery in 4 countries", "ro": "Livrare în 4 țări" },
-  "hero.trust.delivery.sub":   { "en": "RO · MD · RS · BG", "ro": "RO · MD · RS · BG" },
-  "hero.trust.since.title":    { "en": "Otopeni since 2014", "ro": "Otopeni din 2014" },
-  "hero.trust.since.sub":      { "en": "Showroom · workshop", "ro": "Showroom · atelier" },
-
-  "featured.eyebrow":      { "en": "Featured boats", "ro": "Bărci în prim-plan" },
-  "featured.title":        { "en": "Boats <em>ready to leave</em> the showroom.", "ro": "Bărci <em>gata să plece</em> din showroom." },
-  "featured.more":         { "en": "View all boats →", "ro": "Vezi toate bărcile →" },
-
-  "featured.b1.brand":     { "en": "Finval · Aluminium · Estonia", "ro": "Finval · Aluminiu · Estonia" },
-  "featured.b1.model":     { "en": "FINVAL 470 EVO <em>DC</em>", "ro": "FINVAL 470 EVO <em>DC</em>" },
-  "featured.b1.tagline":   { "en": "The boat with the shallowest draft in the entire Finval range — only 19 cm!", "ro": "Ambarcațiunea cu cel mai mic pescaj din toată gama Finval — doar 19 cm!" },
-  "featured.b1.cta":       { "en": "View boat", "ro": "Vezi barca" },
-
-  "featured.b2.brand":     { "en": "Finval · Aluminium · Estonia", "ro": "Finval · Aluminiu · Estonia" },
-  "featured.b2.model":     { "en": "FINVAL 575 CASTING <em>PRO</em>", "ro": "FINVAL 575 CASTING <em>PRO</em>" },
-  "featured.b2.tagline":   { "en": "A new concept created for professionals and families alike.", "ro": "Un concept nou creat pentru profesioniști și familiști, deopotrivă." },
-  "featured.b2.cta":       { "en": "View boat", "ro": "Vezi barca" },
-
-  "featured.b3.brand":     { "en": "Garmin Marine · Promo", "ro": "Garmin Marine · Promoție" },
-  "featured.b3.model":     { "en": "Discover <em>Precision Navigation</em>", "ro": "Descoperă <em>Navigația de Precizie</em>" },
-  "featured.b3.tagline":   { "en": "Take advantage of a 20% discount on the Garmin Promotional Kit.", "ro": "Beneficiază de 20% reducere la Kit-ul Promoțional Garmin." },
-  "featured.b3.cta":       { "en": "View promo", "ro": "Vezi promo" },
-
-  "types.eyebrow":         { "en": "Types of Boats", "ro": "Tipul de bărci" },
-  "types.title":           { "en": "Choose the <em>category of boats</em>.", "ro": "Alegeți <em>categoria de bărci</em>." },
-  "types.t1.name":         { "en": "Aluminium Boats", "ro": "Bărci din aluminiu" },
-  "types.t1.count":        { "en": "54 Offers", "ro": "54 Oferte" },
-  "types.t2.name":         { "en": "Fishing Boats", "ro": "Bărci de pescuit" },
-  "types.t2.count":        { "en": "118 Offers", "ro": "118 Oferte" },
-  "types.t3.name":         { "en": "RIB Boats", "ro": "Bărci RIB" },
-  "types.t3.count":        { "en": "27 Offers", "ro": "27 Oferte" },
-  "types.t4.name":         { "en": "Cruising Boats", "ro": "Bărci de croazieră" },
-  "types.t4.count":        { "en": "18 Offers", "ro": "18 Oferte" },
-  "types.t5.name":         { "en": "Fiberglass Boats", "ro": "Bărci din fibră de sticlă" },
-  "types.t5.count":        { "en": "10 Offers", "ro": "10 Oferte" },
-  "types.t6.name":         { "en": "Boat Trailers", "ro": "Peridocuri" },
-  "types.t6.count":        { "en": "3 Offers", "ro": "3 Oferte" },
-  "types.view_one":        { "en": "View boats", "ro": "Vezi bărcile" },
-
-  "offer.eyebrow":         { "en": "What BoatsExpert Offers", "ro": "Ce oferă BoatsExpert" },
-  "offer.title":           { "en": "<em>The adventure on water</em> begins here.", "ro": "<em>Aventura pe apă</em> începe aici." },
-  "offer.b1.title":        { "en": "Fully kitted-out motorboats", "ro": "Bărci complet echipate" },
-  "offer.b1.body":         { "en": "Fully kitted out and ready-to-launch motorboats.", "ro": "Bărci complet echipate și pregătite pentru lansare." },
-  "offer.b2.title":        { "en": "Made-to-measure motorboats", "ro": "Bărci la comandă" },
-  "offer.b2.body":         { "en": "Motorboats that are made to measure according to the client's needs.", "ro": "Bărci cu motor personalizate conform cerințelor fiecărui client." },
-  "offer.b3.title":        { "en": "Equipment retail", "ro": "Vânzare echipamente" },
-  "offer.b3.body":         { "en": "Retail of equipment for powerboats: outboard motors, navigation, chart plotters, echo sounders, electric motors, batteries, lighting, marine audio. See the full list at Shop.", "ro": "O gamă variată de echipamente pentru bărci: motoare termice, sonare, motoare electrice, baterii, lumini și sisteme audio marine. Detalii complete în magazinul nostru online." },
-  "offer.b4.title":        { "en": "Tuning and service", "ro": "Tuning și service" },
-  "offer.b4.body":         { "en": "Tuning and service of boats, motors and equipment.", "ro": "Servicii de reglare și întreținere pentru bărci, motoare și echipamente." },
-  "offer.b5.title":        { "en": "Boat registration", "ro": "Înmatriculare bărci" },
-  "offer.b5.body":         { "en": "Assistance with the boat registration process.", "ro": "Asistență în procesul de înmatriculare a bărcilor." },
-  "offer.b6.title":        { "en": "Boat driving school", "ro": "Școală de conducere" },
-  "offer.b6.body":         { "en": "Boat driving school for amateurs and professionals.", "ro": "Școală de conducere a bărcilor pentru amatori și profesioniști." },
-  "offer.b7.title":        { "en": "One-handed warranty", "ro": "Garanție rapidă" },
-  "offer.b7.body":         { "en": "One-handed warranty on all boats and equipment.", "ro": "Garanție rapidă pentru toate bărcile și echipamentele." },
-
-  "brands.eyebrow":        { "en": "Authorised dealer for top brands", "ro": "Suntem dealer autorizat pentru mărci de top" },
-  "brands.title":          { "en": "<em>We're proud</em> to work with such brands.", "ro": "<em>Suntem mândri</em> să lucrăm cu aceste mărci." },
-  "brands.tier_exclusive": { "en": "Exclusive Dealers", "ro": "Dealer Exclusiv" },
-  "brands.tier_official":  { "en": "Official Dealers", "ro": "Dealer Oficial" },
-  "brands.tier_partners":  { "en": "Partners", "ro": "Parteneri" },
-
-  "shop.eyebrow":          { "en": "Marine equipment shop", "ro": "Magazin echipamente marine" },
-  "shop.title":            { "en": "Everything around the boat.", "ro": "Tot ce trebuie pe barcă." },
-  "shop.s1":               { "en": "Outboard Motors", "ro": "Motoare termice" },
-  "shop.s2":               { "en": "Electric Motors", "ro": "Motoare electrice" },
-  "shop.s3":               { "en": "Sonars", "ro": "Sonare" },
-  "shop.s4":               { "en": "Batteries", "ro": "Baterii" },
-  "shop.s5":               { "en": "Hydraulic Steering", "ro": "Guvernare hidraulică" },
-  "shop.s6":               { "en": "Power-lift JackPlate", "ro": "Power-lift JackPlate" },
-  "shop.s7":               { "en": "Marine Accessories", "ro": "Accesorii marine" },
-  "shop.s8":               { "en": "Marine Audio", "ro": "Sisteme audio" },
-  "shop.s9":               { "en": "Marine Lights", "ro": "Lumini" },
-  "shop.s10":              { "en": "Mounts", "ro": "Sisteme de prindere" },
-  "shop.s11":              { "en": "Smartwatches", "ro": "Smartwatch" },
-  "shop.s12":              { "en": "Navigation Equipment", "ro": "Echipament navigație" },
-  "shop.cta":              { "en": "Open shop", "ro": "Deschide shop" },
-
-  "story.eyebrow":         { "en": "About BoatsExpert", "ro": "Despre BoatsExpert" },
-  "story.title":           { "en": "Passion for water meets <em>technical expertise</em>.", "ro": "Pasiunea pentru apă întâlnește <em>expertiza tehnică</em>." },
-  "story.body1":           { "en": "At BoatsExpert, the passion for water excursions and fishing meets excellence in innovation and design. We are proud to offer our customers an impressive selection of motorboats, leisure boats, cruise boats, and fishing boats, representing the elite of European and global manufacturers.", "ro": "La BoatsExpert, pasiunea pentru plimbare pe apă și pescuit se întâlnește cu excelența în inovație și design. Suntem mândri să oferim clienților noștri o selecție impresionantă de bărci cu motor, bărci de agrement, de croazieră și de pescuit, reprezentând elita producătorilor europeni și mondiali." },
-  "story.body2":           { "en": "Our authorized partnerships with renowned brands allow us to provide high-quality equipment for our boats. These partnerships demonstrate our commitment to quality and innovation, ensuring that each boat is equipped with the best available technologies.", "ro": "Parteneriatele noastre autorizate cu mărci renumite ne permit să furnizăm echipamente de înaltă calitate pentru bărcile noastre. Aceste parteneriate demonstrează angajamentul nostru față de calitate și inovație, asigurând că fiecare barcă este echipată cu cele mai bune tehnologii disponibile." },
-  "story.body3":           { "en": "At BoatsExpert, technical expertise is combined with personalized service. We take pride in our ability to install and customize each boat according to the highest standards and specific requirements of our clients.", "ro": "La BoatsExpert, expertiza tehnică se îmbină cu un serviciu personalizat. Ne mândrim cu capacitatea noastră de a instala și personaliza fiecare barcă conform celor mai înalte standarde și cerințe specifice ale clienților." },
-  "story.closer":          { "en": "Boats Expert — the adventure on water begins here.", "ro": "La BoatsExpert, călătoria dumneavoastră spre aventura pe apă începe aici." },
-
-  "showroom.eyebrow":      { "en": "Get in touch", "ro": "Contactează-ne" },
-  "showroom.title":        { "en": "Come see the boats.", "ro": "Vino să vezi bărcile." },
-  "showroom.lead":         { "en": "Feel free to ask a question about our products and services, take part in a test drive with a sales associate, or inquire about financing.", "ro": "Pune-ne orice întrebare despre produsele și serviciile noastre, vino la un test drive cu un consilier de vânzări sau află despre opțiunile de finanțare." },
-  "showroom.address_label":{ "en": "Showroom", "ro": "Showroom" },
-  "showroom.address":      { "en": "Strada Horia Cloșca și Crișan 5, Otopeni 075100, Romania", "ro": "Strada Horia Cloșca și Crișan 5, Otopeni 075100, România" },
-  "showroom.phone_label":  { "en": "Phone", "ro": "Telefon" },
-  "showroom.phone":        { "en": "+40 (743) 377 377", "ro": "+40 (743) 377 377" },
-  "showroom.email":        { "en": "info@boatsexpert.com", "ro": "info@boatsexpert.com" },
-  "showroom.hours_label":  { "en": "Workshop hours", "ro": "Program atelier" },
-  "showroom.hours":        { "en": "Mon–Thu · 10:00 – 17:30", "ro": "Luni–Joi · 10:00 – 17:30" },
-  "showroom.cta_visit":    { "en": "Get directions", "ro": "Vezi traseul" },
-  "showroom.cta_whatsapp": { "en": "WhatsApp", "ro": "WhatsApp" },
-
-  "blog.eyebrow":          { "en": "Blog", "ro": "Blog" },
-  "blog.title":            { "en": "From the <em>logbook</em>.", "ro": "Din <em>jurnalul de bord</em>." },
-  "blog.more":             { "en": "Read all articles →", "ro": "Citește toate articolele →" },
-  "blog.by_admin":         { "en": "Written by Admin", "ro": "Scris de Admin" },
-
-  "newsletter.title":      { "en": "Subscribe to the <em>BoatsExpert</em> newsletter.", "ro": "Abonează-te la newsletter-ul <em>BoatsExpert</em>." },
-  "newsletter.sub":        { "en": "Stay updated on new boats, promotions and events.", "ro": "Fii la curent cu noile bărci, promoții și evenimente." },
-  "newsletter.placeholder":{ "en": "Your email", "ro": "Email-ul tău" },
-  "newsletter.cta":        { "en": "Subscribe", "ro": "Abonează-te" },
-
-  "footer.about":          { "en": "Boats Expert — official dealer of boats and marine equipment. Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Otopeni, since 2014.", "ro": "Boats Expert — dealer oficial de bărci și echipamente marine. Dealer exclusiv în România pentru Finval, Beneteau și NorthSilver. Otopeni, din 2014." },
-  "footer.catalog":        { "en": "Catalog", "ro": "Catalog" },
-  "footer.shop":           { "en": "Shop", "ro": "Shop" },
-  "footer.services":       { "en": "Services", "ro": "Servicii" },
-  "footer.contact":        { "en": "Contact", "ro": "Contact" },
-  "footer.copyright":      { "en": "© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania", "ro": "© 2014–2026 BoatsExpert SRL · Toate drepturile rezervate · Construit la Otopeni, România" },
-  "footer.legal.privacy":  { "en": "Privacy Policy", "ro": "Politica de confidențialitate" },
-  "footer.legal.cookies":  { "en": "Cookies", "ro": "Cookies" },
-  "footer.legal.return":   { "en": "Return Policy", "ro": "Politica de retur" },
-  "footer.legal.terms":    { "en": "Terms", "ro": "Termeni" }
+  "site.title": {
+    "en": "BoatsExpert — Aluminium & fishing boats in Romania. Finval, Beneteau, NorthSilver.",
+    "ro": "BoatsExpert — Bărci din aluminiu și de pescuit în România. Finval, Beneteau, NorthSilver."
+  },
+  "site.description": {
+    "en": "BoatsExpert — official dealer of Finval, Beneteau and NorthSilver in Romania. Boats, marine equipment, workshop and warranty in Otopeni.",
+    "ro": "BoatsExpert — dealer oficial Finval, Beneteau și NorthSilver în România. Bărci, echipamente marine, atelier și garanție în Otopeni."
+  },
+  "topbar.address": {
+    "en": "Strada Horia Cloșca și Crișan 5, Otopeni",
+    "ro": "Strada Horia Cloșca și Crișan 5, Otopeni"
+  },
+  "topbar.warranty": {
+    "en": "10 Years Warranty",
+    "ro": "Garanție 10 ani"
+  },
+  "topbar.delivery": {
+    "en": "Delivery RO · MD · RS · BG",
+    "ro": "Livrare RO · MD · RS · BG"
+  },
+  "topbar.phone": {
+    "en": "+40 (743) 377 377",
+    "ro": "+40 (743) 377 377"
+  },
+  "topbar.whatsapp": {
+    "en": "WhatsApp",
+    "ro": "WhatsApp"
+  },
+  "topbar.email": {
+    "en": "info@boatsexpert.com",
+    "ro": "info@boatsexpert.com"
+  },
+  "header.tagline": {
+    "en": "Since 2014",
+    "ro": "Din 2014"
+  },
+  "header.subtagline": {
+    "en": "Official dealer · Otopeni RO",
+    "ro": "Dealer oficial · Otopeni RO"
+  },
+  "nav.catalog": {
+    "en": "Catalog",
+    "ro": "Catalog"
+  },
+  "nav.instock": {
+    "en": "In Stock",
+    "ro": "În Stoc"
+  },
+  "nav.shop": {
+    "en": "Shop",
+    "ro": "Shop"
+  },
+  "nav.services": {
+    "en": "Services",
+    "ro": "Servicii"
+  },
+  "nav.blog": {
+    "en": "Blog",
+    "ro": "Blog"
+  },
+  "nav.contact": {
+    "en": "Contact",
+    "ro": "Contact"
+  },
+  "nav.search_label": {
+    "en": "Search",
+    "ro": "Caută"
+  },
+  "nav.cta_testdrive": {
+    "en": "Book a Test Drive",
+    "ro": "Programează un Test Drive"
+  },
+  "hero.eyebrow": {
+    "en": "Finval boats · Garmin Marine · Yamaha rigging · 10-year warranty",
+    "ro": "Bărci Finval · Garmin Marine · echipare Yamaha · garanție 10 ani"
+  },
+  "hero.h1": {
+    "en": "Finval 470 EVO. <em>Garmin Marine ready.</em>",
+    "ro": "Finval 470 EVO. <em>Pregătită pentru Garmin Marine.</em>"
+  },
+  "hero.h1_sub": {
+    "en": "Boat · electronics · motor · trailer · paperwork · one dealer",
+    "ro": "Barcă · electronică · motor · peridoc · acte · un singur dealer"
+  },
+  "hero.lead": {
+    "en": "The original BoatsExpert promise, sharpened: <b>Finval aluminium hull</b>, <b>Garmin Marine electronics</b>, engine installation, trailer, ANR paperwork and workshop warranty from the same Otopeni team.",
+    "ro": "Promisiunea originală BoatsExpert, în detaliu: <b>cocă din aluminiu Finval</b>, <b>electronică Garmin Marine</b>, montaj motor, peridoc, formalități ANR și garanție de atelier de la aceeași echipă din Otopeni."
+  },
+  "hero.cta_primary": {
+    "en": "Configure a Finval",
+    "ro": "Configurează un Finval"
+  },
+  "hero.cta_secondary": {
+    "en": "Book showroom visit",
+    "ro": "Programează vizită showroom"
+  },
+  "hero.chip": {
+    "en": "230 boats · 471 shop items",
+    "ro": "230 bărci · 471 produse în shop"
+  },
+  "featured.eyebrow": {
+    "en": "Featured this season · 3 of 230",
+    "ro": "Bărci în prim-plan acest sezon · 3 din 230"
+  },
+  "featured.title": {
+    "en": "Boats <em>ready to leave</em> the showroom.",
+    "ro": "Bărci <em>gata să plece</em> din showroom."
+  },
+  "types.eyebrow": {
+    "en": "Browse by category · 6 of 6",
+    "ro": "Categorii · 6 din 6"
+  },
+  "types.title": {
+    "en": "Find the right <em>type of boat</em> for the water you sail.",
+    "ro": "Găsește <em>tipul potrivit</em> de barcă pentru apele tale."
+  },
+  "types.t1.name": {
+    "en": "Aluminium",
+    "ro": "Aluminiu"
+  },
+  "types.t2.name": {
+    "en": "Fishing Boats",
+    "ro": "Bărci de pescuit"
+  },
+  "types.t3.name": {
+    "en": "RIB Boats",
+    "ro": "Bărci RIB"
+  },
+  "types.t4.name": {
+    "en": "Cruising",
+    "ro": "Croazieră"
+  },
+  "types.t5.name": {
+    "en": "Fiberglass",
+    "ro": "Fibră de sticlă"
+  },
+  "types.t6.name": {
+    "en": "Trailers",
+    "ro": "Peridocuri"
+  },
+  "types.t1.count": {
+    "en": "<b>54</b> offers · 3.7–7.2 m",
+    "ro": "<b>54</b> oferte · 3,7–7,2 m"
+  },
+  "types.t2.count": {
+    "en": "<b>118</b> offers · 4.2–6.8 m",
+    "ro": "<b>118</b> oferte · 4,2–6,8 m"
+  },
+  "types.t3.count": {
+    "en": "<b>27</b> offers · 3.3–6.5 m",
+    "ro": "<b>27</b> oferte · 3,3–6,5 m"
+  },
+  "types.t4.count": {
+    "en": "<b>18</b> offers · 5.5–8.4 m",
+    "ro": "<b>18</b> oferte · 5,5–8,4 m"
+  },
+  "types.t5.count": {
+    "en": "<b>10</b> offers · 4.6–5.8 m",
+    "ro": "<b>10</b> oferte · 4,6–5,8 m"
+  },
+  "types.t6.count": {
+    "en": "<b>3</b> offers · for 4.5–7.5 m",
+    "ro": "<b>3</b> oferte · pentru 4,5–7,5 m"
+  },
+  "types.t1.sub": {
+    "en": "Marine-grade AlMg 5083 hull, 2–3&nbsp;mm — welded, never riveted.",
+    "ro": "Cocă AlMg 5083 marin, 2–3&nbsp;mm — sudată, niciodată cu nituri."
+  },
+  "types.t2.sub": {
+    "en": "Angler-tuned platforms — casting decks, livewells, rod storage, trolling motor prep, JackPlate ready.",
+    "ro": "Platforme pentru pescari — punți de casting, livewell, suporturi lansete, pregătire trolling, JackPlate-ready."
+  },
+  "types.t3.sub": {
+    "en": "Inflatable tubes, fibreglass hull — stable, fast, beach-friendly.",
+    "ro": "Tuburi gonflabile, cocă din fibră de sticlă — stabile, rapide, prietenoase cu plaja."
+  },
+  "types.t4.sub": {
+    "en": "Family cabin boats with covered cockpit, head, and overnight bunks.",
+    "ro": "Bărci cu cabină pentru familie, cu cockpit acoperit, toaletă și paturi pentru noapte."
+  },
+  "types.t5.sub": {
+    "en": "Lightweight GRP hulls — smooth ride, easy maintenance.",
+    "ro": "Coci GRP ușoare — mers lin, întreținere simplă."
+  },
+  "types.t6.sub": {
+    "en": "RESPO trailers — road-legal across EU, galvanised steel.",
+    "ro": "Peridocuri RESPO — omologate în UE, oțel zincat."
+  },
+  "brands.eyebrow": {
+    "en": "Brand partnerships · three tiers",
+    "ro": "Parteneriate de mărci · trei niveluri"
+  },
+  "brands.title": {
+    "en": "Sixteen brands. <em>One promise.</em>",
+    "ro": "Șaisprezece mărci. <em>O singură promisiune.</em>"
+  },
+  "services.eyebrow": {
+    "en": "What we do · five services",
+    "ro": "Ce facem · cinci servicii"
+  },
+  "services.title": {
+    "en": "More than a dealer. <em>An on-water partner.</em>",
+    "ro": "Mai mult decât un dealer. <em>Un partener pe apă.</em>"
+  },
+  "shop.eyebrow": {
+    "en": "Original SHOP menu · dealer parts desk",
+    "ro": "Meniul SHOP original · parts desk dealer"
+  },
+  "shop.title": {
+    "en": "Everything around the boat, <em>arranged by system.</em>",
+    "ro": "Tot ce trebuie pe barcă, <em>aranjat pe sisteme.</em>"
+  },
+  "showroom.eyebrow": {
+    "en": "Contact · showroom · application",
+    "ro": "Contact · showroom · cerere"
+  },
+  "showroom.title": {
+    "en": "Come see the boats. <em>Or send the exact request.</em>",
+    "ro": "Vino să vezi bărcile. <em>Sau trimite cererea exactă.</em>"
+  },
+  "blog.eyebrow": {
+    "en": "Stories · guides · news",
+    "ro": "Articole · ghiduri · știri"
+  },
+  "blog.title": {
+    "en": "From the <em>logbook.</em>",
+    "ro": "Din <em>jurnalul de bord.</em>"
+  },
+  "spotlight.eyebrow": {
+    "en": "Exclusive · Finval",
+    "ro": "Exclusiv · Finval"
+  },
+  "spotlight.title": {
+    "en": "Built for shallow water. <em>Built like a workshop tool.</em>",
+    "ro": "Construită pentru ape mici. <em>Construită ca o unealtă de atelier.</em>"
+  },
+  "spotlight.sec_link": {
+    "en": "14 Finval models →",
+    "ro": "14 modele Finval →"
+  },
+  "spotlight.badge_exclusive": {
+    "en": "Exclusive in Romania",
+    "ro": "Exclusiv în România"
+  },
+  "spotlight.badge_stock": {
+    "en": "In stock",
+    "ro": "În stoc"
+  },
+  "spotlight.badge_featured": {
+    "en": "Featured",
+    "ro": "În prim-plan"
+  },
+  "spotlight.anno_beam": {
+    "en": "Beam <b>1.96 m</b>",
+    "ro": "Lățime <b>1,96 m</b>"
+  },
+  "spotlight.anno_draft": {
+    "en": "Draft <b>19 cm</b>",
+    "ro": "Pescaj <b>19 cm</b>"
+  },
+  "spotlight.anno_len": {
+    "en": "Hull length over-all <b>4.65 m</b>",
+    "ro": "Lungime totală cocă <b>4,65 m</b>"
+  },
+  "spotlight.body_eyebrow": {
+    "en": "Finval 470 EVO DC · since 2024",
+    "ro": "Finval 470 EVO DC · din 2024"
+  },
+  "spotlight.body_title": {
+    "en": "The boat that <em>clears 19 cm.</em>",
+    "ro": "Barca ce <em>trece prin 19 cm.</em>"
+  },
+  "spotlight.body_text": {
+    "en": "Consoles positioned forward for maximum cockpit comfort. All-welded AlMg 5083 aluminium hull, 2–3 mm thick. Built to plane fully loaded, to fish all day, and to run rivers and lakes other boats simply cannot reach.",
+    "ro": "Consolele sunt poziționate în față pentru confort maxim în cockpit. Cocă din aluminiu AlMg 5083 sudată complet, 2–3 mm grosime. Construită să planeze încărcată, să pescuiască toată ziua și să meargă pe râuri și lacuri pe care alte bărci pur și simplu nu le pot atinge."
+  },
+  "spotlight.k_length": {
+    "en": "Length",
+    "ro": "Lungime"
+  },
+  "spotlight.v_length": {
+    "en": "4.65 m",
+    "ro": "4,65 m"
+  },
+  "spotlight.k_beam": {
+    "en": "Beam",
+    "ro": "Lățime"
+  },
+  "spotlight.v_beam": {
+    "en": "1.96 m",
+    "ro": "1,96 m"
+  },
+  "spotlight.k_draft": {
+    "en": "Draft",
+    "ro": "Pescaj"
+  },
+  "spotlight.v_draft": {
+    "en": "190 mm",
+    "ro": "190 mm"
+  },
+  "spotlight.k_weight": {
+    "en": "Weight",
+    "ro": "Greutate"
+  },
+  "spotlight.v_weight": {
+    "en": "440 kg",
+    "ro": "440 kg"
+  },
+  "spotlight.k_engine": {
+    "en": "Engine",
+    "ro": "Motor"
+  },
+  "spotlight.v_engine": {
+    "en": "40–70 hp",
+    "ro": "40–70 CP"
+  },
+  "spotlight.k_capacity": {
+    "en": "Capacity",
+    "ro": "Capacitate"
+  },
+  "spotlight.v_capacity": {
+    "en": "600 kg",
+    "ro": "600 kg"
+  },
+  "spotlight.k_fuel": {
+    "en": "Fuel",
+    "ro": "Combustibil"
+  },
+  "spotlight.v_fuel": {
+    "en": "55 l",
+    "ro": "55 l"
+  },
+  "spotlight.k_persons": {
+    "en": "Persons",
+    "ro": "Persoane"
+  },
+  "spotlight.v_persons": {
+    "en": "4 + 1",
+    "ro": "4 + 1"
+  },
+  "spotlight.price_l": {
+    "en": "Price from",
+    "ro": "Preț de la"
+  },
+  "spotlight.price_v": {
+    "en": "€20,490",
+    "ro": "€20.490"
+  },
+  "spotlight.price_vat": {
+    "en": "VAT included · Standard features",
+    "ro": "TVA inclus · Echipare standard"
+  },
+  "spotlight.cta_view": {
+    "en": "View the Boat",
+    "ro": "Vezi barca"
+  },
+  "spotlight.cta_test": {
+    "en": "Book a Test Drive",
+    "ro": "Programează un Test Drive"
+  },
+  "why.eyebrow": {
+    "en": "Why customers choose us",
+    "ro": "De ce ne aleg clienții"
+  },
+  "why.title": {
+    "en": "Twelve years on the <em>Romanian market.</em> Four reasons people stay.",
+    "ro": "Doisprezece ani pe <em>piața din România.</em> Patru motive pentru care oamenii rămân."
+  },
+  "why.c1.ix_n": {
+    "en": "01",
+    "ro": "01"
+  },
+  "why.c1.ix_t": {
+    "en": "Warranty",
+    "ro": "Garanție"
+  },
+  "why.c1.h": {
+    "en": "One-handed <em>warranty</em>",
+    "ro": "Garanție <em>cu un singur apel</em>"
+  },
+  "why.c1.p": {
+    "en": "One call, one number, one person handles your case from diagnosis to delivery. Up to 10 years on aluminium hulls.",
+    "ro": "Un apel, un număr, o singură persoană se ocupă de cazul tău de la diagnostic la livrare. Până la 10 ani pe cocile din aluminiu."
+  },
+  "why.c1.tag": {
+    "en": "Guarantee · 10 years",
+    "ro": "Garanție · 10 ani"
+  },
+  "why.c2.ix_n": {
+    "en": "02",
+    "ro": "02"
+  },
+  "why.c2.ix_t": {
+    "en": "In-shop",
+    "ro": "În atelier"
+  },
+  "why.c2.h": {
+    "en": "In-house <em>tuning</em>",
+    "ro": "Tuning <em>la noi în atelier</em>"
+  },
+  "why.c2.p": {
+    "en": "Every boat is fit out in our Otopeni workshop before leaving: engine, electronics, deck layout, livewell, trolling prep.",
+    "ro": "Fiecare barcă este echipată complet în atelierul nostru din Otopeni înainte de a pleca: motor, electronică, layout punte, livewell, pregătire trolling."
+  },
+  "why.c2.tag": {
+    "en": "Workshop · Otopeni",
+    "ro": "Atelier · Otopeni"
+  },
+  "why.c3.ix_n": {
+    "en": "03",
+    "ro": "03"
+  },
+  "why.c3.ix_t": {
+    "en": "Delivery",
+    "ro": "Livrare"
+  },
+  "why.c3.h": {
+    "en": "Four <em>countries</em>",
+    "ro": "Patru <em>țări</em>"
+  },
+  "why.c3.p": {
+    "en": "Delivery and registration across Romania, Moldova, Serbia and Bulgaria. ANR paperwork handled in-house.",
+    "ro": "Livrare și înmatriculare în România, Moldova, Serbia și Bulgaria. Formalitățile ANR le rezolvăm noi."
+  },
+  "why.c3.tag": {
+    "en": "RO · MD · RS · BG",
+    "ro": "RO · MD · RS · BG"
+  },
+  "why.c4.ix_n": {
+    "en": "04",
+    "ro": "04"
+  },
+  "why.c4.ix_t": {
+    "en": "Inventory",
+    "ro": "Inventar"
+  },
+  "why.c4.h": {
+    "en": "230 boats <em>in catalog</em>",
+    "ro": "230 de bărci <em>în catalog</em>"
+  },
+  "why.c4.p": {
+    "en": "Aluminium fishing platforms from €3,450 to Galaxy Trident T12 at €178,940. Whatever you fish, we have a hull for it.",
+    "ro": "Platforme de pescuit din aluminiu de la €3.450 până la Galaxy Trident T12 la €178.940. Indiferent ce pescuiești, avem o cocă pentru asta."
+  },
+  "why.c4.tag": {
+    "en": "From €3,450",
+    "ro": "De la €3.450"
+  },
+  "promos.eyebrow": {
+    "en": "Marine retail · shop promos",
+    "ro": "Retail marin · promoții shop"
+  },
+  "promos.title": {
+    "en": "Three retail doors. <em>One BoatsExpert store.</em>",
+    "ro": "Trei intrări în retail. <em>Un singur magazin BoatsExpert.</em>"
+  },
+  "promos.sec_link": {
+    "en": "Open shop →",
+    "ro": "Deschide shop →"
+  },
+  "promos.c1.k": {
+    "en": "Marine accessories",
+    "ro": "Accesorii marine"
+  },
+  "promos.c1.h": {
+    "en": "Marinac <em>Marine Accessories</em>",
+    "ro": "Marinac <em>Accesorii Marine</em>"
+  },
+  "promos.c1.p": {
+    "en": "Deck hardware, organisers, mounts and boat-specific accessories grouped for retail and service orders.",
+    "ro": "Feronerie de punte, organizatoare, suporturi și accesorii specifice bărcilor, grupate pentru comenzi de retail și service."
+  },
+  "promos.c1.more": {
+    "en": "Open Marinac range",
+    "ro": "Deschide gama Marinac"
+  },
+  "promos.c2.k": {
+    "en": "Shop online",
+    "ro": "Magazin online"
+  },
+  "promos.c2.h": {
+    "en": "Shop online <em>BoatsExpert</em>",
+    "ro": "Magazin online <em>BoatsExpert</em>"
+  },
+  "promos.c2.p": {
+    "en": "Motors, sonars, batteries, mounts and accessories with prices, stock logic and pickup from Otopeni.",
+    "ro": "Motoare, sonare, baterii, suporturi și accesorii cu prețuri, stoc și ridicare din Otopeni."
+  },
+  "promos.c2.more": {
+    "en": "Browse catalog",
+    "ro": "Vezi catalogul"
+  },
+  "promos.c3.k": {
+    "en": "Premium hardware",
+    "ro": "Feronerie premium"
+  },
+  "promos.c3.h": {
+    "en": "KED <em>Marine Accessories</em>",
+    "ro": "KED <em>Accesorii Marine</em>"
+  },
+  "promos.c3.p": {
+    "en": "Stainless hardware and deck equipment for fit-outs, repair orders and custom service work.",
+    "ro": "Feronerie din inox și echipament de punte pentru echipări, reparații și lucrări de service la cerere."
+  },
+  "promos.c3.more": {
+    "en": "View KED equipment",
+    "ro": "Vezi echipamentul KED"
+  },
+  "showroom.sec_link": {
+    "en": "Call now →",
+    "ro": "Sună acum →"
+  },
+  "showroom.visual_k": {
+    "en": "Otopeni showroom · service desk",
+    "ro": "Showroom Otopeni · birou service"
+  },
+  "showroom.visual_h": {
+    "en": "See the boat, price the fit-out, leave with a plan.",
+    "ro": "Vezi barca, calculează echiparea, pleacă acasă cu un plan."
+  },
+  "showroom.ledger.addr_b": {
+    "en": "Address",
+    "ro": "Adresă"
+  },
+  "showroom.ledger.addr_v": {
+    "en": "Strada Horia Cloșca și Crișan 5<br/>Otopeni 075100",
+    "ro": "Strada Horia Cloșca și Crișan 5<br/>Otopeni 075100"
+  },
+  "showroom.ledger.hours_b": {
+    "en": "Hours",
+    "ro": "Program"
+  },
+  "showroom.ledger.hours_v": {
+    "en": "Mon–Thu · 10:00–17:30<br/>Fri–Sat by appointment",
+    "ro": "Lun–Joi · 10:00–17:30<br/>Vin–Sâm cu programare"
+  },
+  "showroom.ledger.del_b": {
+    "en": "Delivery",
+    "ro": "Livrare"
+  },
+  "showroom.ledger.del_v": {
+    "en": "Romania · Moldova · Serbia · Bulgaria",
+    "ro": "România · Moldova · Serbia · Bulgaria"
+  },
+  "showroom.ledger.work_b": {
+    "en": "Workshop",
+    "ro": "Atelier"
+  },
+  "showroom.ledger.work_v": {
+    "en": "Fit-out, service, registration, warranty",
+    "ro": "Echipare, service, înmatriculare, garanție"
+  },
+  "showroom.panel_eyebrow": {
+    "en": "Application · fast route",
+    "ro": "Cerere · traseu rapid"
+  },
+  "showroom.panel_h": {
+    "en": "Tell us what you need. Sales or service answers on the same business day.",
+    "ro": "Spune-ne ce ai nevoie. Răspuns de la vânzări sau service în aceeași zi lucrătoare."
+  },
+  "showroom.action_office_b": {
+    "en": "Office",
+    "ro": "Birou"
+  },
+  "showroom.action_office_v": {
+    "en": "+40 (743) 377 377",
+    "ro": "+40 (743) 377 377"
+  },
+  "showroom.action_wa_b": {
+    "en": "WhatsApp",
+    "ro": "WhatsApp"
+  },
+  "showroom.action_wa_v": {
+    "en": "Send photos or boat model",
+    "ro": "Trimite poze sau modelul bărcii"
+  },
+  "showroom.action_dir_b": {
+    "en": "Directions",
+    "ro": "Indicații"
+  },
+  "showroom.action_dir_v": {
+    "en": "10 min from Henri Coandă",
+    "ro": "La 10 min de Henri Coandă"
+  },
+  "showroom.form.name_l": {
+    "en": "Name",
+    "ro": "Nume"
+  },
+  "showroom.form.name_p": {
+    "en": "Your name",
+    "ro": "Numele tău"
+  },
+  "showroom.form.phone_l": {
+    "en": "Phone / WhatsApp",
+    "ro": "Telefon / WhatsApp"
+  },
+  "showroom.form.phone_p": {
+    "en": "+40...",
+    "ro": "+40..."
+  },
+  "showroom.form.interest_l": {
+    "en": "Interest",
+    "ro": "Interes"
+  },
+  "showroom.form.opt_buy": {
+    "en": "Boat purchase",
+    "ro": "Cumpărare barcă"
+  },
+  "showroom.form.opt_shop": {
+    "en": "Equipment shop",
+    "ro": "Magazin de echipamente"
+  },
+  "showroom.form.opt_svc": {
+    "en": "Service &amp; tuning",
+    "ro": "Service și tuning"
+  },
+  "showroom.form.opt_reg": {
+    "en": "Registration &amp; warranty",
+    "ro": "Înmatriculare și garanție"
+  },
+  "showroom.form.lang_l": {
+    "en": "Preferred language",
+    "ro": "Limbă preferată"
+  },
+  "showroom.form.lang_en": {
+    "en": "English",
+    "ro": "Engleză"
+  },
+  "showroom.form.lang_ro": {
+    "en": "Romanian",
+    "ro": "Română"
+  },
+  "showroom.form.msg_l": {
+    "en": "Message",
+    "ro": "Mesaj"
+  },
+  "showroom.form.msg_p": {
+    "en": "Boat model, budget, engine, trailer, accessories, delivery city...",
+    "ro": "Model barcă, buget, motor, peridoc, accesorii, oraș de livrare..."
+  },
+  "showroom.form.submit": {
+    "en": "Send request",
+    "ro": "Trimite cererea"
+  },
+  "showroom.form.note": {
+    "en": "No payment here · request goes to sales desk · EN / RO",
+    "ro": "Aici nu se plătește · cererea ajunge la vânzări · EN / RO"
+  },
+  "featured.sec_link": {
+    "en": "All 230 listings →",
+    "ro": "Toate cele 230 de bărci →"
+  },
+  "featured.killer_label": {
+    "en": "Killer fact",
+    "ro": "Atu principal"
+  },
+  "featured.from_vat": {
+    "en": "From, VAT incl.",
+    "ro": "De la, TVA inclus"
+  },
+  "featured.msrp_from": {
+    "en": "MSRP from",
+    "ro": "Preț de listă de la"
+  },
+  "featured.finance_label": {
+    "en": "Finance",
+    "ro": "Finanțare"
+  },
+  "featured.finance_term": {
+    "en": "60 mo · 9.9% APR",
+    "ro": "60 luni · 9,9% DAE"
+  },
+  "featured.btn_details": {
+    "en": "Details",
+    "ro": "Detalii"
+  },
+  "featured.btn_request": {
+    "en": "Request",
+    "ro": "Solicită"
+  },
+  "featured.spec_length": {
+    "en": "Length",
+    "ro": "Lungime"
+  },
+  "featured.spec_engine": {
+    "en": "Engine",
+    "ro": "Motor"
+  },
+  "featured.spec_persons": {
+    "en": "Persons",
+    "ro": "Persoane"
+  },
+  "featured.spec_hull": {
+    "en": "Hull",
+    "ro": "Cocă"
+  },
+  "featured.spec_type": {
+    "en": "Type",
+    "ro": "Tip"
+  },
+  "featured.badge_instock": {
+    "en": "In stock",
+    "ro": "În stoc"
+  },
+  "featured.badge_exclusive": {
+    "en": "Exclusive",
+    "ro": "Exclusiv"
+  },
+  "featured.badge_onorder": {
+    "en": "On order · 4–6 wk",
+    "ro": "La comandă · 4–6 săpt."
+  },
+  "featured.badge_toprib": {
+    "en": "Top RIB",
+    "ro": "Top RIB"
+  },
+  "featured.badge_protuned": {
+    "en": "Pro tuned",
+    "ro": "Tunat profesionist"
+  },
+  "featured.b1.killer": {
+    "en": "Draft only 19 cm",
+    "ro": "Pescaj de doar 19 cm"
+  },
+  "featured.b1.brand": {
+    "en": "Finval · Exclusive Dealer",
+    "ro": "Finval · Dealer Exclusiv"
+  },
+  "featured.b1.model": {
+    "en": "470 EVO DC",
+    "ro": "470 EVO DC"
+  },
+  "featured.b1.why": {
+    "en": "Built to clear shallow rivers where 22 cm boats run aground. Welded AlMg 5083, planes fully loaded with the smallest engine in class.",
+    "ro": "Construită pentru ape mici, unde bărcile cu pescaj de 22 cm se opresc. AlMg 5083 sudat, planează fără probleme cu cel mai mic motor din clasă."
+  },
+  "featured.b2.killer": {
+    "en": "150 hp · 12 pax",
+    "ro": "150 CP · 12 pers."
+  },
+  "featured.b2.brand": {
+    "en": "GALA · RIB Specialist",
+    "ro": "GALA · Specialist RIB"
+  },
+  "featured.b2.model": {
+    "en": "VIKING V6F",
+    "ro": "VIKING V6F"
+  },
+  "featured.b2.why": {
+    "en": "5.80 m of inflatable safety with the speed of a fibreglass hull. Twelve seats, two consoles, one of the most stable RIBs at this length.",
+    "ro": "5,80 m de siguranță gonflabilă, cu viteza unei coci din fibră de sticlă. Douăsprezece locuri, două console, una dintre cele mai stabile RIB-uri la această lungime."
+  },
+  "featured.b3.killer": {
+    "en": "200 hp aluminium",
+    "ro": "200 CP din aluminiu"
+  },
+  "featured.b3.brand": {
+    "en": "GALAXY Pro · Aluminium",
+    "ro": "GALAXY Pro · Aluminiu"
+  },
+  "featured.b3.model": {
+    "en": "Pilot P6.5",
+    "ro": "Pilot P6.5"
+  },
+  "featured.b3.why": {
+    "en": "Cabin cruiser tuned for the Black Sea and Danube delta. 200 hp of factory-rated horsepower on a welded hull that handles 1.2 m waves clean.",
+    "ro": "Cabin cruiser pregătit pentru Marea Neagră și Delta Dunării. 200 CP omologați de fabrică pe o cocă sudată care taie clar valurile de 1,2 m."
+  },
+  "hero.trust.1.b": {
+    "en": "Finval",
+    "ro": "Finval"
+  },
+  "hero.trust.1.s": {
+    "en": "Exclusive dealer",
+    "ro": "Dealer exclusiv"
+  },
+  "hero.trust.2.b": {
+    "en": "Garmin",
+    "ro": "Garmin"
+  },
+  "hero.trust.2.s": {
+    "en": "Sonar · chartplotter",
+    "ro": "Sonar · plotter de hărți"
+  },
+  "hero.trust.3.b": {
+    "en": "Yamaha",
+    "ro": "Yamaha"
+  },
+  "hero.trust.3.s": {
+    "en": "Installed in shop",
+    "ro": "Montaj la noi în atelier"
+  },
+  "hero.trust.4.b": {
+    "en": "Otopeni",
+    "ro": "Otopeni"
+  },
+  "hero.trust.4.s": {
+    "en": "Showroom · service",
+    "ro": "Showroom · service"
+  },
+  "hero.feat.label": {
+    "en": "Boat of the week",
+    "ro": "Barca săptămânii"
+  },
+  "hero.feat.ix": {
+    "en": "№ 01 / 04",
+    "ro": "Nr. 01 / 04"
+  },
+  "hero.feat.a_draft": {
+    "en": "Draft 19 cm",
+    "ro": "Pescaj 19 cm"
+  },
+  "hero.feat.a_garmin": {
+    "en": "Garmin sonar ready",
+    "ro": "Pregătit pentru sonar Garmin"
+  },
+  "hero.feat.a_hull": {
+    "en": "AlMg 5083",
+    "ro": "AlMg 5083"
+  },
+  "hero.feat.brand": {
+    "en": "Finval — Exclusive dealer",
+    "ro": "Finval — dealer exclusiv"
+  },
+  "hero.feat.killer.k": {
+    "en": "Shallowest draft in the Finval range",
+    "ro": "Cel mai mic pescaj din gama Finval"
+  },
+  "hero.feat.killer.v": {
+    "en": "Draft only 19 cm",
+    "ro": "Pescaj doar 19 cm"
+  },
+  "hero.feat.act_view": {
+    "en": "View Boat",
+    "ro": "Vezi barca"
+  },
+  "hero.feat.act_req": {
+    "en": "Send Request",
+    "ro": "Trimite cererea"
+  },
+  "hero.rail.vt": {
+    "en": "№ 01 of 04 · Boat of the week",
+    "ro": "Nr. 01 din 04 · Barca săptămânii"
+  },
+  "hero.rail.cue": {
+    "en": "Scroll · Catalog below",
+    "ro": "Derulează · catalogul mai jos"
+  },
+  "brands.sec_link": {
+    "en": "How dealer levels work →",
+    "ro": "Cum funcționează nivelurile de dealer →"
+  },
+  "brands.t1.lvl": {
+    "en": "Tier 01 · Exclusive",
+    "ro": "Nivel 01 · Exclusiv"
+  },
+  "brands.t1.title": {
+    "en": "Exclusive <em>Dealers</em>",
+    "ro": "Dealeri <em>Exclusivi</em>"
+  },
+  "brands.t1.p": {
+    "en": "Sole authorised dealer in Romania. Factory configurator, full warranty, in-shop fit-out. <b>Average partnership: 9 years.</b>",
+    "ro": "Singurul dealer autorizat în România. Configurator de uzină, garanție completă, echipare la noi în atelier. <b>Parteneriat mediu: 9 ani.</b>"
+  },
+  "brands.t1.stat": {
+    "en": "<b>5</b>brands · 230 boats · since 2014",
+    "ro": "<b>5</b>mărci · 230 bărci · din 2014"
+  },
+  "brands.t2.lvl": {
+    "en": "Tier 02 · Official",
+    "ro": "Nivel 02 · Oficial"
+  },
+  "brands.t2.title": {
+    "en": "Official <em>Equipment</em>",
+    "ro": "Echipamente <em>Oficiale</em>"
+  },
+  "brands.t2.p": {
+    "en": "Authorised reseller for engines, electronics and accessories. Manufacturer warranty across the catalog — <b>same parts, same paperwork, same day.</b>",
+    "ro": "Distribuitor autorizat pentru motoare, electronică și accesorii. Garanție de la producător pentru tot catalogul — <b>aceleași piese, aceleași acte, în aceeași zi.</b>"
+  },
+  "brands.t2.stat": {
+    "en": "<b>7</b>brands · 471 SKU · in-shop fit-out",
+    "ro": "<b>7</b>mărci · 471 SKU · montaj la noi în atelier"
+  },
+  "brands.t3.lvl": {
+    "en": "Tier 03 · Partners",
+    "ro": "Nivel 03 · Parteneri"
+  },
+  "brands.t3.title": {
+    "en": "Marine <em>Partners</em>",
+    "ro": "Parteneri <em>Marini</em>"
+  },
+  "brands.t3.p": {
+    "en": "Trusted supply partners. On-demand stock, same one-handed warranty and service — covers what the first two tiers don't carry.",
+    "ro": "Parteneri de furnizare de încredere. Stoc la cerere, aceeași garanție rapidă și service — acoperă ce primele două niveluri nu țin pe stoc."
+  },
+  "brands.t3.stat": {
+    "en": "<b>4</b>brands · supply · 48h order",
+    "ro": "<b>4</b>mărci · furnizare · comandă în 48h"
+  },
+  "brands.t1.c_finval": {
+    "en": "Estonia · 1993",
+    "ro": "Estonia · 1993"
+  },
+  "brands.t1.c_beneteau": {
+    "en": "France · 1884",
+    "ro": "Franța · 1884"
+  },
+  "brands.t1.c_northsilver": {
+    "en": "Estonia · 2002",
+    "ro": "Estonia · 2002"
+  },
+  "brands.t1.c_landx": {
+    "en": "Hungary",
+    "ro": "Ungaria"
+  },
+  "brands.t1.c_revalgrade": {
+    "en": "Estonia",
+    "ro": "Estonia"
+  },
+  "brands.t2.c_yamaha": {
+    "en": "Outboards",
+    "ro": "Motoare outboard"
+  },
+  "brands.t2.c_garmin": {
+    "en": "Sonars · Nav",
+    "ro": "Sonare · Navigație"
+  },
+  "brands.t2.c_minnkota": {
+    "en": "Electric motors",
+    "ro": "Motoare electrice"
+  },
+  "brands.t2.c_humminbird": {
+    "en": "Fishfinders",
+    "ro": "Sonare de pescuit"
+  },
+  "brands.t2.c_rebelcell": {
+    "en": "Lithium",
+    "ro": "Litiu"
+  },
+  "brands.t2.c_osculati": {
+    "en": "Accessories",
+    "ro": "Accesorii"
+  },
+  "brands.t2.c_ram": {
+    "en": "Mounts",
+    "ro": "Suporturi"
+  },
+  "brands.t3.c_mercury": {
+    "en": "Outboards",
+    "ro": "Motoare outboard"
+  },
+  "brands.t3.c_honda": {
+    "en": "Outboards",
+    "ro": "Motoare outboard"
+  },
+  "brands.t3.c_fusion": {
+    "en": "Marine audio",
+    "ro": "Audio marin"
+  },
+  "brands.t3.c_tohatsu": {
+    "en": "Outboards",
+    "ro": "Motoare outboard"
+  },
+  "services.sec_link": {
+    "en": "All services →",
+    "ro": "Toate serviciile →"
+  },
+  "services.s1.num": {
+    "en": "№ 01",
+    "ro": "Nr. 01"
+  },
+  "services.s1.h": {
+    "en": "Expert tuning of <em>angler boats</em>",
+    "ro": "Tuning expert pentru <em>bărci de pescuit</em>"
+  },
+  "services.s1.p": {
+    "en": "Casting platforms, livewells, trolling motor prep, rod storage. Built for serious fishermen.",
+    "ro": "Platforme de casting, livewell, pregătire trolling, suporturi pentru lansete. Construit pentru pescari serioși."
+  },
+  "services.s1.m": {
+    "en": "Tune my boat",
+    "ro": "Tunează-mi barca"
+  },
+  "services.s2.num": {
+    "en": "№ 02",
+    "ro": "Nr. 02"
+  },
+  "services.s2.h": {
+    "en": "Outboard <em>installation</em>",
+    "ro": "Montaj <em>motor outboard</em>"
+  },
+  "services.s2.p": {
+    "en": "Yamaha, Mercury, Honda, Tohatsu — fitted, rigged, calibrated. Hydraulic steering and JackPlate ready.",
+    "ro": "Yamaha, Mercury, Honda, Tohatsu — montat, echipat, calibrat. Pregătit pentru guvernare hidraulică și JackPlate."
+  },
+  "services.s2.m": {
+    "en": "Book installation",
+    "ro": "Programează montaj"
+  },
+  "services.s3.num": {
+    "en": "№ 03",
+    "ro": "Nr. 03"
+  },
+  "services.s3.h": {
+    "en": "Tuning &amp; <em>service</em>",
+    "ro": "Tuning <em>și service</em>"
+  },
+  "services.s3.p": {
+    "en": "Winterising, hull repair, electrical fit-out. Pickup from any marina in Romania.",
+    "ro": "Pregătire de iarnă, reparații cocă, echipare electrică. Ridicare din orice marina din România."
+  },
+  "services.s3.m": {
+    "en": "Service request",
+    "ro": "Cerere service"
+  },
+  "services.s4.num": {
+    "en": "№ 04",
+    "ro": "Nr. 04"
+  },
+  "services.s4.h": {
+    "en": "Registration &amp; <em>driving courses</em>",
+    "ro": "Înmatriculare &amp; <em>cursuri de navigație</em>"
+  },
+  "services.s4.p": {
+    "en": "ANR paperwork, skipper licence, insurance referrals. We handle the desk so you handle the wheel.",
+    "ro": "Formalități ANR, permis de conducere, recomandări de asigurare. Ne ocupăm noi de hârtii ca tu să ai grijă doar de volan."
+  },
+  "services.s4.m": {
+    "en": "See programmes",
+    "ro": "Vezi programele"
+  },
+  "services.s5.num": {
+    "en": "№ 05",
+    "ro": "Nr. 05"
+  },
+  "services.s5.h": {
+    "en": "10-year <em>warranty</em>",
+    "ro": "Garanție <em>10 ani</em>"
+  },
+  "services.s5.p": {
+    "en": "One call, one number, one person on your case. From engine diagnosis to trailer pick-up.",
+    "ro": "Un apel, un număr, o singură persoană pe cazul tău. De la diagnostic motor până la ridicarea peridocului."
+  },
+  "services.s5.m": {
+    "en": "How it works",
+    "ro": "Cum funcționează"
+  },
+  "services.s6.num": {
+    "en": "№ 06",
+    "ro": "Nr. 06"
+  },
+  "services.s6.h": {
+    "en": "Equipment <em>retail</em>",
+    "ro": "Vânzare <em>echipamente</em>"
+  },
+  "services.s6.p": {
+    "en": "471 SKU — outboards, sonars, batteries, accessories. Online and walk-in shop.",
+    "ro": "471 SKU — motoare outboard, sonare, baterii, accesorii. Online și magazin fizic."
+  },
+  "services.s6.m": {
+    "en": "Open shop",
+    "ro": "Deschide shop"
+  },
+  "hero.rail.dealer": {
+    "en": "<b>BoatsExpert</b> · Official dealer · Otopeni, Romania",
+    "ro": "<b>BoatsExpert</b> · Dealer oficial · Otopeni, România"
+  },
+  "hero.rail.since": {
+    "en": "EST. MMXIV · OTOPENI, ROMANIA",
+    "ro": "EST. MMXIV · OTOPENI, ROMÂNIA"
+  },
+  "hero.ledger.since": {
+    "en": "<b>Since</b>2014 · Otopeni RO",
+    "ro": "<b>Din</b>2014 · Otopeni RO"
+  },
+  "hero.ledger.exclusive": {
+    "en": "<b>Exclusive</b>Finval · Beneteau · NorthSilver",
+    "ro": "<b>Exclusiv</b>Finval · Beneteau · NorthSilver"
+  },
+  "hero.ledger.warranty": {
+    "en": "<b>Warranty</b>10-year hull · one-handed",
+    "ro": "<b>Garanție</b>10 ani cocă · procedură rapidă"
+  },
+  "hero.ledger.lang": {
+    "en": "<b>Languages</b>EN · RO",
+    "ro": "<b>Limbi</b>EN · RO"
+  },
+  "foot.legal.k1": {
+    "en": "Legal entity",
+    "ro": "Entitate juridică"
+  },
+  "foot.legal.v1": {
+    "en": "BoatsExpert SRL",
+    "ro": "BoatsExpert SRL"
+  },
+  "foot.legal.k2": {
+    "en": "Showroom",
+    "ro": "Showroom"
+  },
+  "foot.legal.v2": {
+    "en": "Strada Horia Cloșca și Crișan 5, Otopeni 075100",
+    "ro": "Strada Horia Cloșca și Crișan 5, Otopeni 075100"
+  },
+  "foot.legal.k3": {
+    "en": "Phone",
+    "ro": "Telefon"
+  },
+  "foot.legal.v3": {
+    "en": "+40 (743) 377 377",
+    "ro": "+40 (743) 377 377"
+  },
+  "foot.legal.k4": {
+    "en": "Email",
+    "ro": "Email"
+  },
+  "foot.legal.v4": {
+    "en": "info@boatsexpert.com",
+    "ro": "info@boatsexpert.com"
+  },
+  "foot.legal.k5": {
+    "en": "Workshop hours",
+    "ro": "Program atelier"
+  },
+  "foot.legal.v5": {
+    "en": "Mon–Thu 10:00 – 17:30",
+    "ro": "Luni–Joi 10:00 – 17:30"
+  },
+  "hero.brand_role.finval": {
+    "en": "Romania dealer",
+    "ro": "Dealer România"
+  },
+  "hero.brand_role.garmin": {
+    "en": "Official equipment",
+    "ro": "Echipament oficial"
+  },
+  "hero.brand_role.yamaha": {
+    "en": "Installed in shop",
+    "ro": "Montat în atelier"
+  },
+  "hero.crumb": {
+    "en": "Exclusive Finval · Official Garmin Marine · Otopeni",
+    "ro": "Finval exclusiv · Garmin Marine oficial · Otopeni"
+  },
+  "hero.featured_tag": {
+    "en": "<span class=\"pulse\"></span>Finval 470 EVO DC · Garmin-ready rig",
+    "ro": "<span class=\"pulse\"></span>Finval 470 EVO DC · gata pentru Garmin"
+  },
+  "types.catalog_share": {
+    "en": "Catalog share",
+    "ro": "Pondere în catalog"
+  },
+  "types.sec_link": {
+    "en": "All categories →",
+    "ro": "Toate categoriile →"
+  },
+  "foot.topline.k": {
+    "en": "BoatsExpert dealer ledger",
+    "ro": "Registru dealer BoatsExpert"
+  },
+  "foot.topline.v": {
+    "en": "Otopeni showroom · shop · workshop · delivery",
+    "ro": "Showroom Otopeni · shop · atelier · livrare"
+  },
+  "foot.topline.call": {
+    "en": "Call +40 743 377 377",
+    "ro": "Sună +40 743 377 377"
+  },
+  "foot.topline.wa": {
+    "en": "WhatsApp",
+    "ro": "WhatsApp"
+  },
+  "foot.topline.dir": {
+    "en": "Directions",
+    "ro": "Indicații rutiere"
+  },
+  "foot.brand.tagline_a": {
+    "en": "Since 2014",
+    "ro": "Din 2014"
+  },
+  "foot.brand.tagline_b": {
+    "en": "Otopeni · Romania",
+    "ro": "Otopeni · România"
+  },
+  "foot.brand.about": {
+    "en": "Exclusive Romanian dealer of Finval, Beneteau and NorthSilver. Official partner of Yamaha, Garmin, Mercury and 13 more marine brands. Otopeni, since 2014.",
+    "ro": "Dealer exclusiv în România pentru Finval, Beneteau și NorthSilver. Partener oficial Yamaha, Garmin, Mercury și încă 13 mărci marine. Otopeni, din 2014."
+  },
+  "foot.proof.boats": {
+    "en": "<b>230</b> boats",
+    "ro": "<b>230</b> bărci"
+  },
+  "foot.proof.brands": {
+    "en": "<b>16</b> brands",
+    "ro": "<b>16</b> mărci"
+  },
+  "foot.proof.warr": {
+    "en": "<b>10y</b> warranty",
+    "ro": "<b>10ani</b> garanție"
+  },
+  "foot.col_cat.h": {
+    "en": "Catalog",
+    "ro": "Catalog"
+  },
+  "foot.col_cat.l1": {
+    "en": "Finval Boats",
+    "ro": "Bărci Finval"
+  },
+  "foot.col_cat.l2": {
+    "en": "Beneteau",
+    "ro": "Beneteau"
+  },
+  "foot.col_cat.l3": {
+    "en": "NorthSilver Fish",
+    "ro": "NorthSilver Fish"
+  },
+  "foot.col_cat.l4": {
+    "en": "NorthSilver Expedition",
+    "ro": "NorthSilver Expedition"
+  },
+  "foot.col_cat.l5": {
+    "en": "GALA RIB",
+    "ro": "GALA RIB"
+  },
+  "foot.col_cat.l6": {
+    "en": "GALAXY Pro",
+    "ro": "GALAXY Pro"
+  },
+  "foot.col_cat.l7": {
+    "en": "LANDX",
+    "ro": "LANDX"
+  },
+  "foot.col_cat.l8": {
+    "en": "RESPO Trailers",
+    "ro": "Peridocuri RESPO"
+  },
+  "foot.col_shop.h": {
+    "en": "Shop",
+    "ro": "Shop"
+  },
+  "foot.col_shop.l1": {
+    "en": "Outboard motors",
+    "ro": "Motoare termice"
+  },
+  "foot.col_shop.l2": {
+    "en": "Electric motors",
+    "ro": "Motoare electrice"
+  },
+  "foot.col_shop.l3": {
+    "en": "Sonars",
+    "ro": "Sonare"
+  },
+  "foot.col_shop.l4": {
+    "en": "Batteries",
+    "ro": "Baterii"
+  },
+  "foot.col_shop.l5": {
+    "en": "Marine accessories",
+    "ro": "Accesorii marine"
+  },
+  "foot.col_shop.l6": {
+    "en": "Marine audio",
+    "ro": "Sisteme audio marine"
+  },
+  "foot.col_shop.l7": {
+    "en": "Navigation",
+    "ro": "Navigație"
+  },
+  "foot.col_shop.l8": {
+    "en": "Quatix watches",
+    "ro": "Ceasuri Quatix"
+  },
+  "foot.col_svc.h": {
+    "en": "Services",
+    "ro": "Servicii"
+  },
+  "foot.col_svc.l1": {
+    "en": "Tuning of angler boats",
+    "ro": "Tuning bărci de pescuit"
+  },
+  "foot.col_svc.l2": {
+    "en": "Outboard installation",
+    "ro": "Montaj motor outboard"
+  },
+  "foot.col_svc.l3": {
+    "en": "Tuning &amp; service",
+    "ro": "Tuning și service"
+  },
+  "foot.col_svc.l4": {
+    "en": "Registration courses",
+    "ro": "Cursuri de înmatriculare"
+  },
+  "foot.col_svc.l5": {
+    "en": "10-year warranty",
+    "ro": "Garanție 10 ani"
+  },
+  "foot.col_svc.l6": {
+    "en": "Book a Test Drive",
+    "ro": "Programează un Test Drive"
+  },
+  "foot.col_ct.h": {
+    "en": "Contact",
+    "ro": "Contact"
+  },
+  "foot.col_ct.addr1": {
+    "en": "Strada Horia Cloșca<br/>și Crișan 5",
+    "ro": "Strada Horia Cloșca<br/>și Crișan 5"
+  },
+  "foot.col_ct.addr2": {
+    "en": "Otopeni 075100, Ilfov",
+    "ro": "Otopeni 075100, Ilfov"
+  },
+  "foot.col_ct.phone1": {
+    "en": "+40 (743) 377 377",
+    "ro": "+40 (743) 377 377"
+  },
+  "foot.col_ct.phone2": {
+    "en": "+40 (743) 377 375",
+    "ro": "+40 (743) 377 375"
+  },
+  "foot.col_ct.wa": {
+    "en": "WhatsApp",
+    "ro": "WhatsApp"
+  },
+  "foot.col_ct.email": {
+    "en": "info@boatsexpert.com",
+    "ro": "info@boatsexpert.com"
+  },
+  "foot.col_ct.hours": {
+    "en": "Mon–Thu · 10:00–17:30",
+    "ro": "Lun–Joi · 10:00–17:30"
+  },
+  "foot.copyright": {
+    "en": "© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania",
+    "ro": "© 2014–2026 BoatsExpert SRL · Toate drepturile rezervate · Construit în Otopeni, România"
+  },
+  "foot.priv": {
+    "en": "Privacy",
+    "ro": "Confidențialitate"
+  },
+  "foot.cookies": {
+    "en": "Cookies",
+    "ro": "Cookies"
+  },
+  "foot.terms": {
+    "en": "Terms",
+    "ro": "Termeni"
+  },
+  "foot.imprint": {
+    "en": "Imprint",
+    "ro": "Impressum"
+  },
+  "shop.head_copy": {
+    "en": "Motors, electronics, power, lights, mounts and deck hardware from the same Otopeni team that installs and services the boats.",
+    "ro": "Motoare, electronică, baterii, lumini, suporturi și feronerie de punte, de la aceeași echipă din Otopeni care montează și face service-ul bărcilor."
+  },
+  "shop.head_card.l": {
+    "en": "Live commerce board",
+    "ro": "Panou comerț live"
+  },
+  "shop.head_card.b": {
+    "en": "12 departments",
+    "ro": "12 departamente"
+  },
+  "shop.head_card.p": {
+    "en": "253+ listed shop items · pickup or install in Otopeni",
+    "ro": "253+ produse listate · ridicare sau montaj la Otopeni"
+  },
+  "shop.head_card.a": {
+    "en": "Open shop →",
+    "ro": "Deschide shop →"
+  },
+  "shop.bar_l": {
+    "en": "Shop online · official dealer stock",
+    "ro": "Magazin online · stoc dealer oficial"
+  },
+  "shop.bar_r": {
+    "en": "Engines · electronics · batteries · deck hardware · installation",
+    "ro": "Motoare · electronică · baterii · feronerie de punte · montaj"
+  },
+  "shop.cmd.lead.k": {
+    "en": "Commerce spine",
+    "ro": "Pilon comercial"
+  },
+  "shop.cmd.lead.b": {
+    "en": "Equipment, motors and accessories for boats.",
+    "ro": "Echipamente, motoare și accesorii pentru bărci."
+  },
+  "shop.cmd.lead.p": {
+    "en": "Built from the original BoatsExpert SHOP categories, but shaped like a premium marine dealer catalogue.",
+    "ro": "Construit pe baza categoriilor SHOP originale BoatsExpert, dar prezentat ca un catalog premium de dealer marin."
+  },
+  "shop.cmd.lead.f": {
+    "en": "WooCommerce shop · walk-in pickup · Otopeni",
+    "ro": "Magazin WooCommerce · ridicare la sediu · Otopeni"
+  },
+  "shop.cmd.1.k": {
+    "en": "Propulsion",
+    "ro": "Propulsie"
+  },
+  "shop.cmd.1.b": {
+    "en": "Engines, trolling motors and control.",
+    "ro": "Motoare, motoare trolling și control."
+  },
+  "shop.cmd.1.p": {
+    "en": "Yamaha, Mercury, Honda, Tohatsu, Minn Kota, hydraulic steering and jack plates.",
+    "ro": "Yamaha, Mercury, Honda, Tohatsu, Minn Kota, guvernare hidraulică și jack plates."
+  },
+  "shop.cmd.1.f": {
+    "en": "134 listed items",
+    "ro": "134 produse listate"
+  },
+  "shop.cmd.2.k": {
+    "en": "Electronics",
+    "ro": "Electronică"
+  },
+  "shop.cmd.2.b": {
+    "en": "Sonar, navigation and dashboard.",
+    "ro": "Sonare, navigație și bord."
+  },
+  "shop.cmd.2.p": {
+    "en": "Garmin, Humminbird, charts, watches, marine audio and console-ready electronics.",
+    "ro": "Garmin, Humminbird, hărți, ceasuri, audio marin și electronică pentru consolă."
+  },
+  "shop.cmd.2.f": {
+    "en": "120 listed items",
+    "ro": "120 produse listate"
+  },
+  "shop.cmd.3.k": {
+    "en": "Hardware",
+    "ro": "Feronerie"
+  },
+  "shop.cmd.3.b": {
+    "en": "Power, light and deck hardware.",
+    "ro": "Putere, lumini și feronerie de punte."
+  },
+  "shop.cmd.3.p": {
+    "en": "Rebelcell batteries, Osculati, RAM Mounts, KED and daily service-desk accessories.",
+    "ro": "Baterii Rebelcell, Osculati, RAM Mounts, KED și accesorii zilnice de service-desk."
+  },
+  "shop.cmd.3.f": {
+    "en": "249 listed items",
+    "ro": "249 produse listate"
+  },
+  "shop.gridlabel.l": {
+    "en": "12 live departments",
+    "ro": "12 departamente live"
+  },
+  "shop.gridlabel.r": {
+    "en": "Choose a system first, then the exact product.",
+    "ro": "Alege întâi un sistem, apoi produsul exact."
+  },
+  "shop.finder.k": {
+    "en": "Product type index",
+    "ro": "Index pe tip de produs"
+  },
+  "shop.finder.b": {
+    "en": "Start like a counter order.",
+    "ro": "Începe ca la o comandă la tejghea."
+  },
+  "shop.finder.tab1": {
+    "en": "Motor",
+    "ro": "Motor"
+  },
+  "shop.finder.tab2": {
+    "en": "Electronics",
+    "ro": "Electronică"
+  },
+  "shop.finder.tab3": {
+    "en": "Power",
+    "ro": "Baterii"
+  },
+  "shop.finder.tab4": {
+    "en": "Deck",
+    "ro": "Punte"
+  },
+  "shop.finder.tab5": {
+    "en": "Service fit",
+    "ro": "Service & montaj"
+  },
+  "entry.catalog.k": {
+    "en": "Boats catalog",
+    "ro": "Catalog bărci"
+  },
+  "entry.instock.k": {
+    "en": "Boats in stock",
+    "ro": "Bărci în stoc"
+  },
+  "entry.shop.k": {
+    "en": "Shop online",
+    "ro": "Shop online"
+  },
+  "entry.services.k": {
+    "en": "Services",
+    "ro": "Servicii"
+  },
+  "brands.promise.1": {
+    "en": "Most in Eastern Europe",
+    "ro": "Cei mai mulți din Europa de Est"
+  },
+  "brands.promise.2": {
+    "en": "Hull type, never marketing",
+    "ro": "Tipul cocei, nu marketing"
+  },
+  "brands.promise.3": {
+    "en": "ANR paperwork in-house",
+    "ro": "Acte ANR rezolvate la noi"
+  },
+  "brands.promise.4": {
+    "en": "Same workshop, same address",
+    "ro": "Același atelier, aceeași adresă"
+  },
+  "brands.promise.5": {
+    "en": "One number for all of it",
+    "ro": "Un singur număr pentru tot"
+  },
+  "entry.catalog.c": {
+    "en": "Finval · Beneteau · NorthSilver · GALA · GALAXY Pro",
+    "ro": "Finval · Beneteau · NorthSilver · GALA · GALAXY Pro"
+  },
+  "entry.instock.c": {
+    "en": "Fishing platforms, RIBs, cabin boats and trailers.",
+    "ro": "Platforme de pescuit, RIB-uri, bărci cu cabină și peridocuri."
+  },
+  "entry.shop.c": {
+    "en": "The familiar WooCommerce store, presented cleaner.",
+    "ro": "Magazinul WooCommerce, prezentat mai curat."
+  },
+  "entry.services.c": {
+    "en": "The original offer list, turned into a dealer workflow.",
+    "ro": "Lista originală de servicii, transformată într-un flux de dealer."
+  }
 }
