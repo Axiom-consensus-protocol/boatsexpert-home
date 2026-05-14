@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>BoatsExpert — Aluminium &amp; fishing boats in Romania. Finval, Beneteau, NorthSilver.</title>
+<title data-i18n="site.title">BoatsExpert — Aluminium &amp; fishing boats in Romania. Finval, Beneteau, NorthSilver.</title>
+<meta name="description" data-i18n-attr="content:site.description" content="Boats Expert — official dealer of boats and marine equipment in Romania."/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -5414,7 +5415,20 @@
     height: 24px;
     padding: 0 10px;
     border-radius: 0;
+    display: inline-flex; align-items: center; gap: 4px;
   }
+  .topbar .lang [data-i18n-set]{
+    color: rgba(244,239,230,.55);
+    font-weight: 500;
+    padding: 2px 4px;
+    transition: color .15s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .topbar .lang [data-i18n-set]:hover{ color: var(--brass); }
+  .topbar .lang [data-i18n-set].active{ color: var(--brass); font-weight: 600; }
+  .topbar .lang [data-i18n-set].active b{ color: var(--brass); }
+  .topbar .lang .dim{ color: rgba(244,239,230,.25); }
   header.site{
     box-shadow:
       0 1px 0 rgba(10,37,64,.04),
@@ -6329,15 +6343,19 @@
   <div class="topbar">
     <div class="container">
       <div class="tl">
-        <span><span class="dot">●</span>Strada Horia Cloșca și Crișan 5, Otopeni</span>
-        <span>10 Years Warranty</span>
-        <span>Delivery RO · MD · RS · BG</span>
+        <span><span class="dot">●</span><span data-i18n="topbar.address">Strada Horia Cloșca și Crișan 5, Otopeni 075100, Romania</span></span>
+        <span data-i18n="topbar.warranty">One-handed warranty</span>
+        <span data-i18n="topbar.delivery">Delivery RO · MD · RS · BG</span>
       </div>
       <div class="tr">
-        <a href="tel:+40743377377"><span class="dot">☎</span>+40 (743) 377 377</a>
-        <a href="https://wa.me/40743377377">WhatsApp</a>
-        <a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>
-        <span class="lang"><b>EN</b><span class="dim">/</span><span class="dim">RO</span></span>
+        <a href="tel:+40743377377"><span class="dot">☎</span><span data-i18n="topbar.phone">+40 (743) 377 377</span></a>
+        <a href="https://wa.me/40743377377" data-i18n="topbar.whatsapp">WhatsApp</a>
+        <a href="mailto:info@boatsexpert.com" data-i18n="topbar.email">info@boatsexpert.com</a>
+        <span class="lang" role="group" aria-label="Language">
+          <a href="?lang=en" data-i18n-set="en"><b>EN</b></a>
+          <span class="dim">/</span>
+          <a href="?lang=ro" data-i18n-set="ro">RO</a>
+        </span>
       </div>
     </div>
   </div>
@@ -6347,16 +6365,16 @@
     <div class="container">
       <a href="/" class="logo" aria-label="BoatsExpert — Aluminium and fishing boats in Romania">
         <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
-        <span class="logo-tagline"><b>Since 2014</b>Official dealer · Otopeni RO</span>
+        <span class="logo-tagline"><b data-i18n="header.tagline">Since 2014</b><span data-i18n="header.subtagline">Official dealer · Otopeni RO</span></span>
       </a>
 
       <nav class="primary">
-        <a href="/listings" class="sub">Catalog</a>
-        <a href="/product-category/boats-in-stock">In Stock</a>
-        <a href="/shop" class="sub">Shop</a>
-        <a href="/services" class="sub">Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/contact-us">Contact</a>
+        <a href="/listings" class="sub" data-i18n="nav.catalog">Catalog</a>
+        <a href="/product-category/boats-in-stock" data-i18n="nav.instock">In Stock</a>
+        <a href="/shop" class="sub" data-i18n="nav.shop">Shop</a>
+        <a href="/services" class="sub" data-i18n="nav.services">Services</a>
+        <a href="/blog" data-i18n="nav.blog">Blog</a>
+        <a href="/contact-us" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="nav-cta">
@@ -6365,7 +6383,7 @@
             <circle cx="11" cy="11" r="6"/>
             <path d="M16 16l4 4"/>
           </svg>
-          <span class="search-label">Search</span>
+          <span class="search-label" data-i18n="nav.search_label">Search</span>
           <span class="search-key">Ctrl K</span>
         </button>
         <a href="/my-account" class="icon-btn" aria-label="Account">
@@ -6382,7 +6400,7 @@
           </svg>
         </a>
         <a href="#contact" class="btn-brass">
-          Book a Test Drive
+          <span data-i18n="nav.cta_testdrive">Book a Test Drive</span>
           <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <path d="M2 6h8M7 3l3 3-3 3"/>
           </svg>
@@ -6460,19 +6478,17 @@
             <span class="brand-role">Installed in shop</span>
           </span>
         </div>
-        <div class="hero-eyebrow">Finval boats · Garmin Marine · Yamaha rigging · 10-year warranty</div>
-        <h1>Finval 470 EVO. <em>Garmin Marine ready.</em>
-          <span class="sub">Boat · electronics · motor · trailer · paperwork · one dealer</span>
-        </h1>
-        <p class="deck">The original BoatsExpert promise, sharpened: <b>Finval aluminium hull</b>, <b>Garmin Marine electronics</b>, engine installation, trailer, ANR paperwork and workshop warranty from the same Otopeni team.</p>
+        <div class="hero-eyebrow" data-i18n="hero.slogan">The adventure on water begins here.</div>
+        <h1 data-i18n="hero.h1">Official dealer of <em>Finval, Beneteau, NorthSilver</em> in Romania.</h1>
+        <p class="deck" data-i18n="hero.lead">Fully kitted out and ready-to-launch motorboats, and motorboats made to measure according to the client's needs.</p>
         <div class="hero-cta">
           <a href="/listings" class="btn-brass">
-            Configure a Finval
+            <span data-i18n="hero.cta_primary">Browse Catalog</span>
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <path d="M2 6h8M7 3l3 3-3 3"/>
             </svg>
           </a>
-          <a href="#contact" class="btn-outline">Book showroom visit</a>
+          <a href="#contact" class="btn-outline" data-i18n="hero.cta_secondary">Book a Test Drive</a>
           <span class="chip">230 boats · 471 shop items</span>
         </div>
 
@@ -6706,8 +6722,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">Featured this season · 3 of 230</div>
-          <h2 class="sec-title">Boats <em>ready to leave</em> the showroom.</h2>
+          <div class="ey" data-i18n="featured.eyebrow">Featured boats</div>
+          <h2 class="sec-title" data-i18n="featured.title">Boats <em>ready to leave</em> the showroom.</h2>
         </div>
         <a href="/listings" class="sec-link">All 230 listings →</a>
       </div>
@@ -6850,8 +6866,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">Browse by category · 6 of 6</div>
-          <h2 class="sec-title">Find the right <em>type of boat</em> for the water you sail.</h2>
+          <div class="ey" data-i18n="types.eyebrow">Types of Boats</div>
+          <h2 class="sec-title" data-i18n="types.title">Choose the <em>category of boats</em>.</h2>
         </div>
         <a href="/listings" class="sec-link">All categories →</a>
       </div>
@@ -6870,10 +6886,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>118</b> &nbsp;offers · 4.2–6.8 m</div>
+            <div class="count" data-i18n="types.t2.count"><b>118</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">Fishing Boats</div>
+            <div class="type-name" data-i18n="types.t2.name">Fishing Boats</div>
             <div class="type-sub">Angler-tuned platforms — casting decks, livewells, rod storage, trolling motor prep, JackPlate ready.</div>
             <div class="specchips">
               <span><b>From</b>€8,950</span>
@@ -6899,10 +6915,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>54</b> &nbsp;offers · 3.7–7.2 m</div>
+            <div class="count" data-i18n="types.t1.count"><b>54</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">Aluminium</div>
+            <div class="type-name" data-i18n="types.t1.name">Aluminium Boats</div>
             <div class="type-sub">Marine-grade AlMg 5083 hull, 2–3&nbsp;mm — welded, never riveted.</div>
             <div class="specchips">
               <span><b>From</b>€11,400</span>
@@ -6929,10 +6945,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>27</b> &nbsp;offers · 3.3–6.5 m</div>
+            <div class="count" data-i18n="types.t3.count"><b>27</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">RIB Boats</div>
+            <div class="type-name" data-i18n="types.t3.name">RIB Boats</div>
             <div class="type-sub">Inflatable tubes, fibreglass hull — stable, fast, beach-friendly.</div>
             <div class="specchips">
               <span><b>From</b>€7,300</span>
@@ -6958,10 +6974,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>18</b> &nbsp;offers · 5.5–8.4 m</div>
+            <div class="count" data-i18n="types.t4.count"><b>18</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">Cruising</div>
+            <div class="type-name" data-i18n="types.t4.name">Cruising Boats</div>
             <div class="type-sub">Family cabin boats with covered cockpit, head, and overnight bunks.</div>
             <div class="specchips">
               <span><b>From</b>€34,000</span>
@@ -6987,10 +7003,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>10</b> &nbsp;offers · 4.6–5.8 m</div>
+            <div class="count" data-i18n="types.t5.count"><b>10</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">Fiberglass</div>
+            <div class="type-name" data-i18n="types.t5.name">Fiberglass Boats</div>
             <div class="type-sub">Lightweight GRP hulls — smooth ride, easy maintenance.</div>
             <div class="specchips">
               <span><b>From</b>€18,200</span>
@@ -7017,10 +7033,10 @@
             </svg>
           </span>
           <div class="top">
-            <div class="count"><b>3</b> &nbsp;offers · for 4.5–7.5 m</div>
+            <div class="count" data-i18n="types.t6.count"><b>3</b> Offers</div>
           </div>
           <div class="bottom">
-            <div class="type-name">Trailers</div>
+            <div class="type-name" data-i18n="types.t6.name">Boat Trailers</div>
             <div class="type-sub">RESPO trailers — road-legal across EU, galvanised steel.</div>
             <div class="specchips">
               <span><b>From</b>€2,890</span>
@@ -7044,8 +7060,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">Brand partnerships · three tiers</div>
-          <h2 class="sec-title">Sixteen brands. <em>One promise.</em></h2>
+          <div class="ey" data-i18n="brands.eyebrow">Authorised dealer for top brands</div>
+          <h2 class="sec-title" data-i18n="brands.title"><em>We're proud</em> to work with such brands.</h2>
         </div>
         <a href="/about" class="sec-link">How dealer levels work →</a>
       </div>
@@ -7231,8 +7247,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">What we do · five services</div>
-          <h2 class="sec-title">More than a dealer. <em>An on-water partner.</em></h2>
+          <div class="ey" data-i18n="services.eyebrow">What we do · five services</div>
+          <h2 class="sec-title" data-i18n="services.title">Services.</h2>
         </div>
         <a href="/services" class="sec-link">All services →</a>
       </div>
@@ -7329,8 +7345,8 @@
     <div class="container">
       <div class="sec-head shop-head">
         <div>
-          <div class="ey">Original SHOP menu · dealer parts desk</div>
-          <h2 class="sec-title">Everything around the boat, <em>arranged by system.</em></h2>
+          <div class="ey" data-i18n="shop.eyebrow">Marine equipment shop</div>
+          <h2 class="sec-title" data-i18n="shop.title">Everything around the boat.</h2>
           <p class="shop-head-copy">Motors, electronics, power, lights, mounts and deck hardware from the same Otopeni team that installs and services the boats.</p>
         </div>
         <div class="shop-head-card">
@@ -7729,8 +7745,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">Contact · showroom · application</div>
-          <h2 class="sec-title">Come see the boats. <em>Or send the exact request.</em></h2>
+          <div class="ey" data-i18n="showroom.eyebrow">Get in touch</div>
+          <h2 class="sec-title" data-i18n="showroom.title">Come see the boats.</h2>
         </div>
         <a href="tel:+40743377377" class="sec-link">Call now →</a>
       </div>
@@ -7815,8 +7831,8 @@
     <div class="container">
       <div class="sec-head">
         <div>
-          <div class="ey">Stories · guides · news</div>
-          <h2 class="sec-title">From the <em>logbook.</em></h2>
+          <div class="ey" data-i18n="blog.eyebrow">Blog</div>
+          <h2 class="sec-title" data-i18n="blog.title">From the <em>logbook</em>.</h2>
         </div>
         <a href="/blog" class="sec-link">All stories →</a>
       </div>
@@ -8233,6 +8249,9 @@
       render();
     })();
   </script>
+
+  <!-- i18n loader (EN / RO) — keep last so all data-i18n elements are mounted -->
+  <script src="i18n.js" defer></script>
 
 </body>
 </html>
