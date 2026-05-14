@@ -13,6 +13,10 @@
 <meta name="theme-color" content="#0A2540" />
 <meta name="description" content="BoatsExpert — official Romanian dealer of Finval, Beneteau and NorthSilver. 230 boats across six categories. 10-year warranty. Otopeni, since 2014." />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+<script>
+(function(){try{var p=new URLSearchParams(location.search).get("theme");var t=(p==="day"||p==="night")?p:localStorage.getItem("bx_theme");if(t!=="day"&&t!=="night"){t="day";}document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t==="night"?"dark":"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="theme.css" />
 <style>
   :root{
     --navy:    #0A2540;
@@ -6418,7 +6422,7 @@
 
       <nav class="primary">
         <a href="Catalog.html" class="sub" data-i18n="nav.catalog">Catalog</a>
-        <a href="Catalog.html#instock" data-i18n="nav.instock">In Stock</a>
+        <a href="Catalog.html#results" data-i18n="nav.instock">In Stock</a>
         <a href="Shop.html" class="sub" data-i18n="nav.shop">Shop</a>
         <a href="index.html#services" data-i18n="nav.services">Services</a>
         <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -6433,13 +6437,22 @@
           <span class="search-label" data-i18n="nav.search_label">Search</span>
           <span class="search-key">Ctrl K</span>
         </button>
-        <a href="/my-account" class="icon-btn" aria-label="Account">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 15.2A7.8 7.8 0 0 1 8.8 4 8.4 8.4 0 1 0 20 15.2Z"/>
+          </svg>
+        </button>
+        <a href="index.html#contact" class="icon-btn" aria-label="Account">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
           </svg>
         </a>
-        <a href="/cart" class="icon-btn" aria-label="Cart">
+        <a href="Shop.html" class="icon-btn" aria-label="Cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 4h2l2.5 12h11l2-8H6"/>
             <circle cx="9" cy="20" r="1.5"/>
@@ -6458,6 +6471,15 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="6"/>
             <path d="M16 16l4 4"/>
+          </svg>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 15.2A7.8 7.8 0 0 1 8.8 4 8.4 8.4 0 1 0 20 15.2Z"/>
           </svg>
         </button>
         <button class="mobile-menu" type="button" aria-label="Open menu">
@@ -6489,7 +6511,6 @@
       <div class="quick-search__results" id="quickSearchResults" aria-live="polite"></div>
     </div>
   </div>
-
   </template>
 
   <!-- =========== HERO =========== -->
@@ -6533,7 +6554,7 @@
         </h1>
         <p class="deck" data-i18n="hero.lead">The original BoatsExpert promise, sharpened: <b>Finval aluminium hull</b>, <b>Garmin Marine electronics</b>, engine installation, trailer, ANR paperwork and workshop warranty from the same Otopeni team.</p>
         <div class="hero-cta">
-          <a href="/listings" class="btn-brass">
+          <a href="Catalog.html" class="btn-brass">
             <span data-i18n="hero.cta_primary">Configure a Finval</span>
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <path d="M2 6h8M7 3l3 3-3 3"/>
@@ -6620,7 +6641,7 @@
         </div>
 
         <div class="actions">
-          <a href="/boat-catalog/finval-470-evo-dc" data-i18n="hero.feat.act_view">View Boat</a>
+          <a href="Boat.html" data-i18n="hero.feat.act_view">View Boat</a>
           <a href="#contact" class="primary" data-i18n="hero.feat.act_req">Send Request</a>
         </div>
       </div>
@@ -6637,25 +6658,25 @@
   <!-- =========== ORIGINAL-SITE QUICK ENTRY =========== -->
   <section class="entrybar" aria-label="Main BoatsExpert shortcuts">
     <div class="container">
-      <a class="entry-card primary" href="/listings">
+      <a class="entry-card primary" href="Catalog.html">
         <span class="entry-kicker" data-i18n="entry.catalog.k">Boats catalog</span>
         <strong>Choose by hull, brand, engine and stock status</strong>
         <span class="entry-copy" data-i18n="entry.catalog.c">Finval · Beneteau · NorthSilver · GALA · GALAXY Pro</span>
         <em>230 offers</em>
       </a>
-      <a class="entry-card" href="/product-category/boats-in-stock">
+      <a class="entry-card" href="Shop.html">
         <span class="entry-kicker" data-i18n="entry.instock.k">Boats in stock</span>
         <strong data-i18n="entry.instock.h">Ready at Otopeni showroom or available for test drive</strong>
         <span class="entry-copy" data-i18n="entry.instock.c">Fishing platforms, RIBs, cabin boats and trailers.</span>
         <em data-i18n="entry.instock.b">View stock</em>
       </a>
-      <a class="entry-card" href="/shop">
+      <a class="entry-card" href="Shop.html">
         <span class="entry-kicker" data-i18n="entry.shop.k">Shop online</span>
         <strong data-i18n="entry.shop.h">Outboards, sonars, batteries and marine accessories</strong>
         <span class="entry-copy" data-i18n="entry.shop.c">The familiar WooCommerce store, presented cleaner.</span>
         <em data-i18n="entry.shop.b">471 SKU</em>
       </a>
-      <a class="entry-card support" href="/services">
+      <a class="entry-card support" href="index.html#services">
         <span class="entry-kicker" data-i18n="entry.services.k">Services</span>
         <strong data-i18n="entry.services.h">Installation, tuning, registration and warranty</strong>
         <span class="entry-copy" data-i18n="entry.services.c">The original offer list, turned into a dealer workflow.</span>
@@ -6669,14 +6690,14 @@
     <div class="container">
       <div class="label">Authorised partner of<br/><b>16 marine brands</b></div>
       <div class="trust-logos">
-        <a href="/listings/make-brand/finval"><img class="brand-logo-img" src="assets/brands/finval.webp" alt="Finval" data-brand="Finval"/><span class="tier">Exclusive</span></a>
-        <a href="/listings/make-brand/beneteau"><img class="brand-logo-img" src="assets/brands/beneteau.webp" alt="Beneteau" data-brand="Beneteau"/><span class="tier">Exclusive</span></a>
-        <a href="/listings/make-brand/northsilver-fish"><img class="brand-logo-img" src="assets/brands/northsilver.webp" alt="NorthSilver" data-brand="NorthSilver"/><span class="tier">Exclusive</span></a>
-        <a href="/product-category/outboard-motors"><img class="brand-logo-img" src="assets/brands/yamaha.webp" alt="Yamaha" data-brand="Yamaha"/><span class="tier">Official</span></a>
-        <a href="/product-category/sonars"><img class="brand-logo-img" src="assets/brands/garmin.webp" alt="Garmin" data-brand="Garmin"/><span class="tier">Official</span></a>
-        <a href="/product-category/outboard-motors"><img class="brand-logo-img" src="assets/brands/mercury.webp" alt="Mercury" data-brand="Mercury"/><span class="tier">Official</span></a>
-        <a href="/product-category/electric-motors"><img class="brand-logo-img" src="assets/brands/minnkota.webp" alt="MinnKota" data-brand="MinnKota"/><span class="tier">Partner</span></a>
-        <a href="/product-category/sonars"><img class="brand-logo-img" src="assets/brands/humminbird.webp" alt="Humminbird" data-brand="Humminbird"/><span class="tier">Partner</span></a>
+        <a href="Catalog.html"><img class="brand-logo-img" src="assets/brands/finval.webp" alt="Finval" data-brand="Finval"/><span class="tier">Exclusive</span></a>
+        <a href="Catalog.html"><img class="brand-logo-img" src="assets/brands/beneteau.webp" alt="Beneteau" data-brand="Beneteau"/><span class="tier">Exclusive</span></a>
+        <a href="Catalog.html"><img class="brand-logo-img" src="assets/brands/northsilver.webp" alt="NorthSilver" data-brand="NorthSilver"/><span class="tier">Exclusive</span></a>
+        <a href="Shop.html"><img class="brand-logo-img" src="assets/brands/yamaha.webp" alt="Yamaha" data-brand="Yamaha"/><span class="tier">Official</span></a>
+        <a href="Shop.html"><img class="brand-logo-img" src="assets/brands/garmin.webp" alt="Garmin" data-brand="Garmin"/><span class="tier">Official</span></a>
+        <a href="Shop.html"><img class="brand-logo-img" src="assets/brands/mercury.webp" alt="Mercury" data-brand="Mercury"/><span class="tier">Official</span></a>
+        <a href="Shop.html"><img class="brand-logo-img" src="assets/brands/minnkota.webp" alt="MinnKota" data-brand="MinnKota"/><span class="tier">Partner</span></a>
+        <a href="Shop.html"><img class="brand-logo-img" src="assets/brands/humminbird.webp" alt="Humminbird" data-brand="Humminbird"/><span class="tier">Partner</span></a>
       </div>
     </div>
   </div>
@@ -6776,12 +6797,12 @@
           <div class="ey" data-i18n="featured.eyebrow">Featured this season · 3 of 230</div>
           <h2 class="sec-title" data-i18n="featured.title">Boats <em>ready to leave</em> the showroom.</h2>
         </div>
-        <a href="/listings" class="sec-link" data-i18n="featured.sec_link">All 230 listings →</a>
+        <a href="Catalog.html" class="sec-link" data-i18n="featured.sec_link">All 230 listings →</a>
       </div>
 
       <div class="boats">
         <!-- Boat 1 — Finval 470 EVO DC -->
-        <a href="/boat-catalog/finval-470-evo-dc" class="boat">
+        <a href="Boat.html" class="boat">
           <div class="boat-photo">
             <img src="assets/boats/finval-470-evo.jpg" alt="Finval 470 EVO DC" loading="lazy" />
             <div class="gradient"></div>
@@ -6824,7 +6845,7 @@
         </a>
 
         <!-- Boat 2 — GALA VIKING V6F -->
-        <a href="/boat-catalog/gala-viking-v6f-v580f" class="boat">
+        <a href="Catalog.html" class="boat">
           <div class="boat-photo">
             <img src="assets/boats/gala-viking-v6f.jpg" alt="GALA VIKING V6F" loading="lazy" />
             <div class="gradient"></div>
@@ -6867,7 +6888,7 @@
         </a>
 
         <!-- Boat 3 — Galaxy Pilot P6.5 -->
-        <a href="/boat-catalog/galaxy-pilot-p6-5" class="boat">
+        <a href="Catalog.html" class="boat">
           <div class="boat-photo">
             <img src="assets/boats/galaxy-pilot-p65.jpg" alt="Galaxy Pilot P6.5" loading="lazy" />
             <div class="gradient"></div>
@@ -6920,12 +6941,12 @@
           <div class="ey" data-i18n="types.eyebrow">Browse by category · 6 of 6</div>
           <h2 class="sec-title" data-i18n="types.title">Find the right <em>type of boat</em> for the water you sail.</h2>
         </div>
-        <a href="/listings" class="sec-link" data-i18n="types.sec_link">All categories →</a>
+        <a href="Catalog.html" class="sec-link" data-i18n="types.sec_link">All categories →</a>
       </div>
 
       <div class="types">
 
-        <a class="type feature" href="/listings/body-type/fishing-boats">
+        <a class="type feature" href="Catalog.html">
           <img src="assets/blog/470vc-overview-03.jpg" alt="Fishing Boats" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -6955,7 +6976,7 @@
           </div>
         </a>
 
-        <a class="type" href="/listings/body-type/aluminium-boats">
+        <a class="type" href="Catalog.html">
           <img src="assets/boats/finval-470-evo-15.jpg" alt="Aluminium Boats" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -6984,7 +7005,7 @@
           </div>
         </a>
 
-        <a class="type" href="/listings/body-type/rib-boats">
+        <a class="type" href="Catalog.html">
           <img src="assets/boats/gala-viking-v6f.jpg" alt="RIB Boats" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -7014,7 +7035,7 @@
           </div>
         </a>
 
-        <a class="type" href="/listings/body-type/cruising-boats">
+        <a class="type" href="Catalog.html">
           <img src="assets/boats/galaxy-pilot-p65.jpg" alt="Cruising Boats" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -7043,7 +7064,7 @@
           </div>
         </a>
 
-        <a class="type" href="/listings/body-type/fiberglass-boats">
+        <a class="type" href="Catalog.html">
           <img src="assets/boats/galaxy-hd460m.jpg" alt="Fiberglass Boats" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -7072,7 +7093,7 @@
           </div>
         </a>
 
-        <a class="type" href="/listings/body-type/boat-trailer">
+        <a class="type" href="Catalog.html">
           <img src="assets/boats/big-foot-ultimate.jpg" alt="Boat Trailers" loading="lazy" />
           <span class="typeicn" aria-hidden="true">
             <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -7107,14 +7128,14 @@
   </section>
 
   <!-- =========== BRAND TIERS =========== -->
-  <section class="sec dark">
+  <section class="sec dark" id="brands">
     <div class="container">
       <div class="sec-head">
         <div>
           <div class="ey" data-i18n="brands.eyebrow">Brand partnerships · three tiers</div>
           <h2 class="sec-title" data-i18n="brands.title">Sixteen brands. <em>One promise.</em></h2>
         </div>
-        <a href="/about" class="sec-link" data-i18n="brands.sec_link">How dealer levels work →</a>
+        <a href="index.html#brands" class="sec-link" data-i18n="brands.sec_link">How dealer levels work →</a>
       </div>
 
       <div class="tiers">
@@ -7128,23 +7149,23 @@
             <div class="stat-mini" data-i18n="brands.t1.stat"><b>5</b>brands · 230 boats · since 2014</div>
           </div>
           <div class="tier-logos c5">
-            <a href="/listings/make-brand/finval" class="blogo">
+            <a href="Catalog.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/finval.webp" alt="Finval" data-brand="Finval"/></div>
               <div class="country" data-i18n="brands.t1.c_finval">Estonia · 1993</div>
             </a>
-            <a href="/listings/make-brand/beneteau" class="blogo">
+            <a href="Catalog.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/beneteau.webp" alt="Beneteau" data-brand="Beneteau"/></div>
               <div class="country" data-i18n="brands.t1.c_beneteau">France · 1884</div>
             </a>
-            <a href="/listings/make-brand/northsilver-fish" class="blogo">
+            <a href="Catalog.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/northsilver.webp" alt="NorthSilver" data-brand="NorthSilver"/></div>
               <div class="country" data-i18n="brands.t1.c_northsilver">Estonia · 2002</div>
             </a>
-            <a href="/listings/make-brand/landx" class="blogo">
+            <a href="Catalog.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/landx.webp" alt="LANDX" data-brand="LANDX"/></div>
               <div class="country" data-i18n="brands.t1.c_landx">Hungary</div>
             </a>
-            <a href="/listings/make-brand/reval-grade" class="blogo">
+            <a href="Catalog.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/revalgrade.webp" alt="Reval Grade" data-brand="Reval Grade"/></div>
               <div class="country" data-i18n="brands.t1.c_revalgrade">Estonia</div>
             </a>
@@ -7160,31 +7181,31 @@
             <div class="stat-mini" data-i18n="brands.t2.stat"><b>7</b>brands · 471 SKU · in-shop fit-out</div>
           </div>
           <div class="tier-logos c7">
-            <a href="/product-category/outboard-motors" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/yamaha.webp" alt="Yamaha" data-brand="Yamaha"/></div>
               <div class="country" data-i18n="brands.t2.c_yamaha">Outboards</div>
             </a>
-            <a href="/product-category/sonars" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/garmin.webp" alt="Garmin" data-brand="Garmin"/></div>
               <div class="country" data-i18n="brands.t2.c_garmin">Sonars · Nav</div>
             </a>
-            <a href="/product-category/electric-motors" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/minnkota.webp" alt="MinnKota" data-brand="MinnKota"/></div>
               <div class="country" data-i18n="brands.t2.c_minnkota">Electric motors</div>
             </a>
-            <a href="/product-category/sonars" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/humminbird.webp" alt="Humminbird" data-brand="Humminbird"/></div>
               <div class="country" data-i18n="brands.t2.c_humminbird">Fishfinders</div>
             </a>
-            <a href="/product-category/batteries" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/rebelcell.webp" alt="Rebelcell" data-brand="Rebelcell"/></div>
               <div class="country" data-i18n="brands.t2.c_rebelcell">Lithium</div>
             </a>
-            <a href="/product-category/marine-accessories" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/osculati.webp" alt="Osculati" data-brand="Osculati"/></div>
               <div class="country" data-i18n="brands.t2.c_osculati">Accessories</div>
             </a>
-            <a href="/product-category/mounts" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/ram.webp" alt="RAM Mounts" data-brand="RAM Mounts"/></div>
               <div class="country" data-i18n="brands.t2.c_ram">Mounts</div>
             </a>
@@ -7200,19 +7221,19 @@
             <div class="stat-mini" data-i18n="brands.t3.stat"><b>4</b>brands · supply · 48h order</div>
           </div>
           <div class="tier-logos c4">
-            <a href="/product-category/outboard-motors" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/mercury.webp" alt="Mercury" data-brand="Mercury"/></div>
               <div class="country" data-i18n="brands.t3.c_mercury">Outboards</div>
             </a>
-            <a href="/product-category/outboard-motors" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/honda-marine.webp" alt="Honda Marine" data-brand="Honda Marine"/></div>
               <div class="country" data-i18n="brands.t3.c_honda">Outboards</div>
             </a>
-            <a href="/product-category/marine-audio" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/fusion.webp" alt="Fusion" data-brand="Fusion"/></div>
               <div class="country" data-i18n="brands.t3.c_fusion">Marine audio</div>
             </a>
-            <a href="/product-category/outboard-motors" class="blogo">
+            <a href="Shop.html" class="blogo">
               <div class="logoimg"><img class="brand-logo-img" src="assets/brands/tohatsu.webp" alt="Tohatsu" data-brand="Tohatsu"/></div>
               <div class="country" data-i18n="brands.t3.c_tohatsu">Outboards</div>
             </a>
@@ -7231,7 +7252,7 @@
           <div class="ey" data-i18n="spotlight.eyebrow">Exclusive · Finval</div>
           <h2 class="sec-title" data-i18n="spotlight.title">Built for shallow water. <em>Built like a workshop tool.</em></h2>
         </div>
-        <a href="/listings/make-brand/finval" class="sec-link" data-i18n="spotlight.sec_link">14 Finval models →</a>
+        <a href="Catalog.html" class="sec-link" data-i18n="spotlight.sec_link">14 Finval models →</a>
       </div>
 
       <div class="spotlight">
@@ -7280,7 +7301,7 @@
           </div>
 
           <div class="spotlight-cta">
-            <a href="/boat-catalog/finval-470-evo-dc" class="btn-brass">
+            <a href="Boat.html" class="btn-brass">
               <span data-i18n="spotlight.cta_view">View the Boat</span>
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <path d="M2 6h8M7 3l3 3-3 3"/>
@@ -7294,18 +7315,18 @@
   </section>
 
   <!-- =========== SERVICES =========== -->
-  <section class="sec dark">
+  <section class="sec dark" id="services">
     <div class="container">
       <div class="sec-head">
         <div>
           <div class="ey" data-i18n="services.eyebrow">What we do · five services</div>
           <h2 class="sec-title" data-i18n="services.title">More than a dealer. <em>An on-water partner.</em></h2>
         </div>
-        <a href="/services" class="sec-link" data-i18n="services.sec_link">All services →</a>
+        <a href="index.html#services" class="sec-link" data-i18n="services.sec_link">All services →</a>
       </div>
 
       <div class="services">
-        <a class="service" href="/services/expert-tuning-of-angler-boats">
+        <a class="service" href="index.html#services">
           <div class="num" data-i18n="services.s1.num">№ 01</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7320,7 +7341,7 @@
           <div class="more" data-i18n="services.s1.m">Tune my boat</div>
         </a>
 
-        <a class="service" href="/services/outboard-engine-installation">
+        <a class="service" href="index.html#services">
           <div class="num" data-i18n="services.s2.num">№ 02</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7336,7 +7357,7 @@
           <div class="more" data-i18n="services.s2.m">Book installation</div>
         </a>
 
-        <a class="service" href="/services/tuning-service">
+        <a class="service" href="index.html#services">
           <div class="num" data-i18n="services.s3.num">№ 03</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7349,7 +7370,7 @@
           <div class="more" data-i18n="services.s3.m">Service request</div>
         </a>
 
-        <a class="service" href="/services/registration-driving">
+        <a class="service" href="index.html#services">
           <div class="num" data-i18n="services.s4.num">№ 04</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7362,7 +7383,7 @@
           <div class="more" data-i18n="services.s4.m">See programmes</div>
         </a>
 
-        <a class="service" href="/services/warranty">
+        <a class="service" href="index.html#services">
           <div class="num" data-i18n="services.s5.num">№ 05</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7375,7 +7396,7 @@
           <div class="more" data-i18n="services.s5.m">How it works</div>
         </a>
 
-        <a class="service" href="/shop">
+        <a class="service" href="Shop.html">
           <div class="num" data-i18n="services.s6.num">№ 06</div>
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -7404,7 +7425,7 @@
           <span data-i18n="shop.head_card.l">Live commerce board</span>
           <strong data-i18n="shop.head_card.b">12 departments</strong>
           <p data-i18n="shop.head_card.p">253+ listed shop items · pickup or install in Otopeni</p>
-          <a href="/shop" data-i18n="shop.head_card.a">Open shop →</a>
+          <a href="Shop.html" data-i18n="shop.head_card.a">Open shop →</a>
         </div>
       </div>
 
@@ -7461,7 +7482,7 @@
       </div>
 
       <div class="shop">
-        <a href="/product-category/outboard-motors" class="cat" data-code="M01" data-note="Petrol engines · dealer rigging">
+        <a href="Shop.html" class="cat" data-code="M01" data-note="Petrol engines · dealer rigging">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7483,7 +7504,7 @@
           </div>
         </a>
 
-        <a href="/product-category/electric-motors" class="cat" data-code="M02" data-note="Bow motors · silent fishing">
+        <a href="Shop.html" class="cat" data-code="M02" data-note="Bow motors · silent fishing">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7506,7 +7527,7 @@
           </div>
         </a>
 
-        <a href="/product-category/sonars" class="cat" data-code="E01" data-note="Garmin · Humminbird · install">
+        <a href="Shop.html" class="cat" data-code="E01" data-note="Garmin · Humminbird · install">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7528,7 +7549,7 @@
           </div>
         </a>
 
-        <a href="/product-category/batteries" class="cat" data-code="P01" data-note="Rebelcell · marine power">
+        <a href="Shop.html" class="cat" data-code="P01" data-note="Rebelcell · marine power">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7549,7 +7570,7 @@
           </div>
         </a>
 
-        <a href="/product-category/marine-accessories" class="cat" data-code="H01" data-note="Deck gear · safety · fittings">
+        <a href="Shop.html" class="cat" data-code="H01" data-note="Deck gear · safety · fittings">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7570,7 +7591,7 @@
           </div>
         </a>
 
-        <a href="/product-category/marine-audio" class="cat" data-code="E02" data-note="Fusion audio · waterproof sound">
+        <a href="Shop.html" class="cat" data-code="E02" data-note="Fusion audio · waterproof sound">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7591,7 +7612,7 @@
           </div>
         </a>
 
-        <a href="/product-category/marine-lights" class="cat" data-code="H02" data-note="Navigation · deck · cabin light">
+        <a href="Shop.html" class="cat" data-code="H02" data-note="Navigation · deck · cabin light">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7612,7 +7633,7 @@
           </div>
         </a>
 
-        <a href="/product-category/quatix-smartwatches" class="cat" data-code="E03" data-note="Garmin watches · skipper kit">
+        <a href="Shop.html" class="cat" data-code="E03" data-note="Garmin watches · skipper kit">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7632,7 +7653,7 @@
           </div>
         </a>
 
-        <a href="/product-category/navigation-equipment" class="cat" data-code="E04" data-note="Charts · GPS · helm layout">
+        <a href="Shop.html" class="cat" data-code="E04" data-note="Charts · GPS · helm layout">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7651,7 +7672,7 @@
           </div>
         </a>
 
-        <a href="/product-category/outboard-hydraulic-steering-system" class="cat" data-code="M03" data-note="Hydraulic kits · workshop fitted">
+        <a href="Product.html" class="cat" data-code="M03" data-note="Hydraulic kits · workshop fitted">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7671,7 +7692,7 @@
           </div>
         </a>
 
-        <a href="/product-category/outboard-powerlift" class="cat" data-code="M04" data-note="Jack plates · shallow water trim">
+        <a href="Shop.html" class="cat" data-code="M04" data-note="Jack plates · shallow water trim">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7691,7 +7712,7 @@
           </div>
         </a>
 
-        <a href="/product-category/mounts" class="cat" data-code="H03" data-note="RAM mounts · console hardware">
+        <a href="Shop.html" class="cat" data-code="H03" data-note="RAM mounts · console hardware">
           <div class="cat-photo">
             <div class="icon">
               <svg viewBox="0 0 56 56" fill="none" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -7717,7 +7738,7 @@
   </section>
 
   <!-- =========== WHY US =========== -->
-  <section class="sec bg">
+  <section class="sec bg" id="blog">
     <div class="container">
       <div class="sec-head">
         <div>
@@ -7763,25 +7784,25 @@
           <div class="ey" data-i18n="promos.eyebrow">Marine retail · shop promos</div>
           <h2 class="sec-title" data-i18n="promos.title">Three retail doors. <em>One BoatsExpert store.</em></h2>
         </div>
-        <a href="/shop" class="sec-link" data-i18n="promos.sec_link">Open shop →</a>
+        <a href="Shop.html" class="sec-link" data-i18n="promos.sec_link">Open shop →</a>
       </div>
 
       <div class="collections">
-        <a class="collection-card marinac" data-mark="M" href="/product-category/marine-accessories">
+        <a class="collection-card marinac" data-mark="M" href="Shop.html">
           <span class="k" data-i18n="promos.c1.k">Marine accessories</span>
           <h3 data-i18n="promos.c1.h">Marinac <em>Marine Accessories</em></h3>
           <p data-i18n="promos.c1.p">Deck hardware, organisers, mounts and boat-specific accessories grouped for retail and service orders.</p>
           <span class="more" data-i18n="promos.c1.more">Open Marinac range</span>
         </a>
 
-        <a class="collection-card shop-card" data-mark="BE" href="/shop">
+        <a class="collection-card shop-card" data-mark="BE" href="Shop.html">
           <span class="k" data-i18n="promos.c2.k">Shop online</span>
           <h3 data-i18n="promos.c2.h">Shop online <em>BoatsExpert</em></h3>
           <p data-i18n="promos.c2.p">Motors, sonars, batteries, mounts and accessories with prices, stock logic and pickup from Otopeni.</p>
           <span class="more" data-i18n="promos.c2.more">Browse catalog</span>
         </a>
 
-        <a class="collection-card ked" data-mark="KED" href="/product-category/marine-accessories">
+        <a class="collection-card ked" data-mark="KED" href="Shop.html">
           <span class="k" data-i18n="promos.c3.k">Premium hardware</span>
           <h3 data-i18n="promos.c3.h">KED <em>Marine Accessories</em></h3>
           <p data-i18n="promos.c3.p">Stainless hardware and deck equipment for fit-outs, repair orders and custom service work.</p>
@@ -7885,11 +7906,11 @@
           <div class="ey" data-i18n="blog.eyebrow">Stories · guides · news</div>
           <h2 class="sec-title" data-i18n="blog.title">From the <em>logbook.</em></h2>
         </div>
-        <a href="/blog" class="sec-link" data-i18n="blog.all">All stories →</a>
+        <a href="index.html#blog" class="sec-link" data-i18n="blog.all">All stories →</a>
       </div>
 
       <div class="stories-grid">
-        <a class="story" href="/blog/finval-470-evo-dc-one-season">
+        <a class="story" href="index.html#blog">
           <div class="story-photo">
             <img src="assets/blog/470vc-overview-01.jpg" alt="Finval 470 EVO DC" loading="lazy" />
           </div>
@@ -7901,7 +7922,7 @@
           </div>
         </a>
 
-        <a class="story" href="/blog/aluminium-vs-fiberglass">
+        <a class="story" href="index.html#blog">
           <div class="story-photo">
             <img src="assets/blog/470dc-main.jpg" alt="Aluminium vs fiberglass" loading="lazy" />
           </div>
@@ -7913,7 +7934,7 @@
           </div>
         </a>
 
-        <a class="story" href="/blog/galaxy-pilot-p65-arrived">
+        <a class="story" href="index.html#blog">
           <div class="story-photo">
             <img src="assets/boats/galaxy-pilot-p65.jpg" alt="Galaxy Pilot P6.5" loading="lazy" />
           </div>
@@ -7957,7 +7978,7 @@
 
       <div class="foot-inner">
         <div class="brand-block">
-          <a href="/" class="logo" aria-label="BoatsExpert home">
+          <a href="index.html" class="logo" aria-label="BoatsExpert home">
             <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
             <span class="logo-tagline"><b data-i18n="foot.brand.tag">Since 2014</b><span data-i18n="foot.brand.sub">Otopeni · Romania</span></span>
           </a>
@@ -7977,7 +7998,7 @@
             <a href="https://wa.me/40743377377" aria-label="WhatsApp">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 14l1-3a6 6 0 1 1 2.2 2.2L2 14z"/></svg>
             </a>
-            <a href="/" aria-label="YouTube">
+            <a href="index.html" aria-label="YouTube">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="12" height="8" rx="2"/><path d="M7 6.5 V9.5 L10 8 Z" fill="currentColor"/></svg>
             </a>
           </div>
@@ -7986,40 +8007,40 @@
         <div>
           <h5 data-i18n="foot.col_cat.h">Catalog</h5>
           <ul>
-            <li><a href="/listings/make-brand/finval" data-i18n="foot.col_cat.l1">Finval Boats</a></li>
-            <li><a href="/listings/make-brand/beneteau" data-i18n="foot.col_cat.l2">Beneteau</a></li>
-            <li><a href="/listings/make-brand/northsilver-fish" data-i18n="foot.col_cat.l3">NorthSilver Fish</a></li>
-            <li><a href="/listings/make-brand/northsilver-expedition" data-i18n="foot.col_cat.l4">NorthSilver Expedition</a></li>
-            <li><a href="/listings/make-brand/gala" data-i18n="foot.col_cat.l5">GALA RIB</a></li>
-            <li><a href="/listings/make-brand/galaxy-pro-rib" data-i18n="foot.col_cat.l6">GALAXY Pro</a></li>
-            <li><a href="/listings/make-brand/landx" data-i18n="foot.col_cat.l7">LANDX</a></li>
-            <li><a href="/listings/make-brand/respo-trailers" data-i18n="foot.col_cat.l8">RESPO Trailers</a></li>
+            <li><a href="Boat.html" data-i18n="foot.col_cat.l1">Finval Boats</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l2">Beneteau</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l3">NorthSilver Fish</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l4">NorthSilver Expedition</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l5">GALA RIB</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l6">GALAXY Pro</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l7">LANDX</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l8">RESPO Trailers</a></li>
           </ul>
         </div>
 
         <div>
           <h5 data-i18n="foot.col_shop.h">Shop</h5>
           <ul>
-            <li><a href="/product-category/outboard-motors" data-i18n="foot.col_shop.l1">Outboard motors</a></li>
-            <li><a href="/product-category/electric-motors" data-i18n="foot.col_shop.l2">Electric motors</a></li>
-            <li><a href="/product-category/sonars" data-i18n="foot.col_shop.l3">Sonars</a></li>
-            <li><a href="/product-category/batteries" data-i18n="foot.col_shop.l4">Batteries</a></li>
-            <li><a href="/product-category/marine-accessories" data-i18n="foot.col_shop.l5">Marine accessories</a></li>
-            <li><a href="/product-category/marine-audio" data-i18n="foot.col_shop.l6">Marine audio</a></li>
-            <li><a href="/product-category/navigation-equipment" data-i18n="foot.col_shop.l7">Navigation</a></li>
-            <li><a href="/product-category/quatix-smartwatches" data-i18n="foot.col_shop.l8">Quatix watches</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l1">Outboard motors</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l2">Electric motors</a></li>
+            <li><a href="Product.html" data-i18n="foot.col_shop.l3">Sonars</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l4">Batteries</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l5">Marine accessories</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l6">Marine audio</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l7">Navigation</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l8">Quatix watches</a></li>
           </ul>
         </div>
 
         <div>
           <h5 data-i18n="foot.col_svc.h">Services</h5>
           <ul>
-            <li><a href="/services/expert-tuning-of-angler-boats" data-i18n="foot.col_svc.l1">Tuning of angler boats</a></li>
-            <li><a href="/services/outboard-engine-installation" data-i18n="foot.col_svc.l2">Outboard installation</a></li>
-            <li><a href="/services/tuning-service" data-i18n="foot.col_svc.l3">Tuning &amp; service</a></li>
-            <li><a href="/services/registration-driving" data-i18n="foot.col_svc.l4">Registration courses</a></li>
-            <li><a href="/services/warranty" data-i18n="foot.col_svc.l5">10-year warranty</a></li>
-            <li><a href="#contact" data-i18n="foot.col_svc.l6">Book a Test Drive</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l1">Tuning of angler boats</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l2">Outboard installation</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l3">Tuning &amp; service</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l4">Registration courses</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l5">10-year warranty</a></li>
+            <li><a href="index.html#contact" data-i18n="foot.col_svc.l6">Book a Test Drive</a></li>
           </ul>
         </div>
 
@@ -8049,12 +8070,11 @@
       <div class="foot-bottom">
         <div data-i18n="foot.copyright">© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania</div>
         <div>
-          <a href="/legal/privacy" data-i18n="foot.priv">Privacy</a> · <a href="/legal/cookies" data-i18n="foot.cookies">Cookies</a> · <a href="/legal/terms" data-i18n="foot.terms">Terms</a> · <a href="/legal/imprint" data-i18n="foot.imprint">Imprint</a> · EN / RO
+          <a href="index.html#contact" data-i18n="foot.priv">Privacy</a> · <a href="index.html#contact" data-i18n="foot.cookies">Cookies</a> · <a href="index.html#contact" data-i18n="foot.terms">Terms</a> · <a href="index.html#contact" data-i18n="foot.imprint">Imprint</a> · EN / RO
         </div>
       </div>
     </div>
   </footer>
-
   </template>
 
   <script>
@@ -8069,7 +8089,7 @@
           desc: 'AlMg 5083 aluminium fishing boat, 4.65 m, draft only 19 cm, Garmin-ready cockpit.',
           price: '€20,490',
           image: 'assets/boats/finval-470-evo-10.jpg',
-          url: '/boat-catalog/finval-470-evo-dc',
+          url: 'Boat.html',
           tags: 'finval 470 evo dc aluminium fishing boat shallow draft garmin sonar'
         },
         {
@@ -8079,7 +8099,7 @@
           desc: '5.80 m inflatable safety with twelve seats, two consoles and family deck layout.',
           price: '€26,366',
           image: 'assets/boats/gala-viking-v6f.jpg',
-          url: '/boat-catalog/gala-viking-v6f',
+          url: 'Catalog.html',
           tags: 'gala viking rib inflatable boat family'
         },
         {
@@ -8089,7 +8109,7 @@
           desc: 'Cabin cruiser for Black Sea and Danube delta, up to 200 hp, pilot house comfort.',
           price: '€26,330',
           image: 'assets/boats/galaxy-pilot-p65.jpg',
-          url: '/boat-catalog/galaxy-pilot-p65',
+          url: 'Catalog.html',
           tags: 'galaxy pilot cabin aluminium boat 200 hp'
         },
         {
@@ -8099,7 +8119,7 @@
           desc: 'Chartplotters, fishfinders, transducers and navigation equipment for fitted boats.',
           price: 'from €240',
           image: 'assets/brands/garmin.webp',
-          url: '/product-category/sonars',
+          url: 'Shop.html',
           tags: 'garmin marine sonar fishfinder chartplotter navigation echomap'
         },
         {
@@ -8109,7 +8129,7 @@
           desc: 'Outboard motors installed, rigged and calibrated in the Otopeni workshop.',
           price: 'from €890',
           image: 'assets/brands/yamaha.webp',
-          url: '/product-category/outboard-motors',
+          url: 'Shop.html',
           tags: 'yamaha outboard motor engine installation rigging'
         },
         {
@@ -8119,7 +8139,7 @@
           desc: 'Bow-mount trolling motors for angler boats with battery and deck preparation.',
           price: 'from €640',
           image: 'assets/brands/minnkota.webp',
-          url: '/product-category/electric-motors',
+          url: 'Shop.html',
           tags: 'minn kota electric motor trolling fishing'
         },
         {
@@ -8129,7 +8149,7 @@
           desc: 'Lithium batteries for electronics, trolling motors and long fishing days.',
           price: 'from €165',
           image: 'assets/brands/rebelcell.webp',
-          url: '/product-category/batteries',
+          url: 'Shop.html',
           tags: 'rebelcell lithium battery batteries power'
         },
         {
@@ -8139,7 +8159,7 @@
           desc: 'Deck hardware, mounts, lights, audio, steering and fit-out accessories.',
           price: '182 items',
           image: 'assets/brands/osculati.webp',
-          url: '/product-category/marine-accessories',
+          url: 'Shop.html',
           tags: 'marine accessories osculati ram ked mounts lights audio steering'
         },
         {
@@ -8149,7 +8169,7 @@
           desc: 'Casting platforms, livewells, trolling motor prep, rod storage and JackPlate setup.',
           price: 'service',
           image: 'assets/boats/finval-470-evo-15.jpg',
-          url: '/services/expert-tuning-of-angler-boats',
+          url: 'index.html#services',
           tags: 'tuning service angler fishing boat workshop livewell trolling'
         },
         {
@@ -8159,7 +8179,7 @@
           desc: 'Engine fitting, rigging, hydraulic steering, calibration and warranty paperwork.',
           price: 'service',
           image: 'assets/brands/yamaha.webp',
-          url: '/services/outboard-engine-installation',
+          url: 'index.html#services',
           tags: 'outboard installation engine service yamaha mercury honda'
         },
         {
@@ -8169,7 +8189,7 @@
           desc: 'Registration, warranty desk, pickup, service and delivery across RO · MD · RS · BG.',
           price: 'support',
           image: 'assets/logo/favicon-192.png',
-          url: '/services/registration-driving',
+          url: 'index.html#services',
           tags: 'registration warranty anr paperwork delivery service'
         },
         {
@@ -8179,7 +8199,7 @@
           desc: 'A 19 cm draft puts you in places others cannot reach. One season on the Danube.',
           price: 'read',
           image: 'assets/blog/470vc-overview-01.jpg',
-          url: '/blog/finval-470-evo-dc-one-season',
+          url: 'index.html#blog',
           tags: 'finval 470 evo story danube review shallow draft'
         }
       ];
@@ -8315,6 +8335,7 @@
   </script>
 
   <!-- partials + i18n loaders — keep last so all data-i18n elements are mounted -->
+  <script src="theme.js" defer></script>
   <script src="partials.js"></script>
   <script src="i18n.js" defer></script>
 

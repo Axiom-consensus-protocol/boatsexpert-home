@@ -38,21 +38,25 @@
     const name = node.getAttribute('data-partial');
     if (!name) return;
 
-    // 1) Inline <template> — works on file:// and any server
+    // On a real server, the shared partial file is the source of truth.
+    // Inline templates are kept only as a file:// fallback for quick local opens.
+    if (location.protocol !== 'file:'){
+      try {
+        const res = await fetch('partials/' + name + '.html', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const html = await res.text();
+        inject(node, html);
+        return;
+      } catch (e) {
+        console.warn('[partials] failed to load "' + name + '", falling back to inline template:', e);
+      }
+    }
+
     const inline = fromTemplate(name);
     if (inline){
       inject(node, inline);
-      return;
-    }
-
-    // 2) Fetch from /partials/<name>.html
-    try {
-      const res = await fetch('partials/' + name + '.html', { cache: 'no-cache' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const html = await res.text();
-      inject(node, html);
-    } catch (e) {
-      console.warn('[partials] failed to load "' + name + '":', e);
+    } else {
+      console.warn('[partials] missing inline fallback for "' + name + '"');
     }
   }
 
@@ -79,6 +83,74 @@
     });
   }
 
+  function buildMobileDrawer(){
+    const navItems = [
+      ['Catalog.html', 'nav.catalog', 'Catalog'],
+      ['Catalog.html#results', 'nav.instock', 'In Stock'],
+      ['Shop.html', 'nav.shop', 'Shop'],
+      ['index.html#services', 'nav.services', 'Services'],
+      ['index.html#contact', 'nav.contact', 'Contact']
+    ];
+
+    const nav = document.createElement('nav');
+    nav.className = 'mobile-drawer mobile-drawer--generated';
+    nav.setAttribute('aria-label', 'Mobile navigation');
+    nav.setAttribute('aria-hidden', 'true');
+    nav.innerHTML =
+      '<div class="mobile-drawer-head">' +
+        '<a href="index.html" class="logo" aria-label="BoatsExpert home">' +
+          '<img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
+        '</a>' +
+        '<button class="mobile-close" type="button" aria-label="Close menu">' +
+          '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="mobile-nav">' +
+        navItems.map(item => '<a href="' + item[0] + '" data-i18n="' + item[1] + '">' + item[2] + '</a>').join('') +
+      '</div>' +
+      '<div class="mobile-tools">' +
+        '<a href="index.html#contact" class="btn-brass" data-i18n="nav.cta_testdrive">Book a Test Drive</a>' +
+        '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
+      '</div>' +
+      '<div class="mobile-tools-info">' +
+        '<a href="tel:+40743377377" class="brass">+40 (743) 377 377</a>' +
+        '<a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>' +
+        '<span>Strada Horia Closca si Crisan 5, Otopeni</span>' +
+        '<span>Mon-Thu | 10:00-17:30</span>' +
+      '</div>';
+    document.body.appendChild(nav);
+    return nav;
+  }
+
+  function initMobileDrawer(){
+    const buttons = Array.from(document.querySelectorAll('.mobile-menu'));
+    if (!buttons.length) return;
+
+    const drawer = document.querySelector('.mobile-drawer') || buildMobileDrawer();
+    const legacyToggle = document.getElementById('mobile-toggle');
+
+    function setOpen(open){
+      drawer.classList.toggle('is-open', open);
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.classList.toggle('mobile-drawer-open', open);
+      if (legacyToggle) legacyToggle.checked = open;
+      buttons.forEach(button => button.setAttribute('aria-expanded', open ? 'true' : 'false'));
+    }
+
+    buttons.forEach(button => {
+      button.setAttribute('aria-expanded', 'false');
+      button.addEventListener('click', () => setOpen(true));
+    });
+
+    drawer.querySelectorAll('.mobile-close, .mobile-nav a, .mobile-tools a').forEach(control => {
+      control.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  }
+
   async function loadAll(){
     const nodes = Array.from(document.querySelectorAll('[data-partial]'));
     // Load sequentially to preserve DOM order
@@ -86,6 +158,7 @@
       await load(n);
     }
     markActiveNav();
+    initMobileDrawer();
     document.documentElement.dispatchEvent(new CustomEvent('partials:ready'));
     // If i18n has already mounted, re-apply translations to freshly inserted nodes
     if (window.BX_i18n && typeof window.BX_i18n.reload === 'function'){

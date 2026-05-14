@@ -7,6 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<script>
+(function(){try{var p=new URLSearchParams(location.search).get("theme");var t=(p==="day"||p==="night")?p:localStorage.getItem("bx_theme");if(t!=="day"&&t!=="night"){t="day";}document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t==="night"?"dark":"light";}catch(e){}})();
+</script>
+<link rel="stylesheet" href="theme.css" />
 <style>
   :root{
     --navy:    #0B2A4A;
@@ -2309,7 +2313,7 @@
 
       <nav class="primary">
         <a href="Catalog.html" class="sub" data-i18n="nav.catalog">Catalog</a>
-        <a href="Catalog.html#instock" data-i18n="nav.instock">In Stock</a>
+        <a href="Catalog.html#results" data-i18n="nav.instock">In Stock</a>
         <a href="Shop.html" class="sub" data-i18n="nav.shop">Shop</a>
         <a href="index.html#services" data-i18n="nav.services">Services</a>
         <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -2324,13 +2328,22 @@
           <span class="search-label" data-i18n="nav.search_label">Search</span>
           <span class="search-key">Ctrl K</span>
         </button>
-        <a href="/my-account" class="icon-btn" aria-label="Account">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 15.2A7.8 7.8 0 0 1 8.8 4 8.4 8.4 0 1 0 20 15.2Z"/>
+          </svg>
+        </button>
+        <a href="index.html#contact" class="icon-btn" aria-label="Account">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
           </svg>
         </a>
-        <a href="/cart" class="icon-btn" aria-label="Cart">
+        <a href="Shop.html" class="icon-btn" aria-label="Cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 4h2l2.5 12h11l2-8H6"/>
             <circle cx="9" cy="20" r="1.5"/>
@@ -2349,6 +2362,15 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="6"/>
             <path d="M16 16l4 4"/>
+          </svg>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 15.2A7.8 7.8 0 0 1 8.8 4 8.4 8.4 0 1 0 20 15.2Z"/>
           </svg>
         </button>
         <button class="mobile-menu" type="button" aria-label="Open menu">
@@ -2380,14 +2402,13 @@
       <div class="quick-search__results" id="quickSearchResults" aria-live="polite"></div>
     </div>
   </div>
-
   </template>
 
   <!-- =========== MOBILE DRAWER =========== -->
   <input type="checkbox" id="mobile-toggle" hidden/>
   <nav class="mobile-drawer" aria-label="Mobile navigation">
     <div class="mobile-drawer-head">
-      <a href="Home.html" class="logo" aria-label="BoatsExpert home">
+      <a href="index.html" class="logo" aria-label="BoatsExpert home">
         <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
       </a>
       <label for="mobile-toggle" class="mobile-close" aria-label="Close menu">
@@ -2396,7 +2417,7 @@
     </div>
     <div class="mobile-nav">
       <a href="Catalog.html" class="active" data-i18n="nav.catalog">Catalog</a>
-      <a href="Catalog.html#instock" data-i18n="nav.instock">In Stock</a>
+      <a href="Catalog.html#results" data-i18n="nav.instock">In Stock</a>
       <a href="Shop.html" data-i18n="nav.shop">Shop</a>
       <a href="index.html#services" data-i18n="nav.services">Services</a>
       <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
@@ -2418,13 +2439,13 @@
     <div class="boat-band-photo" style="background-image:url('assets/boats/finval-470-evo-13.jpg');"></div>
     <div class="container-wide">
       <div class="crumbs">
-        <a href="Home.html">Home</a>
+        <a href="index.html">Home</a>
         <span class="sep">/</span>
         <a href="Catalog.html">Catalog</a>
         <span class="sep">/</span>
-        <a href="#" data-i18n="boat.crumb.aluminium">Aluminium</a>
+        <a href="Catalog.html#results" data-i18n="boat.crumb.aluminium">Aluminium</a>
         <span class="sep">/</span>
-        <a href="#">Finval</a>
+        <a href="Catalog.html#brands">Finval</a>
         <span class="sep">/</span>
         <span class="here">470 EVO DC</span>
       </div>
@@ -2574,19 +2595,19 @@
           <span class="lease-chip">or <b>€295/mo</b> · 0% over 60 months</span>
           <div class="side-divider"></div>
           <div class="side-cta-grid">
-            <a href="#" class="btn-brass"><span data-i18n="boat.side.cta.quote">Request a Quote</span>
+            <a href="index.html#contact" class="btn-brass"><span data-i18n="boat.side.cta.quote">Request a Quote</span>
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
             </a>
             <div class="side-row-2">
               <a href="#testdrive" class="btn-outline" data-i18n="boat.side.cta.test">Book Test Drive</a>
-              <a href="#" class="btn-outline" data-i18n="boat.side.cta.trade">Trade-in</a>
+              <a href="#tradein" class="btn-outline" data-i18n="boat.side.cta.trade">Trade-in</a>
             </div>
           </div>
           <div class="side-divider"></div>
           <div class="side-reserve">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10 H21"/><path d="M7 16 H11"/></svg></span>
             <div class="l"><b>Reserve €1,000</b>Refundable · holds for 14 days</div>
-            <a href="#" data-i18n="boat.side.reserve_link">Reserve →</a>
+            <a href="index.html#contact" data-i18n="boat.side.reserve_link">Reserve →</a>
           </div>
         </div>
 
@@ -2705,7 +2726,7 @@
           <div class="ey">42 specifications · 4 categories</div>
           <h2>Specifications, <em>nothing rounded.</em></h2>
         </div>
-        <a href="#" class="more">Download spec sheet (PDF) →</a>
+        <a href="#documents" class="more">Download spec sheet (PDF) →</a>
       </div>
       <div class="specs-ledger">
         <div class="grp">
@@ -2760,7 +2781,7 @@
           <div class="ey" data-i18n="boat.sec.equip.ey">Standard equipment · 28 items</div>
           <h2>What's <em>on board</em> from the factory.</h2>
         </div>
-        <a href="#" class="more">Optional upgrades →</a>
+        <a href="#equipment" class="more">Optional upgrades →</a>
       </div>
       <div class="eq-grid">
         <div class="eq-card">
@@ -2811,7 +2832,7 @@
           <div class="ey" data-i18n="boat.sec.config.ey">3 packs · upgrade path</div>
           <h2>Pick a <em>configuration</em>.</h2>
         </div>
-        <a href="#" class="more">Compare all packs →</a>
+        <a href="#configurations" class="more">Compare all packs →</a>
       </div>
       <div class="cfg-grid">
         <div class="cfg">
@@ -2825,7 +2846,7 @@
             <li>Console gauges, no chartplotter</li>
             <li>1 battery · 75 Ah AGM</li>
           </ul>
-          <div class="cfg-cta"><a href="#" class="btn-outline" data-i18n="boat.cfg.cta.quote">Request quote</a></div>
+          <div class="cfg-cta"><a href="index.html#contact" class="btn-outline" data-i18n="boat.cfg.cta.quote">Request quote</a></div>
         </div>
         <div class="cfg best">
           <span class="cfg-l" data-i18n="boat.cfg.popular">Most popular</span>
@@ -2839,7 +2860,7 @@
             <li>2 batteries · 75 Ah AGM · dual switch</li>
             <li>EVA flooring · grey</li>
           </ul>
-          <div class="cfg-cta"><a href="#" class="btn-outline">Request quote</a></div>
+          <div class="cfg-cta"><a href="index.html#contact" class="btn-outline">Request quote</a></div>
         </div>
         <div class="cfg">
           <span class="cfg-l" data-i18n="boat.cfg.pro">Full-spec · pro</span>
@@ -2853,7 +2874,7 @@
             <li>Trolling motor charger · onboard</li>
             <li>Custom bimini · stainless · brass hardware</li>
           </ul>
-          <div class="cfg-cta"><a href="#" class="btn-outline">Request quote</a></div>
+          <div class="cfg-cta"><a href="index.html#contact" class="btn-outline">Request quote</a></div>
         </div>
       </div>
     </div>
@@ -2867,45 +2888,45 @@
           <div class="ey" data-i18n="boat.sec.docs.ey">Downloads · 7 files</div>
           <h2>Documents, <em>paperwork done.</em></h2>
         </div>
-        <a href="#" class="more">Request originals →</a>
+        <a href="index.html#contact" class="more">Request originals →</a>
       </div>
       <div class="docs-grid">
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/><path d="M7 10 H11"/><path d="M7 12 H11"/></svg></span>
           <h4>Technical spec sheet</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>1.8 MB</span><span class="sep">·</span><span>EN / RO</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>CE declaration of conformity</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>320 KB</span><span class="sep">·</span><span>EN</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Owner's manual (2026)</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>4.2 MB</span><span class="sep">·</span><span>EN / RO</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Warranty terms</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>180 KB</span><span class="sep">·</span><span>EN / RO</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Hull-ID certificate</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>96 KB</span><span class="sep">·</span><span>EN</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Leasing offer · 0% / 60 mo</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>240 KB</span><span class="sep">·</span><span>RO</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Insurance pre-quote (Allianz)</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>140 KB</span><span class="sep">·</span><span>RO</span></div>
         </a>
-        <a class="doc" href="#">
+        <a class="doc" href="#documents">
           <span class="ic"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 H11 L14 7 V14 H4 Z"/><path d="M11 4 V7 H14"/></svg></span>
           <h4>Sea-trial checklist</h4>
           <div class="meta"><span>PDF</span><span class="sep">·</span><span>72 KB</span><span class="sep">·</span><span>EN</span></div>
@@ -2952,7 +2973,7 @@
             </label>
             <label class="check">
               <input type="checkbox" checked/>
-              <span>Yes, contact me on WhatsApp. I've read the <a href="#" style="color:var(--brass-3);border-bottom:1px solid var(--brass)">privacy notice</a>.</span>
+              <span>Yes, contact me on WhatsApp. I've read the <a href="index.html#contact" style="color:var(--brass-3);border-bottom:1px solid var(--brass)">privacy notice</a>.</span>
             </label>
             <button type="submit" class="btn-brass submit">Send booking request
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
@@ -2974,7 +2995,7 @@
         <a href="Catalog.html" class="more">Full catalogue →</a>
       </div>
       <div class="sim-grid">
-        <a class="sim" href="#">
+        <a class="sim" href="Catalog.html#results">
           <div class="sim-photo">
             <img src="assets/boats/big-foot-ultimate.jpg" alt="Big Foot Ultimate"/>
             <div class="gradient"></div>
@@ -2988,7 +3009,7 @@
             </div>
           </div>
         </a>
-        <a class="sim" href="#">
+        <a class="sim" href="Catalog.html#results">
           <div class="sim-photo">
             <img src="assets/boats/galaxy-pilot-p65.jpg" alt="GALAXY Pilot P6.5"/>
             <div class="gradient"></div>
@@ -3002,7 +3023,7 @@
             </div>
           </div>
         </a>
-        <a class="sim" href="#">
+        <a class="sim" href="Catalog.html#results">
           <div class="sim-photo">
             <img src="assets/boats/gala-viking-v6f.jpg" alt="GALA Viking V6F"/>
             <div class="gradient"></div>
@@ -3028,7 +3049,7 @@
           <div class="ey">Leasing · 0% interest available</div>
           <h2>Pay it off <em>month by month</em>.</h2>
         </div>
-        <a href="#" class="more">Apply for pre-approval →</a>
+        <a href="#finance" class="more">Apply for pre-approval →</a>
       </div>
       <div class="fin-grid">
         <div class="fin-l">
@@ -3083,7 +3104,7 @@
             </div>
           </div>
           <div class="fin-cta">
-            <a href="#" class="btn-brass">Apply for pre-approval
+            <a href="index.html#contact" class="btn-brass">Apply for pre-approval
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
             </a>
           </div>
@@ -3100,7 +3121,7 @@
           <div class="ey">Trade in your boat · 48-hour quote</div>
           <h2>Bring your old hull, <em>we'll value it</em>.</h2>
         </div>
-        <a href="#" class="more">Trade-in full form →</a>
+        <a href="#tradein" class="more">Trade-in full form →</a>
       </div>
       <div class="trade">
         <div class="trade-l">
@@ -3177,7 +3198,7 @@
           <div class="ey">Frequently asked · 8 questions</div>
           <h2>Things buyers ask <em>before they sign</em>.</h2>
         </div>
-        <a href="#" class="more">Ask a different question →</a>
+        <a href="index.html#contact" class="more">Ask a different question →</a>
       </div>
       <div class="faq-list">
         <details class="faq" open>
@@ -3285,7 +3306,7 @@
         </div>
         <div class="cta-row">
           <a href="https://wa.me/40743377377" class="btn-brass">WhatsApp Alex</a>
-          <a href="#" class="btn-outline" style="color:var(--paper);border-color:rgba(244,239,230,.36)">Reserve €1,000</a>
+          <a href="index.html#contact" class="btn-outline" style="color:var(--paper);border-color:rgba(244,239,230,.36)">Reserve €1,000</a>
         </div>
       </div>
     </div>
@@ -3310,7 +3331,7 @@
 
       <div class="foot-inner">
         <div class="brand-block">
-          <a href="/" class="logo" aria-label="BoatsExpert home">
+          <a href="index.html" class="logo" aria-label="BoatsExpert home">
             <img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>
             <span class="logo-tagline"><b data-i18n="foot.brand.tag">Since 2014</b><span data-i18n="foot.brand.sub">Otopeni · Romania</span></span>
           </a>
@@ -3330,7 +3351,7 @@
             <a href="https://wa.me/40743377377" aria-label="WhatsApp">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 14l1-3a6 6 0 1 1 2.2 2.2L2 14z"/></svg>
             </a>
-            <a href="/" aria-label="YouTube">
+            <a href="index.html" aria-label="YouTube">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="12" height="8" rx="2"/><path d="M7 6.5 V9.5 L10 8 Z" fill="currentColor"/></svg>
             </a>
           </div>
@@ -3339,40 +3360,40 @@
         <div>
           <h5 data-i18n="foot.col_cat.h">Catalog</h5>
           <ul>
-            <li><a href="/listings/make-brand/finval" data-i18n="foot.col_cat.l1">Finval Boats</a></li>
-            <li><a href="/listings/make-brand/beneteau" data-i18n="foot.col_cat.l2">Beneteau</a></li>
-            <li><a href="/listings/make-brand/northsilver-fish" data-i18n="foot.col_cat.l3">NorthSilver Fish</a></li>
-            <li><a href="/listings/make-brand/northsilver-expedition" data-i18n="foot.col_cat.l4">NorthSilver Expedition</a></li>
-            <li><a href="/listings/make-brand/gala" data-i18n="foot.col_cat.l5">GALA RIB</a></li>
-            <li><a href="/listings/make-brand/galaxy-pro-rib" data-i18n="foot.col_cat.l6">GALAXY Pro</a></li>
-            <li><a href="/listings/make-brand/landx" data-i18n="foot.col_cat.l7">LANDX</a></li>
-            <li><a href="/listings/make-brand/respo-trailers" data-i18n="foot.col_cat.l8">RESPO Trailers</a></li>
+            <li><a href="Boat.html" data-i18n="foot.col_cat.l1">Finval Boats</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l2">Beneteau</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l3">NorthSilver Fish</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l4">NorthSilver Expedition</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l5">GALA RIB</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l6">GALAXY Pro</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l7">LANDX</a></li>
+            <li><a href="Catalog.html" data-i18n="foot.col_cat.l8">RESPO Trailers</a></li>
           </ul>
         </div>
 
         <div>
           <h5 data-i18n="foot.col_shop.h">Shop</h5>
           <ul>
-            <li><a href="/product-category/outboard-motors" data-i18n="foot.col_shop.l1">Outboard motors</a></li>
-            <li><a href="/product-category/electric-motors" data-i18n="foot.col_shop.l2">Electric motors</a></li>
-            <li><a href="/product-category/sonars" data-i18n="foot.col_shop.l3">Sonars</a></li>
-            <li><a href="/product-category/batteries" data-i18n="foot.col_shop.l4">Batteries</a></li>
-            <li><a href="/product-category/marine-accessories" data-i18n="foot.col_shop.l5">Marine accessories</a></li>
-            <li><a href="/product-category/marine-audio" data-i18n="foot.col_shop.l6">Marine audio</a></li>
-            <li><a href="/product-category/navigation-equipment" data-i18n="foot.col_shop.l7">Navigation</a></li>
-            <li><a href="/product-category/quatix-smartwatches" data-i18n="foot.col_shop.l8">Quatix watches</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l1">Outboard motors</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l2">Electric motors</a></li>
+            <li><a href="Product.html" data-i18n="foot.col_shop.l3">Sonars</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l4">Batteries</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l5">Marine accessories</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l6">Marine audio</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l7">Navigation</a></li>
+            <li><a href="Shop.html" data-i18n="foot.col_shop.l8">Quatix watches</a></li>
           </ul>
         </div>
 
         <div>
           <h5 data-i18n="foot.col_svc.h">Services</h5>
           <ul>
-            <li><a href="/services/expert-tuning-of-angler-boats" data-i18n="foot.col_svc.l1">Tuning of angler boats</a></li>
-            <li><a href="/services/outboard-engine-installation" data-i18n="foot.col_svc.l2">Outboard installation</a></li>
-            <li><a href="/services/tuning-service" data-i18n="foot.col_svc.l3">Tuning &amp; service</a></li>
-            <li><a href="/services/registration-driving" data-i18n="foot.col_svc.l4">Registration courses</a></li>
-            <li><a href="/services/warranty" data-i18n="foot.col_svc.l5">10-year warranty</a></li>
-            <li><a href="#contact" data-i18n="foot.col_svc.l6">Book a Test Drive</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l1">Tuning of angler boats</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l2">Outboard installation</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l3">Tuning &amp; service</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l4">Registration courses</a></li>
+            <li><a href="index.html#services" data-i18n="foot.col_svc.l5">10-year warranty</a></li>
+            <li><a href="index.html#contact" data-i18n="foot.col_svc.l6">Book a Test Drive</a></li>
           </ul>
         </div>
 
@@ -3402,12 +3423,11 @@
       <div class="foot-bottom">
         <div data-i18n="foot.copyright">© 2014–2026 BoatsExpert SRL · All rights reserved · Built in Otopeni, Romania</div>
         <div>
-          <a href="/legal/privacy" data-i18n="foot.priv">Privacy</a> · <a href="/legal/cookies" data-i18n="foot.cookies">Cookies</a> · <a href="/legal/terms" data-i18n="foot.terms">Terms</a> · <a href="/legal/imprint" data-i18n="foot.imprint">Imprint</a> · EN / RO
+          <a href="index.html#contact" data-i18n="foot.priv">Privacy</a> · <a href="index.html#contact" data-i18n="foot.cookies">Cookies</a> · <a href="index.html#contact" data-i18n="foot.terms">Terms</a> · <a href="index.html#contact" data-i18n="foot.imprint">Imprint</a> · EN / RO
         </div>
       </div>
     </div>
   </footer>
-
   </template>
 
   <!-- =========== LIGHTBOX =========== -->
@@ -3443,11 +3463,12 @@
       <span class="v">€20,490<em>· €295/mo</em></span>
     </div>
     <a href="#testdrive" class="btn-mc">Test Drive</a>
-    <a href="#" class="btn-mc primary">Request quote
+    <a href="index.html#contact" class="btn-mc primary">Request quote
       <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
     </a>
   </div>
 
+  <script src="theme.js" defer></script>
   <script src="partials.js"></script>
   <script src="i18n.js" defer></script>
   <script>
