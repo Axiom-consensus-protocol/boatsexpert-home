@@ -1,0 +1,42 @@
+{
+  "slug": "catalog",
+  "route": "/catalog",
+  "source": "boatsexpert-home/Catalog.html",
+  "title": "Boats Catalog — 230 offers · BoatsExpert",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-catalog-band",
+      "file": "01-catalog-band.html"
+    },
+    {
+      "name": "02-type-icon-strip-hull-types",
+      "file": "02-type-icon-strip-hull-types.html"
+    },
+    {
+      "name": "03-in-stock-showcase",
+      "file": "03-in-stock-showcase.html"
+    },
+    {
+      "name": "03-toolbar",
+      "file": "03-toolbar.html"
+    },
+    {
+      "name": "04-body",
+      "file": "04-body.html"
+    },
+    {
+      "name": "05-featured-brands-6-hero-brand-tiles",
+      "file": "05-featured-brands-6-hero-brand-tiles.html"
+    },
+    {
+      "name": "06-cta-band",
+      "file": "06-cta-band.html"
+    },
+    {
+      "name": "07-original-taxonomy-directory",
+      "file": "07-original-taxonomy-directory.html"
+    }
+  ],
+  "scriptCount": 2
+}

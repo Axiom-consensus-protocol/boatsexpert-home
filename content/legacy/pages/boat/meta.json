@@ -1,0 +1,74 @@
+{
+  "slug": "boat",
+  "route": "/boat",
+  "source": "boatsexpert-home/Boat.html",
+  "title": "Finval 470 EVO DC — Aluminium Pro Angler · BoatsExpert",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-boat-band-crumb-title-deck",
+      "file": "01-boat-band-crumb-title-deck.html"
+    },
+    {
+      "name": "02-main-gallery-sticky-sidebar",
+      "file": "02-main-gallery-sticky-sidebar.html"
+    },
+    {
+      "name": "03-tabs-bar",
+      "file": "03-tabs-bar.html"
+    },
+    {
+      "name": "04-about-long-form",
+      "file": "04-about-long-form.html"
+    },
+    {
+      "name": "05-specs-ledger",
+      "file": "05-specs-ledger.html"
+    },
+    {
+      "name": "06-equipment",
+      "file": "06-equipment.html"
+    },
+    {
+      "name": "07-configurations",
+      "file": "07-configurations.html"
+    },
+    {
+      "name": "08-documents",
+      "file": "08-documents.html"
+    },
+    {
+      "name": "09-test-drive-form",
+      "file": "09-test-drive-form.html"
+    },
+    {
+      "name": "10-similar-boats",
+      "file": "10-similar-boats.html"
+    },
+    {
+      "name": "11-finance-leasing-calculator",
+      "file": "11-finance-leasing-calculator.html"
+    },
+    {
+      "name": "12-trade-in-mini-form",
+      "file": "12-trade-in-mini-form.html"
+    },
+    {
+      "name": "13-faq",
+      "file": "13-faq.html"
+    },
+    {
+      "name": "14-cta-band",
+      "file": "14-cta-band.html"
+    },
+    {
+      "name": "15-lightbox",
+      "file": "15-lightbox.html"
+    },
+    {
+      "name": "16-sticky-bottom-cta-mobile-tablet-only",
+      "file": "16-sticky-bottom-cta-mobile-tablet-only.html"
+    }
+  ],
+  "scriptCount": 1
+}

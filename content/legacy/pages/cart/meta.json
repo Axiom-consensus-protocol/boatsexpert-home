@@ -1,0 +1,18 @@
+{
+  "slug": "cart",
+  "route": "/cart",
+  "source": "staging-pages/cart.html",
+  "title": "BoatsExpert — Your cart",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-page-band",
+      "file": "01-page-band.html"
+    },
+    {
+      "name": "02-cart",
+      "file": "02-cart.html"
+    }
+  ],
+  "scriptCount": 1
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "services",
+  "route": "/services",
+  "source": "staging-pages/services.html",
+  "title": "BoatsExpert — Services in Otopeni",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-page-band",
+      "file": "01-page-band.html"
+    },
+    {
+      "name": "02-services-grid",
+      "file": "02-services-grid.html"
+    },
+    {
+      "name": "03-workshop-band",
+      "file": "03-workshop-band.html"
+    }
+  ],
+  "scriptCount": 0
+}

@@ -1,0 +1,71 @@
+<!-- =========== FINANCE / LEASING CALCULATOR =========== -->
+<section class="sec dark" id="finance">
+    <div class="container-wide">
+      <div class="sec-head">
+        <div>
+          <div class="ey">Leasing · 0% interest available</div>
+          <h2>Pay it off <em>month by month</em>.</h2>
+        </div>
+        <a href="#finance" class="more">Apply for pre-approval →</a>
+      </div>
+      <div class="fin-grid">
+        <div class="fin-l">
+          <h3>The €20,490 hull, on <em>€295 a month</em>.</h3>
+          <p>We work with Allianz Țiriac Leasing, Raiffeisen Leasing and Țiriac Leasing — all of whom run special boat-finance products in Romania. The 470 EVO DC qualifies for the 0% promotional rate. Pre-approval takes 24 hours; signing takes 30 minutes at our showroom.</p>
+          <ul class="fin-bullets">
+            <li><b>0% APR</b> on terms up to 60 months for first-time boat buyers in Romania.</li>
+            <li><b>Down payment from 15 %</b> — and we accept your old boat as part of it (see trade-in below).</li>
+            <li><b>Pre-approval in 24 h</b> — bring three documents, leave with a signed offer.</li>
+            <li><b>Insurance bundled</b> — Allianz CASCO Marine quote attached on request.</li>
+          </ul>
+          <div class="fin-banks">
+            <span class="l">Approved partners</span>
+            <span class="b">Allianz Țiriac</span>
+            <span class="b">Raiffeisen Leasing</span>
+            <span class="b">Țiriac Leasing</span>
+          </div>
+        </div>
+        <div class="fin-r">
+          <div class="head">
+            <h4>Leasing calculator</h4>
+            <span class="ey">Demo · live in mockup</span>
+          </div>
+          <div class="fin-row">
+            <div class="lb"><b>Hull price</b>VAT incl. · EUR</div>
+            <input type="range" class="slider" id="fin-price" min="18000" max="32000" step="500" value="20490"/>
+            <div class="v" id="fin-price-v">€20,490</div>
+          </div>
+          <div class="fin-row">
+            <div class="lb"><b>Down payment</b>15 % – 60 %</div>
+            <input type="range" class="slider" id="fin-down" min="15" max="60" step="5" value="20"/>
+            <div class="v" id="fin-down-v">20%</div>
+          </div>
+          <div class="fin-row">
+            <div class="lb"><b>Term</b>12 – 60 months</div>
+            <input type="range" class="slider" id="fin-term" min="12" max="60" step="6" value="60"/>
+            <div class="v" id="fin-term-v">60 mo</div>
+          </div>
+          <div class="fin-row">
+            <div class="lb"><b>APR</b>0 % – 7.9 %</div>
+            <input type="range" class="slider" id="fin-apr" min="0" max="79" step="1" value="0"/>
+            <div class="v" id="fin-apr-v">0.0 %</div>
+          </div>
+          <div class="fin-result">
+            <div class="it">
+              <span class="il">Monthly payment</span>
+              <span class="iv" id="fin-mo">€273<em>/mo</em></span>
+            </div>
+            <div class="it">
+              <span class="il">Total paid</span>
+              <span class="iv" id="fin-total">€20,490</span>
+            </div>
+          </div>
+          <div class="fin-cta">
+            <a href="/#contact" class="btn-brass">Apply for pre-approval
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

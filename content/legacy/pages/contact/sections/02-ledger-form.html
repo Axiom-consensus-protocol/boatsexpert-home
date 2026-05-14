@@ -1,0 +1,66 @@
+<!-- LEDGER + FORM -->
+<section class="sec">
+    <div class="container-wide">
+      <div class="split">
+        <div class="ledger">
+          <h2 data-i18n="showroom.visual_h">See the boat, price the fit-out, leave with a plan.</h2>
+          <p data-i18n="showroom.visual_k">Otopeni showroom · service desk</p>
+          <div class="ledger-grid">
+            <div><b data-i18n="showroom.ledger.addr_b">Address</b><span data-i18n="showroom.ledger.addr_v">Strada Horia Cloșca și Crișan 5<br/>Otopeni 075100</span></div>
+            <div><b data-i18n="showroom.ledger.hours_b">Hours</b><span data-i18n="showroom.ledger.hours_v">Mon–Thu · 10:00–17:30<br/>Fri–Sat by appointment</span></div>
+            <div><b data-i18n="showroom.ledger.work_b">Workshop</b><span data-i18n="showroom.ledger.work_v">Fit-out, service, registration, warranty</span></div>
+            <div><b data-i18n="showroom.ledger.del_b">Delivery</b><span data-i18n="showroom.ledger.del_v">Romania · Moldova · Serbia · Bulgaria</span></div>
+          </div>
+          <div class="ledger-actions">
+            <a class="ledger-action" href="tel:+40743377377">
+              <span class="k" data-i18n="showroom.action_office_b">Office</span>
+              <span class="v" data-i18n="showroom.action_office_v">+40 (743) 377 377</span>
+            </a>
+            <a class="ledger-action" href="https://wa.me/40743377377">
+              <span class="k" data-i18n="showroom.action_wa_b">WhatsApp</span>
+              <span class="v" data-i18n="showroom.action_wa_v">Send photos or boat model</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="ey" data-i18n="showroom.panel_eyebrow">Application · fast route</div>
+          <h3 data-i18n="showroom.panel_h">Tell us what you need. Sales or service answers on the same business day.</h3>
+          <form class="field-grid" onsubmit="event.preventDefault(); alert('Demo only — request accepted in mockup.');">
+            <div class="field">
+              <label data-i18n="showroom.form.name_l">Name</label>
+              <input type="text" data-i18n-attr="placeholder:showroom.form.name_p" placeholder="Your name" required/>
+            </div>
+            <div class="field">
+              <label data-i18n="showroom.form.phone_l">Phone / WhatsApp</label>
+              <input type="tel" data-i18n-attr="placeholder:showroom.form.phone_p" placeholder="+40..." required/>
+            </div>
+            <div class="field full">
+              <label data-i18n="showroom.form.interest_l">Interest</label>
+              <div class="interest">
+                <label class="on"><input type="checkbox" checked/><span data-i18n="showroom.form.opt_buy">Boat purchase</span></label>
+                <label><input type="checkbox"/><span data-i18n="showroom.form.opt_svc">Service &amp; tuning</span></label>
+                <label><input type="checkbox"/><span data-i18n="showroom.form.opt_reg">Registration &amp; warranty</span></label>
+                <label><input type="checkbox"/><span data-i18n="showroom.form.opt_shop">Equipment shop</span></label>
+              </div>
+            </div>
+            <div class="field full">
+              <label data-i18n="showroom.form.msg_l">Message</label>
+              <textarea data-i18n-attr="placeholder:showroom.form.msg_p" placeholder="Boat model, budget, engine, trailer, accessories, delivery city..."></textarea>
+            </div>
+            <div class="field full">
+              <label data-i18n="showroom.form.lang_l">Preferred language</label>
+              <div class="lang-toggle">
+                <button type="button" class="on" data-i18n="showroom.form.lang_en">English</button>
+                <button type="button" data-i18n="showroom.form.lang_ro">Romanian</button>
+              </div>
+            </div>
+            <div class="form-foot full">
+              <span class="note" data-i18n="showroom.form.note">No payment here · request goes to sales desk · EN / RO</span>
+              <button type="submit" class="btn-brass" data-i18n="showroom.form.submit">Send request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

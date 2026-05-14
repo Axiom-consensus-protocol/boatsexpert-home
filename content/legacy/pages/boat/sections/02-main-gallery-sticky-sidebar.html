@@ -1,0 +1,159 @@
+<!-- =========== MAIN: GALLERY + STICKY SIDEBAR =========== -->
+<section class="boat-main">
+    <div class="container-wide">
+
+      <!-- LEFT: GALLERY -->
+      <div class="gallery">
+        <!-- Mobile swipe-snap carousel (visible only on mobile) -->
+        <div class="gal-mobile">
+          <span class="gal-mobile-tag"><span style="width:5px;height:5px;border-radius:50%;background:currentColor"></span>In stock · Otopeni</span>
+          <span class="gal-mobile-counter"><b id="gal-m-cur">1</b> / 6</span>
+          <button class="gal-mobile-zoom" id="gal-m-zoom" aria-label="Open gallery">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5 V2 H5 M14 5 V2 H11 M2 11 V14 H5 M14 11 V14 H11"/></svg>
+          </button>
+          <div class="gal-mobile-track" id="gal-m-track">
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo.jpg" alt="Finval 470 EVO DC" data-lb="0"/></div>
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo-2.jpg" alt="Profile shot" data-lb="1"/></div>
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo-10.jpg" alt="Deck" data-lb="2"/></div>
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo-13.jpg" alt="Console" data-lb="3"/></div>
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo-15.jpg" alt="On water" data-lb="4"/></div>
+            <div class="gal-mobile-slide"><img src="/assets/boats/finval-470-evo-17.jpg" alt="Stern" data-lb="5"/></div>
+          </div>
+          <div class="gal-mobile-dots" id="gal-m-dots">
+            <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="gal-main lb-trigger">
+          <img id="gal-main-img" src="/assets/boats/finval-470-evo.jpg" alt="Finval 470 EVO DC"/>
+          <div class="gal-toolbar">
+            <div class="gal-badges">
+              <span class="gal-badge"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block"></span>In stock · Otopeni</span>
+              <span class="gal-badge exc">Exclusive · RO</span>
+              <span class="gal-badge year">2026</span>
+            </div>
+            <div class="gal-actions">
+              <button class="gal-icon" aria-label="Save"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14 L2.5 8 Q 1 5 4 3.5 Q 6 3.5 8 6 Q 10 3.5 12 3.5 Q 15 5 13.5 8 Z"/></svg></button>
+              <button class="gal-icon" aria-label="Compare"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5 L12 2.5 L12 13.5 L8 11 L4 13.5 Z"/></svg></button>
+              <button class="gal-icon" aria-label="Share"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="8" r="1.6"/><circle cx="12" cy="4" r="1.6"/><circle cx="12" cy="12" r="1.6"/><path d="M5.5 7 L10.5 4.5 M5.5 9 L10.5 11.5"/></svg></button>
+	              <button class="gal-icon" aria-label="Fullscreen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5 V2 H5 M14 5 V2 H11 M2 11 V14 H5 M14 11 V14 H11"/></svg></button>
+	            </div>
+	          </div>
+	          <div class="gal-measurements" aria-hidden="true">
+	            <span class="measure beam">Beam 1.96 m</span>
+	            <span class="measure draft">Draft 19 cm</span>
+	            <span class="measure tank">55 L welded tank</span>
+	          </div>
+	          <div class="gal-foot">
+	            <span class="gal-count">
+	              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3.5" width="10" height="7" rx="1"/><circle cx="7" cy="7" r="1.7"/></svg>
+	              28 photos · 2 videos
+            </span>
+            <div class="gal-arrows">
+              <button class="gal-arrow" aria-label="Previous"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4 L5 9 L11 14"/></svg></button>
+              <button class="gal-arrow" aria-label="Next"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 L13 9 L7 14"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="gal-thumbs">
+          <button class="gal-thumb active" data-src="/assets/boats/finval-470-evo.jpg"><img src="/assets/boats/finval-470-evo.jpg" alt=""/></button>
+          <button class="gal-thumb" data-src="/assets/boats/finval-470-evo-2.jpg"><img src="/assets/boats/finval-470-evo-2.jpg" alt=""/></button>
+          <button class="gal-thumb" data-src="/assets/boats/finval-470-evo-10.jpg"><img src="/assets/boats/finval-470-evo-10.jpg" alt=""/></button>
+          <button class="gal-thumb" data-src="/assets/boats/finval-470-evo-13.jpg"><img src="/assets/boats/finval-470-evo-13.jpg" alt=""/></button>
+          <button class="gal-thumb video" data-src="/assets/boats/finval-470-evo-15.jpg"><img src="/assets/boats/finval-470-evo-15.jpg" alt=""/></button>
+          <button class="gal-thumb more">
+            <span>+22</span>
+	            <span class="l">View all</span>
+	          </button>
+	        </div>
+	        <div class="boat-proof-ledger">
+	          <div>
+	            <span>Hull proof</span>
+	            <b>AlMg-5083 plate checked.</b>
+	            <p>Weld seams, transom rating and RAPTOR coating are inspected before handover.</p>
+	          </div>
+	          <div>
+	            <span>Rigging plan</span>
+	            <b>Yamaha F60 is pre-mapped.</b>
+	            <p>Prop, throttle, battery and steering load are matched before invoice.</p>
+	          </div>
+	          <div>
+	            <span>Water fit</span>
+	            <b>Delta-ready shallow hull.</b>
+	            <p>Built for rivers, reed beds and lakes where fiberglass becomes a liability.</p>
+	          </div>
+	          <div>
+	            <span>Handover</span>
+	            <b>Trailer, papers, test drive.</b>
+	            <p>Registration pack and Otopeni handover are prepared as one order.</p>
+	          </div>
+	        </div>
+	      </div>
+
+      <!-- RIGHT: STICKY SIDEBAR -->
+      <aside class="side">
+        <!-- Price card -->
+        <div class="side-card">
+          <div class="price-head">
+            <span data-i18n="boat.side.from">From, VAT incl.</span>
+            <span class="vat" data-i18n="boat.side.exdisplay">−€1,500 ex-display</span>
+          </div>
+          <div class="price-row">
+            <span class="v">€20,490</span>
+          </div>
+          <span class="lease-chip">or <b>€295/mo</b> · 0% over 60 months</span>
+          <div class="side-divider"></div>
+          <div class="side-cta-grid">
+            <a href="/#contact" class="btn-brass"><span data-i18n="boat.side.cta.quote">Request a Quote</span>
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+            </a>
+            <div class="side-row-2">
+              <a href="#testdrive" class="btn-outline" data-i18n="boat.side.cta.test">Book Test Drive</a>
+              <a href="#tradein" class="btn-outline" data-i18n="boat.side.cta.trade">Trade-in</a>
+            </div>
+          </div>
+          <div class="side-divider"></div>
+          <div class="side-reserve">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10 H21"/><path d="M7 16 H11"/></svg></span>
+            <div class="l"><b>Reserve €1,000</b>Refundable · holds for 14 days</div>
+            <a href="/#contact" data-i18n="boat.side.reserve_link">Reserve →</a>
+          </div>
+        </div>
+
+        <!-- Trust pills -->
+        <div class="side-trust">
+          <div class="t">
+            <span class="ic"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2 L19 6 V11 C19 15.5 15.5 19 11 20 C6.5 19 3 15.5 3 11 V6 Z M7.5 11 L10 13.5 L15 8.5"/></svg></span>
+            <span class="lb">Warranty<b data-i18n="boat.trust.warranty.v">10-year hull · one-handed claim</b></span>
+          </div>
+          <div class="t">
+            <span class="ic"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18 L19 18 M5 18 V13 L11 9 L17 13 V18"/></svg></span>
+            <span class="lb"><span data-i18n="boat.trust.showroom.k">Showroom</span><b data-i18n="boat.trust.showroom.v">Otopeni, 4.7 km from airport</b></span>
+          </div>
+          <div class="t">
+            <span class="ic"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="14" height="9" rx="1"/><path d="M16 10 H19 L21 12 V16 H16"/><circle cx="6" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg></span>
+            <span class="lb"><span data-i18n="boat.trust.delivery.k">Delivery</span><b data-i18n="boat.trust.delivery.v">RO · MD · RS · BG · trailer included</b></span>
+          </div>
+          <div class="t">
+            <span class="ic"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16 L8 10 L13 15 L20 8"/><path d="M14 8 H20 V14"/></svg></span>
+            <span class="lb"><span data-i18n="boat.trust.leasing.k">Leasing</span><b data-i18n="boat.trust.leasing.v">0% interest up to 60 months</b></span>
+          </div>
+        </div>
+
+        <!-- Dealer card -->
+        <div class="side-dealer">
+          <div class="av">AP</div>
+          <div class="lb">
+            <div class="nm">Alex Popescu</div>
+            <div class="rl" data-i18n="boat.dealer.role">Sales · Finval line</div>
+          </div>
+          <div class="actions">
+            <a href="tel:+40743377375" aria-label="Call"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4 C3 9 7 13 12 13 L13.5 11.5 L11 10 L9 11 C7 10 6 9 5 7 L6 5 L4.5 2.5 Z"/></svg></a>
+            <a href="https://wa.me/40743377377" aria-label="WhatsApp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l1-3a6 6 0 1 1 2.2 2.2L2 14z"/></svg></a>
+            <a href="mailto:alex@boatsexpert.com" aria-label="Email"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="12" height="9" rx="1"/><path d="M2 5 L8 9 L14 5"/></svg></a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>

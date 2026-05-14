@@ -1,0 +1,160 @@
+<!-- CART -->
+<section class="sec">
+    <div class="container-wide">
+      <div class="cart-grid">
+
+        <!-- LEFT: items table -->
+        <div class="items">
+          <div class="items-head">
+            <div data-i18n="cart.tbl.product">Product</div>
+            <div data-i18n="cart.tbl.price">Price</div>
+            <div data-i18n="cart.tbl.qty">Qty</div>
+            <div data-i18n="cart.tbl.subtotal">Subtotal</div>
+            <div></div>
+          </div>
+
+          <div class="item">
+            <div class="item-prod">
+              <div class="item-photo"><img src="/assets/shop/HK4200A-3-300x258.png" alt="BayStar HK4200"/></div>
+              <div class="item-meta">
+                <span class="item-brand" data-i18n="cart.it1.br">SeaStar · Hydraulic</span>
+                <span class="item-name" data-i18n="cart.it1.nm">BayStar Hydraulic <em>HK4200</em></span>
+                <span class="item-sku" data-i18n="cart.it1.sku">SKU HK4200A-3 · 5-year warranty</span>
+                <span class="item-stock" data-i18n="prod.stock.ok">In stock · Otopeni</span>
+              </div>
+            </div>
+            <div class="item-price"><span class="was">€1,054</span>€932</div>
+            <div class="item-qty">
+              <button aria-label="−" data-d="-1">−</button>
+              <input type="number" min="1" value="1"/>
+              <button aria-label="+" data-d="+1">+</button>
+            </div>
+            <div class="item-sub">€932</div>
+            <button class="item-rm" aria-label="Remove" title="Remove from cart">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 L12 12 M12 4 L4 12"/></svg>
+            </button>
+          </div>
+
+          <div class="item">
+            <div class="item-prod">
+              <div class="item-photo"><img src="/assets/shop/901157-300x258.jpg" alt="Optima BlueTop 75 Ah"/></div>
+              <div class="item-meta">
+                <span class="item-brand" data-i18n="cart.it2.br">Optima · Battery</span>
+                <span class="item-name" data-i18n="cart.it2.nm">BlueTop <em>75 Ah AGM</em></span>
+                <span class="item-sku" data-i18n="cart.it2.sku">SKU 901157 · Marine deep-cycle</span>
+                <span class="item-stock" data-i18n="prod.stock.ok">In stock · Otopeni</span>
+              </div>
+            </div>
+            <div class="item-price">€433</div>
+            <div class="item-qty">
+              <button aria-label="−" data-d="-1">−</button>
+              <input type="number" min="1" value="1"/>
+              <button aria-label="+" data-d="+1">+</button>
+            </div>
+            <div class="item-sub">€433</div>
+            <button class="item-rm" aria-label="Remove" title="Remove from cart">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 L12 12 M12 4 L4 12"/></svg>
+            </button>
+          </div>
+
+          <div class="items-foot">
+            <a href="/shop" class="continue" data-i18n="cart.cta.continue">Continue shopping →</a>
+            <span style="font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);" data-i18n="cart.reserved">Reserved 28 min</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: totals -->
+        <div class="totals">
+          <h3 data-i18n="cart.totals.h">Order summary</h3>
+          <div class="totals-rows">
+            <div class="totals-row"><span class="k" data-i18n="cart.totals.sub">Subtotal</span><span class="v">€1,365</span></div>
+            <div class="totals-row free"><span class="k" data-i18n="cart.totals.fit">Workshop fit-out</span><span class="v" data-i18n="cart.totals.fit_free">Free</span></div>
+            <div class="totals-row free"><span class="k" data-i18n="cart.totals.ship">Shipping · RO</span><span class="v" data-i18n="cart.totals.fit_free">Free</span></div>
+            <div class="totals-row"><span class="k" data-i18n="cart.totals.tax">VAT 19%</span><span class="v">€259</span></div>
+            <div class="totals-row total"><span class="k" data-i18n="cart.totals.total">Total</span><span class="v">€1,624</span></div>
+          </div>
+          <div class="coupon">
+            <h4 data-i18n="cart.coupon.h">Coupon code</h4>
+            <div class="coupon-row">
+              <input type="text" data-i18n-attr="placeholder:cart.coupon.p" placeholder="Enter code" autocomplete="off"/>
+              <button data-i18n="cart.coupon.apply">Apply</button>
+            </div>
+          </div>
+          <div class="totals-cta">
+            <a href="#" class="btn-brass">
+              <span data-i18n="cart.cta.checkout">Checkout · secure</span>
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M7 3l3 3-3 3"/></svg>
+            </a>
+            <a href="/shop" class="continue" data-i18n="cart.cta.continue">Continue shopping →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TRUST STRIP -->
+      <div class="trust-strip">
+        <div class="trust-pill">
+          <span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2 L13 4 V8 C13 11 11 13 8 14 C5 13 3 11 3 8 V4 Z"/><path d="M6 8 L7.5 9.5 L10.5 6.5"/></svg></span>
+          <span class="lb">Warranty<b data-i18n="cart.trust.warr">10-year warranty</b></span>
+        </div>
+        <div class="trust-pill">
+          <span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14 L13 14"/><path d="M5 14 V10 L8 7 L11 10 V14"/></svg></span>
+          <span class="lb">Workshop<b data-i18n="cart.trust.fit">Free fit-out · €1,500+</b></span>
+        </div>
+        <div class="trust-pill">
+          <span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="9" height="6" rx="1"/><path d="M11 7 H13 L14.5 8.5 V11 H11"/><circle cx="5" cy="12.5" r="1"/><circle cx="13" cy="12.5" r="1"/></svg></span>
+          <span class="lb">Shipping<b data-i18n="cart.trust.ship">48h · RO + 5-day EU</b></span>
+        </div>
+        <div class="trust-pill">
+          <span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 A5 5 0 1 1 5 11"/><path d="M3 11 V8 H6"/></svg></span>
+          <span class="lb">Returns<b data-i18n="cart.trust.return">30-day return</b></span>
+        </div>
+      </div>
+
+      <!-- RELATED -->
+      <div class="related">
+        <div class="related-head">
+          <div>
+            <div class="ey" data-i18n="cart.related.ey">Customers also added</div>
+            <h2 data-i18n="cart.related.h">Customers also <em>added</em></h2>
+          </div>
+          <a href="/shop" class="continue" style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--brass);padding-bottom:4px;" data-i18n="cart.related.more">Open shop →</a>
+        </div>
+        <div class="rel-grid">
+          <a class="rel" href="/product">
+            <div class="rel-photo"><img src="/assets/shop/HK4222A-3-300x258.jpg" alt=""/></div>
+            <div class="rel-body">
+              <div class="rel-brand">SeaStar · Luxe</div>
+              <div class="rel-name">BayStar Luxe HK4222</div>
+              <div class="rel-foot"><span class="rel-pr">€1,140</span><span class="rel-add" data-i18n="cart.add">Add</span></div>
+            </div>
+          </a>
+          <a class="rel" href="#">
+            <div class="rel-photo"><img src="/assets/shop/F14393-300x258.jpg" alt=""/></div>
+            <div class="rel-body">
+              <div class="rel-brand">SeaStar · Fluid</div>
+              <div class="rel-name">HA5430 hydraulic fluid · 2 L</div>
+              <div class="rel-foot"><span class="rel-pr">€28</span><span class="rel-add" data-i18n="cart.add">Add</span></div>
+            </div>
+          </a>
+          <a class="rel" href="#">
+            <div class="rel-photo"><img src="/assets/shop/22-300x258.jpg" alt=""/></div>
+            <div class="rel-body">
+              <div class="rel-brand">SeaStar · Tie-bar</div>
+              <div class="rel-name">Twin-engine tie-bar kit</div>
+              <div class="rel-foot"><span class="rel-pr">€186</span><span class="rel-add" data-i18n="cart.add">Add</span></div>
+            </div>
+          </a>
+          <a class="rel" href="#">
+            <div class="rel-photo"><img src="/assets/shop/1-10-300x258.jpg" alt=""/></div>
+            <div class="rel-body">
+              <div class="rel-brand">Rebelcell · Charger</div>
+              <div class="rel-name">12.6V 20A waterproof charger</div>
+              <div class="rel-foot"><span class="rel-pr">€294</span><span class="rel-add" data-i18n="cart.add">Add</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>

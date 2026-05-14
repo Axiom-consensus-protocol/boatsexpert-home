@@ -1,0 +1,54 @@
+{
+  "slug": "product",
+  "route": "/product",
+  "source": "boatsexpert-home/Product.html",
+  "title": "BayStar Hydraulic Steering Kit HK4200 — SeaStar · BoatsExpert",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-product-band-crumbs",
+      "file": "01-product-band-crumbs.html"
+    },
+    {
+      "name": "02-product-main",
+      "file": "02-product-main.html"
+    },
+    {
+      "name": "03-tabs",
+      "file": "03-tabs.html"
+    },
+    {
+      "name": "04-description",
+      "file": "04-description.html"
+    },
+    {
+      "name": "05-specs",
+      "file": "05-specs.html"
+    },
+    {
+      "name": "06-compatible-boats",
+      "file": "06-compatible-boats.html"
+    },
+    {
+      "name": "07-fit-out-band",
+      "file": "07-fit-out-band.html"
+    },
+    {
+      "name": "08-reviews",
+      "file": "08-reviews.html"
+    },
+    {
+      "name": "09-related-products",
+      "file": "09-related-products.html"
+    },
+    {
+      "name": "10-lightbox",
+      "file": "10-lightbox.html"
+    },
+    {
+      "name": "11-sticky-bottom-cta-mobile-tablet-only",
+      "file": "11-sticky-bottom-cta-mobile-tablet-only.html"
+    }
+  ],
+  "scriptCount": 1
+}

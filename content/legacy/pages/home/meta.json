@@ -1,0 +1,66 @@
+{
+  "slug": "home",
+  "route": "/",
+  "source": "boatsexpert-home/index.html",
+  "title": "BoatsExpert — Aluminium & fishing boats in Romania. Finval, Beneteau, NorthSilver.",
+  "description": "Boats Expert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-hero",
+      "file": "01-hero.html"
+    },
+    {
+      "name": "02-original-site-quick-entry",
+      "file": "02-original-site-quick-entry.html"
+    },
+    {
+      "name": "03-trust-strip",
+      "file": "03-trust-strip.html"
+    },
+    {
+      "name": "04-stats",
+      "file": "04-stats.html"
+    },
+    {
+      "name": "05-featured-boats",
+      "file": "05-featured-boats.html"
+    },
+    {
+      "name": "06-types-of-boats",
+      "file": "06-types-of-boats.html"
+    },
+    {
+      "name": "07-brand-tiers",
+      "file": "07-brand-tiers.html"
+    },
+    {
+      "name": "08-finval-spotlight",
+      "file": "08-finval-spotlight.html"
+    },
+    {
+      "name": "09-services",
+      "file": "09-services.html"
+    },
+    {
+      "name": "10-shop-categories",
+      "file": "10-shop-categories.html"
+    },
+    {
+      "name": "11-why-us",
+      "file": "11-why-us.html"
+    },
+    {
+      "name": "12-original-shop-promos",
+      "file": "12-original-shop-promos.html"
+    },
+    {
+      "name": "13-showroom",
+      "file": "13-showroom.html"
+    },
+    {
+      "name": "14-stories-newsletter",
+      "file": "14-stories-newsletter.html"
+    }
+  ],
+  "scriptCount": 1
+}

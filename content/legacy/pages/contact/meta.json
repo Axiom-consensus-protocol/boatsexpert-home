@@ -1,0 +1,22 @@
+{
+  "slug": "contact",
+  "route": "/contact",
+  "source": "staging-pages/contact.html",
+  "title": "BoatsExpert — Contact & showroom in Otopeni",
+  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "sections": [
+    {
+      "name": "01-page-band",
+      "file": "01-page-band.html"
+    },
+    {
+      "name": "02-ledger-form",
+      "file": "02-ledger-form.html"
+    },
+    {
+      "name": "03-map-band",
+      "file": "03-map-band.html"
+    }
+  ],
+  "scriptCount": 0
+}
