@@ -4,6 +4,7 @@ import { ChromeGuard } from "@/components/legacy/ChromeGuard";
 import { LegacyFooter, LegacyHeader } from "@/components/legacy/LegacyChrome";
 import { ThemePolish } from "@/components/legacy/ThemePolish";
 import { getLegacyI18nJson } from "@/lib/legacy-content";
+import { defaultOgDescription, defaultOgImage, defaultOgTitle } from "@/lib/og";
 import "./globals.css";
 
 const themeBootstrap = `
@@ -16,7 +17,21 @@ export const metadata: Metadata = {
     default: "BoatsExpert",
     template: "%s",
   },
-  description: "BoatsExpert live catalog, boats in stock and marine equipment shop in Otopeni, Romania.",
+  description: defaultOgDescription,
+  openGraph: {
+    title: defaultOgTitle,
+    description: defaultOgDescription,
+    url: "/",
+    siteName: "BoatsExpert",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultOgTitle,
+    description: defaultOgDescription,
+    images: [defaultOgImage.url],
+  },
   icons: {
     icon: [
       { url: "/assets/logo/logo-brass.svg", type: "image/svg+xml" },

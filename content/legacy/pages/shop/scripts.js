@@ -189,6 +189,57 @@
   applyFilters();
 })();
 
+(function initMobileShopFilterDock(){
+  const sidebar = document.querySelector('aside.cats');
+  const body = document.querySelector('.body');
+  const main = body?.querySelector('main');
+  if (!sidebar || !body || !main) return;
+
+  const media = window.matchMedia('(max-width: 640px)');
+  let frame = 0;
+
+  const clearDock = () => {
+    sidebar.classList.remove('is-mobile-fixed');
+    body.classList.remove('shop-filter-docked');
+    document.documentElement.style.removeProperty('--shop-sticky-filter-height');
+  };
+
+  const sync = () => {
+    frame = 0;
+    if (!media.matches) {
+      clearDock();
+      return;
+    }
+
+    const topOffset = 74;
+    const bodyRect = body.getBoundingClientRect();
+    const bodyTop = bodyRect.top + window.scrollY;
+    const bodyBottom = bodyRect.bottom + window.scrollY;
+    const filterHeight = sidebar.offsetHeight;
+    const start = bodyTop - topOffset;
+    const end = bodyBottom - filterHeight - 24;
+    const docked = window.scrollY >= start && window.scrollY <= end;
+
+    sidebar.classList.toggle('is-mobile-fixed', docked);
+    body.classList.toggle('shop-filter-docked', docked);
+    if (docked) {
+      document.documentElement.style.setProperty('--shop-sticky-filter-height', filterHeight + 'px');
+    } else {
+      document.documentElement.style.removeProperty('--shop-sticky-filter-height');
+    }
+  };
+
+  const requestSync = () => {
+    if (frame) return;
+    frame = window.requestAnimationFrame(sync);
+  };
+
+  window.addEventListener('scroll', requestSync, { passive: true });
+  window.addEventListener('resize', requestSync);
+  media.addEventListener?.('change', requestSync);
+  requestSync();
+})();
+
 (function initQuickSearch(){
   const root = document.getElementById('quickSearch');
   if (!root) return;

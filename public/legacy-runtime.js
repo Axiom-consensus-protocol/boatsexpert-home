@@ -175,6 +175,168 @@
     });
   }
 
+  var mobileDrawerCopy = {
+    en: {
+      aria: "Mobile navigation",
+      source: "Live site map",
+      search: "Search catalog",
+      office: "Office · +40 743 377 377",
+      contact: "Contact showroom",
+      address: "Strada Horia Closca si Crisan 5, Otopeni",
+      hours: "Mon-Thu | 10:00-17:30",
+      groups: [
+        {
+          title: "Boats catalog",
+          meta: "20 / 324",
+          links: [
+            ["Full catalog", "20 Results of 324"],
+            ["Boats in stock", "13 current stock entries"],
+            ["Aluminium boats", "Live body-type route"],
+            ["Fishing boats", "Live body-type route"],
+            ["Finval Boats", "Live make-brand route"],
+            ["GALA RIB", "VIKING, ATLANTIS, Sprinter"]
+          ]
+        },
+        {
+          title: "Shop",
+          meta: "942 results",
+          links: [
+            ["Shop archive", "Live shop results"],
+            ["Outboard motors", "Live product category"],
+            ["Electric motors", "Live product category"],
+            ["Sonars", "Live product category"],
+            ["Batteries", "Live product category"],
+            ["Hydraulic steering", "BayStar source category"]
+          ]
+        },
+        {
+          title: "Services",
+          meta: "Live routes",
+          links: [
+            ["Services", "Live services route"],
+            ["Expert tuning", "Angler boats"],
+            ["Outboard installation", "Live service route"],
+            ["Tuning service", "Live service route"],
+            ["Registration driving", "Live service route"]
+          ]
+        }
+      ],
+      single: [
+        ["Blog", "News and archive"],
+        ["Contact", "Office and sales contacts"]
+      ],
+      kpis: [
+        ["324", "listings"],
+        ["13", "boats in stock"],
+        ["942", "shop results"]
+      ]
+    },
+    ro: {
+      aria: "Navigare mobilă",
+      source: "Harta site-ului live",
+      search: "Caută în catalog",
+      office: "Birou · +40 743 377 377",
+      contact: "Contact showroom",
+      address: "Strada Horia Closca si Crisan 5, Otopeni",
+      hours: "Luni-Joi | 10:00-17:30",
+      groups: [
+        {
+          title: "Catalog bărci",
+          meta: "20 / 324",
+          links: [
+            ["Catalog complet", "20 rezultate din 324"],
+            ["Bărci în stoc", "13 intrări curente în stoc"],
+            ["Bărci din aluminiu", "Rută tip carenă live"],
+            ["Bărci de pescuit", "Rută tip carenă live"],
+            ["Bărci Finval", "Rută brand live"],
+            ["GALA RIB", "VIKING, ATLANTIS, Sprinter"]
+          ]
+        },
+        {
+          title: "Shop",
+          meta: "942 rezultate",
+          links: [
+            ["Arhivă shop", "Rezultate shop live"],
+            ["Motoare outboard", "Categorie produs live"],
+            ["Motoare electrice", "Categorie produs live"],
+            ["Sonare", "Categorie produs live"],
+            ["Baterii", "Categorie produs live"],
+            ["Direcție hidraulică", "Categorie sursă BayStar"]
+          ]
+        },
+        {
+          title: "Servicii",
+          meta: "Rute live",
+          links: [
+            ["Servicii", "Rută servicii live"],
+            ["Tuning expert", "Bărci de pescuit"],
+            ["Instalare outboard", "Rută serviciu live"],
+            ["Tuning service", "Rută serviciu live"],
+            ["Înmatriculare", "Rută serviciu live"]
+          ]
+        }
+      ],
+      single: [
+        ["Blog", "Noutăți și arhivă"],
+        ["Contact", "Birou și contacte vânzări"]
+      ],
+      kpis: [
+        ["324", "listări"],
+        ["13", "bărci în stoc"],
+        ["942", "rezultate shop"]
+      ]
+    }
+  };
+
+  function getCurrentLang() {
+    if (window.BX_i18n && typeof window.BX_i18n.get === "function") {
+      var apiLang = window.BX_i18n.get();
+      if (mobileDrawerCopy[apiLang]) return apiLang;
+    }
+    try {
+      var fromUrl = new URLSearchParams(location.search).get("lang");
+      if (mobileDrawerCopy[fromUrl]) return fromUrl;
+      var stored = localStorage.getItem("bx_lang");
+      if (mobileDrawerCopy[stored]) return stored;
+    } catch (err) {}
+    return "en";
+  }
+
+  function setDrawerText(drawer, key, value) {
+    drawer.querySelectorAll('[data-mobile-copy="' + key + '"]').forEach(function (node) {
+      node.textContent = value;
+    });
+  }
+
+  function applyMobileDrawerLanguage(drawer) {
+    if (!drawer) return;
+    var lang = getCurrentLang();
+    var copy = mobileDrawerCopy[lang] || mobileDrawerCopy.en;
+    drawer.setAttribute("aria-label", copy.aria);
+    setDrawerText(drawer, "source", copy.source);
+    setDrawerText(drawer, "search", copy.search);
+    setDrawerText(drawer, "office", copy.office);
+    setDrawerText(drawer, "contact", copy.contact);
+    setDrawerText(drawer, "address", copy.address);
+    setDrawerText(drawer, "hours", copy.hours);
+    copy.kpis.forEach(function (item, index) {
+      setDrawerText(drawer, "kpi-" + index + "-value", item[0]);
+      setDrawerText(drawer, "kpi-" + index + "-label", item[1]);
+    });
+    copy.groups.forEach(function (group, groupIndex) {
+      setDrawerText(drawer, "group-" + groupIndex + "-title", group.title);
+      setDrawerText(drawer, "group-" + groupIndex + "-meta", group.meta);
+      group.links.forEach(function (item, linkIndex) {
+        setDrawerText(drawer, "group-" + groupIndex + "-link-" + linkIndex + "-label", item[0]);
+        setDrawerText(drawer, "group-" + groupIndex + "-link-" + linkIndex + "-meta", item[1]);
+      });
+    });
+    copy.single.forEach(function (item, index) {
+      setDrawerText(drawer, "single-" + index + "-label", item[0]);
+      setDrawerText(drawer, "single-" + index + "-meta", item[1]);
+    });
+  }
+
   function buildMobileDrawer() {
     var groups = [
       {
@@ -229,49 +391,54 @@
           '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
           '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
         "</a>" +
+        '<span class="mobile-drawer-lang" role="group" aria-label="Language">' +
+          '<a href="?lang=ro" data-i18n-set="ro" aria-label="Română">RO</a>' +
+          '<a href="?lang=en" data-i18n-set="en" aria-label="English">EN</a>' +
+        "</span>" +
         '<button class="mobile-close" type="button" aria-label="Close menu">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +
         "</button>" +
       "</div>" +
       '<div class="mobile-drawer-source">' +
-        '<span>Live site map</span>' +
+        '<span data-mobile-copy="source">Live site map</span>' +
         '<b>boatsexpert.com</b>' +
       "</div>" +
       '<div class="mobile-drawer-kpis">' +
-        "<span><b>324</b> listings</span>" +
-        "<span><b>13</b> boats in stock</span>" +
-        "<span><b>942</b> shop results</span>" +
+        '<span><b data-mobile-copy="kpi-0-value">324</b> <em data-mobile-copy="kpi-0-label">listings</em></span>' +
+        '<span><b data-mobile-copy="kpi-1-value">13</b> <em data-mobile-copy="kpi-1-label">boats in stock</em></span>' +
+        '<span><b data-mobile-copy="kpi-2-value">942</b> <em data-mobile-copy="kpi-2-label">shop results</em></span>' +
       "</div>" +
       '<div class="mobile-drawer-actions">' +
-        '<button class="mobile-command mobile-command--search" type="button" data-mobile-search>Search catalog</button>' +
-        '<a class="mobile-command" href="tel:+40743377377">Office · +40 743 377 377</a>' +
+        '<button class="mobile-command mobile-command--search" type="button" data-mobile-search data-mobile-copy="search">Search catalog</button>' +
+        '<a class="mobile-command" href="tel:+40743377377" data-mobile-copy="office">Office · +40 743 377 377</a>' +
         '<a class="mobile-command" href="https://wa.me/40743377377">WhatsApp</a>' +
       "</div>" +
-      groups.map(function (group) {
+      groups.map(function (group, groupIndex) {
         return '<section class="mobile-nav-group">' +
-          '<div class="mobile-nav-group__head"><b>' + group.title + '</b><span>' + group.meta + '</span></div>' +
+          '<div class="mobile-nav-group__head"><b data-mobile-copy="group-' + groupIndex + '-title">' + group.title + '</b><span data-mobile-copy="group-' + groupIndex + '-meta">' + group.meta + '</span></div>' +
           '<div class="mobile-nav">' +
-            group.links.map(function (item) {
-              return '<a href="' + item[0] + '"><span>' + item[1] + '</span><small>' + item[2] + '</small></a>';
+            group.links.map(function (item, linkIndex) {
+              return '<a href="' + item[0] + '"><span data-mobile-copy="group-' + groupIndex + '-link-' + linkIndex + '-label">' + item[1] + '</span><small data-mobile-copy="group-' + groupIndex + '-link-' + linkIndex + '-meta">' + item[2] + '</small></a>';
             }).join("") +
           "</div>" +
         "</section>";
       }).join("") +
       '<div class="mobile-nav mobile-nav--single">' +
-        '<a href="/blog"><span>Blog</span><small>News and archive</small></a>' +
-        '<a href="/contact"><span>Contact</span><small>Office and sales contacts</small></a>' +
+        '<a href="/blog"><span data-mobile-copy="single-0-label">Blog</span><small data-mobile-copy="single-0-meta">News and archive</small></a>' +
+        '<a href="/contact"><span data-mobile-copy="single-1-label">Contact</span><small data-mobile-copy="single-1-meta">Office and sales contacts</small></a>' +
       "</div>" +
       '<div class="mobile-tools">' +
-        '<a href="/contact" class="btn-brass" data-i18n="nav.cta_testdrive">Contact showroom</a>' +
+        '<a href="/contact" class="btn-brass" data-mobile-copy="contact">Contact showroom</a>' +
         '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
       "</div>" +
       '<div class="mobile-tools-info">' +
         '<a href="tel:+40743377377" class="brass">+40 (743) 377 377</a>' +
         '<a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>' +
-        "<span>Strada Horia Closca si Crisan 5, Otopeni</span>" +
-        "<span>Mon-Thu | 10:00-17:30</span>" +
+        '<span data-mobile-copy="address">Strada Horia Closca si Crisan 5, Otopeni</span>' +
+        '<span data-mobile-copy="hours">Mon-Thu | 10:00-17:30</span>' +
       "</div>";
     document.body.appendChild(drawer);
+    applyMobileDrawerLanguage(drawer);
     return drawer;
   }
 
@@ -375,6 +542,9 @@
     });
 
     updateActiveLinks();
+    applyMobileDrawerLanguage(drawer);
+    document.documentElement.addEventListener("i18n:ready", function () { applyMobileDrawerLanguage(drawer); });
+    document.documentElement.addEventListener("i18n:change", function () { applyMobileDrawerLanguage(drawer); });
   }
 
   onReady(function () {

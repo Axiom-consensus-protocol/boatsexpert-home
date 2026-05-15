@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getLegacyPage, type LegacyPageSlug } from "./legacy-content";
+import { defaultOgImage } from "./og";
 
 export function legacyMetadata(slug: LegacyPageSlug): Metadata {
   const page = getLegacyPage(slug);
@@ -16,6 +17,13 @@ export function legacyMetadata(slug: LegacyPageSlug): Metadata {
       url: page.route,
       siteName: "BoatsExpert",
       type: "website",
+      images: [defaultOgImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: [defaultOgImage.url],
     },
   };
 }

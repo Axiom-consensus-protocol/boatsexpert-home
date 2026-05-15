@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { InStockShop, type StockBoatItem } from "@/components/stock/InStockShop";
+import { defaultOgImage } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Boats in Stock | BoatsExpert",
@@ -15,6 +16,14 @@ export const metadata: Metadata = {
     url: "/in-stock",
     siteName: "BoatsExpert",
     type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boats in Stock | BoatsExpert",
+    description:
+      "Showroom-ready boats in Otopeni: see, reserve, rig and prepare delivery with the BoatsExpert workshop.",
+    images: [defaultOgImage.url],
   },
 };
 
