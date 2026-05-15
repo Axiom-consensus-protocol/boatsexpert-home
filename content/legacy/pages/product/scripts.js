@@ -9,11 +9,11 @@
     // === LIGHTBOX ===
     (function(){
       const PHOTOS = [
-        { src: 'assets/shop/HK4200A-3-300x258.png', cap: 'BayStar HK4200 — main' },
-        { src: 'assets/shop/HK4222A-3-300x258.jpg', cap: 'HK4222 — angle view' },
-        { src: 'assets/shop/F14393-300x258.jpg',    cap: 'Cylinder detail' },
-        { src: 'assets/shop/22-300x258.jpg',        cap: 'Helm pump' },
-        { src: 'assets/shop/901157-300x258.jpg',    cap: 'Fittings & hardware' },
+        { src: 'assets/shop/HK4200A-3-300x258.png', cap: 'BayStar Hydraulic Steering Kit HK4200A-3' },
+        { src: 'assets/shop/HK4222A-3-300x258.jpg', cap: 'BayStar Hydraulic Steering System Luxe' },
+        { src: 'assets/shop/F14393-300x258.jpg',    cap: 'Hydraulic steering product view' },
+        { src: 'assets/shop/22-300x258.jpg',        cap: 'Hydraulic steering component view' },
+        { src: 'assets/shop/901157-300x258.jpg',    cap: 'Hydraulic steering fittings view' },
       ];
       const lb     = document.getElementById('lightbox');
       const lbImg  = document.getElementById('lb-img');

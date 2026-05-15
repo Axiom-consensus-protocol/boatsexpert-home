@@ -84,32 +84,88 @@
   }
 
   function buildMobileDrawer(){
-    const navItems = [
-      ['Catalog.html', 'nav.catalog', 'Catalog'],
-      ['Catalog.html#results', 'nav.instock', 'In Stock'],
-      ['Shop.html', 'nav.shop', 'Shop'],
-      ['index.html#services', 'nav.services', 'Services'],
-      ['index.html#contact', 'nav.contact', 'Contact']
+    const groups = [
+      {
+        title: 'Boats catalog',
+        meta: '20 / 324',
+        links: [
+          ['/catalog', 'Full catalog', '20 Results of 324'],
+          ['/in-stock', 'Boats in stock', '13 current stock entries'],
+          ['/listings/body-type/aluminium-boats', 'Aluminium boats', 'Live body-type route'],
+          ['/listings/body-type/fishing-boats', 'Fishing boats', 'Live body-type route'],
+          ['/listings/make-brand/finval', 'Finval Boats', 'Live make-brand route'],
+          ['/listings/make-brand/gala', 'GALA RIB', 'VIKING, ATLANTIS, Sprinter']
+        ]
+      },
+      {
+        title: 'Shop',
+        meta: '942 results',
+        links: [
+          ['/shop', 'Shop archive', 'Live shop results'],
+          ['/product-category/outboard-motors', 'Outboard motors', 'Live product category'],
+          ['/product-category/electric-motors', 'Electric motors', 'Live product category'],
+          ['/product-category/sonars', 'Sonars', 'Live product category'],
+          ['/product-category/batteries', 'Batteries', 'Live product category'],
+          ['/product-category/outboard-hydraulic-steering-system', 'Hydraulic steering', 'BayStar source category']
+        ]
+      },
+      {
+        title: 'Services',
+        meta: 'Live routes',
+        links: [
+          ['/services', 'Services', 'Live services route'],
+          ['/services/expert-tuning-of-angler-boats', 'Expert tuning', 'Angler boats'],
+          ['/services/outboard-engine-installation', 'Outboard installation', 'Live service route'],
+          ['/services/tuning-service', 'Tuning service', 'Live service route'],
+          ['/services/registration-driving', 'Registration driving', 'Live service route']
+        ]
+      }
     ];
 
     const nav = document.createElement('nav');
     nav.className = 'mobile-drawer mobile-drawer--generated';
+    nav.id = 'mobileDrawer';
+    nav.setAttribute('data-bx-mobile-drawer', 'true');
     nav.setAttribute('aria-label', 'Mobile navigation');
     nav.setAttribute('aria-hidden', 'true');
+    nav.setAttribute('role', 'dialog');
+    nav.setAttribute('aria-modal', 'true');
+    nav.setAttribute('aria-labelledby', 'mobileDrawerTitle');
     nav.innerHTML =
       '<div class="mobile-drawer-head">' +
-        '<a href="index.html" class="logo" aria-label="BoatsExpert home">' +
-          '<img class="logo-img" src="assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
+        '<a href="/" class="mobile-drawer-brand" aria-label="BoatsExpert home">' +
+          '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
+          '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
         '</a>' +
         '<button class="mobile-close" type="button" aria-label="Close menu">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +
         '</button>' +
       '</div>' +
-      '<div class="mobile-nav">' +
-        navItems.map(item => '<a href="' + item[0] + '" data-i18n="' + item[1] + '">' + item[2] + '</a>').join('') +
+      '<div class="mobile-drawer-source"><span>Live site map</span><b>boatsexpert.com</b></div>' +
+      '<div class="mobile-drawer-kpis">' +
+        '<span><b>324</b> listings</span>' +
+        '<span><b>13</b> boats in stock</span>' +
+        '<span><b>942</b> shop results</span>' +
+      '</div>' +
+      '<div class="mobile-drawer-actions">' +
+        '<button class="mobile-command mobile-command--search" type="button" data-mobile-search>Search catalog</button>' +
+        '<a class="mobile-command" href="tel:+40743377377">Office · +40 743 377 377</a>' +
+        '<a class="mobile-command" href="https://wa.me/40743377377">WhatsApp</a>' +
+      '</div>' +
+      groups.map(group => (
+        '<section class="mobile-nav-group">' +
+          '<div class="mobile-nav-group__head"><b>' + group.title + '</b><span>' + group.meta + '</span></div>' +
+          '<div class="mobile-nav">' +
+            group.links.map(item => '<a href="' + item[0] + '"><span>' + item[1] + '</span><small>' + item[2] + '</small></a>').join('') +
+          '</div>' +
+        '</section>'
+      )).join('') +
+      '<div class="mobile-nav mobile-nav--single">' +
+        '<a href="/blog"><span>Blog</span><small>News and archive</small></a>' +
+        '<a href="/contact"><span>Contact</span><small>Office and sales contacts</small></a>' +
       '</div>' +
       '<div class="mobile-tools">' +
-        '<a href="index.html#contact" class="btn-brass" data-i18n="nav.cta_testdrive">Book a Test Drive</a>' +
+        '<a href="/contact" class="btn-brass" data-i18n="nav.cta_testdrive">Contact showroom</a>' +
         '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
       '</div>' +
       '<div class="mobile-tools-info">' +
@@ -126,29 +182,83 @@
     const buttons = Array.from(document.querySelectorAll('.mobile-menu'));
     if (!buttons.length) return;
 
-    const drawer = document.querySelector('.mobile-drawer') || buildMobileDrawer();
+    const drawer = document.querySelector('.mobile-drawer[data-bx-mobile-drawer]') || document.querySelector('.mobile-drawer') || buildMobileDrawer();
     const legacyToggle = document.getElementById('mobile-toggle');
+    let lastTrigger = null;
+    const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function routePart(value){
+      return String(value || '').split('#')[0].split('?')[0].replace(/\/+$/, '').toLowerCase() || '/';
+    }
+
+    function updateActiveLinks(){
+      const current = routePart(location.pathname || '/');
+      drawer.querySelectorAll('.mobile-nav a').forEach(link => {
+        const target = routePart(link.getAttribute('href'));
+        const active = target === current || (target !== '/' && current.indexOf(target + '/') === 0);
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    }
 
     function setOpen(open){
+      if (open) updateActiveLinks();
       drawer.classList.toggle('is-open', open);
       drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.classList.toggle('mobile-drawer-open', open);
+      document.body.classList.remove('mobile-nav-open');
       if (legacyToggle) legacyToggle.checked = open;
       buttons.forEach(button => button.setAttribute('aria-expanded', open ? 'true' : 'false'));
+      const focusTarget = open ? drawer.querySelector('.mobile-close') : lastTrigger;
+      if (focusTarget && typeof focusTarget.focus === 'function') setTimeout(() => focusTarget.focus(), 30);
     }
 
     buttons.forEach(button => {
       button.setAttribute('aria-expanded', 'false');
-      button.addEventListener('click', () => setOpen(true));
+      button.setAttribute('aria-controls', drawer.id || 'mobileDrawer');
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        lastTrigger = button;
+        setOpen(!drawer.classList.contains('is-open'));
+      });
     });
 
-    drawer.querySelectorAll('.mobile-close, .mobile-nav a, .mobile-tools a').forEach(control => {
+    drawer.querySelectorAll('.mobile-close, .mobile-nav a, .mobile-tools a, .mobile-command').forEach(control => {
       control.addEventListener('click', () => setOpen(false));
     });
 
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') setOpen(false);
+    drawer.querySelectorAll('[data-mobile-search]').forEach(control => {
+      control.addEventListener('click', event => {
+        event.preventDefault();
+        setOpen(false);
+        const search = document.querySelector('.search-toggle');
+        if (search) setTimeout(() => search.click(), 80);
+      });
     });
+
+    document.addEventListener('keydown', event => {
+      if (!drawer.classList.contains('is-open')) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setOpen(false);
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = Array.from(drawer.querySelectorAll(focusableSelector))
+        .filter(node => node.offsetParent !== null || node === document.activeElement);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    updateActiveLinks();
   }
 
   async function loadAll(){

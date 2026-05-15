@@ -148,6 +148,8 @@
       }
       if (event.key === "Escape" && panel.classList.contains("is-open")) closeSearch();
     });
+
+    window.BX_search = { open: openSearch, close: closeSearch };
   }
 
   function currentRouteStem() {
@@ -176,33 +178,38 @@
   function buildMobileDrawer() {
     var groups = [
       {
-        title: "Catalog",
-        meta: "230 boats",
+        title: "Boats catalog",
+        meta: "20 / 324",
         links: [
-          ["/catalog", "Full catalog", "Filters, hulls, brands"],
-          ["/in-stock", "Boats in stock", "Ready in Otopeni"],
-          ["/listings/body-type/fishing-boats", "Fishing boats", "Original body type"],
-          ["/listings/make-brand/finval", "Finval", "Exclusive dealer"]
+          ["/catalog", "Full catalog", "20 Results of 324"],
+          ["/in-stock", "Boats in stock", "13 current stock entries"],
+          ["/listings/body-type/aluminium-boats", "Aluminium boats", "Live body-type route"],
+          ["/listings/body-type/fishing-boats", "Fishing boats", "Live body-type route"],
+          ["/listings/make-brand/finval", "Finval Boats", "Live make-brand route"],
+          ["/listings/make-brand/gala", "GALA RIB", "VIKING, ATLANTIS, Sprinter"]
         ]
       },
       {
         title: "Shop",
-        meta: "937 products",
+        meta: "942 results",
         links: [
-          ["/shop", "Marine equipment", "All departments"],
-          ["/product-category/outboard-motors", "Outboard motors", "Yamaha, Honda"],
-          ["/product-category/sonars", "Sonars", "Garmin, Humminbird"],
-          ["/product-category/batteries", "Batteries", "Power systems"]
+          ["/shop", "Shop archive", "Live shop results"],
+          ["/product-category/outboard-motors", "Outboard motors", "Live product category"],
+          ["/product-category/electric-motors", "Electric motors", "Live product category"],
+          ["/product-category/sonars", "Sonars", "Live product category"],
+          ["/product-category/batteries", "Batteries", "Live product category"],
+          ["/product-category/outboard-hydraulic-steering-system", "Hydraulic steering", "BayStar source category"]
         ]
       },
       {
         title: "Services",
-        meta: "Workshop",
+        meta: "Live routes",
         links: [
-          ["/services", "Service overview", "All service paths"],
-          ["/services/outboard-engine-installation", "Outboard install", "Rigging and prop"],
-          ["/services/expert-tuning-of-angler-boats", "Angler tuning", "Deck, sonar, livewell"],
-          ["/services/registration-driving", "Registration", "ANR paperwork"]
+          ["/services", "Services", "Live services route"],
+          ["/services/expert-tuning-of-angler-boats", "Expert tuning", "Angler boats"],
+          ["/services/outboard-engine-installation", "Outboard installation", "Live service route"],
+          ["/services/tuning-service", "Tuning service", "Live service route"],
+          ["/services/registration-driving", "Registration driving", "Live service route"]
         ]
       }
     ];
@@ -210,21 +217,35 @@
     var drawer = document.createElement("nav");
     drawer.className = "mobile-drawer mobile-drawer--generated";
     drawer.id = "mobileDrawer";
+    drawer.setAttribute("data-bx-mobile-drawer", "true");
     drawer.setAttribute("aria-label", "Mobile navigation");
     drawer.setAttribute("aria-hidden", "true");
+    drawer.setAttribute("role", "dialog");
+    drawer.setAttribute("aria-modal", "true");
+    drawer.setAttribute("aria-labelledby", "mobileDrawerTitle");
     drawer.innerHTML =
       '<div class="mobile-drawer-head">' +
-        '<a href="/" class="logo" aria-label="BoatsExpert home">' +
+        '<a href="/" class="mobile-drawer-brand" aria-label="BoatsExpert home">' +
           '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
+          '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
         "</a>" +
         '<button class="mobile-close" type="button" aria-label="Close menu">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +
         "</button>" +
       "</div>" +
+      '<div class="mobile-drawer-source">' +
+        '<span>Live site map</span>' +
+        '<b>boatsexpert.com</b>' +
+      "</div>" +
       '<div class="mobile-drawer-kpis">' +
-        "<span><b>230</b> boats</span>" +
-        "<span><b>16</b> brands</span>" +
-        "<span><b>937</b> shop SKU</span>" +
+        "<span><b>324</b> listings</span>" +
+        "<span><b>13</b> boats in stock</span>" +
+        "<span><b>942</b> shop results</span>" +
+      "</div>" +
+      '<div class="mobile-drawer-actions">' +
+        '<button class="mobile-command mobile-command--search" type="button" data-mobile-search>Search catalog</button>' +
+        '<a class="mobile-command" href="tel:+40743377377">Office · +40 743 377 377</a>' +
+        '<a class="mobile-command" href="https://wa.me/40743377377">WhatsApp</a>' +
       "</div>" +
       groups.map(function (group) {
         return '<section class="mobile-nav-group">' +
@@ -238,10 +259,10 @@
       }).join("") +
       '<div class="mobile-nav mobile-nav--single">' +
         '<a href="/blog"><span>Blog</span><small>News and archive</small></a>' +
-        '<a href="/contact"><span>Contact</span><small>Otopeni showroom</small></a>' +
+        '<a href="/contact"><span>Contact</span><small>Office and sales contacts</small></a>' +
       "</div>" +
       '<div class="mobile-tools">' +
-        '<a href="/contact" class="btn-brass" data-i18n="nav.cta_testdrive">Book a Test Drive</a>' +
+        '<a href="/contact" class="btn-brass" data-i18n="nav.cta_testdrive">Contact showroom</a>' +
         '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
       "</div>" +
       '<div class="mobile-tools-info">' +
@@ -258,16 +279,48 @@
     var buttons = Array.prototype.slice.call(document.querySelectorAll(".mobile-menu"));
     if (!buttons.length) return;
 
-    var drawer = document.querySelector(".mobile-drawer") || buildMobileDrawer();
+    var drawer = document.querySelector(".mobile-drawer[data-bx-mobile-drawer]") || document.querySelector(".mobile-drawer") || buildMobileDrawer();
+    var lastTrigger = null;
+    var focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function focusDrawer() {
+      var target = drawer.querySelector(".mobile-close") || drawer.querySelector(focusableSelector);
+      if (target) window.setTimeout(function () { target.focus(); }, 30);
+    }
+
+    function focusTrigger() {
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        window.setTimeout(function () { lastTrigger.focus(); }, 30);
+      }
+    }
+
+    function routePart(value) {
+      return String(value || "").split("#")[0].split("?")[0].replace(/\/+$/, "").toLowerCase() || "/";
+    }
+
+    function updateActiveLinks() {
+      var current = routePart(location.pathname || "/");
+      drawer.querySelectorAll(".mobile-nav a").forEach(function (link) {
+        var target = routePart(link.getAttribute("href"));
+        var active = target === current || (target !== "/" && current.indexOf(target + "/") === 0);
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+    }
 
     function setOpen(open) {
+      if (open) updateActiveLinks();
       drawer.classList.toggle("is-open", open);
       drawer.setAttribute("aria-hidden", open ? "false" : "true");
       document.body.classList.toggle("mobile-drawer-open", open);
+      document.body.classList.remove("mobile-nav-open");
       buttons.forEach(function (button) {
         button.setAttribute("aria-expanded", open ? "true" : "false");
         button.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       });
+      if (open) focusDrawer();
+      else focusTrigger();
     }
 
     buttons.forEach(function (button) {
@@ -275,12 +328,23 @@
       button.setAttribute("aria-expanded", "false");
       button.addEventListener("click", function (event) {
         event.preventDefault();
+        lastTrigger = button;
         setOpen(!drawer.classList.contains("is-open"));
       });
     });
 
-    drawer.querySelectorAll(".mobile-close, .mobile-nav a, .mobile-tools a").forEach(function (control) {
+    drawer.querySelectorAll(".mobile-close, .mobile-nav a, .mobile-tools a, .mobile-command").forEach(function (control) {
       control.addEventListener("click", function () { setOpen(false); });
+    });
+
+    drawer.querySelectorAll("[data-mobile-search]").forEach(function (control) {
+      control.addEventListener("click", function (event) {
+        event.preventDefault();
+        setOpen(false);
+        if (window.BX_search && typeof window.BX_search.open === "function") {
+          window.setTimeout(function () { window.BX_search.open(); }, 80);
+        }
+      });
     });
 
     document.addEventListener("click", function (event) {
@@ -290,8 +354,27 @@
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") setOpen(false);
+      if (!drawer.classList.contains("is-open")) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+      }
+      if (event.key !== "Tab") return;
+      var focusable = Array.prototype.slice.call(drawer.querySelectorAll(focusableSelector))
+        .filter(function (node) { return node.offsetParent !== null || node === document.activeElement; });
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
+
+    updateActiveLinks();
   }
 
   onReady(function () {

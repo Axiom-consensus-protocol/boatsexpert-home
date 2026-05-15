@@ -1508,8 +1508,8 @@
   /* ===== SCROLL REVEAL ===== */
   @media (prefers-reduced-motion: no-preference){
     .reveal{
-      opacity: 0;
-      transform: translateY(24px);
+      opacity: 1;
+      transform: none;
       transition: opacity .7s ease-out, transform .7s ease-out;
     }
     .reveal.in{ opacity: 1; transform: none; }

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "BoatsExpert",
     template: "%s",
   },
-  description: "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  description: "BoatsExpert live catalog, boats in stock and marine equipment shop in Otopeni, Romania.",
   icons: {
     icon: [
       { url: "/assets/logo/logo-brass.svg", type: "image/svg+xml" },

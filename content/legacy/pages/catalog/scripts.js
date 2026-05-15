@@ -26,248 +26,51 @@
 
 ;
 
+const liveBoat = ({ brand, cat, country, model, price, length, persons, power, photo, request = false }) => ({
+    brand,
+    cat,
+    country,
+    model,
+    tagline: 'Live BoatsExpert listing: ' + length + ' · ' + persons + ' persons · ' + power + '.',
+    badges: request ? [['req', 'Request']] : [['live', 'Live listing']],
+    features: ['Length overall ' + length, persons + ' persons', power, request ? 'Request price' : price],
+    specs: [['Length', length], ['Persons', persons], ['Power', power], ['Source', 'Listings']],
+    meta: [['users', persons], ['power', power], ['catalog', request ? 'Request' : 'MSRP']],
+    price: request ? { l: 'Live catalog price', v: 'Request', req: true } : { l: 'MSRP', v: price },
+    photo,
+    fb: 'assets/boats/hero-DSC07340-1.jpg',
+    galleryLabel: 'more info',
+    sourceLabel: 'Live',
+  });
+
 const BOATS = [
-    {
-      brand: 'Finval', cat: 'Aluminium', country: 'ee',
-      model: '470 EVO <em>DC</em>',
-      tagline: 'Shallowest draft in the Finval range — clears 19 cm of water.',
-      badges: [['exclusive','Exclusive'],['ok','In stock'],['featured','Editor\'s pick']],
-      features: ['AlMg 5083 hull', '55 L fuel', 'Trolling-ready', 'RAPTOR coat'],
-      specs: [['Length','4.65 m'],['Beam','1.96 m'],['Engine','40–70 hp'],['Draft','19 cm']],
-      meta: [['users','4 + 1'],['weight','440 kg'],['shield','10 yrs']],
-      price: { l: 'From, VAT incl.', v: '€20,490', mo: '€295/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo.jpg',
-      fb: '',
-      gallery: 28, year: 2026,
-    },
-    {
-      brand: 'GALA', cat: 'RIB', country: 'ua',
-      model: 'VIKING <em>V6F</em>',
-      tagline: 'Open RIB platform. Inflatable tubes, fibreglass V-hull, 150 hp top.',
-      badges: [['order','On order · 4–6 wk']],
-      features: ['Fibreglass V-hull', 'PVC tubes', '12 pax', 'Console wheel'],
-      specs: [['Length','5.80 m'],['Beam','2.36 m'],['Engine','150 hp'],['Tubes','50 cm']],
-      meta: [['users','12'],['weight','520 kg'],['shield','5 yrs']],
-      price: { l: 'MSRP from', v: '€26,366', mo: '€420/mo · 60 mo' },
-      photo: 'assets/boats/gala-viking-v6f-111-654x525.jpg',
-      fb: '',
-      gallery: 14, year: 2026,
-    },
-    {
-      brand: 'GALAXY Pro', cat: 'Cabin', country: 'ua',
-      model: 'Pilot <em>P6.5</em>',
-      tagline: 'Aluminium pilot boat. 200 hp, walk-around cabin, sea-trial slots open.',
-      badges: [['ok','In stock']],
-      features: ['Walk-around', 'AlMg 5083', 'Heated cabin', 'Pro electronics'],
-      specs: [['Length','6.50 m'],['Beam','2.30 m'],['Engine','200 hp'],['Cabin','Yes']],
-      meta: [['users','12'],['weight','920 kg'],['shield','10 yrs']],
-      price: { l: 'MSRP from', v: '€26,330', mo: '€420/mo · 60 mo' },
-      photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg',
-      fb: '',
-      gallery: 22, year: 2026,
-    },
-    {
-      brand: 'Big Foot', cat: 'Aluminium', country: 'hu',
-      model: 'Ultimate <em>Console</em>',
-      tagline: 'Centre-console aluminium angler. Rod holders, livewell, dry storage.',
-      badges: [['ok','In stock']],
-      features: ['Centre-console', 'Livewell 90 L', '4 rod holders', 'Trolling-ready'],
-      specs: [['Length','5.65 m'],['Beam','2.05 m'],['Engine','60 hp'],['Draft','27 cm']],
-      meta: [['users','6'],['weight','520 kg'],['shield','5 yrs']],
-      price: { l: 'MSRP from', v: '€10,605', mo: '€175/mo · 60 mo' },
-      photo: 'assets/boats/big-foot-ultimate-654x525.jpg',
-      fb: '',
-      gallery: 11, year: 2026,
-    },
-    {
-      brand: 'GALAXY', cat: 'Heavy Duty', country: 'ua',
-      model: 'HD <em>460M</em>',
-      tagline: 'Heavy-duty 4.7 m aluminium hull. Built for rough water and commercial use.',
-      badges: [['req','By request']],
-      features: ['3 mm AlMg', 'Self-bailing', '10 pax', 'Commercial-rated'],
-      specs: [['Length','4.70 m'],['Beam','2.20 m'],['Engine','50 hp'],['Draft','30 cm']],
-      meta: [['users','10'],['weight','610 kg'],['shield','5 yrs']],
-      price: { l: 'Price', v: 'On request', req: true },
-      photo: 'assets/boats/galaxy-heavy-duty-hd460m-654x525.jpg',
-      fb: '',
-      gallery: 9, year: 2026,
-    },
-    {
-      brand: 'Finval', cat: 'Aluminium', country: 'ee',
-      model: '555 EVO <em>BC</em>',
-      tagline: 'Bow-console layout, 5.5 m fishing deck — Finval\'s most versatile angler.',
-      badges: [['exclusive','Exclusive']],
-      features: ['AlMg 5083', 'Bow console', '80 L tank', 'Stand-up casting'],
-      specs: [['Length','5.55 m'],['Beam','2.10 m'],['Engine','60–100'],['Draft','24 cm']],
-      meta: [['users','5'],['weight','620 kg'],['shield','10 yrs']],
-      price: { l: 'From, VAT incl.', v: '€28,900', mo: '€450/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-18.jpg',
-      fb: '',
-      gallery: 18, year: 2025,
-    },
-    {
-      brand: 'GALAXY Pro', cat: 'Compact', country: 'ua',
-      model: 'Pilot <em>P4</em>',
-      tagline: 'Compact aluminium console — entry-level model in the GALAXY range.',
-      badges: [['ok','In stock']],
-      features: ['Open console', '2 mm AlMg', 'Tiller option', 'Road-trailer'],
-      specs: [['Length','3.90 m'],['Beam','1.65 m'],['Engine','30 hp'],['Draft','22 cm']],
-      meta: [['users','6'],['weight','230 kg'],['shield','5 yrs']],
-      price: { l: 'MSRP from', v: '€7,920', mo: '€135/mo · 60 mo' },
-      photo: 'assets/boats/galaxy-pilot-p4-654x525.jpg',
-      fb: '',
-      gallery: 8, year: 2025,
-    },
-    {
-      brand: 'NorthSilver', cat: 'Cabin', country: 'ee',
-      model: 'Hawk <em>580 DCM</em>',
-      tagline: 'Double-cabin cruiser. Sleep two, fish four — Black Sea proven.',
-      badges: [['order','On order · 6 wk']],
-      features: ['2-bunk cabin', 'GRP/AlMg', 'Heated helm', 'Toilet aft'],
-      specs: [['Length','5.80 m'],['Beam','2.30 m'],['Engine','150 hp'],['Draft','45 cm']],
-      meta: [['users','6'],['weight','1180 kg'],['shield','10 yrs']],
-      price: { l: 'From, VAT incl.', v: '€38,200', mo: '€615/mo · 60 mo' },
-      photo: 'assets/stock/northsilver-585-fish.jpg',
-      fb: 'assets/stock/northsilver-585-yamaha.png',
-      gallery: 24, year: 2026,
-    },
-    {
-      brand: 'GALAXY', cat: 'Heavy Duty', country: 'ua',
-      model: 'HC <em>520</em>',
-      tagline: 'Commercial-grade aluminium. Ideal for marina operators and pickups.',
-      badges: [['req','By request']],
-      features: ['3 mm AlMg', 'Reinforced', 'Cargo deck', 'Heavy keel'],
-      specs: [['Length','5.20 m'],['Beam','2.10 m'],['Engine','8 hp'],['Draft','35 cm']],
-      meta: [['users','5'],['weight','580 kg'],['shield','5 yrs']],
-      price: { l: 'Price', v: 'On request', req: true },
-      photo: 'assets/boats/galaxy-heavy-duty-hc520-654x525.jpg',
-      fb: '',
-      gallery: 7, year: 2026,
-    },
-    {
-      brand: 'Beneteau', cat: 'Cruising', country: 'fr',
-      model: 'Antares <em>7</em>',
-      tagline: 'Family fibreglass cruiser. Walk-around cabin, sun pad, swim platform.',
-      badges: [['order','On order · 8–10 wk']],
-      features: ['GRP hull', 'Walk-around', 'Sun deck', 'CE-B cat'],
-      specs: [['Length','7.05 m'],['Beam','2.59 m'],['Engine','150–250'],['Draft','55 cm']],
-      meta: [['users','8'],['weight','1640 kg'],['shield','5 yrs']],
-      price: { l: 'From, VAT incl.', v: '€72,400', mo: '€1,160/mo · 60 mo' },
-      photo: 'assets/stock/beneteau-antares-7-comfort.jpg',
-      fb: 'assets/stock/beneteau-antares-7-essential.jpg',
-      gallery: 32, year: 2026,
-    },
-    {
-      brand: 'Big Foot', cat: 'Aluminium', country: 'hu',
-      model: 'Ultimate <em>B</em>',
-      tagline: 'Entry-level fishing aluminium — same hull, basic equipment.',
-      badges: [['ok','In stock']],
-      features: ['AlMg 5083', 'Open deck', 'Bench seat', 'Basic kit'],
-      specs: [['Length','5.65 m'],['Beam','2.05 m'],['Engine','60 hp'],['Draft','27 cm']],
-      meta: [['users','6'],['weight','480 kg'],['shield','5 yrs']],
-      price: { l: 'MSRP from', v: '€3,450', mo: '€62/mo · 60 mo' },
-      photo: 'assets/boats/big-foot-ultimate.jpg',
-      fb: '',
-      gallery: 6, year: 2026,
-    },
-    {
-      brand: 'Finval', cat: 'Pro Angler', country: 'ee',
-      model: '575 CASTING <em>PRO</em>',
-      tagline: 'A new concept for professional fishermen — casting deck forward.',
-      badges: [['exclusive','Exclusive'],['featured','New 2026']],
-      features: ['Casting deck', '105 L livewell', 'Pro electronics', '24 V trolling'],
-      specs: [['Length','5.75 m'],['Beam','2.15 m'],['Engine','70–115'],['Draft','22 cm']],
-      meta: [['users','5'],['weight','690 kg'],['shield','10 yrs']],
-      price: { l: 'From, VAT incl.', v: '€34,500', mo: '€555/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-27.jpg',
-      fb: '',
-      gallery: 16, year: 2026,
-    },
-    {
-      brand: 'GALAXY Pro', cat: 'Flagship', country: 'ua',
-      model: 'TRIDENT <em>T12</em>',
-      tagline: '11.6 m flagship aluminium — twin engines, sleeps eight, ocean-class hull.',
-      badges: [['featured','Flagship'],['order','Build to order']],
-      features: ['Twin engines', 'Sleeps 8', 'Ocean-class', '11.6 m hull'],
-      specs: [['Length','11.6 m'],['Beam','3.40 m'],['Engine','2 × 600'],['Draft','85 cm']],
-      meta: [['users','20'],['weight','5800 kg'],['shield','10 yrs']],
-      price: { l: 'MSRP from', v: '€178,940', mo: '€2,870/mo · 60 mo' },
-      photo: 'assets/boats/galaxy-trident-t12-654x525.jpg',
-      fb: '',
-      gallery: 42, year: 2026,
-    },
-    {
-      brand: 'Reval Grade', cat: 'Aluminium', country: 'ee',
-      model: '470 <em>Pro</em>',
-      tagline: 'Estonian aluminium runabout — solid hull, simple electrical, trailer-ready.',
-      badges: [['ok','In stock']],
-      features: ['AlMg 5083', 'Steering wheel', 'Cushioned seats', 'Built-in tank'],
-      specs: [['Length','4.70 m'],['Beam','1.92 m'],['Engine','40–60 hp'],['Draft','25 cm']],
-      meta: [['users','4'],['weight','390 kg'],['shield','5 yrs']],
-      price: { l: 'From, VAT incl.', v: '€14,200', mo: '€235/mo · 60 mo' },
-      photo: 'assets/stock/reval-grade-cg47.jpg',
-      fb: 'assets/boats/finval-470-evo-11.jpg',
-      gallery: 11, year: 2025,
-    },
-    {
-      brand: 'LANDX', cat: 'Aluminium', country: 'hu',
-      model: 'Pro <em>460</em>',
-      tagline: 'Hungarian-built 4.6 m angler — open deck, lockable storage, livewell.',
-      badges: [['order','On order · 8 wk']],
-      features: ['AlMg 5083', 'Livewell 60 L', 'Lockable storage', 'Rod holders'],
-      specs: [['Length','4.60 m'],['Beam','1.95 m'],['Engine','40–50 hp'],['Draft','24 cm']],
-      meta: [['users','4'],['weight','420 kg'],['shield','5 yrs']],
-      price: { l: 'From, VAT incl.', v: '€16,800', mo: '€275/mo · 60 mo' },
-      photo: 'assets/stock/landx-x6.png',
-      fb: 'assets/boats/finval-470-evo-13.jpg',
-      gallery: 9, year: 2026,
-    },
-    {
-      brand: 'NorthSilver', cat: 'Expedition', country: 'ee',
-      model: 'Expedition <em>575</em>',
-      tagline: 'Long-range expedition hull. Auxiliary fuel, dry storage, heated wheelhouse.',
-      badges: [['order','On order · 10 wk']],
-      features: ['Wheelhouse', '120 L fuel', 'AlMg 5083', 'Heater + GPS'],
-      specs: [['Length','5.75 m'],['Beam','2.20 m'],['Engine','115–150'],['Draft','40 cm']],
-      meta: [['users','6'],['weight','980 kg'],['shield','10 yrs']],
-      price: { l: 'From, VAT incl.', v: '€44,800', mo: '€720/mo · 60 mo' },
-      photo: 'assets/stock/northsilver-585-yamaha.png',
-      fb: 'assets/stock/northsilver-585-fish.jpg',
-      gallery: 19, year: 2026,
-    },
-    {
-      brand: 'GALA', cat: 'RIB', country: 'ua',
-      model: 'ATLANTIS <em>A360</em>',
-      tagline: 'Compact RIB — light enough for one-person handling, tough enough for the sea.',
-      badges: [['ok','In stock']],
-      features: ['PVC tubes', 'GRP V-hull', 'Folding seat', 'Towable'],
-      specs: [['Length','3.60 m'],['Beam','1.70 m'],['Engine','15–25 hp'],['Tubes','42 cm']],
-      meta: [['users','5'],['weight','85 kg'],['shield','5 yrs']],
-      price: { l: 'MSRP from', v: '€4,890', mo: '€85/mo · 60 mo' },
-      photo: 'assets/stock/gala-atlantis-a390q.jpg',
-      fb: 'assets/boats/gala-viking-v6f.jpg',
-      gallery: 12, year: 2026,
-    },
-    {
-      brand: 'RESPO', cat: 'Trailer', country: 'ee',
-      model: 'BT <em>1800</em>',
-      tagline: 'Hot-galvanised boat trailer — 1800 kg capacity, road-legal across EU.',
-      badges: [['ok','In stock']],
-      features: ['Hot-galvanised', '1800 kg', 'Tilting frame', '13-pin EU plug'],
-      specs: [['Length','6.20 m'],['Beam','2.10 m'],['Capacity','1800 kg'],['Tyre','13″']],
-      meta: [['users','—'],['weight','280 kg'],['shield','3 yrs']],
-      price: { l: 'From, VAT incl.', v: '€3,950', mo: '€68/mo · 60 mo' },
-      photo: 'assets/stock/furseal-425-sc-vinyl.jpg',
-      fb: 'assets/boats/hero-DSC07340-1.jpg',
-      gallery: 6, year: 2026,
-    },
+    liveBoat({ brand: 'GALA', cat: 'RIB Boats', country: 'ua', model: 'VIKING V6F (V580F)', price: '€26,366', length: '5.8 m', persons: '12', power: '150 HP', photo: 'assets/boats/gala-viking-v6f-111-654x525.jpg' }),
+    liveBoat({ brand: 'Big Foot', cat: 'Aluminium Boats', country: 'hu', model: 'Ultimate Console', price: '€10,605', length: '5.65 m', persons: '6', power: '60 hp', photo: 'assets/boats/big-foot-ultimate-654x525.jpg' }),
+    liveBoat({ brand: 'Big Foot', cat: 'Aluminium Boats', country: 'hu', model: 'Ultimate B', price: '€3,450', length: '5.65 m', persons: '6', power: '60 hp', photo: 'assets/boats/big-foot-ultimate.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'HEAVY DUTY HC520', price: 'Request', length: '5.20 m', persons: '5', power: '8 hp', photo: 'assets/boats/galaxy-heavy-duty-hc520-654x525.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'HEAVY DUTY HD460M', price: 'Request', length: '4.70 m', persons: '10', power: '50 hp', photo: 'assets/boats/galaxy-heavy-duty-hd460m-654x525.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'HEAVY DUTY F450HD', price: 'Request', length: '4.50 m', persons: '6', power: '50 hp', photo: 'assets/boats/galaxy-hd460m.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'HEAVY DUTY P4.6HD', price: 'Request', length: '4.57 m', persons: '7', power: '60 hp', photo: 'assets/boats/galaxy-heavy-duty-hd460m-654x525.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P6.5', price: '€26,330', length: '6.50 m', persons: '12', power: '200 hp', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P4', price: '€7,920', length: '3.90 m', persons: '6', power: '30 hp', photo: 'assets/boats/galaxy-pilot-p4-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'TRIDENT - T12', price: '€178,940', length: '11.60 m', persons: '20', power: '1200 hp', photo: 'assets/boats/galaxy-trident-t12-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'TRIDENT - T10', price: '€149,510', length: '9.60 m', persons: '16', power: '700 hp', photo: 'assets/boats/galaxy-trident-t12-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'TRIDENT - T6.5', price: '€70,650', length: '6.50 m', persons: '10', power: '300 hp', photo: 'assets/boats/galaxy-trident-t12-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P4.5', price: '€12,760', length: '4.50 m', persons: '7', power: '70 hp', photo: 'assets/boats/galaxy-pilot-p4-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P5', price: '€15,970', length: '5.00 m', persons: '8', power: '100 hp', photo: 'assets/boats/galaxy-pilot-p4-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P6', price: '€23,100', length: '5.80 m', persons: '10', power: '175 hp', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'PILOT - P7', price: '€32,560', length: '6.95 m', persons: '13', power: '300 hp', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'TRIDENT T8', price: '€101,010', length: '7.80 m', persons: '14', power: '500 hp', photo: 'assets/boats/galaxy-trident-t12-654x525.jpg' }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'Pilot - P12', price: 'Request', length: '11.60 m', persons: '18', power: '900 hp', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'Pilot - P10', price: 'Request', length: '9.60 m', persons: '16', power: '700 hp', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg', request: true }),
+    liveBoat({ brand: 'GALAXY', cat: 'Aluminium Boats', country: 'ua', model: 'Pilot - P8', price: '€44,040', length: '7.80 m', persons: '14', power: '350 HP', photo: 'assets/boats/galaxy-pilot-p6-5-654x525.jpg' }),
   ];
 
-  const BADGE_CLASS = { exclusive: 'exclusive', featured: 'featured', ok: '', order: 'order', req: 'request' };
+  const BADGE_CLASS = { exclusive: 'exclusive', featured: 'featured', live: 'featured', ok: '', order: 'order', req: 'request' };
   const META_ICONS = {
     users: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5.5" r="2.4"/><path d="M2.5 14 Q 8 9.5 13.5 14"/></svg>',
-    weight: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 H13 L12 13 H4 Z"/><path d="M6.5 5 Q 6.5 3 8 3 Q 9.5 3 9.5 5"/></svg>',
-    shield: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2 L13 4 L13 9 Q 13 12 8 14 Q 3 12 3 9 L3 4 Z"/><path d="M5.8 8 L7.2 9.4 L10.4 6.2"/></svg>',
+    power: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l2-6h6l2 6"/><path d="M5 11h6"/><path d="M8 5v8"/></svg>',
+    catalog: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h10v10H3z"/><path d="M5 6h6M5 9h4"/></svg>',
   };
   const COMPARE_SVG = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5 L12 2.5 L12 13.5 L8 11 L4 13.5 Z"/></svg>';
   const GALLERY_SVG = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="6" rx="1"/><circle cx="6" cy="6" r="1.5"/></svg>';
@@ -312,8 +115,8 @@ const BOATS = [
             '<button class="compare" aria-label="Save">' + COMPARE_SVG + '</button></div>',
             killerHtml,
             '<div class="photo-foot">',
-              '<span class="gallery-count">' + GALLERY_SVG + b.gallery + ' photos</span>',
-              '<span class="year-pill">' + b.year + '</span>',
+              '<span class="gallery-count">' + GALLERY_SVG + (b.galleryLabel || 'more info') + '</span>',
+              '<span class="year-pill">' + (b.sourceLabel || 'Live') + '</span>',
             '</div>',
           '</div>',
           '<div class="boat-body">',
@@ -347,20 +150,36 @@ const BOATS = [
     const findSection = (needle) => filterSections.find((section) => lower(text(section.querySelector('h4'))).includes(needle));
     const brandSection = findSection('brand');
     const bodySection = findSection('body');
-    const availabilitySection = findSection('availability');
+    const availabilitySection = findSection('listing status');
     const brandChecks = () => Array.from(brandSection?.querySelectorAll('.check.on .lbl') || []).map(text);
     const bodyChecks = () => Array.from(bodySection?.querySelectorAll('.check.on .lbl') || []).map(text);
+    const extraChecks = () => filterSections
+      .filter((section) => section !== brandSection && section !== bodySection && section !== availabilitySection)
+      .flatMap((section) => Array.from(section.querySelectorAll('.check.on .lbl')).map(text));
     const activeAvailability = () => text(availabilitySection?.querySelector('.seg button.active') || '').toLowerCase();
     const boatStatus = (boat) => {
       const keys = boat.badges.map(([key]) => key);
-      if (keys.includes('ok')) return 'in stock';
-      if (keys.includes('order')) return 'on order';
       if (keys.includes('req')) return 'by request';
-      return 'catalog';
+      return 'price shown';
+    };
+    const brandMatches = (boat, selected) => {
+      if (!selected.length) return true;
+      const brand = lower(boat.brand);
+      const model = lower(boat.model);
+      return selected.some((label) => {
+        const l = lower(label);
+        if (l.startsWith('gala ')) return brand === 'gala' && model.includes(l.replace('gala ', '').trim());
+        if (l.includes('galaxy')) return brand === 'galaxy';
+        if (l.includes('big foot')) return brand === 'big foot';
+        if (l.includes('respo')) return brand === 'respo';
+        if (l.includes('northsilver')) return brand === 'northsilver';
+        if (l.includes('reval')) return brand === 'reval grade';
+        return brand === l || brand.includes(l);
+      });
     };
     const bodyMatches = (boat, selected) => {
       if (!selected.length) return true;
-      const haystack = lower([boat.brand, boat.cat, boat.tagline, boat.features.join(' ')].join(' '));
+      const haystack = lower([boat.brand, boat.cat, boat.model, boat.tagline, boat.features.join(' ')].join(' '));
       return selected.some((label) => {
         const l = lower(label);
         if (l.includes('aluminium')) return /(aluminium|almg|pro angler|heavy duty|compact)/.test(haystack);
@@ -371,13 +190,18 @@ const BOATS = [
         return haystack.includes(l.replace(' boats', ''));
       });
     };
+    const labelMatches = (boat, selected) => {
+      if (!selected.length) return true;
+      const haystack = lower([boat.brand, boat.cat, boat.model, boat.tagline, boat.features.join(' '), boat.specs.map(([, v]) => v).join(' ')].join(' '));
+      return selected.some((label) => haystack.includes(lower(label)));
+    };
     const updateToolbar = (filtered, brands, bodies, availability) => {
-      const shown = filtered.length ? '1 - ' + Math.min(filtered.length, 12) : '0';
-      if (countEl) countEl.innerHTML = 'Showing <b>' + shown + '</b> of <b>' + filtered.length + '</b> boats';
+      const shown = filtered.length ? '1 - ' + Math.min(filtered.length, 20) : '0';
+      if (countEl) countEl.innerHTML = '<b>' + shown + '</b> shown from this 20-item live page snapshot';
       if (headCount) headCount.textContent = filtered.length === BOATS.length ? 'ready' : filtered.length + ' shown';
       if (!chipsEl) return;
       const chips = [];
-      if (availability && availability !== 'all') chips.push(['Stock', availability.replace(/\b\w/g, (m) => m.toUpperCase())]);
+      if (availability && availability !== 'all') chips.push(['Status', availability.replace(/\b\w/g, (m) => m.toUpperCase())]);
       chips.push(['Brand', brands.length ? brands.slice(0, 2).join(', ') + (brands.length > 2 ? ' +' + (brands.length - 2) : '') : 'All']);
       chips.push(['Hull', bodies.length ? bodies.slice(0, 2).join(', ') + (bodies.length > 2 ? ' +' + (bodies.length - 2) : '') : 'All']);
       chipsEl.innerHTML = chips.map(([label, value]) => '<span class="chip">' + label + ': <b>' + value + '</b><span class="x" aria-hidden="true"></span></span>').join('') +
@@ -387,12 +211,13 @@ const BOATS = [
     function applyFilters(){
       const brands = brandChecks();
       const bodies = bodyChecks();
+      const extras = extraChecks();
       const availability = activeAvailability();
       const filtered = BOATS.filter((boat) => {
-        if (availability === 'in stock' && boatStatus(boat) !== 'in stock') return false;
-        if (availability === 'on order' && boatStatus(boat) !== 'on order') return false;
-        if (brands.length && !brands.some((brand) => lower(boat.brand).includes(lower(brand)))) return false;
-        return bodyMatches(boat, bodies);
+        if (availability === 'price shown' && boatStatus(boat) !== 'price shown') return false;
+        if (availability === 'request' && boatStatus(boat) !== 'by request') return false;
+        if (!brandMatches(boat, brands)) return false;
+        return bodyMatches(boat, bodies) && labelMatches(boat, extras);
       });
       renderBoats(filtered);
       updateToolbar(filtered, brands, bodies, availability);
@@ -447,7 +272,7 @@ const BOATS = [
             '<span class="qr-price">' + row.price + '</span>',
           '</a>'
         ].join('')).join('')
-        : '<div class="quick-result"><span></span><span><span class="qr-k">No exact match</span><span class="qr-name">Send us the brief</span><span class="qr-meta">We will find the closest hull in 48 hours.</span></span><span class="qr-price">Brief</span></div>';
+        : '<div class="quick-result"><span></span><span><span class="qr-k">No exact match</span><span class="qr-name">Open the live catalog</span><span class="qr-meta">The source archive currently has 324 results.</span></span><span class="qr-price">324</span></div>';
     };
 
     const openSearch = () => {
