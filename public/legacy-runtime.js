@@ -392,8 +392,29 @@
           '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
         "</a>" +
         '<span class="mobile-drawer-lang" role="group" aria-label="Language">' +
-          '<a href="?lang=ro" data-i18n-set="ro" aria-label="Română">RO</a>' +
-          '<a href="?lang=en" data-i18n-set="en" aria-label="English">EN</a>' +
+          '<a href="?lang=ro" data-i18n-set="ro" aria-label="Română">' +
+            '<span class="flag flag-ro" aria-hidden="true">' +
+              '<svg viewBox="0 0 18 12" preserveAspectRatio="none" focusable="false">' +
+                '<rect width="6" height="12" fill="#002B7F"/>' +
+                '<rect x="6" width="6" height="12" fill="#FCD116"/>' +
+                '<rect x="12" width="6" height="12" fill="#CE1126"/>' +
+              "</svg>" +
+            "</span>" +
+            '<span class="lang-code">RO</span>' +
+          "</a>" +
+          '<a href="?lang=en" data-i18n-set="en" aria-label="English">' +
+            '<span class="flag flag-gb" aria-hidden="true">' +
+              '<svg viewBox="0 0 60 30" preserveAspectRatio="none" focusable="false">' +
+                '<rect width="60" height="30" fill="#012169"/>' +
+                '<path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>' +
+                '<path d="M0,0 L60,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>' +
+                '<path d="M60,0 L0,30" stroke="#C8102E" stroke-width="2.4" stroke-dasharray="30,30"/>' +
+                '<path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>' +
+                '<path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>' +
+              "</svg>" +
+            "</span>" +
+            '<span class="lang-code">EN</span>' +
+          "</a>" +
         "</span>" +
         '<button class="mobile-close" type="button" aria-label="Close menu">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +

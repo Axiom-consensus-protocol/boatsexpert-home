@@ -1,24 +1,12 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Boats Expert - official dealer of boats and marine equipment in Romania";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const publicPath = (...parts: string[]) => join(process.cwd(), "public", ...parts);
-const asset = async (mime: string, ...parts: string[]) => {
-  const data = await readFile(publicPath(...parts));
-  return `data:${mime};base64,${data.toString("base64")}`;
-};
-
-const heroPromise = asset("image/jpeg", "assets", "boats", "hero-DSC07340-1.jpg");
-const logoPromise = asset("image/svg+xml", "assets", "logo", "logo-white.svg");
 const cardSections = ["Boats Catalog", "Boats in Stock", "Shop Online", "Service"];
 
-export default async function OpenGraphImage() {
-  const [hero, logo] = await Promise.all([heroPromise, logoPromise]);
-
+export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <div
@@ -33,34 +21,35 @@ export default async function OpenGraphImage() {
           fontFamily: "Arial, sans-serif",
         }}
       >
-        <img
-          src={hero}
-          alt=""
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: 0.46,
-          }}
-        />
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(90deg, rgba(6,24,39,.99) 0%, rgba(6,24,39,.9) 46%, rgba(6,24,39,.28) 100%)",
+              "radial-gradient(circle at 74% 18%, rgba(214,160,86,.34), transparent 30%), radial-gradient(circle at 24% 68%, rgba(8,168,215,.18), transparent 34%), linear-gradient(135deg, #020912 0%, #061827 48%, #0A2540 100%)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            right: 0,
-            top: 0,
-            width: 420,
-            height: 630,
-            background: "linear-gradient(180deg, rgba(198,139,61,.34), rgba(198,139,61,0))",
+            left: -120,
+            bottom: 58,
+            width: 820,
+            height: 180,
+            borderTop: "2px solid rgba(244,239,230,.24)",
+            transform: "skewX(-18deg)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 92,
+            bottom: 96,
+            width: 560,
+            height: 78,
+            borderBottom: "7px solid #D6A056",
+            borderLeft: "2px solid rgba(244,239,230,.42)",
+            transform: "skewX(-21deg)",
           }}
         />
         <div
@@ -97,7 +86,41 @@ export default async function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <img src={logo} alt="Boats Expert" style={{ width: 182, height: 112, objectFit: "contain" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+              <div
+                style={{
+                  width: 94,
+                  height: 94,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "1px solid rgba(244,239,230,.35)",
+                  background: "rgba(244,239,230,.07)",
+                  color: "#F4EFE6",
+                  fontSize: 35,
+                  fontWeight: 800,
+                  letterSpacing: -1,
+                }}
+              >
+                BE
+              </div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ color: "#FFFFFF", fontSize: 42, fontWeight: 800, lineHeight: 1 }}>
+                  BoatsExpert
+                </div>
+                <div
+                  style={{
+                    marginTop: 8,
+                    color: "#D6A056",
+                    fontSize: 15,
+                    letterSpacing: 4,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Official dealer
+                </div>
+              </div>
+            </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
               <div
                 style={{
@@ -119,12 +142,12 @@ export default async function OpenGraphImage() {
                   textAlign: "right",
                 }}
               >
-                Official dealer of boats and marine equipment in Romania
+                Boats, equipment, tuning and service under one roof
               </div>
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", maxWidth: 760, marginTop: 4 }}>
+          <div style={{ display: "flex", flexDirection: "column", maxWidth: 790, marginTop: 4 }}>
             <div
               style={{
                 display: "flex",
@@ -152,7 +175,7 @@ export default async function OpenGraphImage() {
                 fontSize: 41,
                 lineHeight: 1.08,
                 fontWeight: 700,
-                maxWidth: 700,
+                maxWidth: 740,
               }}
             >
               Official dealer of boats and marine equipment
