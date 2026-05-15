@@ -2,20 +2,12 @@
   "slug": "shop",
   "route": "/shop",
   "source": "boatsexpert-home/Shop.html",
-  "title": "Shop — 937 marine products · BoatsExpert",
+  "title": "Shop — 942 marine products · BoatsExpert",
   "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
   "sections": [
     {
       "name": "01-page-band",
       "file": "01-page-band.html"
-    },
-    {
-      "name": "02-category-icon-strip",
-      "file": "02-category-icon-strip.html"
-    },
-    {
-      "name": "03-system-studio",
-      "file": "03-system-studio.html"
     },
     {
       "name": "04-toolbar",
@@ -24,6 +16,14 @@
     {
       "name": "05-body",
       "file": "05-body.html"
+    },
+    {
+      "name": "02-category-icon-strip",
+      "file": "02-category-icon-strip.html"
+    },
+    {
+      "name": "03-system-studio",
+      "file": "03-system-studio.html"
     },
     {
       "name": "06-original-category-directory",

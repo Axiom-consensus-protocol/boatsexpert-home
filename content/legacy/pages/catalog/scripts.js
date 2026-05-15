@@ -198,7 +198,7 @@ const BOATS = [
     const updateToolbar = (filtered, brands, bodies, availability) => {
       const shown = filtered.length ? '1 - ' + Math.min(filtered.length, 20) : '0';
       if (countEl) countEl.innerHTML = '<b>' + shown + '</b> shown from this 20-item live page snapshot';
-      if (headCount) headCount.textContent = filtered.length === BOATS.length ? 'ready' : filtered.length + ' shown';
+      if (headCount) headCount.textContent = filtered.length === BOATS.length ? '20 live cards' : filtered.length + ' shown';
       if (!chipsEl) return;
       const chips = [];
       if (availability && availability !== 'all') chips.push(['Status', availability.replace(/\b\w/g, (m) => m.toUpperCase())]);
@@ -215,7 +215,7 @@ const BOATS = [
       const availability = activeAvailability();
       const filtered = BOATS.filter((boat) => {
         if (availability === 'price shown' && boatStatus(boat) !== 'price shown') return false;
-        if (availability === 'request' && boatStatus(boat) !== 'by request') return false;
+        if ((availability === 'request' || availability === 'request price') && boatStatus(boat) !== 'by request') return false;
         if (!brandMatches(boat, brands)) return false;
         return bodyMatches(boat, bodies) && labelMatches(boat, extras);
       });

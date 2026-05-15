@@ -645,6 +645,10 @@
     box-shadow:0 32px 60px -30px rgba(10,37,64,.28);
     border-color:rgba(10,37,64,.18);
   }
+  .pcard.is-filtered-out,
+  .pcard[hidden]{
+    display:none !important;
+  }
   .pcard::before{
     content:'';
     position:absolute; left:0; top:0; bottom:0; width:2px;
@@ -1951,6 +1955,33 @@
     border-color:var(--line);
     letter-spacing:.08em;
   }
+  .shop-empty{
+    grid-column:1 / -1;
+    min-height:180px;
+    padding:28px;
+    display:grid;
+    align-content:center;
+    gap:8px;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--muted);
+    box-shadow:0 22px 62px -58px rgba(10,37,64,.62);
+  }
+  .shop-empty b{
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:34px;
+    line-height:1;
+    font-weight:400;
+  }
+  .shop-empty span{
+    font-family:var(--serif);
+    font-size:15px;
+    line-height:1.45;
+  }
+  .shop-empty[hidden]{
+    display:none !important;
+  }
   .bundle-lane{
     margin-top:34px;
     padding:34px;
@@ -2567,12 +2598,12 @@
       position:sticky !important;
       top:74px !important;
       z-index:46;
-      max-height:46vh;
+      max-height:none;
       margin:0 calc(var(--pad-wide) * -1);
       border-left:0;
       border-right:0;
       border-radius:0;
-      overflow:auto;
+      overflow:visible;
       overscroll-behavior:contain;
       background:rgba(255,252,246,.96);
       box-shadow:0 20px 54px -42px rgba(10,37,64,.72);
@@ -2610,7 +2641,7 @@
       text-decoration:none;
     }
     .cats-head::after{
-      content:'Departments · price · stock · brands';
+      content:'Departments · state · brands';
       color:var(--brass-3);
     }
     aside.cats .cats-section{
@@ -2669,21 +2700,8 @@
     .cat-link.active .count{
       color:var(--brass);
     }
-    .price-range{
-      min-width:270px;
-    }
-    .price-track{
-      margin:10px 3px 12px;
-    }
-    .price-inputs{
-      display:flex;
-      gap:8px;
-    }
-    .price-inputs input{
-      min-width:96px;
-      min-height:36px;
-      border-radius:999px;
-      background:#fff;
+    aside.cats .cats-section:nth-of-type(4){
+      display:none !important;
     }
     .cats-section:nth-of-type(5),
     .cats-section:nth-of-type(6){
@@ -2813,10 +2831,14 @@
     html[data-theme="night"] .cat-link,
     html[data-theme="night"] .price-inputs input,
     html[data-theme="night"] .check-row,
-    html[data-theme="night"] .results-intro > div{
+    html[data-theme="night"] .results-intro > div,
+    html[data-theme="night"] .shop-empty{
       background:#071A2C !important;
       border-color:rgba(244,239,230,.16) !important;
       color:#E8DDC9 !important;
+    }
+    html[data-theme="night"] .shop-empty b{
+      color:#F4EFE6 !important;
     }
     html[data-theme="night"] .cat-link.active,
     html[data-theme="night"] .check-row.on{

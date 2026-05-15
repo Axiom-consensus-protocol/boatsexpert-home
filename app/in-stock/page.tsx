@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InStockShop, type StockBoatItem } from "@/components/stock/InStockShop";
 
 export const metadata: Metadata = {
   title: "Boats in Stock | BoatsExpert",
@@ -27,21 +28,7 @@ type IconName =
   | "wallet"
   | "wrench";
 
-type StockBoat = {
-  title: string;
-  brand: string;
-  category: string;
-  price: string;
-  oldPrice?: string;
-  tax: string;
-  image: string;
-  href: string;
-  sku: string;
-  status: string;
-  badges: string[];
-  specs: Array<[string, string]>;
-  note: string;
-};
+type StockBoat = StockBoatItem;
 
 const stockBoats: StockBoat[] = [
   {
@@ -283,18 +270,6 @@ const stockBoats: StockBoat[] = [
   },
 ];
 
-const categories = [
-  ["Boats in stock", "13", true],
-  ["Outboard motors for boat", "87", false],
-  ["Sonars for boat", "42", false],
-  ["Marine accessories", "182", false],
-  ["Electric motors", "22", false],
-  ["Batteries", "24", false],
-  ["Hydraulic steering system", "14", false],
-  ["Marine lights", "31", false],
-  ["Mounts for boat", "11", false],
-] as const;
-
 const trustItems: Array<{ icon: IconName; title: string; text: string }> = [
   { icon: "anchor", title: "Ready hulls", text: "13 boats from the original stock department." },
   { icon: "cart", title: "Shop flow", text: "Price, reserve, add-to-cart style actions and sales desk follow-up." },
@@ -465,6 +440,8 @@ export default function InStockPage() {
           </div>
         </section>
 
+        <InStockShop boats={stockBoats} />
+
         <section className="stock-trust">
           <div className="container">
             <div className="stock-trust-grid">
@@ -477,115 +454,6 @@ export default function InStockPage() {
                   <p>{item.text}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="stock-shop" id="stock-shop">
-          <div className="container">
-            <aside className="stock-sidebar">
-              <div className="stock-side-card stock-search">
-                <div className="stock-side-title">
-                  <Icon name="search" />
-                  <span>Search stock</span>
-                </div>
-                <label>
-                  <span>Search...</span>
-                  <input type="search" placeholder="Finval, Beneteau, RIB..." />
-                </label>
-                <button type="button">Search</button>
-              </div>
-
-              <div className="stock-side-card">
-                <div className="stock-side-title">
-                  <Icon name="filter" />
-                  <span>Product categories</span>
-                </div>
-                <nav className="stock-category-list" aria-label="Stock product categories">
-                  {categories.map(([label, count, active]) => (
-                    <a className={active ? "active" : ""} href={active ? "/in-stock" : "/shop"} key={label}>
-                      <span>{label}</span>
-                      <b>{count}</b>
-                    </a>
-                  ))}
-                </nav>
-              </div>
-
-              <div className="stock-side-card stock-help">
-                <span>Online shopping</span>
-                <strong>Not just a list. A checked order.</strong>
-                <p>
-                  Send hull, motor, budget and delivery city. The team checks stock,
-                  rigging, paperwork and service timing before you commit.
-                </p>
-                <a href="/contact">Contact sales</a>
-              </div>
-            </aside>
-
-            <div className="stock-results">
-              <div className="stock-toolbar">
-                <div>
-                  <span>Showing 1-13 of 13 results</span>
-                  <strong>Boats in stock</strong>
-                </div>
-                <label>
-                  <span>Sort by</span>
-                  <select defaultValue="default">
-                    <option value="default">Default sorting</option>
-                    <option value="price-low">Sort by price: low to high</option>
-                    <option value="price-high">Sort by price: high to low</option>
-                    <option value="sale">Sale first</option>
-                  </select>
-                </label>
-              </div>
-
-              <div className="stock-product-grid">
-                {stockBoats.map((boat) => (
-                  <article className="stock-product" key={boat.sku}>
-                    <a className="stock-product-photo" href={boat.href}>
-                      <img src={boat.image} alt={boat.title} loading="lazy" />
-                      <span className="stock-status">{boat.status}</span>
-                      {boat.oldPrice ? <span className="stock-sale">Sale</span> : null}
-                    </a>
-                    <div className="stock-product-body">
-                      <div className="stock-product-tags">
-                        {boat.badges.map((badge) => (
-                          <span key={`${boat.sku}-${badge}`}>{badge}</span>
-                        ))}
-                      </div>
-                      <span className="stock-brand">{boat.brand} - {boat.category}</span>
-                      <h2>{boat.title}</h2>
-                      <p>{boat.note}</p>
-                      <div className="stock-product-specs">
-                        {boat.specs.map(([value, label]) => (
-                          <span key={`${boat.sku}-${label}`}>
-                            <b>{value}</b>
-                            {label}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="stock-product-price">
-                        {boat.oldPrice ? <del>{boat.oldPrice}</del> : null}
-                        <strong>{boat.price}</strong>
-                        <small>{boat.tax}</small>
-                      </div>
-                      <div className="stock-product-actions">
-                        <a href="/cart" className="stock-add">
-                          <Icon name="cart" />
-                          Add to cart
-                        </a>
-                        <a href={boat.href}>Details</a>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <div className="stock-pagination" aria-label="Stock pages">
-                <span className="active">1</span>
-                <span>2</span>
-                <span>Next</span>
-              </div>
             </div>
           </div>
         </section>
@@ -1020,6 +888,38 @@ const stockPageCss = `
     color:#C68B3D;
     font-weight:500;
   }
+  .stock-filter-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .stock-filter-list button{
+    min-height:38px;
+    padding:0 10px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--stock-line);
+    background:#fff;
+    color:var(--stock-ink);
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+  }
+  .stock-filter-list button b{
+    color:#C68B3D;
+    font-weight:500;
+  }
+  .stock-filter-list button.active{
+    background:#0A2540;
+    color:#F4EFE6;
+    border-color:#0A2540;
+  }
+  .stock-filter-list button.active b{
+    color:#D6A056;
+  }
   .stock-help{
     background:#0A2540;
     color:#F4EFE6;
@@ -1317,6 +1217,29 @@ const stockPageCss = `
     background:#0A2540;
     color:#F4EFE6;
   }
+  .stock-empty{
+    grid-column:1 / -1;
+    min-height:180px;
+    padding:28px;
+    display:grid;
+    align-content:center;
+    gap:8px;
+    border:1px solid var(--stock-line);
+    background:#fff;
+    color:var(--stock-muted);
+  }
+  .stock-empty b{
+    color:var(--stock-ink);
+    font-family:var(--display);
+    font-size:34px;
+    line-height:1;
+    font-weight:400;
+  }
+  .stock-empty span{
+    font-family:var(--serif);
+    font-size:15px;
+    line-height:1.45;
+  }
   .stock-editorial{
     padding:78px 0;
     background:#071A2C;
@@ -1489,9 +1412,11 @@ const stockPageCss = `
   html[data-theme="night"] .stock-search input,
   html[data-theme="night"] .stock-toolbar select,
   html[data-theme="night"] .stock-category-list a,
+  html[data-theme="night"] .stock-filter-list button,
   html[data-theme="night"] .stock-product-tags span,
   html[data-theme="night"] .stock-product-actions a,
-  html[data-theme="night"] .stock-pagination span{
+  html[data-theme="night"] .stock-pagination span,
+  html[data-theme="night"] .stock-empty{
     background:#071A2C;
     border-color:rgba(244,239,230,.15);
     color:#F4EFE6;
@@ -1502,6 +1427,7 @@ const stockPageCss = `
     border-color:rgba(244,239,230,.14);
   }
   html[data-theme="night"] .stock-category-list a.active,
+  html[data-theme="night"] .stock-filter-list button.active,
   html[data-theme="night"] .stock-search button,
   html[data-theme="night"] .stock-product-actions .stock-add,
   html[data-theme="night"] .stock-pagination .active{
@@ -1516,6 +1442,7 @@ const stockPageCss = `
   html[data-theme="night"] .stock-product-specs b,
   html[data-theme="night"] .stock-product-price strong,
   html[data-theme="night"] .stock-toolbar strong,
+  html[data-theme="night"] .stock-empty b,
   html[data-theme="night"] .stock-systems-head h2{
     color:#F4EFE6;
   }
@@ -1600,10 +1527,48 @@ const stockPageCss = `
     }
     .stock-hero-ledger,
     .stock-trust-grid,
-    .stock-sidebar,
     .stock-product-grid,
     .stock-system-grid{
       grid-template-columns:1fr;
+    }
+    .stock-sidebar{
+      position:sticky;
+      top:74px;
+      z-index:46;
+      max-height:46vh;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0;
+      overflow:auto;
+      overscroll-behavior:contain;
+      border:1px solid var(--stock-line);
+      background:rgba(255,252,246,.96);
+      box-shadow:0 20px 54px -42px rgba(10,37,64,.72);
+      backdrop-filter:blur(16px) saturate(135%);
+      -webkit-backdrop-filter:blur(16px) saturate(135%);
+    }
+    .stock-sidebar .stock-side-card{
+      border:0;
+      border-bottom:1px solid var(--stock-line);
+      box-shadow:none;
+      background:transparent;
+    }
+    .stock-sidebar .stock-help{
+      display:none;
+    }
+    .stock-filter-list{
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      padding-bottom:1px;
+      scrollbar-width:none;
+    }
+    .stock-filter-list::-webkit-scrollbar{
+      display:none;
+    }
+    .stock-filter-list button{
+      flex:0 0 auto;
+      border-radius:999px;
+      white-space:nowrap;
     }
     .stock-trust-item{
       min-height:0;

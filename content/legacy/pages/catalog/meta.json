@@ -10,20 +10,20 @@
       "file": "01-catalog-band.html"
     },
     {
-      "name": "02-type-icon-strip-hull-types",
-      "file": "02-type-icon-strip-hull-types.html"
-    },
-    {
-      "name": "03-in-stock-showcase",
-      "file": "03-in-stock-showcase.html"
-    },
-    {
       "name": "03-toolbar",
       "file": "03-toolbar.html"
     },
     {
       "name": "04-body",
       "file": "04-body.html"
+    },
+    {
+      "name": "02-type-icon-strip-hull-types",
+      "file": "02-type-icon-strip-hull-types.html"
+    },
+    {
+      "name": "03-in-stock-showcase",
+      "file": "03-in-stock-showcase.html"
     },
     {
       "name": "05-featured-brands-6-hero-brand-tiles",
