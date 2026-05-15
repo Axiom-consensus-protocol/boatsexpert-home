@@ -248,6 +248,7 @@ const BOATS = [
     const clearDock = () => {
       sidebar.classList.remove('is-mobile-fixed');
       body.classList.remove('catalog-filter-docked');
+      document.body.classList.remove('catalog-filter-docked-page');
       document.documentElement.style.removeProperty('--catalog-sticky-filter-height');
     };
 
@@ -258,7 +259,7 @@ const BOATS = [
         return;
       }
 
-      const topOffset = 74;
+      const topOffset = 80;
       const bodyRect = body.getBoundingClientRect();
       const bodyTop = bodyRect.top + window.scrollY;
       const bodyBottom = bodyRect.bottom + window.scrollY;
@@ -269,6 +270,7 @@ const BOATS = [
 
       sidebar.classList.toggle('is-mobile-fixed', docked);
       body.classList.toggle('catalog-filter-docked', docked);
+      document.body.classList.toggle('catalog-filter-docked-page', docked);
       if (docked) {
         document.documentElement.style.setProperty('--catalog-sticky-filter-height', filterHeight + 'px');
       } else {

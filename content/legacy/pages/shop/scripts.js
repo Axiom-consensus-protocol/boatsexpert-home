@@ -201,6 +201,7 @@
   const clearDock = () => {
     sidebar.classList.remove('is-mobile-fixed');
     body.classList.remove('shop-filter-docked');
+    document.body.classList.remove('shop-filter-docked-page');
     document.documentElement.style.removeProperty('--shop-sticky-filter-height');
   };
 
@@ -211,7 +212,7 @@
       return;
     }
 
-    const topOffset = 74;
+    const topOffset = 80;
     const bodyRect = body.getBoundingClientRect();
     const bodyTop = bodyRect.top + window.scrollY;
     const bodyBottom = bodyRect.bottom + window.scrollY;
@@ -222,6 +223,7 @@
 
     sidebar.classList.toggle('is-mobile-fixed', docked);
     body.classList.toggle('shop-filter-docked', docked);
+    document.body.classList.toggle('shop-filter-docked-page', docked);
     if (docked) {
       document.documentElement.style.setProperty('--shop-sticky-filter-height', filterHeight + 'px');
     } else {

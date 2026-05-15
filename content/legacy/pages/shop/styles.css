@@ -2940,3 +2940,166 @@
       display:none !important;
     }
   }
+
+  /* Mobile filter dock: compact commerce controls replace the header while scrolling products. */
+  @media (max-width: 640px){
+    body header.site{
+      transition:transform .22s ease, opacity .18s ease;
+      will-change:transform;
+    }
+    body.shop-filter-docked-page header.site{
+      transform:translateY(-100%) !important;
+      opacity:0 !important;
+      pointer-events:none !important;
+    }
+    aside.cats{
+      display:grid !important;
+      grid-template-rows:38px repeat(3, 36px);
+      max-height:152px !important;
+      overflow:hidden !important;
+      gap:0;
+      background:rgba(255,252,246,.985) !important;
+      box-shadow:0 18px 54px -38px rgba(10,37,64,.72) !important;
+    }
+    aside.cats.is-mobile-fixed{
+      top:0 !important;
+      left:0 !important;
+      right:0 !important;
+      width:100% !important;
+      max-height:152px !important;
+      border-left:0 !important;
+      border-right:0 !important;
+      border-radius:0 !important;
+      z-index:120 !important;
+    }
+    .cats-head{
+      min-height:38px;
+      height:38px;
+      padding:7px 12px !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:10px;
+      position:relative !important;
+    }
+    .cats-head h3{
+      min-width:0;
+      display:flex;
+      align-items:baseline;
+      gap:7px;
+      font-size:16px !important;
+      line-height:1 !important;
+      white-space:nowrap;
+    }
+    .cats-head h3 em{
+      max-width:104px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size:8px !important;
+      letter-spacing:.1em !important;
+    }
+    .cats-head .reset{
+      min-height:26px !important;
+      height:26px;
+      padding:0 9px !important;
+      flex:0 0 auto;
+      font-size:8px !important;
+      letter-spacing:.12em !important;
+    }
+    .cats-head::after{
+      content:none !important;
+    }
+    aside.cats .cats-section{
+      min-height:36px;
+      height:36px;
+      padding:4px 8px !important;
+      display:grid !important;
+      grid-template-columns:62px minmax(0, 1fr);
+      align-items:center;
+      gap:8px;
+      overflow:hidden !important;
+    }
+    aside.cats .cats-section:nth-of-type(4){
+      display:none !important;
+    }
+    .cats-section h4{
+      margin:0 !important;
+      align-self:center;
+      font-size:7px !important;
+      line-height:1.12 !important;
+      letter-spacing:.12em !important;
+      color:var(--muted);
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    aside.cats .cats-section:nth-of-type(3) h4,
+    aside.cats .cats-section:nth-of-type(5) h4,
+    aside.cats .cats-section:nth-of-type(6) h4{
+      font-size:0 !important;
+      letter-spacing:0 !important;
+    }
+    aside.cats .cats-section:nth-of-type(3) h4::after{
+      content:"Departments";
+      font-size:7px !important;
+      letter-spacing:.12em !important;
+    }
+    aside.cats .cats-section:nth-of-type(5) h4::after{
+      content:"State";
+      font-size:7px !important;
+      letter-spacing:.12em !important;
+    }
+    aside.cats .cats-section:nth-of-type(6) h4::after{
+      content:"Brands";
+      font-size:7px !important;
+      letter-spacing:.12em !important;
+    }
+    .cat-tree,
+    .mobile-filter-rail{
+      min-width:0;
+      height:28px;
+      display:flex;
+      align-items:center;
+      gap:6px !important;
+      padding:0 !important;
+      overflow-x:auto !important;
+      overflow-y:hidden !important;
+      white-space:nowrap;
+      scrollbar-width:none;
+    }
+    .cat-tree::-webkit-scrollbar,
+    .mobile-filter-rail::-webkit-scrollbar{
+      display:none;
+    }
+    .cats-section:nth-of-type(5) .mobile-filter-rail,
+    .cats-section:nth-of-type(6) .mobile-filter-rail{
+      grid-column:2;
+      grid-row:1;
+    }
+    .cat-link,
+    .mobile-filter-rail .check-row{
+      min-height:28px !important;
+      height:28px !important;
+      padding:0 9px !important;
+      margin:0 !important;
+      gap:5px !important;
+      flex:0 0 auto;
+      width:auto !important;
+      max-width:none !important;
+      font-size:11px !important;
+      line-height:1 !important;
+    }
+    .cat-link .count{
+      font-size:8px !important;
+    }
+    .check-row .box{
+      width:10px !important;
+      height:10px !important;
+    }
+    .body.shop-filter-docked main{
+      padding-top:calc(var(--shop-sticky-filter-height, 152px) + 10px) !important;
+    }
+    html[data-theme="night"] aside.cats{
+      background:rgba(7,26,44,.985) !important;
+    }
+  }
