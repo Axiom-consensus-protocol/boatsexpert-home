@@ -196,7 +196,7 @@ const BOATS = [
       return selected.some((label) => haystack.includes(lower(label)));
     };
     const updateToolbar = (filtered, brands, bodies, availability) => {
-      const shown = filtered.length ? '1 - ' + Math.min(filtered.length, 20) : '0';
+      const shown = filtered.length ? '1-' + Math.min(filtered.length, 20) : '0';
       if (countEl) countEl.innerHTML = '<b>' + shown + '</b> shown from this 20-item live page snapshot';
       if (headCount) headCount.textContent = filtered.length === BOATS.length ? '20 live cards' : filtered.length + ' shown';
       if (!chipsEl) return;
@@ -234,6 +234,57 @@ const BOATS = [
     filters.querySelectorAll('.seg button').forEach((button) => button.addEventListener('click', () => window.setTimeout(applyFilters, 0)));
     resetControls.forEach((control) => control.addEventListener('click', resetFilters));
     applyFilters();
+  })();
+
+  (function initMobileCatalogFilterDock(){
+    const sidebar = document.querySelector('aside.filters');
+    const body = document.querySelector('.body');
+    const main = body?.querySelector('main');
+    if (!sidebar || !body || !main) return;
+
+    const media = window.matchMedia('(max-width: 760px)');
+    let frame = 0;
+
+    const clearDock = () => {
+      sidebar.classList.remove('is-mobile-fixed');
+      body.classList.remove('catalog-filter-docked');
+      document.documentElement.style.removeProperty('--catalog-sticky-filter-height');
+    };
+
+    const sync = () => {
+      frame = 0;
+      if (!media.matches) {
+        clearDock();
+        return;
+      }
+
+      const topOffset = 74;
+      const bodyRect = body.getBoundingClientRect();
+      const bodyTop = bodyRect.top + window.scrollY;
+      const bodyBottom = bodyRect.bottom + window.scrollY;
+      const filterHeight = sidebar.offsetHeight;
+      const start = bodyTop - topOffset;
+      const end = bodyBottom - filterHeight - 24;
+      const docked = window.scrollY >= start && window.scrollY <= end;
+
+      sidebar.classList.toggle('is-mobile-fixed', docked);
+      body.classList.toggle('catalog-filter-docked', docked);
+      if (docked) {
+        document.documentElement.style.setProperty('--catalog-sticky-filter-height', filterHeight + 'px');
+      } else {
+        document.documentElement.style.removeProperty('--catalog-sticky-filter-height');
+      }
+    };
+
+    const requestSync = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(sync);
+    };
+
+    window.addEventListener('scroll', requestSync, { passive: true });
+    window.addEventListener('resize', requestSync);
+    media.addEventListener?.('change', requestSync);
+    requestSync();
   })();
 
   (function initQuickSearch(){

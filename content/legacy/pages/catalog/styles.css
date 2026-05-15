@@ -3220,6 +3220,21 @@
       grid-template-columns: 1fr;
       gap: 12px;
     }
+    .results-count{
+      width:100%;
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:6px 9px;
+      line-height:1.25;
+      font-size:9.5px;
+      letter-spacing:.13em;
+    }
+    .results-count b{
+      white-space:nowrap;
+      font-size:18px;
+      margin:0;
+    }
     .active-chips{
       overflow: visible;
       flex-wrap: wrap;
@@ -4590,8 +4605,9 @@
   /* Mobile catalog pass: filters stay usable at the top instead of becoming a tall sidebar. */
   @media (max-width: 760px){
     .body .container{
-      display:flex;
-      flex-direction:column;
+      display:grid;
+      grid-template-columns:minmax(0, 1fr);
+      align-items:start;
       gap:18px;
     }
     aside.filters{
@@ -4609,6 +4625,7 @@
       box-shadow:0 20px 54px -42px rgba(10,37,64,.72);
       backdrop-filter:blur(16px) saturate(135%);
       -webkit-backdrop-filter:blur(16px) saturate(135%);
+      align-self:start;
     }
     .filter-head{
       position:sticky;
@@ -4744,6 +4761,21 @@
     }
     .main-results{
       gap:16px;
+    }
+    .results-intel{
+      display:none !important;
+    }
+    aside.filters.is-mobile-fixed{
+      position:fixed !important;
+      top:74px !important;
+      left:var(--pad-wide);
+      right:var(--pad-wide);
+      width:auto;
+      z-index:58;
+      margin:0;
+    }
+    .body.catalog-filter-docked main{
+      padding-top:calc(var(--catalog-sticky-filter-height, 0px) + 16px);
     }
     .boat{
       border-radius:4px;
