@@ -15,8 +15,8 @@ document.querySelectorAll('.check-row').forEach(c => c.addEventListener('click',
       ['Comfort trim', 'Cruiser', 'Order desk'],
       ['Essential trim', 'Configurator', 'On request'],
       ['60 hp EFI', 'Long shaft', 'Power trim'],
-      ['7 inch', 'CHIRP', 'ClearVu'],
-      ['36V', '112 lb thrust', 'iPilot GPS']
+      ['12 inch', 'GT56UHD', 'SideVu'],
+      ['90/115 lb', 'DSC shaft', 'Micro remote']
     ];
     document.querySelectorAll('.pcard').forEach((card, index) => {
       const notes = productFitNotes[index];

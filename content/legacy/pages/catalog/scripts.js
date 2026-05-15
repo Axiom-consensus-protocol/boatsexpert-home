@@ -127,8 +127,8 @@ const BOATS = [
       specs: [['Length','5.80 m'],['Beam','2.30 m'],['Engine','150 hp'],['Draft','45 cm']],
       meta: [['users','6'],['weight','1180 kg'],['shield','10 yrs']],
       price: { l: 'From, VAT incl.', v: '€38,200', mo: '€615/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-22.jpg',
-      fb: '',
+      photo: 'assets/stock/northsilver-585-fish.jpg',
+      fb: 'assets/stock/northsilver-585-yamaha.png',
       gallery: 24, year: 2026,
     },
     {
@@ -153,8 +153,8 @@ const BOATS = [
       specs: [['Length','7.05 m'],['Beam','2.59 m'],['Engine','150–250'],['Draft','55 cm']],
       meta: [['users','8'],['weight','1640 kg'],['shield','5 yrs']],
       price: { l: 'From, VAT incl.', v: '€72,400', mo: '€1,160/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-25.jpg',
-      fb: '',
+      photo: 'assets/stock/beneteau-antares-7-comfort.jpg',
+      fb: 'assets/stock/beneteau-antares-7-essential.jpg',
       gallery: 32, year: 2026,
     },
     {
@@ -205,8 +205,8 @@ const BOATS = [
       specs: [['Length','4.70 m'],['Beam','1.92 m'],['Engine','40–60 hp'],['Draft','25 cm']],
       meta: [['users','4'],['weight','390 kg'],['shield','5 yrs']],
       price: { l: 'From, VAT incl.', v: '€14,200', mo: '€235/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-11.jpg',
-      fb: '',
+      photo: 'assets/stock/reval-grade-cg47.jpg',
+      fb: 'assets/boats/finval-470-evo-11.jpg',
       gallery: 11, year: 2025,
     },
     {
@@ -218,8 +218,8 @@ const BOATS = [
       specs: [['Length','4.60 m'],['Beam','1.95 m'],['Engine','40–50 hp'],['Draft','24 cm']],
       meta: [['users','4'],['weight','420 kg'],['shield','5 yrs']],
       price: { l: 'From, VAT incl.', v: '€16,800', mo: '€275/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-13.jpg',
-      fb: '',
+      photo: 'assets/stock/landx-x6.png',
+      fb: 'assets/boats/finval-470-evo-13.jpg',
       gallery: 9, year: 2026,
     },
     {
@@ -231,8 +231,8 @@ const BOATS = [
       specs: [['Length','5.75 m'],['Beam','2.20 m'],['Engine','115–150'],['Draft','40 cm']],
       meta: [['users','6'],['weight','980 kg'],['shield','10 yrs']],
       price: { l: 'From, VAT incl.', v: '€44,800', mo: '€720/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-14.jpg',
-      fb: '',
+      photo: 'assets/stock/northsilver-585-yamaha.png',
+      fb: 'assets/stock/northsilver-585-fish.jpg',
       gallery: 19, year: 2026,
     },
     {
@@ -244,8 +244,8 @@ const BOATS = [
       specs: [['Length','3.60 m'],['Beam','1.70 m'],['Engine','15–25 hp'],['Tubes','42 cm']],
       meta: [['users','5'],['weight','85 kg'],['shield','5 yrs']],
       price: { l: 'MSRP from', v: '€4,890', mo: '€85/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-16.jpg',
-      fb: '',
+      photo: 'assets/stock/gala-atlantis-a390q.jpg',
+      fb: 'assets/boats/gala-viking-v6f.jpg',
       gallery: 12, year: 2026,
     },
     {
@@ -257,8 +257,8 @@ const BOATS = [
       specs: [['Length','6.20 m'],['Beam','2.10 m'],['Capacity','1800 kg'],['Tyre','13″']],
       meta: [['users','—'],['weight','280 kg'],['shield','3 yrs']],
       price: { l: 'From, VAT incl.', v: '€3,950', mo: '€68/mo · 60 mo' },
-      photo: 'assets/boats/finval-470-evo-17.jpg',
-      fb: '',
+      photo: 'assets/stock/furseal-425-sc-vinyl.jpg',
+      fb: 'assets/boats/hero-DSC07340-1.jpg',
       gallery: 6, year: 2026,
     },
   ];
@@ -272,9 +272,12 @@ const BOATS = [
   const COMPARE_SVG = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5 L12 2.5 L12 13.5 L8 11 L4 13.5 Z"/></svg>';
   const GALLERY_SVG = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="6" rx="1"/><circle cx="6" cy="6" r="1.5"/></svg>';
 
-  function renderBoats(){
+  function renderBoats(items){
+    const list = items || BOATS;
+    const fallbackPhoto = 'assets/boats/hero-DSC07340-1.jpg';
     const wrap = document.getElementById('results');
-    wrap.innerHTML = BOATS.map((b, index) => {
+    if (!wrap) return;
+    wrap.innerHTML = list.map((b, index) => {
       const badgesHtml = b.badges.map(([k, t]) => {
         const cls = BADGE_CLASS[k];
         return '<span class="badge ' + cls + '"><span class="pulse"></span>' + t + '</span>';
@@ -296,11 +299,13 @@ const BOATS = [
       const killerHtml = killer[1]
         ? '<div class="killer"><span class="kn">' + killer[1].replace(/(\d+(?:[.,]\d+)?)/, '<b>$1</b>') + '</span><span class="kl">' + killer[0] + '</span></div>'
         : '';
+      const photo = b.photo || fallbackPhoto;
+      const fb = b.fb || fallbackPhoto;
 
       return [
         '<a class="boat" href="/boat">',
           '<div class="boat-photo">',
-            '<img src="' + b.photo + '" alt="' + b.brand + ' ' + b.model.replace(/<[^>]+>/g,'') + '" onerror="this.onerror=null;this.src=\''+b.fb+'\'" loading="lazy"/>',
+            '<img src="' + photo + '" alt="' + b.brand + ' ' + b.model.replace(/<[^>]+>/g,'') + '" onerror="this.onerror=null;this.src=\''+fb+'\'" loading="lazy"/>',
             '<div class="gradient"></div>',
             '<span class="catalog-index">№ ' + String(index + 1).padStart(2, '0') + '</span>',
             '<div class="badges"><div class="badges-l">' + badgesHtml + '</div>',
@@ -328,6 +333,83 @@ const BOATS = [
     }).join('');
   }
   renderBoats();
+
+  (function initCatalogFilters(){
+    const filters = document.querySelector('aside.filters');
+    if (!filters) return;
+    const countEl = document.querySelector('.results-count');
+    const chipsEl = document.querySelector('.active-chips');
+    const headCount = filters.querySelector('.filter-head h3 em');
+    const resetControls = document.querySelectorAll('.filters .reset, .chip-clear');
+    const text = (node) => (node?.textContent || '').replace(/\s+/g, ' ').trim();
+    const lower = (value) => String(value || '').toLowerCase();
+    const filterSections = Array.from(filters.querySelectorAll('.filter-section'));
+    const findSection = (needle) => filterSections.find((section) => lower(text(section.querySelector('h4'))).includes(needle));
+    const brandSection = findSection('brand');
+    const bodySection = findSection('body');
+    const availabilitySection = findSection('availability');
+    const brandChecks = () => Array.from(brandSection?.querySelectorAll('.check.on .lbl') || []).map(text);
+    const bodyChecks = () => Array.from(bodySection?.querySelectorAll('.check.on .lbl') || []).map(text);
+    const activeAvailability = () => text(availabilitySection?.querySelector('.seg button.active') || '').toLowerCase();
+    const boatStatus = (boat) => {
+      const keys = boat.badges.map(([key]) => key);
+      if (keys.includes('ok')) return 'in stock';
+      if (keys.includes('order')) return 'on order';
+      if (keys.includes('req')) return 'by request';
+      return 'catalog';
+    };
+    const bodyMatches = (boat, selected) => {
+      if (!selected.length) return true;
+      const haystack = lower([boat.brand, boat.cat, boat.tagline, boat.features.join(' ')].join(' '));
+      return selected.some((label) => {
+        const l = lower(label);
+        if (l.includes('aluminium')) return /(aluminium|almg|pro angler|heavy duty|compact)/.test(haystack);
+        if (l.includes('fishing')) return /(fishing|angler|casting|trolling|livewell|pro)/.test(haystack);
+        if (l.includes('rib')) return /(rib|tube|inflatable|gala)/.test(haystack);
+        if (l.includes('cruising') || l.includes('fiberglass')) return /(cruising|cabin|grp|fibreglass|family|antares)/.test(haystack);
+        if (l.includes('trailer')) return /(trailer|respo|towable)/.test(haystack);
+        return haystack.includes(l.replace(' boats', ''));
+      });
+    };
+    const updateToolbar = (filtered, brands, bodies, availability) => {
+      const shown = filtered.length ? '1 - ' + Math.min(filtered.length, 12) : '0';
+      if (countEl) countEl.innerHTML = 'Showing <b>' + shown + '</b> of <b>' + filtered.length + '</b> boats';
+      if (headCount) headCount.textContent = filtered.length === BOATS.length ? 'ready' : filtered.length + ' shown';
+      if (!chipsEl) return;
+      const chips = [];
+      if (availability && availability !== 'all') chips.push(['Stock', availability.replace(/\b\w/g, (m) => m.toUpperCase())]);
+      chips.push(['Brand', brands.length ? brands.slice(0, 2).join(', ') + (brands.length > 2 ? ' +' + (brands.length - 2) : '') : 'All']);
+      chips.push(['Hull', bodies.length ? bodies.slice(0, 2).join(', ') + (bodies.length > 2 ? ' +' + (bodies.length - 2) : '') : 'All']);
+      chipsEl.innerHTML = chips.map(([label, value]) => '<span class="chip">' + label + ': <b>' + value + '</b><span class="x" aria-hidden="true"></span></span>').join('') +
+        '<button class="chip-clear" type="button">Clear all</button>';
+      chipsEl.querySelector('.chip-clear')?.addEventListener('click', resetFilters);
+    };
+    function applyFilters(){
+      const brands = brandChecks();
+      const bodies = bodyChecks();
+      const availability = activeAvailability();
+      const filtered = BOATS.filter((boat) => {
+        if (availability === 'in stock' && boatStatus(boat) !== 'in stock') return false;
+        if (availability === 'on order' && boatStatus(boat) !== 'on order') return false;
+        if (brands.length && !brands.some((brand) => lower(boat.brand).includes(lower(brand)))) return false;
+        return bodyMatches(boat, bodies);
+      });
+      renderBoats(filtered);
+      updateToolbar(filtered, brands, bodies, availability);
+    }
+    function resetFilters(event){
+      event?.preventDefault?.();
+      filters.querySelectorAll('.check.on').forEach((check) => check.classList.remove('on'));
+      filters.querySelectorAll('.seg').forEach((seg) => {
+        seg.querySelectorAll('button').forEach((button, index) => button.classList.toggle('active', index === 0));
+      });
+      applyFilters();
+    }
+    filters.querySelectorAll('.check').forEach((check) => check.addEventListener('click', () => window.setTimeout(applyFilters, 0)));
+    filters.querySelectorAll('.seg button').forEach((button) => button.addEventListener('click', () => window.setTimeout(applyFilters, 0)));
+    resetControls.forEach((control) => control.addEventListener('click', resetFilters));
+    applyFilters();
+  })();
 
   (function initQuickSearch(){
     const root = document.getElementById('quickSearch');

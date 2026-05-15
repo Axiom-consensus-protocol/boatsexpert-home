@@ -4586,3 +4586,228 @@
       font-size:8px;
     }
   }
+
+  /* Mobile catalog pass: filters stay usable at the top instead of becoming a tall sidebar. */
+  @media (max-width: 760px){
+    .body .container{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    aside.filters{
+      position:sticky !important;
+      top:74px !important;
+      z-index:46;
+      max-height:44vh;
+      margin:0 calc(var(--pad-wide) * -1);
+      border-left:0;
+      border-right:0;
+      border-radius:0;
+      overflow-y:auto;
+      overscroll-behavior:contain;
+      background:rgba(255,252,246,.96);
+      box-shadow:0 20px 54px -42px rgba(10,37,64,.72);
+      backdrop-filter:blur(16px) saturate(135%);
+      -webkit-backdrop-filter:blur(16px) saturate(135%);
+    }
+    .filter-head{
+      position:sticky;
+      top:0;
+      z-index:2;
+      padding:13px 18px 12px;
+      background:rgba(244,239,230,.98);
+      border-bottom:1px solid var(--line);
+    }
+    .filter-head h3{
+      font-size:21px;
+      line-height:1;
+    }
+    .filter-head h3 em{
+      font-family:var(--mono);
+      font-size:9px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .filter-head .reset{
+      min-height:34px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 10px;
+      border:1px solid var(--line);
+      background:#fff;
+      text-decoration:none;
+    }
+    .filter-section{
+      padding:10px 18px 12px;
+      border-bottom:1px solid var(--line);
+    }
+    .filter-section:nth-of-type(n+5){
+      display:none;
+    }
+    .filter-section h4{
+      margin-bottom:8px;
+      font-size:8.5px;
+      letter-spacing:.18em;
+    }
+    .filter-section h4 .toggle{
+      display:none;
+    }
+    .seg{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding-bottom:1px;
+      border:0;
+      background:transparent;
+      scrollbar-width:none;
+    }
+    .seg::-webkit-scrollbar,
+    .checks::-webkit-scrollbar{
+      display:none;
+    }
+    .seg button{
+      flex:0 0 auto;
+      min-height:36px;
+      padding:0 12px;
+      border:1px solid var(--line) !important;
+      border-radius:999px;
+      background:#fff;
+      font-size:9px;
+      letter-spacing:.14em;
+      white-space:nowrap;
+    }
+    .seg button + button{
+      border-left:1px solid var(--line) !important;
+    }
+    .checks{
+      display:flex;
+      flex-direction:row;
+      gap:8px;
+      overflow-x:auto;
+      padding:0 1px 1px 0;
+      scrollbar-width:none;
+    }
+    .check{
+      flex:0 0 auto;
+      min-height:36px;
+      gap:7px;
+      padding:0 11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .check .box{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+    }
+    .check.on{
+      border-color:rgba(198,139,61,.55);
+      background:rgba(198,139,61,.12);
+    }
+    .check .count{
+      font-size:9px;
+      color:var(--brass-3);
+    }
+    .toolbar .container{
+      gap:10px;
+    }
+    .active-chips{
+      display:flex;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      margin-right:calc(var(--pad-wide) * -1);
+      padding-right:var(--pad-wide);
+      scrollbar-width:none;
+    }
+    .active-chips::-webkit-scrollbar{
+      display:none;
+    }
+    .chip{
+      min-height:34px;
+      align-items:center;
+      background:#fff;
+      white-space:nowrap;
+    }
+    .chip .x{
+      display:none;
+    }
+    .chip-clear{
+      min-height:34px;
+      padding:0 10px;
+      border:1px solid var(--line);
+      background:#fff;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .main-results{
+      gap:16px;
+    }
+    .boat{
+      border-radius:4px;
+      box-shadow:0 24px 64px -54px rgba(10,37,64,.82);
+    }
+    .boat-photo{
+      aspect-ratio:16 / 11;
+    }
+    .boat-photo .killer{
+      left:10px;
+      bottom:44px;
+      padding:6px 9px;
+    }
+    .boat-photo .killer .kn{
+      font-size:17px;
+    }
+    .boat-photo .killer .kl{
+      font-size:7.5px;
+      letter-spacing:.14em;
+    }
+    .boat-brand{
+      gap:8px;
+    }
+    .boat-model{
+      font-size:28px;
+      max-width:100%;
+    }
+    .boat-tagline{
+      font-size:13.5px;
+      min-height:0;
+    }
+    .boat-features{
+      gap:6px;
+    }
+    .ft{
+      min-height:28px;
+      align-items:center;
+    }
+    html[data-theme="night"] aside.filters{
+      background:rgba(7,26,44,.96) !important;
+      border-color:rgba(244,239,230,.16) !important;
+      box-shadow:0 20px 58px -38px rgba(0,0,0,.92) !important;
+    }
+    html[data-theme="night"] .filter-head{
+      background:rgba(11,34,56,.98) !important;
+      border-color:rgba(244,239,230,.16) !important;
+    }
+    html[data-theme="night"] .filter-head .reset,
+    html[data-theme="night"] .seg button,
+    html[data-theme="night"] .check,
+    html[data-theme="night"] .chip,
+    html[data-theme="night"] .chip-clear{
+      background:#071A2C !important;
+      border-color:rgba(244,239,230,.16) !important;
+      color:#E8DDC9 !important;
+    }
+    html[data-theme="night"] .seg button.active,
+    html[data-theme="night"] .check.on{
+      background:#D6A056 !important;
+      border-color:#D6A056 !important;
+      color:#FFFCF6 !important;
+    }
+    html[data-theme="night"] .check.on .lbl,
+    html[data-theme="night"] .check.on .count{
+      color:#FFFCF6 !important;
+    }
+  }
