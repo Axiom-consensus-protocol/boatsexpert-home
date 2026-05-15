@@ -36,6 +36,9 @@ const LEGACY_REDIRECTS: { from: string; to: string }[] = [
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  outputFileTracingIncludes: {
+    "/*": ["./content/**/*", "./public/assets/**/*"],
+  },
   // Pin Turbopack's workspace root explicitly. Without this, Turbopack walks up
   // the tree past /home/user/Desktop/Boatexpert/v3 looking for a manifest and
   // mis-infers the project root, breaking compilation.
