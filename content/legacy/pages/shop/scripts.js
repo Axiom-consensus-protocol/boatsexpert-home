@@ -40,6 +40,22 @@
   const priceInputs = Array.from(sidebar.querySelectorAll('.price-inputs input'));
   const resetControls = sidebar.querySelectorAll('.reset');
   const categoryLinks = sidebar.querySelectorAll('[data-shop-filter]');
+  const compactSortLabels = () => {
+    if (!sortSelect) return;
+    const compact = window.matchMedia('(max-width: 640px)').matches;
+    const labels = {
+      'Default sorting': 'Default',
+      'Average rating': 'Rating',
+      'Price: low to high': 'Low price',
+      'Price: high to low': 'High price'
+    };
+    sortSelect.querySelectorAll('option').forEach((option) => {
+      const fullLabel = option.dataset.fullLabel || option.textContent.trim();
+      option.dataset.fullLabel = fullLabel;
+      if (!option.hasAttribute('value')) option.value = fullLabel;
+      option.textContent = compact ? (labels[fullLabel] || fullLabel) : fullLabel;
+    });
+  };
   const text = (node) => (node?.textContent || '').replace(/\s+/g, ' ').trim();
   const lower = (value) => String(value || '').toLowerCase();
   const normalizePrice = (value) => {
@@ -152,7 +168,10 @@
     empty.hidden = visible.length !== 0;
     if (countEl) {
       const range = visible.length ? '1 - ' + visible.length : '0';
-      countEl.innerHTML = 'Showing <b>' + range + '</b> of <b>942</b> products · visible cards filtered';
+      const compact = window.matchMedia('(max-width: 640px)').matches;
+      countEl.innerHTML = compact
+        ? '<b>' + range + '</b> shown · <b>942</b>'
+        : 'Showing <b>' + range + '</b> of <b>942</b> products · visible cards filtered';
     }
     if (headCount) headCount.textContent = visible.length + ' shown';
     updateActiveCategory();
@@ -185,6 +204,8 @@
   priceInputs.forEach((input) => input.addEventListener('input', applyFilters));
   searchInput?.addEventListener('input', applyFilters);
   sortSelect?.addEventListener('change', applyFilters);
+  window.addEventListener('resize', compactSortLabels);
+  compactSortLabels();
   resetControls.forEach((control) => control.addEventListener('click', resetFilters));
   applyFilters();
 })();
