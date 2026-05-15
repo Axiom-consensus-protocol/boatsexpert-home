@@ -12,6 +12,180 @@
     --pad-x:64px; --maxw:1320px;
     --maxw-wide:1760px; --pad-wide:56px;
   }
+
+  /* Desktop shop grouping: prevents boats, engines and batteries from reading as one mixed dump. */
+  .shop-group-title{
+    grid-column:1 / -1;
+    min-height:82px;
+    margin:18px 0 0;
+    padding:18px 20px 16px;
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) auto;
+    gap:8px 18px;
+    align-items:end;
+    border:1px solid rgba(198,139,61,.30);
+    border-left:4px solid var(--brass);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.98) 0%, rgba(247,241,231,.96) 100%);
+    box-shadow:0 24px 70px -58px rgba(10,37,64,.65);
+  }
+  .shop-group-title span{
+    font-family:var(--display);
+    font-size:clamp(30px, 2.55vw, 46px);
+    line-height:.95;
+    color:var(--navy);
+    letter-spacing:0;
+  }
+  .shop-group-title small{
+    grid-column:1 / 2;
+    max-width:760px;
+    font-family:var(--serif);
+    font-size:15px;
+    line-height:1.4;
+    color:var(--muted);
+  }
+  .shop-group-title b{
+    grid-column:2;
+    grid-row:1 / span 2;
+    align-self:center;
+    justify-self:end;
+    padding:10px 12px;
+    border:1px solid rgba(198,139,61,.34);
+    background:#fff;
+    color:var(--brass-3);
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1;
+    font-weight:700;
+    text-transform:uppercase;
+    white-space:nowrap;
+    letter-spacing:0;
+  }
+  .pgrid .pcard.is-featured-card{
+    grid-column:span 2;
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+  }
+  .pgrid .pcard.is-featured-card .pcard-photo{
+    aspect-ratio:auto;
+    min-height:380px;
+    border-bottom:0;
+    border-right:1px solid var(--line);
+    padding:28px;
+  }
+  .pgrid .pcard.is-featured-card .pcard-body{
+    padding:30px;
+    gap:13px;
+  }
+  .pgrid .pcard.is-featured-card .pcard-name{
+    font-size:30px;
+    line-height:1;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+  }
+  .pgrid .pcard.is-featured-card .pcard-tag{
+    font-size:16px;
+    -webkit-line-clamp:3;
+    min-height:auto;
+  }
+  .pgrid .pcard.is-featured-card .pcard-price .now{ font-size:42px; }
+  .pgrid .pcard.is-boat-card .pcard-photo{
+    padding:0;
+    background:#071A2C;
+  }
+  .pgrid .pcard.is-boat-card .pcard-photo::after{
+    display:none;
+  }
+  .pgrid .pcard.is-boat-card .pcard-photo img{
+    width:100%;
+    height:100%;
+    padding:0;
+    object-fit:cover;
+  }
+  .pgrid .pcard.is-featured-card.is-boat-card{
+    grid-template-columns:1fr;
+  }
+  .pgrid .pcard.is-featured-card.is-boat-card .pcard-photo{
+    aspect-ratio:16 / 10;
+    min-height:0;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .pgrid .pcard.is-boat-card:hover .pcard-photo img{
+    transform:scale(1.04);
+  }
+  html[data-theme="night"] .shop-group-title{
+    background:linear-gradient(135deg, rgba(7,26,44,.98) 0%, rgba(11,34,56,.96) 100%);
+    border-color:rgba(244,239,230,.16);
+  }
+  html[data-theme="night"] .shop-group-title span{ color:#F4EFE6; }
+  html[data-theme="night"] .shop-group-title small{ color:rgba(232,221,201,.68); }
+  html[data-theme="night"] .shop-group-title b{
+    background:#071A2C;
+    border-color:rgba(198,139,61,.36);
+  }
+  @media (max-width: 1380px){
+    .pgrid .pcard.is-featured-card{ grid-column:span 3; }
+  }
+  @media (max-width: 900px){
+    .pgrid .pcard.is-featured-card{
+      grid-column:span 2;
+      grid-template-columns:1fr;
+    }
+    .pgrid .pcard.is-featured-card .pcard-photo{
+      border-right:0;
+      border-bottom:1px solid var(--line);
+      min-height:300px;
+    }
+  }
+  @media (max-width: 640px){
+    .shop-group-title{
+      min-height:0;
+      margin:8px 0 0;
+      padding:14px;
+      grid-template-columns:1fr auto;
+      gap:6px 10px;
+      border-left-width:3px;
+    }
+    .shop-group-title span{ font-size:29px; }
+    .shop-group-title small{
+      grid-column:1 / -1;
+      font-size:13px;
+    }
+    .shop-group-title b{
+      grid-row:1;
+      padding:8px 9px;
+      font-size:9px;
+    }
+    .pgrid .pcard.is-featured-card{
+      grid-column:span 1;
+      display:flex;
+      flex-direction:column;
+    }
+    .pgrid .pcard.is-featured-card .pcard-photo{
+      aspect-ratio:16 / 11;
+      min-height:0;
+      padding:0;
+      border-right:0;
+      border-bottom:1px solid var(--line);
+    }
+    .pgrid .pcard.is-featured-card:not(.is-boat-card) .pcard-photo img{
+      object-fit:contain;
+      padding:18px;
+    }
+    .pgrid .pcard.is-featured-card .pcard-body{
+      padding:17px;
+      gap:10px;
+    }
+    .pgrid .pcard.is-featured-card .pcard-name{
+      font-size:27px;
+      line-height:1.04;
+    }
+    .pgrid .pcard.is-featured-card .pcard-price .now{
+      font-size:31px;
+    }
+  }
   *{ box-sizing:border-box; min-width:0; }
   html,body{ margin:0; padding:0; }
   em, i, cite, address{ font-style: normal; }
@@ -1445,10 +1619,11 @@
     position:absolute;
     inset:0;
     background:
-      linear-gradient(90deg, rgba(6,26,48,.72), rgba(6,26,48,.16)),
-      url('/assets/shop/HK4222A-3-300x258.jpg') right 7% center / min(44vw, 620px) auto no-repeat;
-    opacity:.34;
-    filter:saturate(1.04) contrast(1.05);
+      linear-gradient(90deg, rgba(6,26,48,.78), rgba(6,26,48,.10)),
+      radial-gradient(circle at 79% 48%, rgba(244,239,230,.16), transparent 33%),
+      url('/assets/stock/beneteau-antares-7-comfort.jpg') right 4% center / min(48vw, 720px) auto no-repeat;
+    opacity:.46;
+    filter:saturate(1.08) contrast(1.08);
     pointer-events:none;
   }
   .page-band .container{ padding-top:80px; padding-bottom:64px; }
@@ -2148,8 +2323,8 @@
     .page-band::before{
       background:
         linear-gradient(180deg, rgba(6,26,48,.94), rgba(6,26,48,.78)),
-        url('/assets/shop/HK4222A-3-300x258.jpg') center 72px / 92% auto no-repeat;
-      opacity:.16;
+        url('/assets/stock/beneteau-antares-7-comfort.jpg') center 76px / 96% auto no-repeat;
+      opacity:.18;
     }
     .page-band .container{ padding-top:48px; padding-bottom:42px; }
     .crumbs{ margin-bottom:22px; font-size:9px; }
@@ -3207,4 +3382,22 @@
     html[data-theme="night"] aside.cats{
       background:rgba(7,26,44,.985) !important;
     }
+  }
+
+  /* Final grouped-grid image overrides after legacy positional card rules. */
+  .pgrid .pcard:not(.is-boat-card) .pcard-photo img{
+    object-fit:contain;
+  }
+  .pgrid .pcard.is-boat-card .pcard-photo{
+    padding:0;
+    background:#071A2C;
+  }
+  .pgrid .pcard.is-boat-card .pcard-photo::after{
+    display:none;
+  }
+  .pgrid .pcard.is-boat-card .pcard-photo img{
+    width:100%;
+    height:100%;
+    padding:0;
+    object-fit:cover;
   }

@@ -93,6 +93,40 @@
       categories: classify(raw)
     };
   });
+  const groupMeta = {
+    boats: {
+      title: 'Boats in stock',
+      lead: 'Beneteau stock boats are separated from small marine gear for clean desktop browsing.'
+    },
+    'motors-electronics': {
+      title: 'Motors and electronics',
+      lead: 'Yamaha, Garmin and Minn Kota source products grouped as rig-ready upgrades.'
+    },
+    'steering-rigging': {
+      title: 'Steering and rigging',
+      lead: 'BayStar hydraulic steering and BoatBuckle hardware kept in one service lane.'
+    },
+    power: {
+      title: 'Power and charging',
+      lead: 'Optima battery and Rebelcell chargers live in their own power section.'
+    }
+  };
+  const groupOrder = ['boats', 'motors-electronics', 'steering-rigging', 'power'];
+  const groupFor = (record) => {
+    if (record.categories.has('boats in stock')) return 'boats';
+    if (record.categories.has('hydraulic steering') || record.categories.has('mounts')) return 'steering-rigging';
+    if (record.categories.has('batteries')) return 'power';
+    if (record.categories.has('outboard motors') || record.categories.has('sonars') || record.categories.has('electric motors')) {
+      return 'motors-electronics';
+    }
+    return 'steering-rigging';
+  };
+  records.forEach((record) => {
+    const group = groupFor(record);
+    record.group = group;
+    record.card.dataset.shopGroup = group;
+    record.card.classList.toggle('is-boat-card', group === 'boats');
+  });
   const state = { category: 'all' };
 
   let empty = grid.querySelector('.shop-empty');
@@ -137,13 +171,40 @@
   const sortVisible = (visible) => {
     const mode = lower(sortSelect?.value || 'default sorting');
     const sorted = [...visible];
-    if (mode.includes('low')) sorted.sort((a, b) => a.price - b.price);
-    if (mode.includes('high')) sorted.sort((a, b) => b.price - a.price);
-    if (mode.includes('latest')) sorted.sort((a, b) => b.index - a.index);
+    const groupRank = (record) => groupOrder.indexOf(record.group);
+    const inGroup = (a, b) => {
+      if (mode.includes('low')) return a.price - b.price || a.index - b.index;
+      if (mode.includes('high')) return b.price - a.price || a.index - b.index;
+      if (mode.includes('latest')) return b.index - a.index;
+      return a.index - b.index;
+    };
+    sorted.sort((a, b) => groupRank(a) - groupRank(b) || inGroup(a, b));
     if (mode.includes('sale') || mode.includes('popularity') || mode.includes('rating')) {
-      sorted.sort((a, b) => Number(b.raw.includes('sale')) - Number(a.raw.includes('sale')) || a.index - b.index);
+      sorted.sort((a, b) => (
+        groupRank(a) - groupRank(b) ||
+        Number(b.raw.includes('sale')) - Number(a.raw.includes('sale')) ||
+        a.index - b.index
+      ));
     }
-    sorted.forEach((record) => grid.append(record.card));
+    grid.querySelectorAll('.shop-group-title').forEach((node) => node.remove());
+    records.forEach((record) => record.card.classList.remove('is-featured-card'));
+    let featuredSet = false;
+    groupOrder.forEach((group) => {
+      const grouped = sorted.filter((record) => record.group === group);
+      if (!grouped.length) return;
+      const heading = document.createElement('div');
+      const countLabel = grouped.length === 1 ? '1 item' : grouped.length + ' items';
+      heading.className = 'shop-group-title';
+      heading.innerHTML = '<span>' + groupMeta[group].title + '</span><small>' + groupMeta[group].lead + '</small><b>' + countLabel + '</b>';
+      grid.append(heading);
+      grouped.forEach((record) => {
+        if (!featuredSet) {
+          record.card.classList.add('is-featured-card');
+          featuredSet = true;
+        }
+        grid.append(record.card);
+      });
+    });
     grid.append(empty);
   };
   const applyFilters = () => {
