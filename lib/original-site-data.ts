@@ -27,7 +27,7 @@ export function legacySlugToTitle(slug: string) {
     .join(" ");
 }
 
-export function normalizeDemo regionnLegacySlug(slug: string) {
+export function normalizeLegacySlug(slug: string) {
   const map: Record<string, string> = {
     "aluminium-boats-ro": "aluminium-boats",
     "barci-rib": "rib-boats",
@@ -91,7 +91,7 @@ export const originalServicePages: Record<string, {
   "tuning-service": {
     title: "Tuning & Service",
     eyebrow: "Original service page",
-    lead: "Workshop service for maintenance, tuning, electrical fit-out, winterising and practical support around boats that already work on Demo regionn water.",
+    lead: "Workshop service for maintenance, tuning, electrical fit-out, winterising and practical support around boats that already work on Demo water.",
     source: "https://marine.axiomprotocol.org/services/tuning-service/",
     cards: [
       { title: "Boat service", text: "Hull, motor and equipment checks are handled by the same demo workshop." },
