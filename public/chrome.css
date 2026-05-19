@@ -1053,7 +1053,6 @@
   }
   header.site .logo-img{
     height: 60px;
-    filter: brightness(0) saturate(100%) invert(45%) sepia(95%) saturate(1490%) hue-rotate(162deg) brightness(94%) contrast(101%);
   }
   header.site .logo-tagline{
     min-height: 52px;
@@ -1769,10 +1768,8 @@ header.site .container{
   overflow: visible;
 }
 header.site .logo-img{
-  filter: none;
 }
 html[data-theme="night"] header.site .logo-img{
-  filter: none;
 }
 header.site nav.primary{
   position: relative;
@@ -2024,10 +2021,8 @@ html[data-theme="night"] header.site .search-toggle .search-key{
   }
   body header.site .logo-img{
     height: 44px !important;
-    filter: brightness(0) saturate(100%) invert(46%) sepia(97%) saturate(1573%) hue-rotate(161deg) brightness(95%) contrast(98%) !important;
   }
   html[data-theme="night"] body header.site .logo-img{
-    filter: none !important;
   }
   body header.site nav.primary,
   body header.site .nav-cta{

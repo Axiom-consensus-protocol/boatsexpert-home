@@ -35,9 +35,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/assets/logo/logo-brass.svg", type: "image/svg+xml" },
-      { url: "/assets/logo/favicon-32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [{ url: "/assets/logo/favicon-192.png", sizes: "192x192" }],
   },
 };
 
