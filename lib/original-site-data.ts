@@ -27,7 +27,7 @@ export function legacySlugToTitle(slug: string) {
     .join(" ");
 }
 
-export function normalizeRomanianLegacySlug(slug: string) {
+export function normalizeDemo regionnLegacySlug(slug: string) {
   const map: Record<string, string> = {
     "aluminium-boats-ro": "aluminium-boats",
     "barci-rib": "rib-boats",
@@ -70,10 +70,10 @@ export const originalServicePages: Record<string, {
   "registration-driving": {
     title: "Registration & Driving Courses",
     eyebrow: "Original service page",
-    lead: "A desk-led route for ANR paperwork, registration support, insurance referrals and skipper-course guidance, so the customer can move from purchase to legal use without chasing offices.",
-    source: "https://boatsexpert.com/services/registration-driving/",
+    lead: "A desk-led route for registration paperwork, registration support, insurance referrals and skipper-course guidance, so the customer can move from purchase to legal use without chasing offices.",
+    source: "https://marine.axiomprotocol.org/services/registration-driving/",
     cards: [
-      { title: "ANR paperwork", text: "Registration files, required documents and next steps are prepared as one service flow." },
+      { title: "registration paperwork", text: "Registration files, required documents and next steps are prepared as one service flow." },
       { title: "Driving courses", text: "Skipper licence and training guidance is connected to the sales and service desk." },
       { title: "Insurance referrals", text: "The original service path includes referrals and practical handover support." },
     ],
@@ -84,17 +84,17 @@ export const originalServicePages: Record<string, {
           "Boat registration, required documents, licence guidance and post-purchase administration are handled as a practical workflow.",
           "The goal is simple: the customer leaves with a clear legal route, not only a boat invoice.",
         ],
-        items: ["ANR registration support", "Skipper-course guidance", "Insurance referrals", "Dealer document trail"],
+        items: ["Registration support", "Skipper-course guidance", "Insurance referrals", "Dealer document trail"],
       },
     ],
   },
   "tuning-service": {
     title: "Tuning & Service",
     eyebrow: "Original service page",
-    lead: "Workshop service for maintenance, tuning, electrical fit-out, winterising and practical support around boats that already work on Romanian water.",
-    source: "https://boatsexpert.com/services/tuning-service/",
+    lead: "Workshop service for maintenance, tuning, electrical fit-out, winterising and practical support around boats that already work on Demo regionn water.",
+    source: "https://marine.axiomprotocol.org/services/tuning-service/",
     cards: [
-      { title: "Boat service", text: "Hull, motor and equipment checks are handled by the same Otopeni workshop." },
+      { title: "Boat service", text: "Hull, motor and equipment checks are handled by the same demo workshop." },
       { title: "Electrical fit-out", text: "Power, chargers, electronics and accessories are matched to the hull and use case." },
       { title: "Season prep", text: "Winterising and re-launch checks keep the boat ready between seasons." },
     ],
@@ -113,7 +113,7 @@ export const originalServicePages: Record<string, {
     title: "Expert Tuning of Angler Boats",
     eyebrow: "Original service page",
     lead: "Fishing boat tuning focused on casting decks, livewells, trolling motor prep, sonar positions, rod storage and the details that matter to serious anglers.",
-    source: "https://boatsexpert.com/services/expert-tuning-of-angler-boats/",
+    source: "https://marine.axiomprotocol.org/services/expert-tuning-of-angler-boats/",
     cards: [
       { title: "Fishing layout", text: "Decks, livewells, storage and working space are planned around real angling use." },
       { title: "Trolling prep", text: "Bow motors, battery capacity and controls are matched before installation." },
@@ -133,8 +133,8 @@ export const originalServicePages: Record<string, {
   "outboard-engine-installation": {
     title: "Outboard Engine Installation",
     eyebrow: "Original service page",
-    lead: "Outboard installation for Yamaha, Mercury, Honda and Tohatsu, including rigging, steering, prop advice and calibration through the Otopeni workshop.",
-    source: "https://boatsexpert.com/services/outboard-engine-installation/",
+    lead: "Outboard installation for Yamaha, Mercury, Honda and Tohatsu, including rigging, steering, prop advice and calibration through the demo workshop.",
+    source: "https://marine.axiomprotocol.org/services/outboard-engine-installation/",
     cards: [
       { title: "Engine fitting", text: "Outboards are mounted, rigged and checked as workshop work, not just boxed retail." },
       { title: "Steering and controls", text: "Hydraulic steering, controls and cable paths are sized for the boat." },
@@ -158,42 +158,42 @@ export const originalBlogPosts: OriginalCard[] = [
     title: "Galaxy Professional RIBs",
     kicker: "RIBs",
     text: "Original English article covering the Galaxy professional RIB line and its commercial-use positioning.",
-    href: "https://boatsexpert.com/2024/02/03/galaxy-professional-ribs/",
+    href: "https://marine.axiomprotocol.org/2024/02/03/galaxy-professional-ribs/",
     meta: "2024-02-03",
   },
   {
     title: "Fishing and Outdoor Expo 2024 Arad",
     kicker: "Main News",
-    text: "Event/news post connected to BoatsExpert presence at the Fishing and Outdoor Expo in Arad.",
-    href: "https://boatsexpert.com/2024/02/23/fishing-and-outdoor-expo-2024-arad/",
+    text: "Event/news post connected to Axiom Marine presence at the Fishing and Outdoor Expo in Arad.",
+    href: "https://marine.axiomprotocol.org/2024/02/23/fishing-and-outdoor-expo-2024-arad/",
     meta: "2024-02-23",
   },
   {
     title: "The Bucharest International Boat Show",
     kicker: "Main News",
     text: "Original event post for the Bucharest International Boat Show.",
-    href: "https://boatsexpert.com/2024/04/08/the-bucharest-international-boat-show/",
+    href: "https://marine.axiomprotocol.org/2024/04/08/the-bucharest-international-boat-show/",
     meta: "2024-04-08",
   },
   {
     title: "Pana 50% reducere la echipamentele Garmin",
     kicker: "RO promo",
-    text: "Romanian Garmin promotion post from the original blog archive.",
-    href: "https://boatsexpert.com/ro/2023/06/20/pana-50-reducere-la-echipamentele-garmin/",
+    text: "Demo Garmin promotion post from the original blog archive.",
+    href: "https://marine.axiomprotocol.org/ro/2023/06/20/pana-50-reducere-la-echipamentele-garmin/",
     meta: "2023-06-20",
   },
   {
     title: "15% reducere pe barci FurSeal",
     kicker: "RO promo",
-    text: "Romanian FurSeal boat promotion from the original archive.",
-    href: "https://boatsexpert.com/ro/2023/07/21/15-reducere-pe-barci-furseal/",
+    text: "Demo FurSeal boat promotion from the original archive.",
+    href: "https://marine.axiomprotocol.org/ro/2023/07/21/15-reducere-pe-barci-furseal/",
     meta: "2023-07-21",
   },
   {
     title: "Salonul Nautic International Bucuresti",
     kicker: "RO event",
-    text: "Romanian version of the Bucharest boat show event post.",
-    href: "https://boatsexpert.com/ro/2024/04/08/salonul-nautic-international-bucuresti/",
+    text: "Demo archive of the Bucharest boat show event post.",
+    href: "https://marine.axiomprotocol.org/ro/2024/04/08/salonul-nautic-international-bucuresti/",
     meta: "2024-04-08",
   },
 ];
@@ -289,7 +289,7 @@ export const returnPolicySections: OriginalSection[] = [
 export const privacyPolicySections: OriginalSection[] = [
   {
     title: "Data controller and collected data",
-    text: ["The privacy policy explains who BoatsExpert is, what customer data is collected and how that data is collected through orders, forms, inquiries and newsletter flows."],
+    text: ["The privacy policy explains who Axiom Marine is, what customer data is collected and how that data is collected through orders, forms, inquiries and newsletter flows."],
     items: ["Who we are", "What data we collect", "How we collect data"],
   },
   {

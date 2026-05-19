@@ -2,8 +2,8 @@
   "slug": "services",
   "route": "/services",
   "source": "staging-pages/services.html",
-  "title": "BoatsExpert — Services in Otopeni",
-  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "title": "Axiom Marine — Services in demo",
+  "description": "Axiom Marine — official dealer of boats and marine equipment for SMB.",
   "sections": [
     {
       "name": "01-page-band",

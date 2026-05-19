@@ -159,7 +159,7 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
 
           <div className="stock-side-card stock-help">
             <span>Source category</span>
-            <strong>13 BoatsExpert stock products.</strong>
+            <strong>13 Axiom Marine stock products.</strong>
             <p>
               Filters are generated from the visible stock cards: brand, sale state,
               category and search terms all update the product grid.

@@ -1,9 +1,9 @@
 {
   "slug": "boat",
   "route": "/boat",
-  "source": "boatsexpert-home/Boat.html",
-  "title": "Finval 470 EVO DC — Aluminium Pro Angler · BoatsExpert",
-  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "source": "axiom-marine-demo/Boat.html",
+  "title": "Finval 470 EVO DC — Aluminium Pro Angler · Axiom Marine",
+  "description": "Axiom Marine — official dealer of boats and marine equipment for SMB.",
   "sections": [
     {
       "name": "01-boat-band-crumb-title-deck",

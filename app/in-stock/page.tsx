@@ -3,26 +3,26 @@ import { InStockShop, type StockBoatItem } from "@/components/stock/InStockShop"
 import { defaultOgImage } from "@/lib/og";
 
 export const metadata: Metadata = {
-  title: "Boats in Stock | BoatsExpert",
+  title: "Boats in Stock | Axiom Marine",
   description:
-    "Showroom-ready boats in Otopeni: see, reserve, rig and prepare delivery with the BoatsExpert workshop.",
+    "Showroom-ready boats in demo: see, reserve, rig and prepare delivery with the Axiom Marine workshop.",
   alternates: {
     canonical: "/in-stock",
   },
   openGraph: {
-    title: "Boats in Stock | BoatsExpert",
+    title: "Boats in Stock | Axiom Marine",
     description:
-      "Showroom-ready boats in Otopeni: see, reserve, rig and prepare delivery with the BoatsExpert workshop.",
+      "Showroom-ready boats in demo: see, reserve, rig and prepare delivery with the Axiom Marine workshop.",
     url: "/in-stock",
-    siteName: "BoatsExpert",
+    siteName: "Axiom Marine",
     type: "website",
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boats in Stock | BoatsExpert",
+    title: "Boats in Stock | Axiom Marine",
     description:
-      "Showroom-ready boats in Otopeni: see, reserve, rig and prepare delivery with the BoatsExpert workshop.",
+      "Showroom-ready boats in demo: see, reserve, rig and prepare delivery with the Axiom Marine workshop.",
     images: [defaultOgImage.url],
   },
 };
@@ -72,7 +72,7 @@ const stockBoats: StockBoat[] = [
     specs: [
       ["7 class", "Hull"],
       ["Comfort", "Pack"],
-      ["Otopeni", "Desk"],
+      ["demo", "Desk"],
     ],
     note: "Higher comfort configuration for family cruising and protected cockpit use.",
   },
@@ -200,7 +200,7 @@ const stockBoats: StockBoat[] = [
     specs: [
       ["5.85 m", "Length"],
       ["Fish", "Layout"],
-      ["Otopeni", "Stock"],
+      ["demo", "Stock"],
     ],
     note: "Fishing-focused NorthSilver hull from the original first page of stock results.",
   },
@@ -282,9 +282,9 @@ const stockBoats: StockBoat[] = [
 const trustItems: Array<{ icon: IconName; title: string; text: string }> = [
   { icon: "anchor", title: "Ready hulls", text: "13 boats from the original stock department." },
   { icon: "cart", title: "Shop flow", text: "Price, reserve, add-to-cart style actions and sales desk follow-up." },
-  { icon: "wrench", title: "Workshop", text: "Motor, electronics, trailer and handover checked in Otopeni." },
+  { icon: "wrench", title: "Workshop", text: "Motor, electronics, trailer and handover checked in demo." },
   { icon: "wallet", title: "Financing", text: "Financing options and transparent sales process kept from the original copy." },
-  { icon: "truck", title: "Delivery", text: "Romania plus wider European delivery planning." },
+  { icon: "truck", title: "Delivery", text: "Demo region plus wider European delivery planning." },
   { icon: "shield", title: "Support", text: "Guidance before purchase and full-service support after handover." },
 ];
 
@@ -404,7 +404,7 @@ export default function InStockPage() {
                   Boats in stock, <em>ready to hit the water.</em>
                 </h1>
                 <p>
-                  Built from the original BoatsExpert stock category: 13 real products,
+                  Built from the original Axiom Marine stock category: 13 real products,
                   prices, sale states, add-to-cart actions, dealer categories, financing,
                   delivery and workshop support.
                 </p>

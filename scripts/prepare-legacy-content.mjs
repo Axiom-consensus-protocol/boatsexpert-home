@@ -7,11 +7,11 @@ const appRoot = path.resolve(__dirname, "..");
 const workspaceRoot = path.resolve(appRoot, "..");
 
 const sources = [
-  { slug: "home", route: "/", source: "boatsexpert-home/index.html" },
-  { slug: "boat", route: "/boat", source: "boatsexpert-home/Boat.html" },
-  { slug: "catalog", route: "/catalog", source: "boatsexpert-home/Catalog.html" },
-  { slug: "product", route: "/product", source: "boatsexpert-home/Product.html" },
-  { slug: "shop", route: "/shop", source: "boatsexpert-home/Shop.html" },
+  { slug: "home", route: "/", source: "axiom-marine-demo/index.html" },
+  { slug: "boat", route: "/boat", source: "axiom-marine-demo/Boat.html" },
+  { slug: "catalog", route: "/catalog", source: "axiom-marine-demo/Catalog.html" },
+  { slug: "product", route: "/product", source: "axiom-marine-demo/Product.html" },
+  { slug: "shop", route: "/shop", source: "axiom-marine-demo/Shop.html" },
   { slug: "cart", route: "/cart", source: "staging-pages/cart.html" },
   { slug: "contact", route: "/contact", source: "staging-pages/contact.html" },
   { slug: "services", route: "/services", source: "staging-pages/services.html" },
@@ -59,7 +59,7 @@ function extractTag(html, tagName) {
 }
 
 function extractTitle(html) {
-  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "BoatsExpert";
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "Axiom Marine";
   return decodeEntities(stripTags(title)).replace(/\s+/g, " ").trim();
 }
 
@@ -70,7 +70,7 @@ function extractDescription(html) {
     const content = meta.match(/\bcontent=(["'])([\s\S]*?)\1/i)?.[2];
     if (content) return decodeEntities(content).replace(/\s+/g, " ").trim();
   }
-  return "BoatsExpert — official dealer of boats and marine equipment in Romania.";
+  return "Axiom Marine — official dealer of boats and marine equipment for SMB.";
 }
 
 function stripTags(value) {

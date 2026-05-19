@@ -18,7 +18,7 @@
     const notes = productFitNotes[index];
     const anchor = card.querySelector('.pcard-stars');
     const reviewLine = anchor?.querySelector(':scope > span:last-child');
-    if (reviewLine) reviewLine.textContent = 'Live BoatsExpert shop card';
+    if (reviewLine) reviewLine.textContent = 'Live Axiom Marine shop card';
     if (!notes || !anchor || card.querySelector('.pcard-specs')) return;
     const specs = document.createElement('div');
     specs.className = 'pcard-specs';
@@ -133,7 +133,7 @@
   if (!empty) {
     empty = document.createElement('div');
     empty.className = 'shop-empty';
-    empty.innerHTML = '<b>No visible card matches this filter.</b><span>Clear filters or choose another BoatsExpert source department.</span>';
+    empty.innerHTML = '<b>No visible card matches this filter.</b><span>Clear filters or choose another Axiom Marine source department.</span>';
     grid.append(empty);
   }
 
@@ -358,7 +358,7 @@
           '<span class="qr-price">' + row.price + '</span>',
         '</a>'
       ].join('')).join('')
-      : '<div class="quick-result"><span></span><span><span class="qr-k">No exact match</span><span class="qr-name">No shop card in this prototype</span><span class="qr-meta">Clear the search or open the live BoatsExpert shop archive.</span></span><span class="qr-price">Clear</span></div>';
+      : '<div class="quick-result"><span></span><span><span class="qr-k">No exact match</span><span class="qr-name">No shop card in this prototype</span><span class="qr-meta">Clear the search or open the live Axiom Marine shop archive.</span></span><span class="qr-price">Clear</span></div>';
   };
   const openSearch = () => {
     root.classList.add('is-open');

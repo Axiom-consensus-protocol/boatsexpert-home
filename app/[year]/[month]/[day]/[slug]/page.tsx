@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const title = post?.title || legacySlugToTitle(slug);
 
   return {
-    title: `${title} | BoatsExpert Blog`,
-    description: "Original BoatsExpert blog post route preserved inside the new site.",
+    title: `${title} | Axiom Marine Blog`,
+    description: "Original Axiom Marine blog post route preserved inside the new site.",
   };
 }
 
@@ -35,15 +35,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <OriginalInfoPage
       eyebrow="Original blog post"
       title={title}
-      lead={post?.text || "This original BoatsExpert blog URL is preserved and connected back to the new blog archive, dealer news and catalog context."}
-      source={`https://boatsexpert.com/${year}/${month}/${day}/${slug}/`}
+      lead={post?.text || "This original Axiom Marine blog URL is preserved and connected back to the new blog archive, dealer news and catalog context."}
+      source={`https://marine.axiomprotocol.org/${year}/${month}/${day}/${slug}/`}
       cards={originalBlogPosts}
       sections={[
         {
           title: "Blog archive context",
           text: [
             `Original publication date: ${post?.meta || date}.`,
-            "The old site mixed English and Romanian news, boat-show updates, Garmin promotions and RIB articles. The new blog page keeps that archive visible instead of dropping old content.",
+            "The old site mixed English and Demo regionn news, boat-show updates, Garmin promotions and RIB articles. The new blog page keeps that archive visible instead of dropping old content.",
           ],
           items: originalBlogCategories,
         },

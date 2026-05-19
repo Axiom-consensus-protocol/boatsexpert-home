@@ -3,27 +3,27 @@
     {
       "slug": "home",
       "route": "/",
-      "source": "boatsexpert-home/index.html"
+      "source": "axiom-marine-demo/index.html"
     },
     {
       "slug": "boat",
       "route": "/boat",
-      "source": "boatsexpert-home/Boat.html"
+      "source": "axiom-marine-demo/Boat.html"
     },
     {
       "slug": "catalog",
       "route": "/catalog",
-      "source": "boatsexpert-home/Catalog.html"
+      "source": "axiom-marine-demo/Catalog.html"
     },
     {
       "slug": "product",
       "route": "/product",
-      "source": "boatsexpert-home/Product.html"
+      "source": "axiom-marine-demo/Product.html"
     },
     {
       "slug": "shop",
       "route": "/shop",
-      "source": "boatsexpert-home/Shop.html"
+      "source": "axiom-marine-demo/Shop.html"
     },
     {
       "slug": "cart",

@@ -180,9 +180,9 @@
       aria: "Mobile navigation",
       source: "Live site map",
       search: "Search catalog",
-      office: "Office · +40 743 377 377",
+      office: "Office · +0 000 000 000",
       contact: "Contact showroom",
-      address: "Strada Horia Closca si Crisan 5, Otopeni",
+      address: "Demo street #5",
       hours: "Mon-Thu | 10:00-17:30",
       groups: [
         {
@@ -235,9 +235,9 @@
       aria: "Navigare mobilă",
       source: "Harta site-ului live",
       search: "Caută în catalog",
-      office: "Birou · +40 743 377 377",
+      office: "Birou · +0 000 000 000",
       contact: "Contact showroom",
-      address: "Strada Horia Closca si Crisan 5, Otopeni",
+      address: "Demo street #5",
       hours: "Luni-Joi | 10:00-17:30",
       groups: [
         {
@@ -245,10 +245,10 @@
           meta: "20 / 324",
           links: [
             ["Catalog complet", "20 rezultate din 324"],
-            ["Bărci în stoc", "13 intrări curente în stoc"],
-            ["Bărci din aluminiu", "Rută tip carenă live"],
-            ["Bărci de pescuit", "Rută tip carenă live"],
-            ["Bărci Finval", "Rută brand live"],
+            ["Boats în stoc", "13 intrări curente în stoc"],
+            ["Boats din aluminiu", "Rută tip carenă live"],
+            ["Boats de pescuit", "Rută tip carenă live"],
+            ["Boats Finval", "Rută brand live"],
             ["GALA RIB", "VIKING, ATLANTIS, Sprinter"]
           ]
         },
@@ -269,7 +269,7 @@
           meta: "Rute live",
           links: [
             ["Servicii", "Rută servicii live"],
-            ["Tuning expert", "Bărci de pescuit"],
+            ["Tuning expert", "Boats de pescuit"],
             ["Instalare outboard", "Rută serviciu live"],
             ["Tuning service", "Rută serviciu live"],
             ["Înmatriculare", "Rută serviciu live"]
@@ -387,21 +387,11 @@
     drawer.setAttribute("aria-labelledby", "mobileDrawerTitle");
     drawer.innerHTML =
       '<div class="mobile-drawer-head">' +
-        '<a href="/" class="mobile-drawer-brand" aria-label="BoatsExpert home">' +
-          '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
-          '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
+        '<a href="/" class="mobile-drawer-brand" aria-label="Axiom Marine home">' +
+          '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="Axiom Marine"/>' +
+          '<span><b id="mobileDrawerTitle">Axiom Marine</b><small>Demo · Marine vertical</small></span>' +
         "</a>" +
         '<span class="mobile-drawer-lang" role="group" aria-label="Language">' +
-          '<a href="?lang=ro" data-i18n-set="ro" aria-label="Română">' +
-            '<span class="flag flag-ro" aria-hidden="true">' +
-              '<svg viewBox="0 0 18 12" preserveAspectRatio="none" focusable="false">' +
-                '<rect width="6" height="12" fill="#002B7F"/>' +
-                '<rect x="6" width="6" height="12" fill="#FCD116"/>' +
-                '<rect x="12" width="6" height="12" fill="#CE1126"/>' +
-              "</svg>" +
-            "</span>" +
-            '<span class="lang-code">RO</span>' +
-          "</a>" +
           '<a href="?lang=en" data-i18n-set="en" aria-label="English">' +
             '<span class="flag flag-gb" aria-hidden="true">' +
               '<svg viewBox="0 0 60 30" preserveAspectRatio="none" focusable="false">' +
@@ -422,7 +412,7 @@
       "</div>" +
       '<div class="mobile-drawer-source">' +
         '<span data-mobile-copy="source">Live site map</span>' +
-        '<b>boatsexpert.com</b>' +
+        '<b>marine.axiomprotocol.org</b>' +
       "</div>" +
       '<div class="mobile-drawer-kpis">' +
         '<span><b data-mobile-copy="kpi-0-value">324</b> <em data-mobile-copy="kpi-0-label">listings</em></span>' +
@@ -431,8 +421,8 @@
       "</div>" +
       '<div class="mobile-drawer-actions">' +
         '<button class="mobile-command mobile-command--search" type="button" data-mobile-search data-mobile-copy="search">Search catalog</button>' +
-        '<a class="mobile-command" href="tel:+40743377377" data-mobile-copy="office">Office · +40 743 377 377</a>' +
-        '<a class="mobile-command" href="https://wa.me/40743377377">WhatsApp</a>' +
+        '<a class="mobile-command" href="tel:+0000000000" data-mobile-copy="office">Office · +0 000 000 000</a>' +
+        '<a class="mobile-command" href="https://wa.me/0000000000">WhatsApp</a>' +
       "</div>" +
       groups.map(function (group, groupIndex) {
         return '<section class="mobile-nav-group">' +
@@ -450,12 +440,12 @@
       "</div>" +
       '<div class="mobile-tools">' +
         '<a href="/contact" class="btn-brass" data-mobile-copy="contact">Contact showroom</a>' +
-        '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
+        '<a href="https://wa.me/0000000000" class="btn-outline">WhatsApp</a>' +
       "</div>" +
       '<div class="mobile-tools-info">' +
-        '<a href="tel:+40743377377" class="brass">+40 (743) 377 377</a>' +
-        '<a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>' +
-        '<span data-mobile-copy="address">Strada Horia Closca si Crisan 5, Otopeni</span>' +
+        '<a href="tel:+0000000000" class="brass">+0 (000) 000 000</a>' +
+        '<a href="mailto:demo@axiomprotocol.org">demo@axiomprotocol.org</a>' +
+        '<span data-mobile-copy="address">Demo street #5</span>' +
         '<span data-mobile-copy="hours">Mon-Thu | 10:00-17:30</span>' +
       "</div>";
     document.body.appendChild(drawer);

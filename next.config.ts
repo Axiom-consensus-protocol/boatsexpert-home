@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
     "/*": ["./content/**/*", "./public/assets/**/*"],
   },
   // Pin Turbopack's workspace root explicitly. Without this, Turbopack walks up
-  // the tree past /home/user/Desktop/Boatexpert/v3 looking for a manifest and
+  // the tree past the demo workspace looking for a manifest and
   // mis-infers the project root, breaking compilation.
   turbopack: {
     root: path.resolve(import.meta.dirname),

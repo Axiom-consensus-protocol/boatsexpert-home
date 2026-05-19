@@ -1,9 +1,9 @@
 {
   "slug": "home",
   "route": "/",
-  "source": "boatsexpert-home/index.html",
-  "title": "BoatsExpert — Aluminium & fishing boats in Romania. Finval, Beneteau, NorthSilver.",
-  "description": "Boats Expert — official dealer of boats and marine equipment in Romania.",
+  "source": "axiom-marine-demo/index.html",
+  "title": "Axiom Marine — Aluminium & fishing boats for SMB. Finval, Beneteau, NorthSilver.",
+  "description": "Axiom Marine — official dealer of boats and marine equipment for SMB.",
   "sections": [
     {
       "name": "01-hero",

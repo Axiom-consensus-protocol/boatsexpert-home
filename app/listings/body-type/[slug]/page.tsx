@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: BodyTypePageProps): Promise<M
   const label = legacySlugToTitle(slug);
 
   return {
-    title: `${label} | BoatsExpert Catalog`,
-    description: "Original body-type catalog route mapped into the new BoatsExpert catalog.",
+    title: `${label} | Axiom Marine Catalog`,
+    description: "Original body-type catalog route mapped into the new Axiom Marine catalog.",
     alternates: { canonical: `/listings/body-type/${slug}` },
   };
 }
@@ -26,7 +26,7 @@ export default async function BodyTypePage({ params }: BodyTypePageProps) {
       eyebrow="Original body-type route"
       title={label}
       lead="The original catalog used body-type landing pages for aluminium, fishing, RIB, cruising, fiberglass boats and trailers. This route keeps that information available and connects it to the new catalog."
-      source={`https://boatsexpert.com/listings/body-type/${slug}/`}
+      source={`https://marine.axiomprotocol.org/listings/body-type/${slug}/`}
       sections={[
         {
           title: "Body-type index",

@@ -1,5 +1,5 @@
 /**
- * BoatsExpert — minimal i18n binder.
+ * Axiom Marine — minimal i18n binder.
  *
  * Usage:
  *   <h1 data-i18n="hero.h1">Default text</h1>          - replaces innerHTML
@@ -7,7 +7,7 @@
  *   <html data-i18n-attr="lang:_lang,title:site.title"/>
  *
  * Switch language:
- *   - URL: ?lang=ro   |  ?lang=en
+ *   - URL: ?  |  ?lang=en
  *   - or click any [data-i18n-set="ro"] / [data-i18n-set="en"]
  *   - or call BX_i18n.set("ro")
  *   - persisted in localStorage("bx_lang")

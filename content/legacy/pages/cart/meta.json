@@ -2,8 +2,8 @@
   "slug": "cart",
   "route": "/cart",
   "source": "staging-pages/cart.html",
-  "title": "BoatsExpert — Your cart",
-  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "title": "Axiom Marine — Your cart",
+  "description": "Axiom Marine — official dealer of boats and marine equipment for SMB.",
   "sections": [
     {
       "name": "01-page-band",

@@ -1,6 +1,6 @@
-# BoatsExpert Next Port
+# Axiom Marine Next Port
 
-Next.js 15 App Router port of the static BoatsExpert prototype.
+Next.js 15 App Router port of the static Axiom Marine prototype.
 
 ## Stack
 
@@ -31,12 +31,12 @@ pnpm run build
 - `content/legacy/pages/<page>/styles.css` — generated page-specific legacy styles.
 - `content/legacy/pages/<page>/scripts.js` — generated trusted page runtime copied from legacy inline scripts.
 - `legacy/` — source snapshots copied into this app for auditability.
-- `public/assets/` — copied BoatsExpert assets.
-- `scripts/prepare-legacy-content.mjs` — regeneration script from `../boatsexpert-home` and `../staging-pages`.
+- `public/assets/` — copied Axiom Marine assets.
+- `scripts/prepare-legacy-content.mjs` — regeneration script from `../axiom-marine-demo` and `../staging-pages`.
 
 ## Migration Rule
 
-During the 1:1 phase, edit source HTML/CSS in `../boatsexpert-home` or `../staging-pages`, then run:
+During the 1:1 phase, edit source HTML/CSS in `../axiom-marine-demo` or `../staging-pages`, then run:
 
 ```bash
 pnpm run prepare:legacy

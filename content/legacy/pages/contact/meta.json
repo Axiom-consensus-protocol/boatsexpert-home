@@ -2,8 +2,8 @@
   "slug": "contact",
   "route": "/contact",
   "source": "staging-pages/contact.html",
-  "title": "BoatsExpert — Contact & showroom in Otopeni",
-  "description": "BoatsExpert — official dealer of boats and marine equipment in Romania.",
+  "title": "Axiom Marine — Contact & showroom in demo",
+  "description": "Axiom Marine — official dealer of boats and marine equipment for SMB.",
   "sections": [
     {
       "name": "01-page-band",

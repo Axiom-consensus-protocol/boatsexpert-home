@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: BoatCatalogPageProps): Promis
   const title = legacySlugToTitle(slug);
 
   return {
-    title: `${title} | BoatsExpert Boat Catalog`,
-    description: "Original BoatsExpert boat listing route preserved inside the new catalog.",
+    title: `${title} | Axiom Marine Boat Catalog`,
+    description: "Original Axiom Marine boat listing route preserved inside the new catalog.",
     alternates: { canonical: `/boat-catalog/${slug}` },
   };
 }
@@ -30,7 +30,7 @@ export default async function BoatCatalogPage({ params }: BoatCatalogPageProps) 
       eyebrow="Original boat detail route"
       title={title}
       lead={`The original sitemap includes this boat detail URL as /boat-catalog/${slug}/. The new site keeps the route alive, connects it back to the rich catalog and preserves the old brand and hull taxonomy instead of losing the listing index.`}
-      source={`https://boatsexpert.com/boat-catalog/${slug}/`}
+      source={`https://marine.axiomprotocol.org/boat-catalog/${slug}/`}
       cards={[
         {
           title: "Catalog placement",
@@ -41,7 +41,7 @@ export default async function BoatCatalogPage({ params }: BoatCatalogPageProps) 
         {
           title: "Stock check",
           kicker: "Dealer workflow",
-          text: "Availability, delivery, rigging and paperwork are handled through the Otopeni dealer desk.",
+          text: "Availability, delivery, rigging and paperwork are handled through the demo dealer desk.",
           href: "/in-stock",
         },
         {

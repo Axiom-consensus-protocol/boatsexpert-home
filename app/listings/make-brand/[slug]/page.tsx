@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: MakeBrandPageProps): Promise<
   const label = legacySlugToTitle(slug);
 
   return {
-    title: `${label} | BoatsExpert Brand Catalog`,
-    description: "Original make-brand catalog route mapped into the new BoatsExpert catalog.",
+    title: `${label} | Axiom Marine Brand Catalog`,
+    description: "Original make-brand catalog route mapped into the new Axiom Marine catalog.",
     alternates: { canonical: `/listings/make-brand/${slug}` },
   };
 }
@@ -26,7 +26,7 @@ export default async function MakeBrandPage({ params }: MakeBrandPageProps) {
       eyebrow="Original make-brand route"
       title={label}
       lead="The original catalog exposed manufacturer and model-line routes for Beneteau, Finval, GALA, NorthSilver, LANDX, Reval Grade, RESPO and related ranges. This route preserves that sitemap structure."
-      source={`https://boatsexpert.com/listings/make-brand/${slug}/`}
+      source={`https://marine.axiomprotocol.org/listings/make-brand/${slug}/`}
       sections={[
         {
           title: "Brand index",

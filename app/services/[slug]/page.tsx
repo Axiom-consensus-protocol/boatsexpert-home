@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   if (!page) return {};
 
   return {
-    title: `${page.title} | BoatsExpert`,
+    title: `${page.title} | Axiom Marine`,
     description: page.lead,
     alternates: { canonical: `/services/${slug}` },
   };

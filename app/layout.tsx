@@ -12,9 +12,9 @@ const themeBootstrap = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://boatsexpert.com"),
+  metadataBase: new URL("https://marine.axiomprotocol.org"),
   title: {
-    default: "BoatsExpert",
+    default: "Axiom Marine",
     template: "%s",
   },
   description: defaultOgDescription,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: defaultOgTitle,
     description: defaultOgDescription,
     url: "/",
-    siteName: "BoatsExpert",
+    siteName: "Axiom Marine",
     type: "website",
     images: [defaultOgImage],
   },

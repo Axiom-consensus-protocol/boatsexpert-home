@@ -1,5 +1,5 @@
 /**
- * BoatsExpert — shared chrome handlers for staging pages.
+ * Axiom Marine — shared chrome handlers for staging pages.
  *
  * Wires:
  *   1. Theme toggle  — [data-theme-toggle]  →  toggles html[data-theme] day/night,

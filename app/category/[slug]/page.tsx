@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const title = legacySlugToTitle(slug);
 
   return {
-    title: `${title} | BoatsExpert Blog Category`,
-    description: "Original BoatsExpert blog category route mapped into the new archive.",
+    title: `${title} | Axiom Marine Blog Category`,
+    description: "Original Axiom Marine blog category route mapped into the new archive.",
     alternates: { canonical: `/category/${slug}` },
   };
 }
@@ -30,7 +30,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       eyebrow="Original blog category"
       title={title}
       lead="The original WordPress archive used category pages for news, RIB articles and tuning reviews. This route keeps that archive layer available and connected to the restored blog index."
-      source={`https://boatsexpert.com/category/${slug}/`}
+      source={`https://marine.axiomprotocol.org/category/${slug}/`}
       cards={originalBlogPosts}
       sections={[
         {

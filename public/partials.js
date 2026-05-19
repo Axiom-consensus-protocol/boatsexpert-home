@@ -1,5 +1,5 @@
 /**
- * BoatsExpert — partials loader.
+ * Axiom Marine — partials loader.
  *
  * Loads HTML fragments into mount points marked with [data-partial="name"].
  * Each fragment is fetched from /partials/<name>.html.
@@ -133,15 +133,15 @@
     nav.setAttribute('aria-labelledby', 'mobileDrawerTitle');
     nav.innerHTML =
       '<div class="mobile-drawer-head">' +
-        '<a href="/" class="mobile-drawer-brand" aria-label="BoatsExpert home">' +
-          '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="BoatsExpert"/>' +
-          '<span><b id="mobileDrawerTitle">BoatsExpert</b><small>Otopeni · Romania</small></span>' +
+        '<a href="/" class="mobile-drawer-brand" aria-label="Axiom Marine home">' +
+          '<img class="logo-img" src="/assets/logo/logo-white.svg" alt="Axiom Marine"/>' +
+          '<span><b id="mobileDrawerTitle">Axiom Marine</b><small>Demo · Marine vertical</small></span>' +
         '</a>' +
         '<button class="mobile-close" type="button" aria-label="Close menu">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg>' +
         '</button>' +
       '</div>' +
-      '<div class="mobile-drawer-source"><span>Live site map</span><b>boatsexpert.com</b></div>' +
+      '<div class="mobile-drawer-source"><span>Live site map</span><b>marine.axiomprotocol.org</b></div>' +
       '<div class="mobile-drawer-kpis">' +
         '<span><b>324</b> listings</span>' +
         '<span><b>13</b> boats in stock</span>' +
@@ -149,8 +149,8 @@
       '</div>' +
       '<div class="mobile-drawer-actions">' +
         '<button class="mobile-command mobile-command--search" type="button" data-mobile-search>Search catalog</button>' +
-        '<a class="mobile-command" href="tel:+40743377377">Office · +40 743 377 377</a>' +
-        '<a class="mobile-command" href="https://wa.me/40743377377">WhatsApp</a>' +
+        '<a class="mobile-command" href="tel:+0000000000">Office · +0 000 000 000</a>' +
+        '<a class="mobile-command" href="https://wa.me/0000000000">WhatsApp</a>' +
       '</div>' +
       groups.map(group => (
         '<section class="mobile-nav-group">' +
@@ -166,12 +166,12 @@
       '</div>' +
       '<div class="mobile-tools">' +
         '<a href="/contact" class="btn-brass" data-i18n="nav.cta_testdrive">Contact showroom</a>' +
-        '<a href="https://wa.me/40743377377" class="btn-outline">WhatsApp</a>' +
+        '<a href="https://wa.me/0000000000" class="btn-outline">WhatsApp</a>' +
       '</div>' +
       '<div class="mobile-tools-info">' +
-        '<a href="tel:+40743377377" class="brass">+40 (743) 377 377</a>' +
-        '<a href="mailto:info@boatsexpert.com">info@boatsexpert.com</a>' +
-        '<span>Strada Horia Closca si Crisan 5, Otopeni</span>' +
+        '<a href="tel:+0000000000" class="brass">+0 (000) 000 000</a>' +
+        '<a href="mailto:demo@axiomprotocol.org">demo@axiomprotocol.org</a>' +
+        '<span>Demo street #5</span>' +
         '<span>Mon-Thu | 10:00-17:30</span>' +
       '</div>';
     document.body.appendChild(nav);

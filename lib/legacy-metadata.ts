@@ -15,7 +15,7 @@ export function legacyMetadata(slug: LegacyPageSlug): Metadata {
       title: page.title,
       description: page.description,
       url: page.route,
-      siteName: "BoatsExpert",
+      siteName: "Axiom Marine",
       type: "website",
       images: [defaultOgImage],
     },

@@ -31,7 +31,7 @@ const liveBoat = ({ brand, cat, country, model, price, length, persons, power, p
     cat,
     country,
     model,
-    tagline: 'Live BoatsExpert listing: ' + length + ' · ' + persons + ' persons · ' + power + '.',
+    tagline: 'Live Axiom Marine listing: ' + length + ' · ' + persons + ' persons · ' + power + '.',
     badges: request ? [['req', 'Request']] : [['live', 'Live listing']],
     features: ['Length overall ' + length, persons + ' persons', power, request ? 'Request price' : price],
     specs: [['Length', length], ['Persons', persons], ['Power', power], ['Source', 'Listings']],

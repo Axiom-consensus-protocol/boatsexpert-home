@@ -46,7 +46,7 @@
           title: 'Yamaha outboard motors',
           type: 'Shop',
           eyebrow: 'Official equipment',
-          desc: 'Outboard motors installed, rigged and calibrated in the Otopeni workshop.',
+          desc: 'Outboard motors installed, rigged and calibrated in the demo workshop.',
           price: 'from €890',
           image: 'assets/brands/yamaha.webp',
           url: 'Shop.html',
@@ -85,7 +85,7 @@
         {
           title: 'Expert tuning of angler boats',
           type: 'Service',
-          eyebrow: 'Workshop · Otopeni',
+          eyebrow: 'Workshop · demo',
           desc: 'Casting platforms, livewells, trolling motor prep, rod storage and JackPlate setup.',
           price: 'service',
           image: 'assets/boats/finval-470-evo-15.jpg',
@@ -105,8 +105,8 @@
         {
           title: 'Boat registration and warranty',
           type: 'Service',
-          eyebrow: 'ANR paperwork',
-          desc: 'Registration, warranty desk, pickup, service and delivery across RO · MD · RS · BG.',
+          eyebrow: 'registration paperwork',
+          desc: 'Registration, warranty desk, pickup, service and delivery across Worldwide.',
           price: 'support',
           image: 'assets/logo/favicon-192.png',
           url: 'index.html#services',

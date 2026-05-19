@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Boats Expert - official dealer of boats and marine equipment in Romania";
+export const alt = "Axiom Marine - official dealer of boats and marine equipment for SMB";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -106,7 +106,7 @@ export default function OpenGraphImage() {
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ color: "#FFFFFF", fontSize: 42, fontWeight: 800, lineHeight: 1 }}>
-                  BoatsExpert
+                  Axiom Marine
                 </div>
                 <div
                   style={{
@@ -130,7 +130,7 @@ export default function OpenGraphImage() {
                   textTransform: "uppercase",
                 }}
               >
-                Otopeni, Romania
+                Demo location
               </div>
               <div
                 style={{
@@ -166,7 +166,7 @@ export default function OpenGraphImage() {
                 letterSpacing: 0,
               }}
             >
-              Boats Expert
+              Axiom Marine
             </div>
             <div
               style={{
@@ -233,7 +233,7 @@ export default function OpenGraphImage() {
                 fontWeight: 700,
               }}
             >
-              boatsexpert.com
+              marine.axiomprotocol.org
             </div>
           </div>
         </div>
