@@ -29,11 +29,13 @@ export default async function ProductTagPage({ params }: ProductTagPageProps) {
     <OriginalInfoPage
       eyebrow="Original product tag"
       title={title}
-      lead="The original WooCommerce shop exposed tag pages for Marine Nav electronics, sonars, Quatix watches and trolling-motor topics. This route keeps that search layer visible and connected to the new shop."
+      lead="The original WooCommerce shop exposed tag pages for Marine Nav electronics, sonars, marine watches and trolling-motor topics. This route keeps that search layer visible and connected to the new shop."
       source={`https://marine.axiomprotocol.org/product-tag/${slug}/`}
       sections={originalProductCategoryGroups.map((group) => ({
         title: group.title,
-        text: ["Shop departments and tags are cross-linked here to preserve the original WooCommerce discovery paths."],
+        text: [
+          "Shop departments and tags are cross-linked here to preserve the original WooCommerce discovery paths.",
+        ],
         items: group.items,
       }))}
       asideTitle="Product tags"

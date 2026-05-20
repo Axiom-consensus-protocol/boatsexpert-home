@@ -147,7 +147,7 @@
     "en": "Lightweight GRP hulls — smooth ride, easy maintenance."
   },
   "types.t6.sub": {
-    "en": "RESPO trailers — road-legal across EU, galvanised steel."
+    "en": "TowPro trailers — road-legal across EU, galvanised steel."
   },
   "brands.eyebrow": {
     "en": "Brand partnerships · three tiers"
@@ -357,13 +357,13 @@
     "en": "Marine accessories"
   },
   "promos.c1.h": {
-    "en": "Marinac <em>Marine Accessories</em>"
+    "en": "Marine Kit <em>Marine Accessories</em>"
   },
   "promos.c1.p": {
     "en": "Deck hardware, organisers, mounts and boat-specific accessories grouped for retail and service orders."
   },
   "promos.c1.more": {
-    "en": "Open Marinac range"
+    "en": "Open Marine Kit range"
   },
   "promos.c2.k": {
     "en": "Shop online"
@@ -654,7 +654,7 @@
     "en": "Live <em>Catalog</em>"
   },
   "brands.t1.p": {
-    "en": "Live catalog routes include TRAILER X, Cruise Series, Pro Angler, Atlas RIB, Atlas RIBXY, Trailer X, Silver Hull, RESPO and Reval Marine."
+    "en": "Live catalog routes include TRAILER X, Cruise Series, Pro Angler, Atlas RIB, Atlas RIBXY, Trailer X, Silver Hull, TowPro and Reef Line."
   },
   "brands.t1.stat": {
     "en": "<b>324</b>listings · 13 stock boats · 942 shop results"
@@ -753,7 +753,7 @@
     "en": "Outboard <em>rigging</em>"
   },
   "services.s2.p": {
-    "en": "Outboard Y, Outboard M, Honda and Outboard T installed with controls, propeller advice, steering and sea-trial calibration."
+    "en": "Outboard Y, Outboard M, Outboard H and Outboard T installed with controls, propeller advice, steering and sea-trial calibration."
   },
   "services.s2.m": {
     "en": "Rig my engine"
@@ -933,7 +933,7 @@
     "en": "Trailer X"
   },
   "foot.col_cat.l8": {
-    "en": "RESPO Trailers"
+    "en": "TowPro Trailers"
   },
   "foot.col_shop.h": {
     "en": "Shop"
@@ -960,7 +960,7 @@
     "en": "Navigation"
   },
   "foot.col_shop.l8": {
-    "en": "Quatix watches"
+    "en": "Marine watches"
   },
   "foot.col_svc.h": {
     "en": "Services"
@@ -1062,7 +1062,7 @@
     "en": "Engines, trolling motors and control."
   },
   "shop.cmd.1.p": {
-    "en": "Outboard Y, Outboard M, Honda, Outboard T, E-Motor, hydraulic steering and jack plates."
+    "en": "Outboard Y, Outboard M, Outboard H, Outboard T, E-Motor, hydraulic steering and jack plates."
   },
   "shop.cmd.1.f": {
     "en": "134 listed items"
@@ -1287,7 +1287,7 @@
     "en": "Wearable"
   },
   "shop.dept8.name": {
-    "en": "Quatix smartwatches"
+    "en": "Marine smartwatches"
   },
   "shop.dept8.meta1": {
     "en": "12 items"
@@ -1602,7 +1602,7 @@
     "en": "324 live results · 6 boat types · price filter €0-€284,999"
   },
   "catalog.hero.h1": {
-    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · TRAILER X, Cruise Series, Pro Angler, Atlas RIBXY, Atlas RIB, Trailer X, Silver Hull, RESPO, Reval Marine</span>"
+    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · TRAILER X, Cruise Series, Pro Angler, Atlas RIBXY, Atlas RIB, Trailer X, Silver Hull, TowPro, Reef Line</span>"
   },
   "catalog.hero.deck": {
     "en": "Live Axiom Marine listings show aluminium boats, boat trailers, cruising boats, fiberglass boats, fishing boats and RIB boats. The current archive opens with Atlas RIB VIKING V6F (V580F), Trailer X Ultimate Console and Trailer X Ultimate B."
@@ -1670,8 +1670,8 @@
   "shop.dept.navigation": {
     "en": "Navigation"
   },
-  "shop.dept.quatix": {
-    "en": "Quatix smartwatches"
+  "shop.dept.watch": {
+    "en": "Marine smartwatches"
   },
   "shop.dept.mounts": {
     "en": "Mounts & brackets"
@@ -2070,10 +2070,10 @@
     "en": "SKU HK4200A-3"
   },
   "cart.it2.br": {
-    "en": "Optima · Battery"
+    "en": "Power Pack · Battery"
   },
   "cart.it2.nm": {
-    "en": "BlueTop <em>75 Ah AGM</em>"
+    "en": "DeepCycle <em>75 Ah AGM</em>"
   },
   "cart.it2.sku": {
     "en": "SKU 901157 · Marine deep-cycle"

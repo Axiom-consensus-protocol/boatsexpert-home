@@ -25,7 +25,7 @@ export default async function MakeBrandPage({ params }: MakeBrandPageProps) {
     <OriginalInfoPage
       eyebrow="Original make-brand route"
       title={label}
-      lead="The original catalog exposed manufacturer and model-line routes for Cruise Series, Pro Angler, Atlas RIB, Silver Hull, Trailer X, Reval Marine, RESPO and related ranges. This route preserves that sitemap structure."
+      lead="The original catalog exposed manufacturer and model-line routes for Cruise Series, Pro Angler, Atlas RIB, Silver Hull, Trailer X, Reef Line, TowPro and related ranges. This route preserves that sitemap structure."
       source={`https://marine.axiomprotocol.org/listings/make-brand/${slug}/`}
       sections={[
         {
@@ -35,7 +35,9 @@ export default async function MakeBrandPage({ params }: MakeBrandPageProps) {
         },
         {
           title: "Body-type connection",
-          text: ["Brand browsing stays connected to body-type browsing, matching the original catalog structure."],
+          text: [
+            "Brand browsing stays connected to body-type browsing, matching the original catalog structure.",
+          ],
           items: originalBodyTypes,
         },
       ]}

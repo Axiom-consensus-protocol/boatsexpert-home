@@ -35,7 +35,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       sections={[
         {
           title: "Archive coverage",
-          text: ["All original blog categories from the sitemap are represented in the new archive so old links stay useful."],
+          text: [
+            "All original blog categories from the sitemap are represented in the new archive so old links stay useful.",
+          ],
           items: originalBlogCategories,
         },
       ]}

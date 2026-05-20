@@ -17,7 +17,15 @@ export default function ReturnPolicyPage() {
       source="https://marine.axiomprotocol.org/return-policy/"
       sections={returnPolicySections}
       asideTitle="Policy sections"
-      asideItems={["Delivery", "Delivery time", "Order processing", "Large products", "Returns", "Refunds", "Defective products"]}
+      asideItems={[
+        "Delivery",
+        "Delivery time",
+        "Order processing",
+        "Large products",
+        "Returns",
+        "Refunds",
+        "Defective products",
+      ]}
     />
   );
 }

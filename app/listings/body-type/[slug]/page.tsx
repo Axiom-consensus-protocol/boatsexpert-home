@@ -30,12 +30,16 @@ export default async function BodyTypePage({ params }: BodyTypePageProps) {
       sections={[
         {
           title: "Body-type index",
-          text: ["All original body-type entry points are preserved as catalog concepts in the new site."],
+          text: [
+            "All original body-type entry points are preserved as catalog concepts in the new site.",
+          ],
           items: originalBodyTypes,
         },
         {
           title: "Related brands",
-          text: ["The original brand taxonomy remains visible so customers can move by hull type or manufacturer line."],
+          text: [
+            "The original brand taxonomy remains visible so customers can move by hull type or manufacturer line.",
+          ],
           items: originalBrands,
         },
       ]}

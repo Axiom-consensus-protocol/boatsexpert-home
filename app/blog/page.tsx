@@ -4,7 +4,8 @@ import { originalBlogPosts } from "@/lib/original-site-data";
 
 export const metadata: Metadata = {
   title: "Blog | Axiom Marine",
-  description: "Original Axiom Marine blog archive: RIB news, Marine Nav promotions, boat shows and Demo posts.",
+  description:
+    "Original Axiom Marine blog archive: RIB news, Marine Nav promotions, boat shows and Demo posts.",
   alternates: { canonical: "/blog" },
 };
 

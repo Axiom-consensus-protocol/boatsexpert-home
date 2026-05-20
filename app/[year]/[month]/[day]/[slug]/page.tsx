@@ -35,7 +35,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <OriginalInfoPage
       eyebrow="Original blog post"
       title={title}
-      lead={post?.text || "This original Axiom Marine blog URL is preserved and connected back to the new blog archive, dealer news and catalog context."}
+      lead={
+        post?.text ||
+        "This original Axiom Marine blog URL is preserved and connected back to the new blog archive, dealer news and catalog context."
+      }
       source={`https://marine.axiomprotocol.org/${year}/${month}/${day}/${slug}/`}
       cards={originalBlogPosts}
       sections={[

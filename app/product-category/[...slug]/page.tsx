@@ -34,7 +34,9 @@ export default async function ProductCategoryPage({ params }: ProductCategoryPag
       source={`https://marine.axiomprotocol.org/product-category/${joined}/`}
       sections={originalProductCategoryGroups.map((group) => ({
         title: group.title,
-        text: ["Original shop department and subcategory information restored from the Axiom Marine category sitemap and shop sidebar."],
+        text: [
+          "Original shop department and subcategory information restored from the Axiom Marine category sitemap and shop sidebar.",
+        ],
         items: group.items,
       }))}
       asideTitle="Shop categories"

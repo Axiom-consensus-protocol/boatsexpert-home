@@ -17,7 +17,17 @@ export default function PrivacyPolicyPage() {
       source="https://marine.axiomprotocol.org/privacy-policy/"
       sections={privacyPolicySections}
       asideTitle="Privacy sections"
-      asideItems={["Data collected", "Legal basis", "Orders", "Newsletter", "Cookies", "Retention", "Rights", "Security", "Contact"]}
+      asideItems={[
+        "Data collected",
+        "Legal basis",
+        "Orders",
+        "Newsletter",
+        "Cookies",
+        "Retention",
+        "Rights",
+        "Security",
+        "Contact",
+      ]}
     />
   );
 }

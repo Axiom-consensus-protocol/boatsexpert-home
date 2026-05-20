@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -87,12 +87,18 @@ function decodeEntities(value) {
 }
 
 function removeTemplate(html, id) {
-  return html.replace(new RegExp(`\\s*<template\\b[^>]*id=(["'])${id}\\1[^>]*>[\\s\\S]*?<\\/template>`, "gi"), "");
+  return html.replace(
+    new RegExp(`\\s*<template\\b[^>]*id=(["'])${id}\\1[^>]*>[\\s\\S]*?<\\/template>`, "gi"),
+    "",
+  );
 }
 
 function removeGlobalScripts(html) {
   return html
-    .replace(/\s*<script\b[^>]*\bsrc=(["'])(?:\.\/)?(?:partials|i18n|theme|chrome)\.js\1[^>]*>\s*<\/script>/gi, "")
+    .replace(
+      /\s*<script\b[^>]*\bsrc=(["'])(?:\.\/)?(?:partials|i18n|theme|chrome)\.js\1[^>]*>\s*<\/script>/gi,
+      "",
+    )
     .replace(/\s*<script\b[^>]*\bid=(["'])i18n-data\1[^>]*>[\s\S]*?<\/script>/gi, "");
 }
 
@@ -146,13 +152,20 @@ function rewriteLegacyUrls(html) {
 }
 
 function removeChromeFromBody(body) {
-  return removeGlobalScripts(removeTemplate(removeTemplate(body, "partial-header"), "partial-footer"))
+  return removeGlobalScripts(
+    removeTemplate(removeTemplate(body, "partial-header"), "partial-footer"),
+  )
     .replace(/\s*<div\b[^>]*data-partial=(["'])header\1[^>]*>\s*<\/div>/gi, "")
     .replace(/\s*<div\b[^>]*data-partial=(["'])footer\1[^>]*>\s*<\/div>/gi, "")
     .replace(/\s*<input\b[^>]*id=(["'])mobile-toggle\1[^>]*>\s*/gi, "")
-    .replace(/\s*<nav\b[^>]*class=(["'])[^"']*\bmobile-drawer\b[^"']*\1[^>]*>[\s\S]*?<\/nav>\s*/gi, "")
+    .replace(
+      /\s*<nav\b[^>]*class=(["'])[^"']*\bmobile-drawer\b[^"']*\1[^>]*>[\s\S]*?<\/nav>\s*/gi,
+      "",
+    )
     .replace(/\s*<!--([\s\S]*?)-->\s*/gi, (full, comment) => {
-      return /\b(?:HEADER|FOOTER|TOP BAR|MOBILE DRAWER)\b|i18n inline dict/i.test(comment) ? "\n" : full;
+      return /\b(?:HEADER|FOOTER|TOP BAR|MOBILE DRAWER)\b|i18n inline dict/i.test(comment)
+        ? "\n"
+        : full;
     });
 }
 
@@ -217,7 +230,10 @@ function splitTopLevel(html) {
 
     const tagName = startTag[1].toLowerCase();
     const tagEnd = i + startTag[0].length;
-    const end = startTag[0].endsWith("/>") || voidTags.has(tagName) ? tagEnd : findMatchingTag(html, tagName, tagEnd);
+    const end =
+      startTag[0].endsWith("/>") || voidTags.has(tagName)
+        ? tagEnd
+        : findMatchingTag(html, tagName, tagEnd);
     const chunkHtml = `${pendingComment}${html.slice(i, end)}`.trim();
     chunks.push({ label: labelForChunk(chunkHtml, tagName), html: chunkHtml });
     pendingComment = "";
@@ -229,7 +245,8 @@ function splitTopLevel(html) {
 
 function labelForChunk(html, fallback) {
   const comment = html.match(/^<!--\s*([\s\S]*?)\s*-->/)?.[1];
-  const source = comment || html.match(/^<[\w:-]+\b[^>]*(?:id|class)=(["'])(.*?)\1/i)?.[2] || fallback;
+  const source =
+    comment || html.match(/^<[\w:-]+\b[^>]*(?:id|class)=(["'])(.*?)\1/i)?.[2] || fallback;
   return slugify(source);
 }
 
@@ -262,7 +279,9 @@ function writePage(sourceConfig) {
   rmSync(pageDir, { recursive: true, force: true });
   ensureDir(sectionsDir);
 
-  const styles = rewriteLegacyUrls([...head.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1].trim()).join("\n\n"));
+  const styles = rewriteLegacyUrls(
+    [...head.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1].trim()).join("\n\n"),
+  );
 
   body = removeChromeFromBody(body);
   const extracted = collectInlineScripts(body);
@@ -312,18 +331,33 @@ function syncLegacySources() {
   rmSync(legacyDir, { recursive: true, force: true });
   ensureDir(legacyDir);
   for (const source of sources) {
-    copyFileSync(path.join(workspaceRoot, source.source), path.join(legacyDir, `${source.slug === "home" ? "index" : source.slug}.html`));
+    copyFileSync(
+      path.join(workspaceRoot, source.source),
+      path.join(legacyDir, `${source.slug === "home" ? "index" : source.slug}.html`),
+    );
   }
-  copyFileSync(path.join(workspaceRoot, "staging-pages/i18n.json"), path.join(legacyDir, "i18n.json"));
-  copyFileSync(path.join(workspaceRoot, "staging-pages/i18n.json"), path.join(appRoot, "content/legacy/i18n.json"));
-  copyFileSync(path.join(workspaceRoot, "staging-pages/i18n.json"), path.join(appRoot, "public/i18n.json"));
+  copyFileSync(
+    path.join(workspaceRoot, "staging-pages/i18n.json"),
+    path.join(legacyDir, "i18n.json"),
+  );
+  copyFileSync(
+    path.join(workspaceRoot, "staging-pages/i18n.json"),
+    path.join(appRoot, "content/legacy/i18n.json"),
+  );
+  copyFileSync(
+    path.join(workspaceRoot, "staging-pages/i18n.json"),
+    path.join(appRoot, "public/i18n.json"),
+  );
 }
 
 function writeManifest() {
   const manifest = {
     generatedFrom: sources.map(({ slug, route, source }) => ({ slug, route, source })),
   };
-  writeFileSync(path.join(appRoot, "content/legacy/manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+  writeFileSync(
+    path.join(appRoot, "content/legacy/manifest.json"),
+    `${JSON.stringify(manifest, null, 2)}\n`,
+  );
 }
 
 writeChrome();

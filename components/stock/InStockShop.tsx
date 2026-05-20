@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
@@ -19,9 +20,11 @@ export type StockBoatItem = {
   note: string;
 };
 
-type StockIcon = "cart" | "filter" | "search";
+type StockFilter = "all" | "sale" | `brand:${string}` | `category:${string}`;
+type StockIconName = "cart" | "filter" | "search";
+type StockSort = "default" | "price-low" | "price-high" | "sale";
 
-function StockIcon({ name }: { name: StockIcon }) {
+function StockIcon({ name }: { name: StockIconName }) {
   const base = {
     viewBox: "0 0 24 24",
     fill: "none",
@@ -61,34 +64,84 @@ function StockIcon({ name }: { name: StockIcon }) {
 }
 
 function priceNumber(value: string) {
-  return Number.parseFloat(value.replace(/[^\d.,]/g, "").replace(/,(?=\d{3}\b)/g, "").replace(",", ".")) || 0;
+  return (
+    Number.parseFloat(
+      value
+        .replace(/[^\d.,]/g, "")
+        .replace(/,(?=\d{3}\b)/g, "")
+        .replace(",", "."),
+    ) || 0
+  );
 }
 
 export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("all");
-  const [sort, setSort] = useState("default");
+  const [filter, setFilter] = useState<StockFilter>("all");
+  const [sort, setSort] = useState<StockSort>("default");
 
   const filterOptions = useMemo(() => {
     const count = (predicate: (boat: StockBoatItem) => boolean) => boats.filter(predicate).length;
-    return [
+    const options: Array<{ key: StockFilter; label: string; count: number }> = [
       { key: "all", label: "All boats", count: boats.length },
       { key: "sale", label: "Sale", count: count((boat) => Boolean(boat.oldPrice)) },
-      { key: "brand:Cruise Series", label: "Cruise Series", count: count((boat) => boat.brand === "Cruise Series") },
-      { key: "brand:Pro Angler", label: "Pro Angler", count: count((boat) => boat.brand === "Pro Angler") },
-      { key: "brand:Atlas RIB", label: "Atlas RIB", count: count((boat) => boat.brand === "Atlas RIB") },
-      { key: "brand:Silver Hull", label: "Silver Hull", count: count((boat) => boat.brand === "Silver Hull") },
-      { key: "category:Aluminium", label: "Aluminium", count: count((boat) => /aluminium/i.test(boat.category)) },
-      { key: "category:Cruising", label: "Cruising", count: count((boat) => /cruising/i.test(boat.category)) },
-      { key: "category:Fishing", label: "Fishing", count: count((boat) => /fish/i.test(boat.category + " " + boat.title)) },
-      { key: "category:RIB", label: "RIB", count: count((boat) => /rib/i.test(boat.category + " " + boat.title)) },
-    ].filter((item) => item.count > 0 || item.key === "all");
+      {
+        key: "brand:Cruise Series",
+        label: "Cruise Series",
+        count: count((boat) => boat.brand === "Cruise Series"),
+      },
+      {
+        key: "brand:Pro Angler",
+        label: "Pro Angler",
+        count: count((boat) => boat.brand === "Pro Angler"),
+      },
+      {
+        key: "brand:Atlas RIB",
+        label: "Atlas RIB",
+        count: count((boat) => boat.brand === "Atlas RIB"),
+      },
+      {
+        key: "brand:Silver Hull",
+        label: "Silver Hull",
+        count: count((boat) => boat.brand === "Silver Hull"),
+      },
+      {
+        key: "category:Aluminium",
+        label: "Aluminium",
+        count: count((boat) => /aluminium/i.test(boat.category)),
+      },
+      {
+        key: "category:Cruising",
+        label: "Cruising",
+        count: count((boat) => /cruising/i.test(boat.category)),
+      },
+      {
+        key: "category:Fishing",
+        label: "Fishing",
+        count: count((boat) => /fish/i.test(boat.category + " " + boat.title)),
+      },
+      {
+        key: "category:RIB",
+        label: "RIB",
+        count: count((boat) => /rib/i.test(boat.category + " " + boat.title)),
+      },
+    ];
+
+    return options.filter((item) => item.count > 0 || item.key === "all");
   }, [boats]);
 
   const filteredBoats = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const visible = boats.filter((boat) => {
-      const haystack = [boat.title, boat.brand, boat.category, boat.status, boat.price, boat.tax, boat.note, boat.badges.join(" ")]
+      const haystack = [
+        boat.title,
+        boat.brand,
+        boat.category,
+        boat.status,
+        boat.price,
+        boat.tax,
+        boat.note,
+        boat.badges.join(" "),
+      ]
         .join(" ")
         .toLowerCase();
       if (normalizedQuery && !haystack.includes(normalizedQuery)) return false;
@@ -149,6 +202,7 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
                   className={item.key === filter ? "active" : ""}
                   type="button"
                   key={item.key}
+                  aria-pressed={item.key === filter}
                   onClick={() => setFilter(item.key)}
                 >
                   <span>{item.label}</span>
@@ -162,8 +216,8 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
             <span>Source category</span>
             <strong>13 Axiom Marine stock products.</strong>
             <p>
-              Filters are generated from the visible stock cards: brand, sale state,
-              category and search terms all update the product grid.
+              Filters are generated from the visible stock cards: brand, sale state, category and
+              search terms all update the product grid.
             </p>
             <Link href="/contact">Contact sales</Link>
           </div>
@@ -173,13 +227,14 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
           <div className="stock-toolbar">
             <div>
               <span>
-                Showing {filteredBoats.length ? `1-${filteredBoats.length}` : "0"} of {boats.length} results
+                Showing {filteredBoats.length ? `1-${filteredBoats.length}` : "0"} of {boats.length}{" "}
+                results
               </span>
               <strong>{activeLabel}</strong>
             </div>
             <label>
               <span>Sort by</span>
-              <select value={sort} onChange={(event) => setSort(event.target.value)}>
+              <select value={sort} onChange={(event) => setSort(event.target.value as StockSort)}>
                 <option value="default">Default sorting</option>
                 <option value="price-low">Sort by price: low to high</option>
                 <option value="price-high">Sort by price: high to low</option>
@@ -192,7 +247,13 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
             {filteredBoats.map((boat) => (
               <article className="stock-product" key={boat.sku}>
                 <a className="stock-product-photo" href={boat.href}>
-                  <img src={boat.image} alt={boat.title} loading="lazy" />
+                  <Image
+                    src={boat.image}
+                    alt={boat.title}
+                    width={654}
+                    height={525}
+                    sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <span className="stock-status">{boat.status}</span>
                   {boat.oldPrice ? <span className="stock-sale">Sale</span> : null}
                 </a>
@@ -233,7 +294,9 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
             {filteredBoats.length === 0 ? (
               <div className="stock-empty">
                 <b>No stock boat matches this filter.</b>
-                <span>Clear search or choose another brand/category from the sticky filter bar.</span>
+                <span>
+                  Clear search or choose another brand/category from the sticky filter bar.
+                </span>
               </div>
             ) : null}
           </div>

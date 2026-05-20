@@ -27,23 +27,35 @@ export function legacySlugToTitle(slug: string) {
     .join(" ");
 }
 
-export const originalServicePages: Record<string, {
-  title: string;
-  eyebrow: string;
-  lead: string;
-  source: string;
-  cards: OriginalCard[];
-  sections: OriginalSection[];
-}> = {
+export const originalServicePages: Record<
+  string,
+  {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    source: string;
+    cards: OriginalCard[];
+    sections: OriginalSection[];
+  }
+> = {
   "registration-driving": {
     title: "Registration & Driving Courses",
     eyebrow: "Original service page",
     lead: "A desk-led route for registration paperwork, registration support, insurance referrals and skipper-course guidance, so the customer can move from purchase to legal use without chasing offices.",
     source: "https://marine.axiomprotocol.org/services/registration-driving/",
     cards: [
-      { title: "registration paperwork", text: "Registration files, required documents and next steps are prepared as one service flow." },
-      { title: "Driving courses", text: "Skipper licence and training guidance is connected to the sales and service desk." },
-      { title: "Insurance referrals", text: "The original service path includes referrals and practical handover support." },
+      {
+        title: "registration paperwork",
+        text: "Registration files, required documents and next steps are prepared as one service flow.",
+      },
+      {
+        title: "Driving courses",
+        text: "Skipper licence and training guidance is connected to the sales and service desk.",
+      },
+      {
+        title: "Insurance referrals",
+        text: "The original service path includes referrals and practical handover support.",
+      },
     ],
     sections: [
       {
@@ -52,7 +64,12 @@ export const originalServicePages: Record<string, {
           "Boat registration, required documents, licence guidance and post-purchase administration are handled as a practical workflow.",
           "The goal is simple: the customer leaves with a clear legal route, not only a boat invoice.",
         ],
-        items: ["Registration support", "Skipper-course guidance", "Insurance referrals", "Dealer document trail"],
+        items: [
+          "Registration support",
+          "Skipper-course guidance",
+          "Insurance referrals",
+          "Dealer document trail",
+        ],
       },
     ],
   },
@@ -62,9 +79,18 @@ export const originalServicePages: Record<string, {
     lead: "Workshop service for maintenance, tuning, electrical fit-out, winterising and practical support around boats that already work on Demo water.",
     source: "https://marine.axiomprotocol.org/services/tuning-service/",
     cards: [
-      { title: "Boat service", text: "Hull, motor and equipment checks are handled by the same demo workshop." },
-      { title: "Electrical fit-out", text: "Power, chargers, electronics and accessories are matched to the hull and use case." },
-      { title: "Season prep", text: "Winterising and re-launch checks keep the boat ready between seasons." },
+      {
+        title: "Boat service",
+        text: "Hull, motor and equipment checks are handled by the same demo workshop.",
+      },
+      {
+        title: "Electrical fit-out",
+        text: "Power, chargers, electronics and accessories are matched to the hull and use case.",
+      },
+      {
+        title: "Season prep",
+        text: "Winterising and re-launch checks keep the boat ready between seasons.",
+      },
     ],
     sections: [
       {
@@ -83,9 +109,18 @@ export const originalServicePages: Record<string, {
     lead: "Fishing boat tuning focused on casting decks, livewells, trolling motor prep, sonar positions, rod storage and the details that matter to serious anglers.",
     source: "https://marine.axiomprotocol.org/services/expert-tuning-of-angler-boats/",
     cards: [
-      { title: "Fishing layout", text: "Decks, livewells, storage and working space are planned around real angling use." },
-      { title: "Trolling prep", text: "Bow motors, battery capacity and controls are matched before installation." },
-      { title: "Sonar planning", text: "Displays, transducers and cable routes are arranged as part of the fit-out." },
+      {
+        title: "Fishing layout",
+        text: "Decks, livewells, storage and working space are planned around real angling use.",
+      },
+      {
+        title: "Trolling prep",
+        text: "Bow motors, battery capacity and controls are matched before installation.",
+      },
+      {
+        title: "Sonar planning",
+        text: "Displays, transducers and cable routes are arranged as part of the fit-out.",
+      },
     ],
     sections: [
       {
@@ -94,19 +129,34 @@ export const originalServicePages: Record<string, {
           "The original page makes this a specialist service for fishing platforms, not generic accessory installation.",
           "The service connects hull layout, electronics, power, livewell and storage choices into one build plan.",
         ],
-        items: ["Casting platforms", "Livewells", "Rod storage", "Trolling motor prep", "Sonar and display layout"],
+        items: [
+          "Casting platforms",
+          "Livewells",
+          "Rod storage",
+          "Trolling motor prep",
+          "Sonar and display layout",
+        ],
       },
     ],
   },
   "outboard-engine-installation": {
     title: "Outboard Engine Installation",
     eyebrow: "Original service page",
-    lead: "Outboard installation for Outboard Y, Outboard M, Honda and Outboard T, including rigging, steering, prop advice and calibration through the demo workshop.",
+    lead: "Outboard installation for Outboard Y, Outboard M, Outboard H and Outboard T, including rigging, steering, prop advice and calibration through the demo workshop.",
     source: "https://marine.axiomprotocol.org/services/outboard-engine-installation/",
     cards: [
-      { title: "Engine fitting", text: "Outboards are mounted, rigged and checked as workshop work, not just boxed retail." },
-      { title: "Steering and controls", text: "Hydraulic steering, controls and cable paths are sized for the boat." },
-      { title: "Prop and setup", text: "Propeller advice and practical calibration support are part of the handover." },
+      {
+        title: "Engine fitting",
+        text: "Outboards are mounted, rigged and checked as workshop work, not just boxed retail.",
+      },
+      {
+        title: "Steering and controls",
+        text: "Hydraulic steering, controls and cable paths are sized for the boat.",
+      },
+      {
+        title: "Prop and setup",
+        text: "Propeller advice and practical calibration support are part of the handover.",
+      },
     ],
     sections: [
       {
@@ -115,7 +165,14 @@ export const originalServicePages: Record<string, {
           "The original service positions outboard installation as a complete setup: engine, steering, rigging, prop, electronics interface and test plan.",
           "It belongs close to both the boat catalog and the equipment shop, because purchase decisions change the installation.",
         ],
-        items: ["Outboard Y", "Outboard M", "Honda", "Outboard T", "Hydraulic steering", "Prop matching"],
+        items: [
+          "Outboard Y",
+          "Outboard M",
+          "Outboard H",
+          "Outboard T",
+          "Hydraulic steering",
+          "Prop matching",
+        ],
       },
     ],
   },
@@ -166,42 +223,77 @@ export const originalBlogPosts: OriginalCard[] = [
   },
 ];
 
-export const originalBlogCategories = [
-  "Main News",
-  "RIBs",
-  "Tuning Reviews",
-  "Toate",
-];
+export const originalBlogCategories = ["Main News", "RIBs", "Tuning Reviews", "Toate"];
 
 export const originalProductCategoryGroups = [
   {
     title: "Batteries",
-    items: ["Green Cell batteries", "OPTIMA batteries", "Marine Cell batteries", "Marine Cell chargers", "Ultimatron batteries"],
+    items: [
+      "Green Pack batteries",
+      "Power Pack batteries",
+      "Marine Cell batteries",
+      "Marine Cell chargers",
+      "Ultimate batteries",
+    ],
   },
   {
     title: "Boats and motors",
-    items: ["Boats in stock", "Outboard motors", "Honda", "Outboard Y", "Power-lift JackPlate", "Electric motors", "E-Motor", "E-Motor", "Motor Guide"],
+    items: [
+      "Boats in stock",
+      "Outboard motors",
+      "Outboard H",
+      "Outboard Y",
+      "Power-lift JackPlate",
+      "Electric motors",
+      "E-Motor",
+      "E-Motor",
+      "Guide Motor",
+    ],
   },
   {
     title: "Electronics and navigation",
-    items: ["Navigation equipment", "Sonars", "Marine sonars", "Sonar Pro", "Special Offers Marine Nav", "Quatix smartwatches"],
+    items: [
+      "Navigation equipment",
+      "Sonars",
+      "Marine sonars",
+      "Sonar Pro",
+      "Special Offers Marine Nav",
+      "Marine smartwatches",
+    ],
   },
   {
     title: "Deck, mounts and accessories",
-    items: ["Marine accessories", "Marinac", "Hardware Co", "T-H Marine", "Mounts", "BoatBuckle", "KED Mounts", "Mount Co", "Smart Vision", "Stronger"],
+    items: [
+      "Marine accessories",
+      "Marine Kit",
+      "Hardware Co",
+      "T-H Deck",
+      "Mounts",
+      "Boat Strap",
+      "K-Mounts",
+      "Mount Co",
+      "Smart View",
+      "Strong Gear",
+    ],
   },
   {
     title: "Light, audio and steering",
-    items: ["Marine audio", "Marine lights", "Hardware Co lights", "RIGID INDUSTRIES", "Hydraulic Steering System"],
+    items: [
+      "Marine audio",
+      "Marine lights",
+      "Hardware Co lights",
+      "Rigid Light Co",
+      "Hydraulic Steering System",
+    ],
   },
 ];
 
 export const originalProductTags = [
-  "echomap",
+  "chartplotter",
   "marine-nav",
-  "gpsmap",
-  "livescope",
-  "quatix",
+  "gps",
+  "live-scan",
+  "marine-watch",
   "smartwatches",
   "sonars",
   "trolling motor",
@@ -232,24 +324,42 @@ export const originalBrands = [
   "Silver Hull Expedition",
   "Silver Hull Fish",
   "Silver Hull Pro",
-  "RESPO Trailers",
-  "Reval Marine",
+  "TowPro Trailers",
+  "Reef Line",
 ];
 
 export const returnPolicySections: OriginalSection[] = [
   {
     title: "Delivery",
-    text: ["Orders are processed through the shop and large products such as boats or trailers require coordinated delivery instead of standard parcel logic."],
-    items: ["Delivery time", "Order processing", "Delivery costs", "Large-product delivery", "Additional charges", "Delay handling"],
+    text: [
+      "Orders are processed through the shop and large products such as boats or trailers require coordinated delivery instead of standard parcel logic.",
+    ],
+    items: [
+      "Delivery time",
+      "Order processing",
+      "Delivery costs",
+      "Large-product delivery",
+      "Additional charges",
+      "Delay handling",
+    ],
   },
   {
     title: "Returns",
-    text: ["The return policy separates standard products from items that cannot be returned after custom work, special installation or use-specific preparation."],
-    items: ["Return conditions", "Products excluded from return", "Return procedure", "Return shipping costs"],
+    text: [
+      "The return policy separates standard products from items that cannot be returned after custom work, special installation or use-specific preparation.",
+    ],
+    items: [
+      "Return conditions",
+      "Products excluded from return",
+      "Return procedure",
+      "Return shipping costs",
+    ],
   },
   {
     title: "Refunds and problems",
-    text: ["Refund handling and incorrectly delivered or defective products are treated as separate support cases."],
+    text: [
+      "Refund handling and incorrectly delivered or defective products are treated as separate support cases.",
+    ],
     items: ["Refunds", "Defective products", "Incorrectly delivered products"],
   },
 ];
@@ -257,22 +367,49 @@ export const returnPolicySections: OriginalSection[] = [
 export const privacyPolicySections: OriginalSection[] = [
   {
     title: "Data controller and collected data",
-    text: ["The privacy policy explains who Axiom Marine is, what customer data is collected and how that data is collected through orders, forms, inquiries and newsletter flows."],
+    text: [
+      "The privacy policy explains who Axiom Marine is, what customer data is collected and how that data is collected through orders, forms, inquiries and newsletter flows.",
+    ],
     items: ["Who we are", "What data we collect", "How we collect data"],
   },
   {
     title: "Use and legal basis",
-    text: ["The policy covers why data is used, the legal basis for processing, order handling, payments, customer service and product inquiries."],
-    items: ["Why data is used", "Legal basis", "Orders and payments", "Customer service", "Product inquiries"],
+    text: [
+      "The policy covers why data is used, the legal basis for processing, order handling, payments, customer service and product inquiries.",
+    ],
+    items: [
+      "Why data is used",
+      "Legal basis",
+      "Orders and payments",
+      "Customer service",
+      "Product inquiries",
+    ],
   },
   {
     title: "Marketing, cookies and sharing",
-    text: ["Newsletter communication, cookies, third-party services, external links and data sharing are documented as part of the original privacy page."],
-    items: ["Newsletter", "Cookies", "Third-party services", "External links", "International transfers"],
+    text: [
+      "Newsletter communication, cookies, third-party services, external links and data sharing are documented as part of the original privacy page.",
+    ],
+    items: [
+      "Newsletter",
+      "Cookies",
+      "Third-party services",
+      "External links",
+      "International transfers",
+    ],
   },
   {
     title: "Retention and rights",
-    text: ["The original policy also covers retention time, user rights, data security, children's privacy, updates to the policy and contact routes."],
-    items: ["Retention", "User rights", "Data security", "Children's privacy", "Policy changes", "Contact"],
+    text: [
+      "The original policy also covers retention time, user rights, data security, children's privacy, updates to the policy and contact routes.",
+    ],
+    items: [
+      "Retention",
+      "User rights",
+      "Data security",
+      "Children's privacy",
+      "Policy changes",
+      "Contact",
+    ],
   },
 ];

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { OriginalInfoPage } from "@/components/original/OriginalInfoPage";
-import {
-  legacySlugToTitle,
-  originalBodyTypes,
-  originalBrands,
-} from "@/lib/original-site-data";
+import { legacySlugToTitle, originalBodyTypes, originalBrands } from "@/lib/original-site-data";
 
 type BoatCatalogPageProps = {
   params: Promise<{ slug: string }>;
@@ -62,7 +58,9 @@ export default async function BoatCatalogPage({ params }: BoatCatalogPageProps) 
         },
         {
           title: "Catalog indexes",
-          text: ["Original body-type and make-brand routes are preserved as the navigation backbone around every boat detail page."],
+          text: [
+            "Original body-type and make-brand routes are preserved as the navigation backbone around every boat detail page.",
+          ],
           items: [...originalBodyTypes, ...originalBrands],
         },
       ]}

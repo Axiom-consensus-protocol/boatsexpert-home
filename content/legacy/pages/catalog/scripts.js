@@ -171,9 +171,9 @@ const BOATS = [
         if (l.startsWith('atlas rib ')) return brand === 'atlas rib' && model.includes(l.replace('atlas rib ', '').trim());
         if (l.includes('atlas ribxy')) return brand === 'atlas ribxy';
         if (l.includes('trailer x')) return brand === 'trailer x';
-        if (l.includes('respo')) return brand === 'respo';
+        if (l.includes('towpro')) return brand === 'towpro';
         if (l.includes('silver hull')) return brand === 'silver hull';
-        if (l.includes('reval')) return brand === 'reval marine';
+        if (l.includes('reef')) return brand === 'reef line';
         return brand === l || brand.includes(l);
       });
     };
@@ -186,7 +186,7 @@ const BOATS = [
         if (l.includes('fishing')) return /(fishing|angler|casting|trolling|livewell|pro)/.test(haystack);
         if (l.includes('rib')) return /(rib|tube|inflatable|gala)/.test(haystack);
         if (l.includes('cruising') || l.includes('fiberglass')) return /(cruising|cabin|grp|fibreglass|family|antares)/.test(haystack);
-        if (l.includes('trailer')) return /(trailer|respo|towable)/.test(haystack);
+        if (l.includes('trailer')) return /(trailer|towpro|towable)/.test(haystack);
         return haystack.includes(l.replace(' boats', ''));
       });
     };

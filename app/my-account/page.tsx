@@ -15,9 +15,18 @@ export default function MyAccountPage() {
       lead="The original site included a customer account area. This route preserves the entry point and explains where order history, customer details and dealer communication belong in the new structure."
       source="https://marine.axiomprotocol.org/my-account/"
       cards={[
-        { title: "Order history", text: "A future account flow can show shop orders, quote requests and service desk history." },
-        { title: "Customer details", text: "Contact information, delivery city and preferred language stay connected to the sales desk." },
-        { title: "Dealer support", text: "Boat orders often require human confirmation, so the account page remains linked to contact routes." },
+        {
+          title: "Order history",
+          text: "A future account flow can show shop orders, quote requests and service desk history.",
+        },
+        {
+          title: "Customer details",
+          text: "Contact information, delivery city and preferred language stay connected to the sales desk.",
+        },
+        {
+          title: "Dealer support",
+          text: "Boat orders often require human confirmation, so the account page remains linked to contact routes.",
+        },
       ]}
     />
   );

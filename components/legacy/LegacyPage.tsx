@@ -11,10 +11,7 @@ export function LegacyPage({ slug }: LegacyPageProps) {
 
   return (
     <>
-      <style
-        data-legacy-page-style={page.slug}
-        dangerouslySetInnerHTML={{ __html: page.styles }}
-      />
+      <style data-legacy-page-style={page.slug} dangerouslySetInnerHTML={{ __html: page.styles }} />
       {page.sections.map((section) => (
         <HtmlFragment
           key={section.name}

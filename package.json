@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "prepare:legacy": "node scripts/prepare-legacy-content.mjs",
+    "verify:public": "node scripts/verify-public-readiness.mjs",
+    "verify": "pnpm verify:public && pnpm typecheck && pnpm lint && pnpm build",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build": "next build",

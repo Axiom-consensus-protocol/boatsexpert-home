@@ -2,7 +2,7 @@
   const productFitNotes = [
     ['Up to 150 hp', 'Hydraulic kit', '€932 sale'],
     ['Helm Luxe', 'Hydraulic system', '€1,140 sale'],
-    ['75 Ah', 'Optima BlueTop', '€433'],
+    ['75 Ah', 'Power Pack', '€433'],
     ['12.70 AV', 'Waterproof charger', '€294'],
     ['12.35 / 12.50 / 12.70 AV', '12.6V / 20A', '€183'],
     ['14-43 inch', 'Stainless tie-down', '€129.99 sale'],
@@ -10,8 +10,8 @@
     ['Cruise Series', 'Antares 7 Comfort', '€54,002'],
     ['Cruise Series', 'Antares 7 Essential', '€50,554'],
     ['Outboard Y', 'F60FETL LAN A', 'Outboard'],
-    ['Marine Nav', 'ECHOMAP Ultra 122sv', 'GT56UHD'],
-    ['E-Motor', 'Ultrex Quest 90/115', 'Electric motor']
+    ['Marine Nav', 'Chartplotter Ultra 122sv', 'GT56UHD'],
+    ['E-Motor', 'E-Quest 90/115', 'Electric motor']
   ];
 
   document.querySelectorAll('.pcard').forEach((card, index) => {
@@ -74,13 +74,13 @@
     if (/(hydraulic|helm|steering)/.test(haystack)) categories.add('hydraulic steering');
     if (/(battery|batteries|charger|outdoorbox|agm|12\.6v|marine-cell)/.test(haystack)) categories.add('batteries');
     if (/(cruise|pro-angler|boats in stock|cruising)/.test(haystack)) categories.add('boats in stock');
-    if (/(boatbuckle|tie-down|mount|bracket)/.test(haystack)) categories.add('mounts');
+    if (/(boat-strap|boat strap|tie-down|mount|bracket)/.test(haystack)) categories.add('mounts');
     if (/(outboard|outboard-y|outboard-m|outboard-h|outboard-t|f60)/.test(haystack)) categories.add('outboard motors');
-    if (/(marine-nav|echomap|sonar|chartplotter|transducer|sidevu)/.test(haystack)) categories.add('sonars');
-    if (/(e-motor|ultrex|electric|trolling)/.test(haystack)) categories.add('electric motors');
+    if (/(marine-nav|chartplotter|sonar|transducer|sidevu)/.test(haystack)) categories.add('sonars');
+    if (/(e-motor|e-quest|electric|trolling)/.test(haystack)) categories.add('electric motors');
     if (/(audio)/.test(haystack)) categories.add('marine audio');
     if (/(light|rigid)/.test(haystack)) categories.add('marine lights');
-    if (/(navigation|quatix)/.test(haystack)) categories.add('navigation');
+    if (/(navigation|marine watches|smartwatch)/.test(haystack)) categories.add('navigation');
     return categories;
   };
   const records = cards.map((card, index) => {
@@ -104,11 +104,11 @@
     },
     'steering-rigging': {
       title: 'Steering and rigging',
-      lead: 'Helm hydraulic steering and BoatBuckle hardware kept in one service lane.'
+      lead: 'Helm hydraulic steering and Boat Strap hardware kept in one service lane.'
     },
     power: {
       title: 'Power and charging',
-      lead: 'Optima battery and Marine Cell chargers live in their own power section.'
+      lead: 'Power Pack battery and Marine Cell chargers live in their own power section.'
     }
   };
   const groupOrder = ['boats', 'motors-electronics', 'steering-rigging', 'power'];

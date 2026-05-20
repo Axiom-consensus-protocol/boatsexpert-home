@@ -38,7 +38,11 @@ export function OriginalInfoPage({
                 <div className="orig-ey">{eyebrow}</div>
                 <h1>{title}</h1>
                 <p>{lead}</p>
-                {source ? <a className="orig-source" href={source}>Original source</a> : null}
+                {source ? (
+                  <a className="orig-source" href={source}>
+                    Original source
+                  </a>
+                ) : null}
               </div>
               <aside className="orig-aside">
                 <span>{asideTitle}</span>
@@ -88,7 +92,9 @@ export function OriginalInfoPage({
                 <aside className="orig-directory">
                   <span>{asideTitle}</span>
                   {asideItems.map((item) => (
-                    <b className="orig-directory-item" key={item}>{item}</b>
+                    <b className="orig-directory-item" key={item}>
+                      {item}
+                    </b>
                   ))}
                 </aside>
               ) : null}
@@ -99,4 +105,3 @@ export function OriginalInfoPage({
     </>
   );
 }
-

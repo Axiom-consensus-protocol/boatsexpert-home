@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags -- legacy chrome/theme CSS is intentionally served as static files */
 import type { Metadata, Viewport } from "next";
 import {
   Fraunces,
@@ -87,9 +88,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage.url],
   },
   icons: {
-    icon: [
-      { url: "/assets/logo/logo-brass.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/assets/logo/logo-brass.svg", type: "image/svg+xml" }],
   },
 };
 

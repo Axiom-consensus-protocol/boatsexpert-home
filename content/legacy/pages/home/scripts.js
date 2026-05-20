@@ -40,7 +40,7 @@
           price: 'from €240',
           image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'marine-nav sonar fishfinder chartplotter navigation echomap'
+          tags: 'marine-nav sonar fishfinder chartplotter navigation'
         },
         {
           title: 'Outboard Y outboard motors',
@@ -80,7 +80,7 @@
           price: '182 items',
           image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'marine accessories hardware-co mount-co ked mounts lights audio steering'
+          tags: 'marine accessories hardware-co mount-co k-mounts lights audio steering'
         },
         {
           title: 'Expert tuning of angler boats',
@@ -95,7 +95,7 @@
         {
           title: 'Outboard engine installation',
           type: 'Service',
-          eyebrow: 'Outboard Y · Outboard M · Honda',
+          eyebrow: 'Outboard Y · Outboard M · Outboard H',
           desc: 'Engine fitting, rigging, hydraulic steering, calibration and warranty paperwork.',
           price: 'service',
           image: 'assets/brands/_placeholder.svg',

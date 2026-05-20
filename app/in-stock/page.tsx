@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { InStockShop, type StockBoatItem } from "@/components/stock/InStockShop";
 import { defaultOgImage } from "@/lib/og";
@@ -29,15 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-type IconName =
-  | "anchor"
-  | "cart"
-  | "filter"
-  | "search"
-  | "shield"
-  | "truck"
-  | "wallet"
-  | "wrench";
+type IconName = "anchor" | "cart" | "filter" | "search" | "shield" | "truck" | "wallet" | "wrench";
 
 type StockBoat = StockBoatItem;
 
@@ -226,12 +219,12 @@ const stockBoats: StockBoat[] = [
     note: "The second-page discounted package: hull, Outboard Y motor and dealer preparation logic.",
   },
   {
-    title: "Reval Marine CG47",
-    brand: "Reval Marine",
+    title: "Reef Line CG47",
+    brand: "Reef Line",
     category: "Aluminium",
     price: "EUR 21,803",
     tax: "VAT included",
-    image: "/assets/stock/reval-cg47.jpg",
+    image: "/assets/stock/reef-cg47.jpg",
     href: "/contact",
     sku: "EE-VIC47094F323",
     status: "Ready to quote",
@@ -241,7 +234,7 @@ const stockBoats: StockBoat[] = [
       ["Grade", "Series"],
       ["Quote", "Ready"],
     ],
-    note: "Compact Reval aluminium boat kept in the stock department for quick quote and fit-out.",
+    note: "Compact Reef Line aluminium boat kept in the stock department for quick quote and fit-out.",
   },
   {
     title: "RIB Atlas RIB ATLANTIS A390Q",
@@ -283,11 +276,27 @@ const stockBoats: StockBoat[] = [
 
 const trustItems: Array<{ icon: IconName; title: string; text: string }> = [
   { icon: "anchor", title: "Ready hulls", text: "13 boats from the original stock department." },
-  { icon: "cart", title: "Shop flow", text: "Price, reserve, add-to-cart style actions and sales desk follow-up." },
-  { icon: "wrench", title: "Workshop", text: "Motor, electronics, trailer and handover checked in demo." },
-  { icon: "wallet", title: "Financing", text: "Financing options and transparent sales process kept from the original copy." },
+  {
+    icon: "cart",
+    title: "Shop flow",
+    text: "Price, reserve, add-to-cart style actions and sales desk follow-up.",
+  },
+  {
+    icon: "wrench",
+    title: "Workshop",
+    text: "Motor, electronics, trailer and handover checked in demo.",
+  },
+  {
+    icon: "wallet",
+    title: "Financing",
+    text: "Financing options and transparent sales process kept from the original copy.",
+  },
   { icon: "truck", title: "Delivery", text: "Demo region plus wider European delivery planning." },
-  { icon: "shield", title: "Support", text: "Guidance before purchase and full-service support after handover." },
+  {
+    icon: "shield",
+    title: "Support",
+    text: "Guidance before purchase and full-service support after handover.",
+  },
 ];
 
 const systemLinks = [
@@ -297,7 +306,7 @@ const systemLinks = [
   "Marine audio",
   "Marine lights",
   "Outboard motors for boat",
-  "Quatix smartwatches",
+  "Marine smartwatches",
   "Mounts for boat",
   "Sonars for boat",
 ];
@@ -404,9 +413,9 @@ export default function InStockPage() {
                   Boats in stock, <em>ready to hit the water.</em>
                 </h1>
                 <p>
-                  Built from the original Axiom Marine stock category: 13 real products,
-                  prices, sale states, add-to-cart actions, dealer categories, financing,
-                  delivery and workshop support.
+                  Built from the original Axiom Marine stock category: 13 real products, prices,
+                  sale states, add-to-cart actions, dealer categories, financing, delivery and
+                  workshop support.
                 </p>
                 <div className="stock-hero-actions">
                   <a href="#stock-shop" className="stock-btn stock-btn-primary">
@@ -419,7 +428,14 @@ export default function InStockPage() {
               </div>
 
               <a className="stock-hero-card" href={heroBoat.href}>
-                <img src={heroBoat.image} alt={heroBoat.title} />
+                <Image
+                  src={heroBoat.image}
+                  alt={heroBoat.title}
+                  width={900}
+                  height={620}
+                  priority
+                  sizes="(max-width: 900px) 100vw, 420px"
+                />
                 <div className="stock-hero-card-body">
                   <span>{heroBoat.status}</span>
                   <strong>{heroBoat.title}</strong>
@@ -470,35 +486,53 @@ export default function InStockPage() {
         <section className="stock-editorial">
           <div className="container">
             <div className="stock-editorial-copy">
-              <div className="stock-ey">Motorboats for fishing and relaxing with delivery all over Europe</div>
+              <div className="stock-ey">
+                Motorboats for fishing and relaxing with delivery all over Europe
+              </div>
               <h2>
                 A stock boat should be <em>easy to choose and safe to buy.</em>
               </h2>
               <p>
-                The original category text is the backbone here: boats ready to hit
-                the water, available in different sizes and styles, including fishing
-                boats, aluminium boats, fiberglass boats and cruising boats.
+                The original category text is the backbone here: boats ready to hit the water,
+                available in different sizes and styles, including fishing boats, aluminium boats,
+                fiberglass boats and cruising boats.
               </p>
               <p>
-                Fishing boats are presented for anglers with rod holders, livewells
-                and storage. Aluminium boats stay lightweight and durable for shallow
-                water. Fiberglass boats carry the smooth ride and modern design angle,
-                while cruising boats focus on comfort for longer journeys.
+                Fishing boats are presented for anglers with rod holders, livewells and storage.
+                Aluminium boats stay lightweight and durable for shallow water. Fiberglass boats
+                carry the smooth ride and modern design angle, while cruising boats focus on comfort
+                for longer journeys.
               </p>
               <p>
-                The buying flow is not only product cards: financing options,
-                full-service support, transparent sales process and expert guidance are
-                part of the section, so the buyer can move from browsing to a real handover.
+                The buying flow is not only product cards: financing options, full-service support,
+                transparent sales process and expert guidance are part of the section, so the buyer
+                can move from browsing to a real handover.
               </p>
             </div>
             <div className="stock-editorial-panel">
               <span>Dealer support map</span>
               <strong>Selection, reserve, fit-out, delivery.</strong>
               <div className="stock-flow">
-                <div><Icon name="search" /><b>Choose</b><small>Stock, price, category</small></div>
-                <div><Icon name="cart" /><b>Reserve</b><small>Cart or sales desk</small></div>
-                <div><Icon name="wrench" /><b>Prepare</b><small>Motor, sonar, trailer</small></div>
-                <div><Icon name="truck" /><b>Deliver</b><small>RO and Europe</small></div>
+                <div>
+                  <Icon name="search" />
+                  <b>Choose</b>
+                  <small>Stock, price, category</small>
+                </div>
+                <div>
+                  <Icon name="cart" />
+                  <b>Reserve</b>
+                  <small>Cart or sales desk</small>
+                </div>
+                <div>
+                  <Icon name="wrench" />
+                  <b>Prepare</b>
+                  <small>Motor, sonar, trailer</small>
+                </div>
+                <div>
+                  <Icon name="truck" />
+                  <b>Deliver</b>
+                  <small>RO and Europe</small>
+                </div>
               </div>
             </div>
           </div>
@@ -518,7 +552,15 @@ export default function InStockPage() {
             <div className="stock-system-grid">
               {systemLinks.map((item) => (
                 <Link href="/shop" key={item}>
-                  <Icon name={item.includes("motor") ? "anchor" : item.includes("Batteries") ? "wallet" : "wrench"} />
+                  <Icon
+                    name={
+                      item.includes("motor")
+                        ? "anchor"
+                        : item.includes("Batteries")
+                          ? "wallet"
+                          : "wrench"
+                    }
+                  />
                   <span>{item}</span>
                 </Link>
               ))}
@@ -529,4 +571,3 @@ export default function InStockPage() {
     </>
   );
 }
-
