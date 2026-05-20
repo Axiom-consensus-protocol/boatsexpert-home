@@ -9,7 +9,7 @@
     "rule": "EN demo content."
   },
   "site.title": {
-    "en": "Axiom Marine — Aluminium & fishing boats for SMB. Finval, Beneteau, NorthSilver."
+    "en": "Axiom Marine — Aluminium & fishing boats for SMB. Pro Angler, Cruise Series, Silver Hull."
   },
   "site.description": {
     "en": "Axiom Marine live catalog, boats in stock and marine equipment shop in Demo location."
@@ -180,13 +180,13 @@
     "en": "From the <em>logbook.</em>"
   },
   "spotlight.eyebrow": {
-    "en": "Finval catalog route"
+    "en": "Pro Angler catalog route"
   },
   "spotlight.title": {
     "en": "Built for shallow water. <em>Built like a workshop tool.</em>"
   },
   "spotlight.sec_link": {
-    "en": "14 Finval models →"
+    "en": "14 Pro Angler models →"
   },
   "spotlight.badge_exclusive": {
     "en": "Live catalog brand"
@@ -207,7 +207,7 @@
     "en": "Hull length over-all <b>4.65 m</b>"
   },
   "spotlight.body_eyebrow": {
-    "en": "Finval 470 EVO DC · since 2024"
+    "en": "Pro Angler 470 · since 2024"
   },
   "spotlight.body_title": {
     "en": "The boat that <em>clears 19 cm.</em>"
@@ -339,7 +339,7 @@
     "en": "324 listings <em>in catalog</em>"
   },
   "why.c4.p": {
-    "en": "The live listing archive opens with GALA VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B. Price filter range: €0-€284,999."
+    "en": "The live listing archive opens with Atlas RIB VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B. Price filter range: €0-€284,999."
   },
   "why.c4.tag": {
     "en": "Filter €0-€284,999"
@@ -552,7 +552,7 @@
     "en": "Draft only 19 cm"
   },
   "featured.b1.brand": {
-    "en": "Finval · live route"
+    "en": "Pro Angler · live route"
   },
   "featured.b1.model": {
     "en": "470 EVO DC"
@@ -564,7 +564,7 @@
     "en": "150 hp · 12 pax"
   },
   "featured.b2.brand": {
-    "en": "GALA · RIB Specialist"
+    "en": "Atlas RIB · RIB Specialist"
   },
   "featured.b2.model": {
     "en": "VIKING V6F"
@@ -576,7 +576,7 @@
     "en": "200 hp aluminium"
   },
   "featured.b3.brand": {
-    "en": "GALAXY Pro · Aluminium"
+    "en": "Atlas RIBXY Pro · Aluminium"
   },
   "featured.b3.model": {
     "en": "Pilot P6.5"
@@ -585,19 +585,19 @@
     "en": "Cabin cruiser tuned for the Black Sea and Danube delta. 200 hp of factory-rated horsepower on a welded hull that handles 1.2 m waves clean."
   },
   "hero.trust.1.b": {
-    "en": "Finval"
+    "en": "Pro Angler"
   },
   "hero.trust.1.s": {
     "en": "Live catalog route"
   },
   "hero.trust.2.b": {
-    "en": "Garmin"
+    "en": "Marine Nav"
   },
   "hero.trust.2.s": {
     "en": "Sonar · chartplotter"
   },
   "hero.trust.3.b": {
-    "en": "Yamaha"
+    "en": "Outboard Y"
   },
   "hero.trust.3.s": {
     "en": "Installed in shop"
@@ -618,16 +618,16 @@
     "en": "Draft 19 cm"
   },
   "hero.feat.a_garmin": {
-    "en": "Garmin sonar ready"
+    "en": "Marine Nav sonar ready"
   },
   "hero.feat.a_hull": {
     "en": "AlMg 5083"
   },
   "hero.feat.brand": {
-    "en": "Finval — live route"
+    "en": "Pro Angler — live route"
   },
   "hero.feat.killer.k": {
-    "en": "Shallowest draft in the Finval range"
+    "en": "Shallowest draft in the Pro Angler range"
   },
   "hero.feat.killer.v": {
     "en": "Draft only 19 cm"
@@ -654,7 +654,7 @@
     "en": "Live <em>Catalog</em>"
   },
   "brands.t1.p": {
-    "en": "Live catalog routes include BIG FOOT, Beneteau, Finval, GALA, GALAXY, LANDX, NorthSilver, RESPO and Reval Grade."
+    "en": "Live catalog routes include BIG FOOT, Cruise Series, Pro Angler, Atlas RIB, Atlas RIBXY, Trailer X, Silver Hull, RESPO and Reval Marine."
   },
   "brands.t1.stat": {
     "en": "<b>324</b>listings · 13 stock boats · 942 shop results"
@@ -707,13 +707,13 @@
   "brands.t2.c_minnkota": {
     "en": "Electric motors"
   },
-  "brands.t2.c_humminbird": {
+  "brands.t2.c_sonar-pro": {
     "en": "Fishfinders"
   },
   "brands.t2.c_rebelcell": {
     "en": "Lithium"
   },
-  "brands.t2.c_osculati": {
+  "brands.t2.c_hardware-co": {
     "en": "Accessories"
   },
   "brands.t2.c_ram": {
@@ -753,7 +753,7 @@
     "en": "Outboard <em>rigging</em>"
   },
   "services.s2.p": {
-    "en": "Yamaha, Mercury, Honda and Tohatsu installed with controls, propeller advice, steering and sea-trial calibration."
+    "en": "Outboard Y, Outboard M, Honda and Outboard T installed with controls, propeller advice, steering and sea-trial calibration."
   },
   "services.s2.m": {
     "en": "Rig my engine"
@@ -816,7 +816,7 @@
     "en": "<b>Since</b>2014 · demo"
   },
   "hero.ledger.exclusive": {
-    "en": "<b>Catalog</b>Finval · Beneteau · NorthSilver"
+    "en": "<b>Catalog</b>Pro Angler · Cruise Series · Silver Hull"
   },
   "hero.ledger.warranty": {
     "en": "<b>Shop</b>942 results · live site"
@@ -867,7 +867,7 @@
     "en": "324 listings · 13 boats in stock · demo"
   },
   "hero.featured_tag": {
-    "en": "<span class=\"pulse\"></span>Finval 470 EVO DC · Garmin-ready rig"
+    "en": "<span class=\"pulse\"></span>Pro Angler 470 · Marine Nav-ready rig"
   },
   "types.catalog_share": {
     "en": "Catalog share"
@@ -912,25 +912,25 @@
     "en": "Catalog"
   },
   "foot.col_cat.l1": {
-    "en": "Finval Boats"
+    "en": "Pro Angler Boats"
   },
   "foot.col_cat.l2": {
-    "en": "Beneteau"
+    "en": "Cruise Series"
   },
   "foot.col_cat.l3": {
-    "en": "NorthSilver Fish"
+    "en": "Silver Hull Fish"
   },
   "foot.col_cat.l4": {
-    "en": "NorthSilver Expedition"
+    "en": "Silver Hull Expedition"
   },
   "foot.col_cat.l5": {
-    "en": "GALA RIB"
+    "en": "Atlas RIB"
   },
   "foot.col_cat.l6": {
-    "en": "GALAXY Pro"
+    "en": "Atlas RIBXY Pro"
   },
   "foot.col_cat.l7": {
-    "en": "LANDX"
+    "en": "Trailer X"
   },
   "foot.col_cat.l8": {
     "en": "RESPO Trailers"
@@ -1062,7 +1062,7 @@
     "en": "Engines, trolling motors and control."
   },
   "shop.cmd.1.p": {
-    "en": "Yamaha, Mercury, Honda, Tohatsu, Minn Kota, hydraulic steering and jack plates."
+    "en": "Outboard Y, Outboard M, Honda, Outboard T, E-Motor, hydraulic steering and jack plates."
   },
   "shop.cmd.1.f": {
     "en": "134 listed items"
@@ -1074,7 +1074,7 @@
     "en": "Sonar, navigation and dashboard."
   },
   "shop.cmd.2.p": {
-    "en": "Garmin, Humminbird, charts, watches, marine audio and console-ready electronics."
+    "en": "Marine Nav, Sonar Pro, charts, watches, marine audio and console-ready electronics."
   },
   "shop.cmd.2.f": {
     "en": "120 listed items"
@@ -1086,7 +1086,7 @@
     "en": "Power, light and deck hardware."
   },
   "shop.cmd.3.p": {
-    "en": "Rebelcell batteries, Osculati, RAM Mounts, KED and daily service-desk accessories."
+    "en": "Marine Cell batteries, Hardware Co, Mount Co, KED and daily service-desk accessories."
   },
   "shop.cmd.3.f": {
     "en": "249 listed items"
@@ -1146,7 +1146,7 @@
     "en": "One number for all of it"
   },
   "entry.catalog.c": {
-    "en": "Finval · Beneteau · NorthSilver · GALA · GALAXY Pro"
+    "en": "Pro Angler · Cruise Series · Silver Hull · Atlas RIB · Atlas RIBXY Pro"
   },
   "entry.instock.c": {
     "en": "Fishing platforms, RIBs, cabin boats and trailers."
@@ -1296,7 +1296,7 @@
     "en": "from €380"
   },
   "shop.dept8.note": {
-    "en": "Garmin skipper watches for engine data, navigation cues and day-to-day marine use."
+    "en": "Marine Nav skipper watches for engine data, navigation cues and day-to-day marine use."
   },
   "shop.dept8.action": {
     "en": "Open department"
@@ -1368,7 +1368,7 @@
     "en": "from €38"
   },
   "shop.dept12.note": {
-    "en": "RAM mounts, brackets and console hardware chosen for clean, serviceable electronics installs."
+    "en": "Mount-Co mounts, brackets and console hardware chosen for clean, serviceable electronics installs."
   },
   "shop.dept12.action": {
     "en": "Open department"
@@ -1383,7 +1383,7 @@
     "en": "Owner story · 8 min"
   },
   "blog.s1.title": {
-    "en": "Finval 470 EVO DC — one season on the Danube"
+    "en": "Pro Angler 470 — one season on the Danube"
   },
   "blog.s1.excerpt": {
     "en": "A 19 cm draft puts you in places others can't reach. Andrei spent ten weeks chasing pike in the Delta on a 470 EVO. Verdict from the helm."
@@ -1407,10 +1407,10 @@
     "en": "News · 3 min"
   },
   "blog.s3.title": {
-    "en": "Galaxy Pilot P6.5 has landed in demo"
+    "en": "Pilot Marine 6.5 has landed in demo"
   },
   "blog.s3.excerpt": {
-    "en": "Live listings include GALAXY PILOT - P6.5 at €26,330 with 6.50 m length, 12 passengers and 200 hp rating."
+    "en": "Live listings include Atlas RIBXY PILOT - P6.5 at €26,330 with 6.50 m length, 12 passengers and 200 hp rating."
   },
   "blog.s3.date": {
     "en": "05 May 2026"
@@ -1461,7 +1461,7 @@
     "en": "Search Axiom Marine catalog"
   },
   "quick.placeholder": {
-    "en": "Search Finval, Garmin, sonars, outboards..."
+    "en": "Search Pro Angler, Marine Nav, sonars, outboards..."
   },
   "quick.close": {
     "en": "Close"
@@ -1602,10 +1602,10 @@
     "en": "324 live results · 6 boat types · price filter €0-€284,999"
   },
   "catalog.hero.h1": {
-    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · BIG FOOT, Beneteau, Finval, GALAXY, GALA, LANDX, NorthSilver, RESPO, Reval Grade</span>"
+    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · BIG FOOT, Cruise Series, Pro Angler, Atlas RIBXY, Atlas RIB, Trailer X, Silver Hull, RESPO, Reval Marine</span>"
   },
   "catalog.hero.deck": {
-    "en": "Live Axiom Marine listings show aluminium boats, boat trailers, cruising boats, fiberglass boats, fishing boats and RIB boats. The current archive opens with GALA VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B."
+    "en": "Live Axiom Marine listings show aluminium boats, boat trailers, cruising boats, fiberglass boats, fishing boats and RIB boats. The current archive opens with Atlas RIB VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B."
   },
   "crumbs.home": {
     "en": "Home"
@@ -1716,10 +1716,10 @@
     "en": "Aluminium"
   },
   "boat.brand.line": {
-    "en": "Finval · Estonia · Aluminium Pro Angler"
+    "en": "Pro Angler · Estonia · Aluminium Pro Angler"
   },
   "boat.tagline": {
-    "en": "The shallowest draft in the Finval line — clears nineteen centimetres of water. Welded AlMg-5083 hull, RAPTOR coat, 55-litre tank, trolling-ready transom. Two anglers, one weekend, zero compromise."
+    "en": "The shallowest draft in the Pro Angler line — clears nineteen centimetres of water. Welded AlMg-5083 hull, RAPTOR coat, 55-litre tank, trolling-ready transom. Two anglers, one weekend, zero compromise."
   },
   "boat.badge.exclusive": {
     "en": "Live listing"
@@ -1776,7 +1776,7 @@
     "en": "+0 (000) 000 000"
   },
   "boat.dealer.role": {
-    "en": "Sales · Finval line"
+    "en": "Sales · Pro Angler line"
   },
   "boat.tab.overview": {
     "en": "Overview"
@@ -1836,7 +1836,7 @@
     "en": "Hydraulic steering"
   },
   "prod.brand.line": {
-    "en": "SeaStar / Dometic · Hydraulic Steering System"
+    "en": "Marine Systems · Hydraulic Steering System"
   },
   "prod.tagline": {
     "en": "Suitable for most single-outboard powered boats rated up to 150 hp including runabouts and inflatables."
@@ -2061,10 +2061,10 @@
     "en": "A short drive from the demo hub International Airport. Parking on-site, marked entrance, showroom on the right, workshop on the left. Walk in any business day between 10:00 and 17:30, or arrange a weekend viewing by phone or WhatsApp."
   },
   "cart.it1.br": {
-    "en": "SeaStar · Hydraulic"
+    "en": "Hydraulic · Hydraulic"
   },
   "cart.it1.nm": {
-    "en": "BayStar Hydraulic <em>HK4200</em>"
+    "en": "Helm Hydraulic <em>HK4200</em>"
   },
   "cart.it1.sku": {
     "en": "SKU HK4200A-3"
@@ -2088,25 +2088,25 @@
     "en": "Open shop →"
   },
   "cart.rel1.br": {
-    "en": "SeaStar · Luxe"
+    "en": "Hydraulic · Luxe"
   },
   "cart.rel1.nm": {
-    "en": "BayStar Luxe HK4222"
+    "en": "Helm Luxe HK4222"
   },
   "cart.rel2.br": {
-    "en": "SeaStar · Fluid"
+    "en": "Hydraulic · Fluid"
   },
   "cart.rel2.nm": {
     "en": "HA5430 hydraulic fluid · 2 L"
   },
   "cart.rel3.br": {
-    "en": "SeaStar · Tie-bar"
+    "en": "Hydraulic · Tie-bar"
   },
   "cart.rel3.nm": {
     "en": "Twin-engine tie-bar kit"
   },
   "cart.rel4.br": {
-    "en": "Rebelcell · Charger"
+    "en": "Marine Cell · Charger"
   },
   "cart.rel4.nm": {
     "en": "12.6V 20A waterproof charger"

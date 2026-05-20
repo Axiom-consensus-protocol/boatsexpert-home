@@ -93,8 +93,8 @@
           ['/in-stock', 'Boats in stock', '13 current stock entries'],
           ['/listings/body-type/aluminium-boats', 'Aluminium boats', 'Live body-type route'],
           ['/listings/body-type/fishing-boats', 'Fishing boats', 'Live body-type route'],
-          ['/listings/make-brand/finval', 'Finval Boats', 'Live make-brand route'],
-          ['/listings/make-brand/gala', 'GALA RIB', 'VIKING, ATLANTIS, Sprinter']
+          ['/listings/make-brand/finval', 'Pro Angler Boats', 'Live make-brand route'],
+          ['/listings/make-brand/gala', 'Atlas RIB', 'VIKING, ATLANTIS, Sprinter']
         ]
       },
       {
@@ -106,7 +106,7 @@
           ['/product-category/electric-motors', 'Electric motors', 'Live product category'],
           ['/product-category/sonars', 'Sonars', 'Live product category'],
           ['/product-category/batteries', 'Batteries', 'Live product category'],
-          ['/product-category/outboard-hydraulic-steering-system', 'Hydraulic steering', 'BayStar source category']
+          ['/product-category/outboard-hydraulic-steering-system', 'Hydraulic steering', 'Helm source category']
         ]
       },
       {

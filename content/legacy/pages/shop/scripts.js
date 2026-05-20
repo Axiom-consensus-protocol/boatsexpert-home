@@ -1,17 +1,17 @@
 (function initShopCards(){
   const productFitNotes = [
     ['Up to 150 hp', 'Hydraulic kit', '€932 sale'],
-    ['BayStar Luxe', 'Hydraulic system', '€1,140 sale'],
+    ['Helm Luxe', 'Hydraulic system', '€1,140 sale'],
     ['75 Ah', 'Optima BlueTop', '€433'],
     ['12.70 AV', 'Waterproof charger', '€294'],
     ['12.35 / 12.50 / 12.70 AV', '12.6V / 20A', '€183'],
     ['14-43 inch', 'Stainless tie-down', '€129.99 sale'],
-    ['Beneteau', 'Antares 6 OB', '€44,600'],
-    ['Beneteau', 'Antares 7 Comfort', '€54,002'],
-    ['Beneteau', 'Antares 7 Essential', '€50,554'],
-    ['Yamaha', 'F60FETL LAN A', 'Outboard'],
-    ['Garmin', 'ECHOMAP Ultra 122sv', 'GT56UHD'],
-    ['Minn Kota', 'Ultrex Quest 90/115', 'Electric motor']
+    ['Cruise Series', 'Antares 6 OB', '€44,600'],
+    ['Cruise Series', 'Antares 7 Comfort', '€54,002'],
+    ['Cruise Series', 'Antares 7 Essential', '€50,554'],
+    ['Outboard Y', 'F60FETL LAN A', 'Outboard'],
+    ['Marine Nav', 'ECHOMAP Ultra 122sv', 'GT56UHD'],
+    ['E-Motor', 'Ultrex Quest 90/115', 'Electric motor']
   ];
 
   document.querySelectorAll('.pcard').forEach((card, index) => {
@@ -96,19 +96,19 @@
   const groupMeta = {
     boats: {
       title: 'Boats in stock',
-      lead: 'Beneteau stock boats are separated from small marine gear for clean desktop browsing.'
+      lead: 'Cruise Series stock boats are separated from small marine gear for clean desktop browsing.'
     },
     'motors-electronics': {
       title: 'Motors and electronics',
-      lead: 'Yamaha, Garmin and Minn Kota source products grouped as rig-ready upgrades.'
+      lead: 'Outboard Y, Marine Nav and E-Motor source products grouped as rig-ready upgrades.'
     },
     'steering-rigging': {
       title: 'Steering and rigging',
-      lead: 'BayStar hydraulic steering and BoatBuckle hardware kept in one service lane.'
+      lead: 'Helm hydraulic steering and BoatBuckle hardware kept in one service lane.'
     },
     power: {
       title: 'Power and charging',
-      lead: 'Optima battery and Rebelcell chargers live in their own power section.'
+      lead: 'Optima battery and Marine Cell chargers live in their own power section.'
     }
   };
   const groupOrder = ['boats', 'motors-electronics', 'steering-rigging', 'power'];

@@ -2,8 +2,8 @@
   "slug": "product",
   "route": "/product",
   "source": "axiom-marine-demo/Product.html",
-  "title": "BayStar Hydraulic Steering Kit (up 150hp) — Axiom Marine",
-  "description": "BayStar Hydraulic Steering Kit HK4200A-3 product prototype using current Axiom Marine price, SKU, category and product copy.",
+  "title": "Hydraulic Steering Kit (up 150hp) — Axiom Marine",
+  "description": "Hydraulic Steering Kit HK4200A-3 product prototype using current Axiom Marine price, SKU, category and product copy.",
   "sections": [
     {
       "name": "01-product-band-crumbs",

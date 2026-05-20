@@ -3,19 +3,19 @@
     function __initQuickSearch(){
       const searchItems = [
         {
-          title: 'Finval 470 EVO DC',
+          title: 'Pro Angler 470',
           type: 'Boat',
-          eyebrow: 'Finval · Exclusive dealer',
-          desc: 'AlMg 5083 aluminium fishing boat, 4.65 m, draft only 19 cm, Garmin-ready cockpit.',
+          eyebrow: 'Pro Angler · Exclusive dealer',
+          desc: 'AlMg 5083 aluminium fishing boat, 4.65 m, draft only 19 cm, Marine Nav-ready cockpit.',
           price: '€20,490',
           image: 'assets/boats/finval-470-evo-10.jpg',
           url: 'Boat.html',
           tags: 'finval 470 evo dc aluminium fishing boat shallow draft garmin sonar'
         },
         {
-          title: 'GALA Viking V6F',
+          title: 'Atlas RIB V6',
           type: 'Boat',
-          eyebrow: 'GALA · RIB specialist',
+          eyebrow: 'Atlas RIB · RIB specialist',
           desc: '5.80 m inflatable safety with twelve seats, two consoles and family deck layout.',
           price: '€26,366',
           image: 'assets/boats/gala-viking-v6f.jpg',
@@ -23,9 +23,9 @@
           tags: 'gala viking rib inflatable boat family'
         },
         {
-          title: 'Galaxy Pilot P6.5',
+          title: 'Pilot Marine 6.5',
           type: 'Boat',
-          eyebrow: 'Galaxy Pro · aluminium',
+          eyebrow: 'Pilot Marine Pro · aluminium',
           desc: 'Cabin cruiser for Black Sea and Danube delta, up to 200 hp, pilot house comfort.',
           price: '€26,330',
           image: 'assets/boats/galaxy-pilot-p65.jpg',
@@ -33,7 +33,7 @@
           tags: 'galaxy pilot cabin aluminium boat 200 hp'
         },
         {
-          title: 'Garmin Marine electronics',
+          title: 'Marine Nav electronics',
           type: 'Shop',
           eyebrow: 'Official dealer · sonars',
           desc: 'Chartplotters, fishfinders, transducers and navigation equipment for fitted boats.',
@@ -43,7 +43,7 @@
           tags: 'garmin marine sonar fishfinder chartplotter navigation echomap'
         },
         {
-          title: 'Yamaha outboard motors',
+          title: 'Outboard Y outboard motors',
           type: 'Shop',
           eyebrow: 'Official equipment',
           desc: 'Outboard motors installed, rigged and calibrated in the demo workshop.',
@@ -53,7 +53,7 @@
           tags: 'yamaha outboard motor engine installation rigging'
         },
         {
-          title: 'Minn Kota electric motors',
+          title: 'E-Motor electric motors',
           type: 'Shop',
           eyebrow: 'Electric motors',
           desc: 'Bow-mount trolling motors for angler boats with battery and deck preparation.',
@@ -63,7 +63,7 @@
           tags: 'minn kota electric motor trolling fishing'
         },
         {
-          title: 'Rebelcell lithium batteries',
+          title: 'Marine Cell lithium batteries',
           type: 'Shop',
           eyebrow: 'Power systems',
           desc: 'Lithium batteries for electronics, trolling motors and long fishing days.',
@@ -75,12 +75,12 @@
         {
           title: 'Marine accessories',
           type: 'Shop',
-          eyebrow: 'Osculati · RAM · KED',
+          eyebrow: 'Hardware Co · RAM · KED',
           desc: 'Deck hardware, mounts, lights, audio, steering and fit-out accessories.',
           price: '182 items',
-          image: 'assets/brands/osculati.webp',
+          image: 'assets/brands/hardware-co.webp',
           url: 'Shop.html',
-          tags: 'marine accessories osculati ram ked mounts lights audio steering'
+          tags: 'marine accessories hardware-co ram ked mounts lights audio steering'
         },
         {
           title: 'Expert tuning of angler boats',
@@ -95,7 +95,7 @@
         {
           title: 'Outboard engine installation',
           type: 'Service',
-          eyebrow: 'Yamaha · Mercury · Honda',
+          eyebrow: 'Outboard Y · Outboard M · Honda',
           desc: 'Engine fitting, rigging, hydraulic steering, calibration and warranty paperwork.',
           price: 'service',
           image: 'assets/brands/yamaha.webp',
@@ -113,7 +113,7 @@
           tags: 'registration warranty anr paperwork delivery service'
         },
         {
-          title: 'Finval 470 EVO DC — owner story',
+          title: 'Pro Angler 470 — owner story',
           type: 'Story',
           eyebrow: 'Logbook · 8 min',
           desc: 'A 19 cm draft puts you in places others cannot reach. One season on the Danube.',
@@ -181,7 +181,7 @@
           results.innerHTML = `
             <div class="quick-search__empty">
               <b>No exact match.</b>
-              <span>Try Finval, Garmin, sonar, Yamaha, batteries, trailer, service or warranty.</span>
+              <span>Try Pro Angler, Marine Nav, sonar, Outboard Y, batteries, trailer, service or warranty.</span>
             </div>
           `;
           return;

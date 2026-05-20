@@ -352,7 +352,7 @@
   .tier-meta .stat-mini b{ font-size: 34px; letter-spacing: -.016em; }
   .blogo{ min-height: 132px; padding: 22px 16px 18px; gap: 10px; }
 
-  /* Finval spotlight — tighter */
+  /* Pro Angler spotlight — tighter */
   .spotlight-body{ padding: 56px 52px 48px; gap: 20px; }
   .spotlight-body h3{ font-size: 58px; line-height: .96; letter-spacing: -.024em; }
   .spotlight-body p{ font-size: 17px; line-height: 1.5; }
@@ -615,10 +615,10 @@
     transition: color .15s, opacity .15s;
   }
   .trust-logos a:hover .brand-mark{ color: var(--brass); opacity: 1; }
-  .trust-logos .brand-mark[data-brand="Yamaha"],
-  .trust-logos .brand-mark[data-brand="Mercury"],
-  .trust-logos .brand-mark[data-brand="MinnKota"],
-  .trust-logos .brand-mark[data-brand="Humminbird"]{
+  .trust-logos .brand-mark[data-brand="Outboard Y"],
+  .trust-logos .brand-mark[data-brand="Outboard M"],
+  .trust-logos .brand-mark[data-brand="E-Motor"],
+  .trust-logos .brand-mark[data-brand="Sonar Pro"]{
     font-family: var(--sans);
     font-style: normal;
     font-weight: 700;
@@ -639,17 +639,17 @@
     transition: color .15s;
   }
   .blogo:hover .brand-mark{ color: var(--brass); }
-  .blogo .brand-mark[data-brand="Yamaha"],
-  .blogo .brand-mark[data-brand="Garmin"],
-  .blogo .brand-mark[data-brand="Humminbird"],
-  .blogo .brand-mark[data-brand="MinnKota"],
-  .blogo .brand-mark[data-brand="Mercury"],
-  .blogo .brand-mark[data-brand="Honda Marine"],
-  .blogo .brand-mark[data-brand="Tohatsu"],
-  .blogo .brand-mark[data-brand="Rebelcell"],
+  .blogo .brand-mark[data-brand="Outboard Y"],
+  .blogo .brand-mark[data-brand="Marine Nav"],
+  .blogo .brand-mark[data-brand="Sonar Pro"],
+  .blogo .brand-mark[data-brand="E-Motor"],
+  .blogo .brand-mark[data-brand="Outboard M"],
+  .blogo .brand-mark[data-brand="Outboard H"],
+  .blogo .brand-mark[data-brand="Outboard T"],
+  .blogo .brand-mark[data-brand="Marine Cell"],
   .blogo .brand-mark[data-brand="Fusion"],
-  .blogo .brand-mark[data-brand="RAM Mounts"],
-  .blogo .brand-mark[data-brand="LANDX"]{
+  .blogo .brand-mark[data-brand="Mount Co"],
+  .blogo .brand-mark[data-brand="Trailer X"]{
     font-family: var(--sans);
     font-style: normal;
     font-weight: 700;

@@ -73,10 +73,10 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
     return [
       { key: "all", label: "All boats", count: boats.length },
       { key: "sale", label: "Sale", count: count((boat) => Boolean(boat.oldPrice)) },
-      { key: "brand:Beneteau", label: "Beneteau", count: count((boat) => boat.brand === "Beneteau") },
-      { key: "brand:Finval", label: "Finval", count: count((boat) => boat.brand === "Finval") },
-      { key: "brand:GALA", label: "GALA RIB", count: count((boat) => boat.brand === "GALA") },
-      { key: "brand:NorthSilver", label: "NorthSilver", count: count((boat) => boat.brand === "NorthSilver") },
+      { key: "brand:Cruise Series", label: "Cruise Series", count: count((boat) => boat.brand === "Cruise Series") },
+      { key: "brand:Pro Angler", label: "Pro Angler", count: count((boat) => boat.brand === "Pro Angler") },
+      { key: "brand:Atlas RIB", label: "Atlas RIB", count: count((boat) => boat.brand === "Atlas RIB") },
+      { key: "brand:Silver Hull", label: "Silver Hull", count: count((boat) => boat.brand === "Silver Hull") },
       { key: "category:Aluminium", label: "Aluminium", count: count((boat) => /aluminium/i.test(boat.category)) },
       { key: "category:Cruising", label: "Cruising", count: count((boat) => /cruising/i.test(boat.category)) },
       { key: "category:Fishing", label: "Fishing", count: count((boat) => /fish/i.test(boat.category + " " + boat.title)) },
@@ -120,7 +120,7 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
               <span>Search...</span>
               <input
                 type="search"
-                placeholder="Finval, Beneteau, RIB..."
+                placeholder="Pro Angler, Cruise Series, RIB..."
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
               />

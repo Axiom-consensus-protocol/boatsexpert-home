@@ -193,8 +193,8 @@
             ["Boats in stock", "13 current stock entries"],
             ["Aluminium boats", "Live body-type route"],
             ["Fishing boats", "Live body-type route"],
-            ["Finval Boats", "Live make-brand route"],
-            ["GALA RIB", "VIKING, ATLANTIS, Sprinter"]
+            ["Pro Angler Boats", "Live make-brand route"],
+            ["Atlas RIB", "VIKING, ATLANTIS, Sprinter"]
           ]
         },
         {
@@ -206,7 +206,7 @@
             ["Electric motors", "Live product category"],
             ["Sonars", "Live product category"],
             ["Batteries", "Live product category"],
-            ["Hydraulic steering", "BayStar source category"]
+            ["Hydraulic steering", "Helm source category"]
           ]
         },
         {
@@ -248,8 +248,8 @@
             ["Boats în stoc", "13 intrări curente în stoc"],
             ["Boats din aluminiu", "Rută tip carenă live"],
             ["Boats de pescuit", "Rută tip carenă live"],
-            ["Boats Finval", "Rută brand live"],
-            ["GALA RIB", "VIKING, ATLANTIS, Sprinter"]
+            ["Boats Pro Angler", "Rută brand live"],
+            ["Atlas RIB", "VIKING, ATLANTIS, Sprinter"]
           ]
         },
         {
@@ -261,7 +261,7 @@
             ["Motoare electrice", "Categorie produs live"],
             ["Sonare", "Categorie produs live"],
             ["Baterii", "Categorie produs live"],
-            ["Direcție hidraulică", "Categorie sursă BayStar"]
+            ["Direcție hidraulică", "Categorie sursă Helm"]
           ]
         },
         {
@@ -347,8 +347,8 @@
           ["/in-stock", "Boats in stock", "13 current stock entries"],
           ["/listings/body-type/aluminium-boats", "Aluminium boats", "Live body-type route"],
           ["/listings/body-type/fishing-boats", "Fishing boats", "Live body-type route"],
-          ["/listings/make-brand/finval", "Finval Boats", "Live make-brand route"],
-          ["/listings/make-brand/gala", "GALA RIB", "VIKING, ATLANTIS, Sprinter"]
+          ["/listings/make-brand/finval", "Pro Angler Boats", "Live make-brand route"],
+          ["/listings/make-brand/gala", "Atlas RIB", "VIKING, ATLANTIS, Sprinter"]
         ]
       },
       {
@@ -360,7 +360,7 @@
           ["/product-category/electric-motors", "Electric motors", "Live product category"],
           ["/product-category/sonars", "Sonars", "Live product category"],
           ["/product-category/batteries", "Batteries", "Live product category"],
-          ["/product-category/outboard-hydraulic-steering-system", "Hydraulic steering", "BayStar source category"]
+          ["/product-category/outboard-hydraulic-steering-system", "Hydraulic steering", "Helm source category"]
         ]
       },
       {

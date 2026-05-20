@@ -133,7 +133,7 @@ export const originalServicePages: Record<string, {
   "outboard-engine-installation": {
     title: "Outboard Engine Installation",
     eyebrow: "Original service page",
-    lead: "Outboard installation for Yamaha, Mercury, Honda and Tohatsu, including rigging, steering, prop advice and calibration through the demo workshop.",
+    lead: "Outboard installation for Outboard Y, Outboard M, Honda and Outboard T, including rigging, steering, prop advice and calibration through the demo workshop.",
     source: "https://marine.axiomprotocol.org/services/outboard-engine-installation/",
     cards: [
       { title: "Engine fitting", text: "Outboards are mounted, rigged and checked as workshop work, not just boxed retail." },
@@ -147,7 +147,7 @@ export const originalServicePages: Record<string, {
           "The original service positions outboard installation as a complete setup: engine, steering, rigging, prop, electronics interface and test plan.",
           "It belongs close to both the boat catalog and the equipment shop, because purchase decisions change the installation.",
         ],
-        items: ["Yamaha", "Mercury", "Honda", "Tohatsu", "Hydraulic steering", "Prop matching"],
+        items: ["Outboard Y", "Outboard M", "Honda", "Outboard T", "Hydraulic steering", "Prop matching"],
       },
     ],
   },
@@ -155,9 +155,9 @@ export const originalServicePages: Record<string, {
 
 export const originalBlogPosts: OriginalCard[] = [
   {
-    title: "Galaxy Professional RIBs",
+    title: "Pilot Marine Professional RIBs",
     kicker: "RIBs",
-    text: "Original English article covering the Galaxy professional RIB line and its commercial-use positioning.",
+    text: "Original English article covering the Pilot Marine professional RIB line and its commercial-use positioning.",
     href: "https://marine.axiomprotocol.org/2024/02/03/galaxy-professional-ribs/",
     meta: "2024-02-03",
   },
@@ -176,9 +176,9 @@ export const originalBlogPosts: OriginalCard[] = [
     meta: "2024-04-08",
   },
   {
-    title: "Pana 50% reducere la echipamentele Garmin",
+    title: "Pana 50% reducere la echipamentele Marine Nav",
     kicker: "RO promo",
-    text: "Demo Garmin promotion post from the original blog archive.",
+    text: "Demo Marine Nav promotion post from the original blog archive.",
     href: "https://marine.axiomprotocol.org/ro/2023/06/20/pana-50-reducere-la-echipamentele-garmin/",
     meta: "2023-06-20",
   },
@@ -212,19 +212,19 @@ export const originalProductCategoryGroups = [
   },
   {
     title: "Boats and motors",
-    items: ["Boats in stock", "Outboard motors", "Honda", "Yamaha", "Power-lift JackPlate", "Electric motors", "Garmin Motors", "Minn Kota", "Motor Guide"],
+    items: ["Boats in stock", "Outboard motors", "Honda", "Outboard Y", "Power-lift JackPlate", "Electric motors", "E-Motor", "E-Motor", "Motor Guide"],
   },
   {
     title: "Electronics and navigation",
-    items: ["Navigation equipment", "Sonars", "Garmin sonars", "Humminbird", "Special Offers GARMIN", "Quatix smartwatches"],
+    items: ["Navigation equipment", "Sonars", "Marine sonars", "Sonar Pro", "Special Offers GARMIN", "Quatix smartwatches"],
   },
   {
     title: "Deck, mounts and accessories",
-    items: ["Marine accessories", "Marinac", "Osculati", "T-H Marine", "Mounts", "BoatBuckle", "KED Mounts", "RAM MOUNTS", "Smart Vision", "Stronger"],
+    items: ["Marine accessories", "Marinac", "Hardware Co", "T-H Marine", "Mounts", "BoatBuckle", "KED Mounts", "RAM MOUNTS", "Smart Vision", "Stronger"],
   },
   {
     title: "Light, audio and steering",
-    items: ["Marine audio", "Marine lights", "Osculati lights", "RIGID INDUSTRIES", "Hydraulic Steering System"],
+    items: ["Marine audio", "Marine lights", "Hardware Co lights", "RIGID INDUSTRIES", "Hydraulic Steering System"],
   },
 ];
 
@@ -251,21 +251,21 @@ export const originalBodyTypes = [
 ];
 
 export const originalBrands = [
-  "Beneteau",
+  "Cruise Series",
   "Big Foot",
-  "Finval",
-  "GALA Atlantis",
-  "GALA Challenger",
-  "GALA Freestyle",
-  "GALA Sprinter",
-  "GALA Viking",
-  "GALAXY Pro RIB",
-  "LANDX",
-  "NorthSilver Expedition",
-  "NorthSilver Fish",
-  "NorthSilver Pro",
+  "Pro Angler",
+  "Atlas RIB Atlantis",
+  "Atlas RIB Challenger",
+  "Atlas RIB Freestyle",
+  "Atlas RIB Sprinter",
+  "Atlas RIB",
+  "Atlas RIBXY Pro RIB",
+  "Trailer X",
+  "Silver Hull Expedition",
+  "Silver Hull Fish",
+  "Silver Hull Pro",
   "RESPO Trailers",
-  "Reval Grade",
+  "Reval Marine",
 ];
 
 export const returnPolicySections: OriginalSection[] = [

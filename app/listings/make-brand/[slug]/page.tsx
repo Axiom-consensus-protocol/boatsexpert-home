@@ -25,7 +25,7 @@ export default async function MakeBrandPage({ params }: MakeBrandPageProps) {
     <OriginalInfoPage
       eyebrow="Original make-brand route"
       title={label}
-      lead="The original catalog exposed manufacturer and model-line routes for Beneteau, Finval, GALA, NorthSilver, LANDX, Reval Grade, RESPO and related ranges. This route preserves that sitemap structure."
+      lead="The original catalog exposed manufacturer and model-line routes for Cruise Series, Pro Angler, Atlas RIB, Silver Hull, Trailer X, Reval Marine, RESPO and related ranges. This route preserves that sitemap structure."
       source={`https://marine.axiomprotocol.org/listings/make-brand/${slug}/`}
       sections={[
         {

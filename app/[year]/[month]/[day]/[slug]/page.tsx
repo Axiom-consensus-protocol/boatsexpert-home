@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           title: "Blog archive context",
           text: [
             `Original publication date: ${post?.meta || date}.`,
-            "The old site mixed English and Demo news, boat-show updates, Garmin promotions and RIB articles. The new blog page keeps that archive visible instead of dropping old content.",
+            "The old site mixed English and Demo news, boat-show updates, Marine Nav promotions and RIB articles. The new blog page keeps that archive visible instead of dropping old content.",
           ],
           items: originalBlogCategories,
         },
