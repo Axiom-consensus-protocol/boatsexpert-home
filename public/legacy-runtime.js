@@ -62,10 +62,10 @@
       try {
         var fromUrl = new URLSearchParams(location.search).get("theme");
         if (fromUrl === "day" || fromUrl === "night") {
-          localStorage.setItem("bx_theme", fromUrl);
+          localStorage.setItem("am_theme", fromUrl);
           return fromUrl;
         }
-        var stored = localStorage.getItem("bx_theme");
+        var stored = localStorage.getItem("am_theme");
         if (stored === "day" || stored === "night") return stored;
       } catch (err) {}
       return "day";
@@ -88,7 +88,7 @@
     function toggle() {
       var current = document.documentElement.getAttribute("data-theme") || getTheme();
       var next = current === "night" ? "day" : "night";
-      try { localStorage.setItem("bx_theme", next); } catch (err) {}
+      try { localStorage.setItem("am_theme", next); } catch (err) {}
       apply(next);
     }
 
@@ -296,7 +296,7 @@
     try {
       var fromUrl = new URLSearchParams(location.search).get("lang");
       if (mobileDrawerCopy[fromUrl]) return fromUrl;
-      var stored = localStorage.getItem("bx_lang");
+      var stored = localStorage.getItem("am_lang");
       if (mobileDrawerCopy[stored]) return stored;
     } catch (err) {}
     return "en";
@@ -347,8 +347,8 @@
           ["/in-stock", "Boats in stock", "13 current stock entries"],
           ["/listings/body-type/aluminium-boats", "Aluminium boats", "Live body-type route"],
           ["/listings/body-type/fishing-boats", "Fishing boats", "Live body-type route"],
-          ["/listings/make-brand/finval", "Pro Angler Boats", "Live make-brand route"],
-          ["/listings/make-brand/gala", "Atlas RIB", "VIKING, ATLANTIS, Sprinter"]
+          ["/listings/make-brand/pro-angler", "Pro Angler Boats", "Live make-brand route"],
+          ["/listings/make-brand/atlas-rib", "Atlas RIB", "VIKING, ATLANTIS, Sprinter"]
         ]
       },
       {

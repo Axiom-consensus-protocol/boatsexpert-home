@@ -71,13 +71,13 @@
   const classify = (raw) => {
     const categories = new Set();
     const haystack = lower(raw);
-    if (/(baystar|seastar|hydraulic|steering)/.test(haystack)) categories.add('hydraulic steering');
-    if (/(optima|rebelcell|battery|batteries|charger|outdoorbox|agm|12\.6v)/.test(haystack)) categories.add('batteries');
-    if (/(beneteau|antares|finval|boats in stock|cruising)/.test(haystack)) categories.add('boats in stock');
+    if (/(hydraulic|helm|steering)/.test(haystack)) categories.add('hydraulic steering');
+    if (/(battery|batteries|charger|outdoorbox|agm|12\.6v|marine-cell)/.test(haystack)) categories.add('batteries');
+    if (/(cruise|pro-angler|boats in stock|cruising)/.test(haystack)) categories.add('boats in stock');
     if (/(boatbuckle|tie-down|mount|bracket)/.test(haystack)) categories.add('mounts');
-    if (/(yamaha|outboard|f60)/.test(haystack)) categories.add('outboard motors');
-    if (/(garmin|echomap|sonar|chartplotter|transducer|sidevu)/.test(haystack)) categories.add('sonars');
-    if (/(minn kota|ultrex|electric|trolling)/.test(haystack)) categories.add('electric motors');
+    if (/(outboard|outboard-y|outboard-m|outboard-h|outboard-t|f60)/.test(haystack)) categories.add('outboard motors');
+    if (/(marine-nav|echomap|sonar|chartplotter|transducer|sidevu)/.test(haystack)) categories.add('sonars');
+    if (/(e-motor|ultrex|electric|trolling)/.test(haystack)) categories.add('electric motors');
     if (/(audio)/.test(haystack)) categories.add('marine audio');
     if (/(light|rigid)/.test(haystack)) categories.add('marine lights');
     if (/(navigation|quatix)/.test(haystack)) categories.add('navigation');

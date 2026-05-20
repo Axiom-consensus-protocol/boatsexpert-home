@@ -8,9 +8,9 @@
           eyebrow: 'Pro Angler · Exclusive dealer',
           desc: 'AlMg 5083 aluminium fishing boat, 4.65 m, draft only 19 cm, Marine Nav-ready cockpit.',
           price: '€20,490',
-          image: 'assets/boats/finval-470-evo-10.jpg',
+          image: 'assets/boats/pro-angler-470-10.jpg',
           url: 'Boat.html',
-          tags: 'finval 470 evo dc aluminium fishing boat shallow draft garmin sonar'
+          tags: 'pro-angler 470 dc aluminium fishing boat shallow draft marine-nav sonar'
         },
         {
           title: 'Atlas RIB V6',
@@ -18,9 +18,9 @@
           eyebrow: 'Atlas RIB · RIB specialist',
           desc: '5.80 m inflatable safety with twelve seats, two consoles and family deck layout.',
           price: '€26,366',
-          image: 'assets/boats/gala-viking-v6f.jpg',
+          image: 'assets/boats/atlas-v6f.jpg',
           url: 'Catalog.html',
-          tags: 'gala viking rib inflatable boat family'
+          tags: 'atlas viking rib inflatable boat family'
         },
         {
           title: 'Pilot Marine 6.5',
@@ -28,9 +28,9 @@
           eyebrow: 'Pilot Marine Pro · aluminium',
           desc: 'Cabin cruiser for Black Sea and Danube delta, up to 200 hp, pilot house comfort.',
           price: '€26,330',
-          image: 'assets/boats/galaxy-pilot-p65.jpg',
+          image: 'assets/boats/atlas-pilot-p65.jpg',
           url: 'Catalog.html',
-          tags: 'galaxy pilot cabin aluminium boat 200 hp'
+          tags: 'atlas pilot cabin aluminium boat 200 hp'
         },
         {
           title: 'Marine Nav electronics',
@@ -38,9 +38,9 @@
           eyebrow: 'Official dealer · sonars',
           desc: 'Chartplotters, fishfinders, transducers and navigation equipment for fitted boats.',
           price: 'from €240',
-          image: 'assets/brands/garmin.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'garmin marine sonar fishfinder chartplotter navigation echomap'
+          tags: 'marine-nav sonar fishfinder chartplotter navigation echomap'
         },
         {
           title: 'Outboard Y outboard motors',
@@ -48,9 +48,9 @@
           eyebrow: 'Official equipment',
           desc: 'Outboard motors installed, rigged and calibrated in the demo workshop.',
           price: 'from €890',
-          image: 'assets/brands/yamaha.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'yamaha outboard motor engine installation rigging'
+          tags: 'outboard-y motor engine installation rigging'
         },
         {
           title: 'E-Motor electric motors',
@@ -58,9 +58,9 @@
           eyebrow: 'Electric motors',
           desc: 'Bow-mount trolling motors for angler boats with battery and deck preparation.',
           price: 'from €640',
-          image: 'assets/brands/minnkota.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'minn kota electric motor trolling fishing'
+          tags: 'e-motor electric motor trolling fishing'
         },
         {
           title: 'Marine Cell lithium batteries',
@@ -68,9 +68,9 @@
           eyebrow: 'Power systems',
           desc: 'Lithium batteries for electronics, trolling motors and long fishing days.',
           price: 'from €165',
-          image: 'assets/brands/rebelcell.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'rebelcell lithium battery batteries power'
+          tags: 'marine-cell lithium battery batteries power'
         },
         {
           title: 'Marine accessories',
@@ -78,9 +78,9 @@
           eyebrow: 'Hardware Co · RAM · KED',
           desc: 'Deck hardware, mounts, lights, audio, steering and fit-out accessories.',
           price: '182 items',
-          image: 'assets/brands/hardware-co.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'Shop.html',
-          tags: 'marine accessories hardware-co ram ked mounts lights audio steering'
+          tags: 'marine accessories hardware-co mount-co ked mounts lights audio steering'
         },
         {
           title: 'Expert tuning of angler boats',
@@ -88,7 +88,7 @@
           eyebrow: 'Workshop · demo',
           desc: 'Casting platforms, livewells, trolling motor prep, rod storage and JackPlate setup.',
           price: 'service',
-          image: 'assets/boats/finval-470-evo-15.jpg',
+          image: 'assets/boats/pro-angler-470-15.jpg',
           url: 'index.html#services',
           tags: 'tuning service angler fishing boat workshop livewell trolling'
         },
@@ -98,9 +98,9 @@
           eyebrow: 'Outboard Y · Outboard M · Honda',
           desc: 'Engine fitting, rigging, hydraulic steering, calibration and warranty paperwork.',
           price: 'service',
-          image: 'assets/brands/yamaha.webp',
+          image: 'assets/brands/_placeholder.svg',
           url: 'index.html#services',
-          tags: 'outboard installation engine service yamaha mercury honda'
+          tags: 'outboard installation engine service outboard-y outboard-m outboard-h'
         },
         {
           title: 'Boat registration and warranty',
@@ -120,7 +120,7 @@
           price: 'read',
           image: 'assets/blog/470vc-overview-01.jpg',
           url: 'index.html#blog',
-          tags: 'finval 470 evo story danube review shallow draft'
+          tags: 'pro-angler 470 story danube review shallow draft'
         }
       ];
 

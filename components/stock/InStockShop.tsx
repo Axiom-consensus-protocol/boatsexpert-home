@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 export type StockBoatItem = {
@@ -164,7 +165,7 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
               Filters are generated from the visible stock cards: brand, sale state,
               category and search terms all update the product grid.
             </p>
-            <a href="/contact">Contact sales</a>
+            <Link href="/contact">Contact sales</Link>
           </div>
         </aside>
 
@@ -220,10 +221,10 @@ export function InStockShop({ boats }: { boats: StockBoatItem[] }) {
                     <small>{boat.tax}</small>
                   </div>
                   <div className="stock-product-actions">
-                    <a href="/cart" className="stock-add">
+                    <Link href="/cart" className="stock-add">
                       <StockIcon name="cart" />
                       Add to cart
-                    </a>
+                    </Link>
                     <a href={boat.href}>Details</a>
                   </div>
                 </div>

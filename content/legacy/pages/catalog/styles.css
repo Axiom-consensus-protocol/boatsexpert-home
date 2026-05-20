@@ -19,10 +19,10 @@
     --brass-soft:#F0DDB7;
     --green:   #2E6A47;
     --crimson: #B23A2C;
-    --serif:   'Newsreader', 'Times New Roman', serif;
-    --sans:    'Instrument Sans', system-ui, sans-serif;
-    --display: 'Instrument Serif', 'Newsreader', serif;
-    --mono:    'JetBrains Mono', ui-monospace, monospace;
+    --serif:   var(--font-newsreader),'Newsreader', 'Times New Roman', serif;
+    --sans:    var(--font-instrument-sans),'Instrument Sans', system-ui, sans-serif;
+    --display: var(--font-instrument-serif),'Instrument Serif', 'Newsreader', serif;
+    --mono:    var(--font-jetbrains-mono),'JetBrains Mono', ui-monospace, monospace;
     --pad-x:   56px;
     --maxw:    1600px;
     --maxw-wide: 1760px;

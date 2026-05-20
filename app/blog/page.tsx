@@ -13,7 +13,7 @@ export default function BlogPage() {
     <OriginalInfoPage
       eyebrow="Original blog archive"
       title="Axiom Marine Blog"
-      lead="The original site includes a blog archive with RIB articles, boat-show news, Marine Nav and FurSeal promotions, plus Demo versions. This page restores that information as a proper route in the new site."
+      lead="The original site includes a blog archive with RIB articles, boat-show news, Marine Nav and Inflatable Marine promotions, plus Demo versions. This page restores that information as a proper route in the new site."
       source="https://marine.axiomprotocol.org/blog/"
       cards={originalBlogPosts}
       asideTitle="Posts"

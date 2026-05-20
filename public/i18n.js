@@ -10,10 +10,10 @@
  *   - URL: ?  |  ?lang=en
  *   - or click any [data-i18n-set="ro"] / [data-i18n-set="en"]
  *   - or call BX_i18n.set("ro")
- *   - persisted in localStorage("bx_lang")
+ *   - persisted in localStorage("am_lang")
  */
 (function(){
-  const STORAGE_KEY = "bx_lang";
+  const STORAGE_KEY = "am_lang";
   const DEFAULT_LANG = "en";
   const SUPPORTED   = ["en", "ro"];
 

@@ -1,47 +1,91 @@
-# Axiom Marine Next Port
+# Axiom Marine — Demo
 
-Next.js 15 App Router port of the static Axiom Marine prototype.
+Reference implementation by [Axiom Engineering Bureau](https://github.com/Axiom-consensus-protocol).
+
+A dealer-grade marine site: catalog, in-stock boats, equipment shop, and workshop service — built on Next.js 15 App Router with a 1:1 port of a legacy static prototype. The brand is fictional; everything you see is content + structure work, not a live commercial operation.
 
 ## Stack
 
-- Next.js `15.5.18`
-- React `19`
-- App Router
-- Turbopack for local dev
-- Vercel-ready `vercel.json`
+- **Next.js** `15.5` (App Router, Turbopack dev, RSC by default)
+- **React** `19`
+- **TypeScript** `5` (strict)
+- **next/font/google** — Fraunces, Instrument Sans/Serif, Inter, JetBrains Mono, Newsreader
+- **next-intl-style i18n runtime** loaded from `public/i18n.js` against a single `i18n.json` source
+- **ESLint** + **Prettier** + **GitHub Actions** CI gate (`typecheck` → `lint` → `build`)
+- No external runtime services. All content ships statically from `content/legacy/` and `lib/`.
 
 ## Commands
 
 ```bash
 pnpm install
-pnpm run prepare:legacy
-pnpm run dev
-pnpm run typecheck
-pnpm run build
+pnpm dev          # next dev --turbopack
+pnpm typecheck    # tsc --noEmit
+pnpm lint         # next lint
+pnpm format       # prettier --write .
+pnpm build        # next build
+pnpm start        # next start
 ```
 
-`pnpm run dev` starts `next dev --turbopack`.
+The legacy content under `content/legacy/` is committed; no preparation step is required to run the site.
 
-## Structure
+## Layout
 
-- `app/` — App Router routes: `/`, `/boat`, `/catalog`, `/product`, `/shop`, `/cart`, `/contact`, `/services`.
-- `components/legacy/` — shared renderer for split legacy fragments plus shared header/footer.
-- `content/legacy/chrome/` — generated shared header/footer HTML.
-- `content/legacy/pages/<page>/sections/` — generated page sections, cut from the source HTML for controlled 1:1 migration.
-- `content/legacy/pages/<page>/styles.css` — generated page-specific legacy styles.
-- `content/legacy/pages/<page>/scripts.js` — generated trusted page runtime copied from legacy inline scripts.
-- `legacy/` — source snapshots copied into this app for auditability.
-- `public/assets/` — copied Axiom Marine assets.
-- `scripts/prepare-legacy-content.mjs` — regeneration script from `../axiom-marine-demo` and `../staging-pages`.
+```
+app/                          App Router routes (25 pages)
+  layout.tsx                  next/font registration, theme bootstrap, i18n payload
+  page.tsx                    Home
+  in-stock/                   Live stock listing with client-side filters
+  catalog/, shop/, boat/, …   1:1 ports of legacy pages
+  manifest.ts, robots.ts,     PWA + crawler + sitemap surface
+  sitemap.ts, opengraph-image.tsx
 
-## Migration Rule
+components/
+  legacy/ChromeGuard          Shared chrome CSS (extracted from component → .css)
+  legacy/ThemePolish          Theme-mode overrides (extracted → .css)
+  legacy/LegacyChrome         Shared <header>/<footer>
+  original/OriginalInfoPage   Reusable page shell for original-source pages
+  stock/InStockShop           Filterable client component for /in-stock
 
-During the 1:1 phase, edit source HTML/CSS in `../axiom-marine-demo` or `../staging-pages`, then run:
+content/legacy/
+  i18n.json                   String table (loaded at request time, injected as JSON)
+  manifest.json               Page manifest
+  chrome/                     Shared header + footer HTML snapshots
+  pages/<page>/sections/      Per-page section HTML snapshots
+  pages/<page>/styles.css     Per-page hand-written CSS
+  pages/<page>/scripts.js     Per-page client runtime
+
+lib/
+  legacy-content.ts           Reads + caches legacy HTML/CSS/JSON at build time
+  original-site-data.ts       Service-page metadata, original product taxonomy
+  og.ts                       Default OG title/description/image
+
+public/
+  theme.css, chrome.css       Global hand-written CSS loaded via <link>
+  i18n.js, legacy-runtime.js  Client-side i18n + legacy interactivity
+  assets/                     Page imagery, logos
+```
+
+## Migration model
+
+Pages are imported as **legacy fragments** (HTML strings) wrapped in React components. This lets each page be replaced section-by-section with native React without ever breaking the route surface or visible output:
+
+1. Section HTML lives in `content/legacy/pages/<page>/sections/NN-<name>.html`.
+2. `<HtmlFragment>` renders it via `dangerouslySetInnerHTML`.
+3. To go native: replace the fragment file's referent with a JSX component of equal markup, then delete the HTML file.
+
+This is the same pattern an engineering bureau uses when bringing a static prototype onto a modern framework without losing pixel parity.
+
+## Deploy
+
+Push to a branch with a Vercel project attached, or:
 
 ```bash
-pnpm run prepare:legacy
-pnpm run typecheck
-pnpm run build
+vercel        # preview
+vercel --prod # production
 ```
 
-After the visual port is accepted, sections can be replaced one by one with native React components without changing the route surface.
+`vercel.json` declares the framework; everything else is convention.
+
+## License
+
+This demo is published as a portfolio reference. Imagery and product labels are fictional pseudonyms; no real third-party brands or dealers are represented.

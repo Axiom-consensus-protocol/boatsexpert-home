@@ -5,10 +5,10 @@
     --line:#DDD3BD; --line-2:#E8DFCB;
     --brass:#C68B3D; --brass-2:#B5772C; --brass-3:#8E5A1F; --brass-soft:#F0DDB7;
     --green:#2E6A47; --crimson:#B23A2C;
-    --serif:'Newsreader','Times New Roman',serif;
-    --sans:'Instrument Sans',system-ui,sans-serif;
-    --display:'Instrument Serif','Newsreader',serif;
-    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --serif:var(--font-newsreader),'Newsreader','Times New Roman',serif;
+    --sans:var(--font-instrument-sans),'Instrument Sans',system-ui,sans-serif;
+    --display:var(--font-instrument-serif),'Instrument Serif','Newsreader',serif;
+    --mono:var(--font-jetbrains-mono),'JetBrains Mono',ui-monospace,monospace;
     --pad-x:64px; --maxw:1320px;
     --maxw-wide:1760px; --pad-wide:56px;
   }
@@ -1621,7 +1621,7 @@
     background:
       linear-gradient(90deg, rgba(6,26,48,.78), rgba(6,26,48,.10)),
       radial-gradient(circle at 79% 48%, rgba(244,239,230,.16), transparent 33%),
-      url('/assets/stock/beneteau-antares-7-comfort.jpg') right 4% center / min(48vw, 720px) auto no-repeat;
+      url('/assets/stock/cruise-7-comfort.jpg') right 4% center / min(48vw, 720px) auto no-repeat;
     opacity:.46;
     filter:saturate(1.08) contrast(1.08);
     pointer-events:none;
@@ -2323,7 +2323,7 @@
     .page-band::before{
       background:
         linear-gradient(180deg, rgba(6,26,48,.94), rgba(6,26,48,.78)),
-        url('/assets/stock/beneteau-antares-7-comfort.jpg') center 76px / 96% auto no-repeat;
+        url('/assets/stock/cruise-7-comfort.jpg') center 76px / 96% auto no-repeat;
       opacity:.18;
     }
     .page-band .container{ padding-top:48px; padding-bottom:42px; }

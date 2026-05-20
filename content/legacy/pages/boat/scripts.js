@@ -9,12 +9,12 @@
     // === LIGHTBOX ===
     (function(){
       const PHOTOS = [
-        { src: 'assets/boats/finval-470-evo.jpg',    cap: 'Hero · in showroom' },
-        { src: 'assets/boats/finval-470-evo-2.jpg',  cap: 'Profile · port side' },
-        { src: 'assets/boats/finval-470-evo-10.jpg', cap: 'Deck · trolling sockets' },
-        { src: 'assets/boats/finval-470-evo-13.jpg', cap: 'Console · gauges' },
-        { src: 'assets/boats/finval-470-evo-15.jpg', cap: 'On water · cruise' },
-        { src: 'assets/boats/finval-470-evo-17.jpg', cap: 'Stern · transom' },
+        { src: 'assets/boats/pro-angler-470.jpg',    cap: 'Hero · in showroom' },
+        { src: 'assets/boats/pro-angler-470-2.jpg',  cap: 'Profile · port side' },
+        { src: 'assets/boats/pro-angler-470-10.jpg', cap: 'Deck · trolling sockets' },
+        { src: 'assets/boats/pro-angler-470-13.jpg', cap: 'Console · gauges' },
+        { src: 'assets/boats/pro-angler-470-15.jpg', cap: 'On water · cruise' },
+        { src: 'assets/boats/pro-angler-470-17.jpg', cap: 'Stern · transom' },
       ];
       const lb     = document.getElementById('lightbox');
       const lbImg  = document.getElementById('lb-img');

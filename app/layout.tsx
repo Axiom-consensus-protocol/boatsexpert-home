@@ -1,4 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import {
+  Fraunces,
+  Instrument_Sans,
+  Instrument_Serif,
+  Inter,
+  JetBrains_Mono,
+  Newsreader,
+} from "next/font/google";
 import Script from "next/script";
 import { ChromeGuard } from "@/components/legacy/ChromeGuard";
 import { LegacyFooter, LegacyHeader } from "@/components/legacy/LegacyChrome";
@@ -7,8 +15,54 @@ import { getLegacyI18nJson } from "@/lib/legacy-content";
 import { defaultOgDescription, defaultOgImage, defaultOgTitle } from "@/lib/og";
 import "./globals.css";
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-instrument-sans",
+});
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-instrument-serif",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+});
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-newsreader",
+});
+
+const fontVariables = [
+  fraunces.variable,
+  instrumentSans.variable,
+  instrumentSerif.variable,
+  inter.variable,
+  jetbrainsMono.variable,
+  newsreader.variable,
+].join(" ");
+
 const themeBootstrap = `
-(function(){try{var p=new URLSearchParams(location.search).get("theme");var t=(p==="day"||p==="night")?p:localStorage.getItem("bx_theme");if(t!=="day"&&t!=="night"){t="day";}document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t==="night"?"dark":"light";}catch(e){}})();
+(function(){try{var p=new URLSearchParams(location.search).get("theme");var t=(p==="day"||p==="night")?p:localStorage.getItem("am_theme");if(t!=="day"&&t!=="night"){t="day";}document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t==="night"?"dark":"light";}catch(e){}})();
 `;
 
 export const metadata: Metadata = {
@@ -57,17 +111,12 @@ export default function RootLayout({
       lang="en"
       data-theme="day"
       data-i18n-attr="lang:_lang,title:site.title"
+      className={fontVariables}
       style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
-          rel="stylesheet"
-        />
         <link rel="stylesheet" href="/theme.css" />
         <link rel="stylesheet" href="/chrome.css" />
         <script

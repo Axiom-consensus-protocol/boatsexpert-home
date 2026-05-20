@@ -27,38 +27,6 @@ export function legacySlugToTitle(slug: string) {
     .join(" ");
 }
 
-export function normalizeLegacySlug(slug: string) {
-  const map: Record<string, string> = {
-    "aluminium-boats-ro": "aluminium-boats",
-    "barci-rib": "rib-boats",
-    "beneteau-ro": "beneteau",
-    "big-foot": "big-foot",
-    "cruising-boats-ro": "cruising-boats",
-    "expert-tuning-barci-de-pescuit": "expert-tuning-of-angler-boats",
-    "fiberglass-boats-ro": "fiberglass-boats",
-    "finval-ro": "finval",
-    "fishing-boats-ro": "fishing-boats",
-    "gala-atlantis-ro": "gala-atlantis",
-    "gala-challenger-ro": "gala-challenger",
-    "gala-freestyle-ro": "gala-freestyle",
-    "gala-ro": "gala-atlantis",
-    "gala-sprinter-ro": "gala-sprinter",
-    "gala-viking-ro": "gala-viking",
-    "galaxy-pro-rib-ro": "galaxy-pro-rib",
-    "landx-ro": "landx",
-    "montaj-motor-outboard": "outboard-engine-installation",
-    "northsilver-expedition-ro": "northsilver-expedition",
-    "northsilver-fish-ro": "northsilver-fish",
-    "northsilver-pro-ro": "northsilver-pro",
-    "peridocuri-ro": "boat-trailer",
-    "respo-peridocuri": "respo-trailers",
-    "reval-grade-ro": "reval-grade",
-    "tuning-service": "tuning-service",
-  };
-
-  return map[slug] || slug.replace(/-ro$/i, "");
-}
-
 export const originalServicePages: Record<string, {
   title: string;
   eyebrow: string;
@@ -158,42 +126,42 @@ export const originalBlogPosts: OriginalCard[] = [
     title: "Pilot Marine Professional RIBs",
     kicker: "RIBs",
     text: "Original English article covering the Pilot Marine professional RIB line and its commercial-use positioning.",
-    href: "https://marine.axiomprotocol.org/2024/02/03/galaxy-professional-ribs/",
+    href: "https://marine.axiomprotocol.org/2024/02/03/pilot-marine-professional-ribs/",
     meta: "2024-02-03",
   },
   {
-    title: "Fishing and Outdoor Expo 2024 Arad",
+    title: "Fishing and Outdoor Expo 2024",
     kicker: "Main News",
-    text: "Event/news post connected to Axiom Marine presence at the Fishing and Outdoor Expo in Arad.",
-    href: "https://marine.axiomprotocol.org/2024/02/23/fishing-and-outdoor-expo-2024-arad/",
+    text: "Event/news post connected to Axiom Marine presence at the Fishing and Outdoor Expo in the demo region.",
+    href: "https://marine.axiomprotocol.org/2024/02/23/fishing-and-outdoor-expo-2024/",
     meta: "2024-02-23",
   },
   {
-    title: "The Bucharest International Boat Show",
+    title: "The International Boat Show",
     kicker: "Main News",
-    text: "Original event post for the Bucharest International Boat Show.",
-    href: "https://marine.axiomprotocol.org/2024/04/08/the-bucharest-international-boat-show/",
+    text: "Original event post for the International Boat Show.",
+    href: "https://marine.axiomprotocol.org/2024/04/08/international-boat-show-2024/",
     meta: "2024-04-08",
   },
   {
-    title: "Pana 50% reducere la echipamentele Marine Nav",
-    kicker: "RO promo",
+    title: "Up to 50% off on Marine Nav equipment",
+    kicker: "Promo",
     text: "Demo Marine Nav promotion post from the original blog archive.",
-    href: "https://marine.axiomprotocol.org/ro/2023/06/20/pana-50-reducere-la-echipamentele-garmin/",
+    href: "#",
     meta: "2023-06-20",
   },
   {
-    title: "15% reducere pe barci FurSeal",
-    kicker: "RO promo",
-    text: "Demo FurSeal boat promotion from the original archive.",
-    href: "https://marine.axiomprotocol.org/ro/2023/07/21/15-reducere-pe-barci-furseal/",
+    title: "15% off on Inflatable Marine boats",
+    kicker: "Promo",
+    text: "Demo Inflatable Marine boat promotion from the original archive.",
+    href: "#",
     meta: "2023-07-21",
   },
   {
-    title: "Salonul Nautic International Bucuresti",
-    kicker: "RO event",
-    text: "Demo archive of the Bucharest boat show event post.",
-    href: "https://marine.axiomprotocol.org/ro/2024/04/08/salonul-nautic-international-bucuresti/",
+    title: "International Boat Show",
+    kicker: "Event",
+    text: "Demo archive of the Demo boat show event post.",
+    href: "#",
     meta: "2024-04-08",
   },
 ];
@@ -208,7 +176,7 @@ export const originalBlogCategories = [
 export const originalProductCategoryGroups = [
   {
     title: "Batteries",
-    items: ["Green Cell batteries", "OPTIMA batteries", "REBELCELL batteries", "REBELCELL chargers", "Ultimatron batteries"],
+    items: ["Green Cell batteries", "OPTIMA batteries", "Marine Cell batteries", "Marine Cell chargers", "Ultimatron batteries"],
   },
   {
     title: "Boats and motors",
@@ -216,11 +184,11 @@ export const originalProductCategoryGroups = [
   },
   {
     title: "Electronics and navigation",
-    items: ["Navigation equipment", "Sonars", "Marine sonars", "Sonar Pro", "Special Offers GARMIN", "Quatix smartwatches"],
+    items: ["Navigation equipment", "Sonars", "Marine sonars", "Sonar Pro", "Special Offers Marine Nav", "Quatix smartwatches"],
   },
   {
     title: "Deck, mounts and accessories",
-    items: ["Marine accessories", "Marinac", "Hardware Co", "T-H Marine", "Mounts", "BoatBuckle", "KED Mounts", "RAM MOUNTS", "Smart Vision", "Stronger"],
+    items: ["Marine accessories", "Marinac", "Hardware Co", "T-H Marine", "Mounts", "BoatBuckle", "KED Mounts", "Mount Co", "Smart Vision", "Stronger"],
   },
   {
     title: "Light, audio and steering",
@@ -230,7 +198,7 @@ export const originalProductCategoryGroups = [
 
 export const originalProductTags = [
   "echomap",
-  "garmin",
+  "marine-nav",
   "gpsmap",
   "livescope",
   "quatix",
@@ -252,7 +220,7 @@ export const originalBodyTypes = [
 
 export const originalBrands = [
   "Cruise Series",
-  "Big Foot",
+  "Trailer X",
   "Pro Angler",
   "Atlas RIB Atlantis",
   "Atlas RIB Challenger",

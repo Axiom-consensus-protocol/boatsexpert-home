@@ -102,7 +102,7 @@ export default function OpenGraphImage() {
                   letterSpacing: -1,
                 }}
               >
-                BE
+                AM
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ color: "#FFFFFF", fontSize: 42, fontWeight: 800, lineHeight: 1 }}>

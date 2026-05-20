@@ -339,7 +339,7 @@
     "en": "324 listings <em>in catalog</em>"
   },
   "why.c4.p": {
-    "en": "The live listing archive opens with Atlas RIB VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B. Price filter range: €0-€284,999."
+    "en": "The live listing archive opens with Atlas RIB VIKING V6F (V580F), Trailer X Ultimate Console and Trailer X Ultimate B. Price filter range: €0-€284,999."
   },
   "why.c4.tag": {
     "en": "Filter €0-€284,999"
@@ -617,7 +617,7 @@
   "hero.feat.a_draft": {
     "en": "Draft 19 cm"
   },
-  "hero.feat.a_garmin": {
+  "hero.feat.a_marine_nav": {
     "en": "Marine Nav sonar ready"
   },
   "hero.feat.a_hull": {
@@ -654,7 +654,7 @@
     "en": "Live <em>Catalog</em>"
   },
   "brands.t1.p": {
-    "en": "Live catalog routes include BIG FOOT, Cruise Series, Pro Angler, Atlas RIB, Atlas RIBXY, Trailer X, Silver Hull, RESPO and Reval Marine."
+    "en": "Live catalog routes include TRAILER X, Cruise Series, Pro Angler, Atlas RIB, Atlas RIBXY, Trailer X, Silver Hull, RESPO and Reval Marine."
   },
   "brands.t1.stat": {
     "en": "<b>324</b>listings · 13 stock boats · 942 shop results"
@@ -683,52 +683,52 @@
   "brands.t3.stat": {
     "en": "<b>4</b>brands · supply · 48h order"
   },
-  "brands.t1.c_finval": {
+  "brands.t1.c01": {
     "en": "Estonia · 1993"
   },
-  "brands.t1.c_beneteau": {
+  "brands.t1.c02": {
     "en": "France · 1884"
   },
-  "brands.t1.c_northsilver": {
+  "brands.t1.c03": {
     "en": "Estonia · 2002"
   },
-  "brands.t1.c_landx": {
+  "brands.t1.c04": {
     "en": "Hungary"
   },
-  "brands.t1.c_revalgrade": {
+  "brands.t1.c05": {
     "en": "Estonia"
   },
-  "brands.t2.c_yamaha": {
+  "brands.t2.c01": {
     "en": "Outboards"
   },
-  "brands.t2.c_garmin": {
+  "brands.t2.c02": {
     "en": "Sonars · Nav"
   },
-  "brands.t2.c_minnkota": {
+  "brands.t2.c03": {
     "en": "Electric motors"
   },
-  "brands.t2.c_sonar-pro": {
+  "brands.t2.c04": {
     "en": "Fishfinders"
   },
-  "brands.t2.c_rebelcell": {
+  "brands.t2.c05": {
     "en": "Lithium"
   },
-  "brands.t2.c_hardware-co": {
+  "brands.t2.c06": {
     "en": "Accessories"
   },
-  "brands.t2.c_ram": {
+  "brands.t2.c07": {
     "en": "Mounts"
   },
-  "brands.t3.c_mercury": {
+  "brands.t3.c01": {
     "en": "Outboards"
   },
-  "brands.t3.c_honda": {
+  "brands.t3.c02": {
     "en": "Outboards"
   },
-  "brands.t3.c_fusion": {
+  "brands.t3.c03": {
     "en": "Marine audio"
   },
-  "brands.t3.c_tohatsu": {
+  "brands.t3.c04": {
     "en": "Outboards"
   },
   "services.sec_link": {
@@ -854,13 +854,13 @@
   "foot.legal.v5": {
     "en": "marine.axiomprotocol.org contact details"
   },
-  "hero.brand_role.finval": {
+  "hero.brand_role.r1": {
     "en": "demo dealer"
   },
-  "hero.brand_role.garmin": {
+  "hero.brand_role.r2": {
     "en": "Official equipment"
   },
-  "hero.brand_role.yamaha": {
+  "hero.brand_role.r3": {
     "en": "Installed in shop"
   },
   "hero.crumb": {
@@ -1602,10 +1602,10 @@
     "en": "324 live results · 6 boat types · price filter €0-€284,999"
   },
   "catalog.hero.h1": {
-    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · BIG FOOT, Cruise Series, Pro Angler, Atlas RIBXY, Atlas RIB, Trailer X, Silver Hull, RESPO, Reval Marine</span>"
+    "en": "The full <em>boats catalog.</em>\n            <span class=\"sub\">20 results per page · TRAILER X, Cruise Series, Pro Angler, Atlas RIBXY, Atlas RIB, Trailer X, Silver Hull, RESPO, Reval Marine</span>"
   },
   "catalog.hero.deck": {
-    "en": "Live Axiom Marine listings show aluminium boats, boat trailers, cruising boats, fiberglass boats, fishing boats and RIB boats. The current archive opens with Atlas RIB VIKING V6F (V580F), Big Foot Ultimate Console and Big Foot Ultimate B."
+    "en": "Live Axiom Marine listings show aluminium boats, boat trailers, cruising boats, fiberglass boats, fishing boats and RIB boats. The current archive opens with Atlas RIB VIKING V6F (V580F), Trailer X Ultimate Console and Trailer X Ultimate B."
   },
   "crumbs.home": {
     "en": "Home"
